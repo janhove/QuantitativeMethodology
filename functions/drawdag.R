@@ -1,3 +1,6 @@
+# This function was written by Richard McElreath for his
+# rethinking package: https://github.com/rmcelreath/rethinking/blob/master/R/drawdag.R
+#---------------------------------------------------------------
 # my DAG drawing function to extend dagitty plot method
 
 drawdag <- function( x , col_arrow="black" , col_segment="black" , col_labels="black" , cex=1 , lwd=1.5 , goodarrow=TRUE , xlim , ylim , shapes , col_shapes , radius=3.5 , add=FALSE , xkcd=FALSE , latent_mark="c" , ... ){ 
