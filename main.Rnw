@@ -1,0 +1,315 @@
+\documentclass[a4paper]{tufte-book}
+\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+
+\usepackage{setspace}
+\usepackage{parskip}
+
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1em}%
+  \setlength{\parskip}{0.3\baselineskip}%
+}
+\@tufte@reset@par
+% 
+% % Paragraph indentation and separation for marginal text
+% \renewcommand{\@tufte@margin@par}{%
+%   \setlength{\RaggedRightParindent}{0.5pc}%
+%   \setlength{\JustifyingParindent}{0.5pc}%
+%   \setlength{\parindent}{0pt}%
+%   \setlength{\parskip}{\baselineskip}%
+% }
+% \makeatother
+
+% Define a new counter for theorems, lemmas, remarks, etc.
+\newcounter{mycounter}[chapter] % Reset counter at the start of each chapter
+\renewcommand{\themycounter}{\thechapter.\arabic{mycounter}}
+\NewDocumentCommand{\mypar}{som}{%
+  \refstepcounter{mycounter}%
+  \par\medskip\noindent\textbf{#3 \themycounter}%
+    \IfBooleanF{#1}{\IfValueT{#2}{\space(#2)}}\textbf{.}%
+}
+
+% Terms
+\newcommand{\term}[1]{\textbf{#1}}
+
+% Hyperlinks
+\usepackage{hyperref}
+\usepackage[nospace]{varioref}
+
+% After proofs
+\newcommand*{\QED}[1][$\diamondsuit$]{%
+\leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+    \quad\hbox{#1}%
+}
+
+% After comments / exercises
+\newcommand*{\parend}[1][$\diamondsuit$]{%
+\leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+    \quad\hbox{#1}%
+}
+
+\renewcommand{\bibname}{References}
+
+\title[Quantitative methodology]{{%
+  \setlength{\parindent}{0pt}%
+  Quantitative\\
+  methodology\\%
+  \vspace{1.8cm}%
+  {\Huge An introduction}\\%
+  \vspace{1.8cm}
+  {\huge Autumn 2025}
+}}
+\date{2020--2025}
+\author{Jan Vanhove}
+\publisher{University of Fribourg}
+
+\usepackage[export]{adjustbox}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+% \usepackage{mathastext}
+\usepackage{mathpazo}
+\usepackage{varioref}
+\usepackage{bm}
+% \renewcommand*{\reftextfaceafter}{on the next page} % Prevents "on the facing page"
+% \renewcommand*{\reftextfacebefore}{on the previous page}
+
+% Algorithms
+\usepackage[linesnumbered,boxed,vlined,algochapter]{algorithm2e}
+\SetArgSty{textup}
+\setlength{\algomargin}{1.5em}
+\SetAlCapSkip{1em}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{1}
+
+\makeatletter
+\@addtoreset{chapter}{part}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\newpage
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+\textit{Quantitative methodology: An introduction} \copyright\ 2020--2025 by Jan Vanhove is licensed under Creative Commons Attribution-NonCommercial 4.0 International. \\
+To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-nc/4.0/}. \\
+\url{jan.vanhove@unifr.ch} \\
+\url{https://janhove.github.io}
+
+
+% \par\smallcaps{Published by \thanklesspublisher}
+
+% \par\smallcaps{tufte-latex.googlecode.com}
+
+% \par Licensed under the Apache License, Version 2.0 (the ``License''); you may not
+% use this file except in compliance with the License. You may obtain a copy
+% of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless
+% required by applicable law or agreed to in writing, software distributed
+% under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT
+% WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the
+% License for the specific language governing permissions and limitations
+% under the License.\index{license}
+
+% \par\textit{First printing, \monthyear}
+\end{fullwidth}
+
+
+\chapter{Preface}
+The principal goal of this class is to impart the fundamentals of
+quantitative research. Our focus will be on \textbf{drawing causal conclusions}
+from data---when are causal conclusions licensed, what are typical pitfalls
+when drawing causal conclusions,
+and how can you design and optimise studies that avoid these pitfalls?
+Throughout, it is imperative that you not only understand the recommendations
+given in this booklet but also the \textbf{logic} behind them.
+There are two reasons for this.
+
+First, you need to know when the recommendations apply and when they don't.
+You might get away with just memorising the recommendations and their scope
+for now. But in a couple of months, you're bound to apply them where they don't make
+any sense.
+Understand the logic behind the recommendations, and you'll be better 
+able to weigh your options.
+
+Second, many researchers in the social sciences---even seasoned ones---operate
+on rules of thumb, so \emph{they} inevitably end up applying recommendations they've 
+picked up somewhere in situations where they don't apply. You need to be able
+to make an informed judgement about the research carried out by others and
+cogently argue for this judgement. A simple \textit{I took this class that taught
+me that you shouldn't control for colliders} won't do.
+(You'll learn about colliders and why you shouldn't control for them soon enough.)
+
+In this class, we'll cover the contents of this lecture script.
+In addition, we'll spend two sessions on questionnaire design.
+Furthermore, in the homework assignments, you'll learn how to visualise data 
+using state-of-the-art software. 
+These graphing assignments are available from \url{https://janhove.github.io/graphs}.
+
+I occasionally refer to some blog entries I wrote.
+These links are clickable in the PDF version of this booklet,
+but in case you're reading this from paper, all blog entries
+can be found at \url{https://janhove.github.io}.
+
+\medskip
+
+\begin{flushright}
+Jan Vanhove\\
+\href{mailto:jan.vanhove@unifr.ch}{\texttt{jan.vanhove@unifr.ch}}\\
+\url{https://janhove.github.io}
+\end{flushright}
+
+{\fontsize{9.5pt}{11pt}\selectfont
+  \tableofcontents
+}
+
+<<setup, include = FALSE>>=
+knitr::opts_chunk$set(
+  echo = FALSE, message = FALSE, fig.width = 1, fig.height = 0.95, fig.align = "center"
+)
+library(here)
+library(tidyverse)
+theme_set(theme_bw())
+knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+@
+
+<<echo = FALSE, warning = FALSE, message = FALSE>>=
+source(here::here("functions", "drawdag.R"))
+@
+
+\mainmatter
+
+<<DAGs, child='01_DAGs.Rnw'>>=
+@
+
+<<randomisation, child='02_randomisation.Rnw'>>=
+@
+
+<<alternative, child='03_alternative.Rnw'>>=
+@
+
+
+<<precision, child='04_precision.Rnw'>>=
+@
+
+<<within, child='05_within.Rnw'>>=
+@
+
+<<quasi, child='06_quasi.Rnw'>>=
+@
+
+<<measurement, child='07_measurement.Rnw'>>=
+@
+
+<<qrp, child='08_qrp.Rnw'>>=
+@
+
+% \part{Reading assignments}
+% 
+% <<prep, child='reading_assignments.Rnw'>>=
+% @
+
+\appendix
+
+\chapter{Reading difficult results sections}
+Results sections in quantitative research reports can be daunting.
+Sometimes, the analyses are necessarily complex 
+and require sophisticated knowledge about statistics and research
+design on the part of the reader.
+But too often, results sections are more difficult than they need
+to be \citep[see][]{Vanhove2020b}. 
+
+\begin{framed}
+ Don't allow yourself to be dazzled by complicated analyses and 
+ incomprehensible results sections---the complexity may be
+ largely superficial.
+\end{framed}
+
+Here are some tips for muddling through difficult results sections with minimal
+psychological damage.\footnote{Based on the blog entry \href{https://janhove.github.io/posts/2016-05-18-surviving-anova-onslaught/}{\textit{Surviving the ANOVA onslaught}}.}
+
+\begin{enumerate}
+  \item Identify the central, genuine research questions and the corresponding hypotheses.
+Research papers in applied linguistics surprisingly often contain `padding' research questions 
+that are unrelated to the core goal of the study. 
+When scanning the results section, 
+you can usually leave aside the paragraphs about these uninteresting research questions. 
+For example, in a report on a pretest/posttest experiment where participants 
+were randomly assigned to conditions, you may find `research' questions such as 
+\textit{Do participants in the treatment condition have different pretest scores from those in the control condition?} 
+or \textit{Do participants have higher scores on the posttest than on the pretest?} 
+Both questions are uninteresting as they don't tell you whether the treatment actually worked.
+  
+  \item \textbf{Draw a graph of the predictions.} (!)
+  Having identified the key research questions and hypotheses, 
+  I often find it useful to sketch what the data would look like if the 
+  researchers' predictions panned out and what kind of data would, 
+  within reason, falsify their hypotheses. 
+  These graphs are usually simple hand-drawn line charts that 
+  illustrate the expected group differences. 
+  I find that they help me to better understand the logic behind the study and 
+  to focus on the important analyses in the Results section.
+  You may find that several radically different patterns are in line with the 
+  authors' stated predictions; this tells you something about
+  how specific their predictions are. 
+  (It's good to have specific as opposed to very general hypotheses!)
+  It can also be useful to draw some simple graphs of data that
+  would \emph{not} be consistent with the authors' predictions.
+  This, too, can help you work out if the predictions are fairly specific
+  (a good thing) or if pretty much any pattern in the data would be
+  consistent with them (a bad thing).
+  
+  \item Look for a graph in the paper.
+Ideally, the paper will contain a graph of the main results 
+that you can then compare with the graphs you drew yourself. 
+Do the results seem to confirm or disconfirm the researchers' predictions? 
+Sometimes, a good graph will allow you to carry out the easiest of significance tests yourself: 
+the \term{inter-ocular trauma test}---if the conclusion hits you between the eyes, it's significant.\footnote{To be clear, this isn't a formal significance test. But it's a useful heuristic!} 
+If the results are less clear cut, you'll need to scan the Results section 
+for the more details, but by now, you should have a clearer idea of what you're 
+looking for---and what you can ignore for now. If the paper doesn't contain a 
+graph, you can often draw one yourself on the basis of the data provided in the tables.
+
+\item Ignore tests unrelated to the central research questions.
+Results sections sometimes contain significance tests that are unrelated to the 
+research questions the authors formulated up front \citep[see][]{Vanhove2020b}. 
+Such tests include include balance tests in randomised experiments 
+(e.g., ``The control and intervention group did not differ in terms of SES 
+($t(36) = 0.8$, $p = 0.43$).''), tautological tests (e.g., 
+``A one-way ANOVA confirmed that participants categorised as young, 
+middle-aged and old differed in age ($F(2, 57) = 168.2$, $p < 0.001$).'') 
+as well as some less obvious cases. By and large, these tests tend to add 
+little to the study. In non-randomised experiments, systematic differences 
+on background variables between the groups may represent confounds, but these 
+can be assessed based on the descriptive statistics and don't need to be 
+rubber-stamped with a significance test.
+\end{enumerate}
+
+Evidently, you'll get better at this with practice,
+and it'll be helpful to educate yourself on basic statistics, too.
+The latter will help you to understand better what was done,
+but also it will also allow you to ask more critical questions, not
+least of which is \textit{Are these analyses at all relevant?}.
+
+<<openscience, child='99_openscience.Rnw'>>=
+@
+
+\backmatter
+
+\bibliographystyle{../Documents/unified.bst}
+\bibliography{../Documents/bibliography.bib}
+
+\end{document}

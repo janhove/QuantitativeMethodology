@@ -1,0 +1,815 @@
+\chapter{Association and causality}\label{ch:causality}
+
+\section{Two examples}
+Below are two examples of empirical findings 
+along with conclusions that someone could draw from them.
+Answer the following questions for both of these examples.
+
+\begin{enumerate}
+  \item Does the conclusion follow logically from the finding?
+        If not, what are some plausible alternative explanations for the finding?
+  \item Which additional finding would strengthen the conclusions?
+  \item Which additional finding would call the conclusion into question?
+\end{enumerate}
+
+\mypar[Receptive multilingualism in Scandinavia]{Example}
+When talking their respective native languages, Danes understand
+Swedes better than the other way around. Furthermore, Danes
+like Swedish better than Swedes do Danish \citep[e.g.,][]{Delsing2005}.
+
+Conclusion: 
+Danes understand Swedes better than the other way around 
+because they like the language better.\marginnote{The diamond symbol signals where an example, exercise, remark, definition and such like ends.}
+\parend
+
+\mypar[Content and language integrated learning]{Example}
+Pupils in \textit{Content and Language Integrated Learning} (\textsc{clil}) programmes 
+in Andalusia perform better on English proficiency tests 
+than other Andalusian pupils \citep{Lorenzo2010}.
+
+Conclusion: 
+Taking \textsc{clil} classes improves pupils' English proficiency.
+\parend
+
+\newpage
+
+In both examples, an \term{association} of some sort is found in the data,
+and a \term{causal explanation} for this association is put forward: 
+Not only do Danes both understand and like Swedish better than Swedes do Danish (association), 
+it's suggested that one reason why they understand the other language better is that they like it better (explanation).
+Similarly, not only do \textsc{clil} pupils in Andalusia outperform non-\textsc{clil} pupils (association),
+it's suggested that they outperform them \emph{because} of the \textsc{clil} programme (explanation).
+
+Uncovering associations and drawing causal conclusions from them is a key
+goal in empirical research. But it's also fraught with difficulty: after a
+moment's thought, you'll often be able to come up with alternative explanations
+for the findings. To the extent that there exist more, and more plausible,
+alternative explanations, the causal explanation proferred becomes more tenuous:
+The causal claim may still be correct, but in the presence of competing explanations,
+it can't be \emph{shown} to be correct---that is, there isn't much \term{evidence}
+for the claim.
+A key goal when designing an empirical study is to reduce the number and the
+plausibility of such alternative explanations.
+
+\section{Definitions}
+\mypar[Association]{Definition}\label{def:association}
+Two factors (or variables)\footnote{I use these terms interchangeably. 
+Sometimes, factors are constant rather than variable in the context of a study, 
+but let's save our pedantic inclinations for other things.} 
+are \term{associated} if knowing the value of one factor
+can help you hazard a more educated guess about the value of the other factor.\footnote{The 
+more rigorous mathematical definition is that we call two random variables
+$X, Y$ associated if there exist sets $A, B$ such that 
+$\mathbb{P}(X \in A, Y \in B) \neq \mathbb{P}(X \in A)\mathbb{P}(Y \in B)$.
+For the purposes of this class, though, a conceptual understanding
+along the lines of the more informal definition in the previous paragraph
+is sufficient.}
+\parend
+\medskip
+
+That's a mouthful, but convince yourself that the following are examples of associations:
+
+\begin{itemize}
+ \item a person's size in centimetres and their size in inches;
+ \item the time of day and the temperature outside;
+ \item a person's height and their weight;
+ \item a person's shoesize and the size of their vocabulary in their native language;
+ \item a person's age and their father's age;
+ \item a person's nationality and the colour of their eyes.
+\end{itemize}
+
+\medskip
+
+Five remarks are in order:
+
+\begin{itemize}
+  \item Associations work in both directions: knowing the time of day
+allows you to venture a more educated guess about the temperature outside
+than not knowing it, but also vice versa.
+
+  \item Associations needn't be linear 
+  (e.g., the relation between weight and height levels off after a certain weight).
+
+  \item Associations needn't be monotonic, 
+  e.g., the relationship between the two variables can go up and then down again (as in the time of day/temperature example).
+
+  \item Associations needn't be perfect 
+  (e.g., there's a lot of variation about the general trend for taller people to be heavier).
+
+  \item Associations can be found between variables that aren't typically expressed numerically 
+  (e.g., eye colour and nationality).
+\end{itemize}
+
+\medskip
+
+Typical examples of associations in research are mean differences between
+groups and correlations.\footnote{You'll also often see the words `association' and
+`correlation' used interchangeably. I prefer to use `association' as the hypernym
+and reserve `correlation' for a specific type of association. See Chapter \ref{ch:quasi}.}
+
+As for \term{causality},
+a common-sense understanding will be sufficient for our purposes.
+But when in doubt, you can turn to the following broad definition:
+
+\mypar[Causality]{Definition}
+``We say that there is a \emph{causal relationship} between
+[two variables] $D$ and $Y$ in a population if and only if there is at least
+one unit in that population for which intervening in the world
+to change $D$ will change $Y$ \dots.'' \citep[p. 3]{Keele2019}
+\parend
+\medskip
+
+Three remarks are in order:
+
+\begin{itemize}
+  \item Saying that $D$ causally influences $Y$ doesn't imply
+  that $D$ \emph{alone} causally influences $Y$.
+  (You can get lung cancer from smoking, but also from exposure to
+  radon, air polution or just genetic bad luck.)
+
+  \item Saying that $D$ causally influences $Y$ doesn't mean
+  that changing $D$ will result in a change in $Y$ for \emph{all} members
+  of the population.
+  (Some non-smokers get lung cancer, and not all smokers get it.)
+
+  \item Saying that $D$ causally influences $Y$ doesn't imply
+  that changing $D$ will result in a change in $Y$ in all situations.
+  (Smoldering cigarette stubs cause forest fires, but only during droughts.
+  By the same token, droughts cause forest fires, but these need a spark to get started.)
+\end{itemize}
+
+\section{Visualising causality: directed acyclic graphs (\textsc{dag}s)}
+
+\subsection{Why?}
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/correlation}
+\caption{Source: \url{https://xkcd.com/552}.}
+\label{fig:xkcdcorrelation}
+\end{marginfigure}
+Research would be pretty easy if you could safely conclude that a causal
+link existed between two variables any time you observed an association between
+them. Fortunately for teachers of methodology courses who'd be on the dole
+otherwise, this isn't the case. But simply parrotting back \emph{Correlation is not causation}
+isn't too helpful.
+To help us figure out how associations between
+two variables can arise in the absence of a causal link between them, we turn
+to \term{directed acylic graphs} (\textsc{dag}s).
+
+\mypar[Graphs]{Definition}
+  \term{Graphs} are mathematical objects in which nodes (also called vertices) can be connected by edges.
+  In \term{directed} graphs, these edges point from one node to another, i.e., they're
+arrows.
+If, in a directed graph, it is impossible to start from some node and
+end up in the same node by following edges, then that graph is also \term{acyclic}.
+
+ A \term{path} is a sequence of distinct nodes that are linked by edges;
+ the direction of the edges does not matter.
+ A \term{directed path} from a node $X$ to a node $Y$ 
+ is a path in which you start at $X$ and end at $Y$
+ by following edges in the direction they are pointing in
+ (i.e., $X \rightarrow W \rightarrow \dots \rightarrow Z \rightarrow Y$).
+
+If, in a directed graph, there exists an edge from a node $X$ to a node $Y$ (i.e., $X \rightarrow Y$),
+then we call $X$ a \term{parent} of $Y$ and $Y$ a \term{child} of $X$.
+If there exists a directed path from a node $X$ to a node $Y$, then we call 
+$X$ an \term{ancestor} of $Y$ and $Y$ a \term{descendant} of $X$.
+In particular, parents are ancestors, and children are descendants.
+\parend
+
+Graphs are studied in mathematics and computer science
+for sundry purposes; here, we will use \textsc{dag}s as a tool
+for visually representing the causal links
+between the factors at play in a study.
+
+As we'll see below, when \textsc{dag}s are used to represent causal links,
+they are subject to a number of rules that may appear cumbersome at first. 
+However, when \textsc{dag}s are properly specified, 
+they allow researchers to figure out which factors they \emph{should} control for, 
+which factors they \emph{can but needn't} control for 
+and which factors they \emph{must not} control for. 
+Moreover, \textsc{dag}s are useful for learning how associations in empirical data can occur
+both in the presence and in the absence of causal links between the variables of interest.
+
+\subsection{Some examples}
+Before spelling out the rules for drawing \textsc{dag}s, let's look at a couple of
+possible \textsc{dag}s for the Andalusian \textsc{clil} study.
+
+Figure \ref{fig:dag1} is the simplest of \textsc{dag}s. It represents the assumption
+that there is a direct causal influence from the \term{treatment} variable
+(\textsc{clil}) on the \term{outcome} variable. These variables are represented by
+nodes. There exists a directed edge (i.e., an arrow) between them that
+shows the assumed direction of the causal link.
+
+<<dag-clileng, include = FALSE, echo=FALSE, results='hide', fig.width=1.5, fig.height=0.5, fig.align='center', fig.path='figure/', dev='pdf'>>=
+library(dagitty)
+ex1 <- dagitty("dag {
+    CLIL [exposure]
+    ENG [outcome]
+    CLIL -> ENG
+}")
+coordinates(ex1) <- list(
+  x = c(CLIL = 0, ENG = 1),
+  y = c(CLIL = 0, ENG = 0))
+drawdag(ex1)
+@
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/dag-clileng-1}
+  \caption{\textsc{dag} representing a causal influence of \textsc{clil} on English proficiency (\textsc{eng}).}
+  \label{fig:dag1}
+\end{marginfigure}
+
+The pupils' English proficiency won't be affected by their taking \textsc{clil} classes or not \emph{alone} but by a host of other unobserved factors as well. In
+Figure \ref{fig:dag2}, the unobserved factors are conveniently bundled and represented as `U'.
+The U is circled to make it clear that these factors were not observed or measured.
+While this convention isn't universal, it's useful and we'll adopt it here.
+
+<<dag-unobserved, include = FALSE, echo=FALSE, results='hide', fig.width=1.5, fig.height=1, fig.align='center', fig.path='figure/', dev='pdf'>>=
+ ex1 <- dagitty("dag {
+     CLIL [exposure]
+     ENG [outcome]
+     U [unobserved]
+     U -> ENG
+     CLIL -> ENG
+ }")
+ coordinates(ex1) <- list(
+   x = c(CLIL = 0, ENG = 1, U = 0.5) ,
+   y = c(CLIL = 0, ENG = 0, U = -1) )
+ drawdag( ex1 )
+@
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/dag-unobserved-1}
+  \caption{\textsc{dag} representing a causal influence of \textsc{clil} and of unobserved factors on English proficiency.}
+  \label{fig:dag2}
+\end{marginfigure}
+
+
+\textbf{Important:} If we don't draw an arrow between U and \textsc{clil}, this means
+that we assume that there is \emph{no} direct causal relationship between these two factors.
+But presumably, some unobserved factors will also account for why some pupils are
+enrolled in \textsc{clil} classes and others aren't; see Figure \ref{fig:dag3}. As we'll discuss later,
+these unobserved factors, some of which may affect both the 'treatment' (\textsc{clil})
+and the 'outcome' (English proficiency), \term{confound} the causal link of interest.
+
+<<dag-confound, include = FALSE, echo=FALSE, results='hide', fig.width=1.5, fig.height=1, fig.align='center', fig.path='figure/', dev='pdf'>>=
+ex1 <- dagitty("dag {
+    CLIL [exposure]
+    ENG [outcome]
+    U [unobserved]
+    U -> ENG
+    U -> CLIL
+    CLIL -> ENG
+}")
+coordinates(ex1) <- list(
+  x = c(CLIL = 0, ENG = 1, U = 0.5) ,
+  y = c(CLIL = 0, ENG = 0, U = -1) )
+drawdag( ex1 )
+@
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/dag-confound-1}
+  \caption{Unobserved factors as confounders (1).}
+  \label{fig:dag3}
+\end{marginfigure}
+
+Figure \vref{fig:dag4} also features the unobserved factors as possible confounders,
+but this time there is no edge between \textsc{clil} and \textsc{eng}.
+Such a \textsc{dag} can be useful for playing devil's advocate:
+We assume that there is no causal link between \textsc{clil} and English proficiency
+and subsequently use the \textsc{dag} to deduce if it is possible that 
+\textsc{clil} and English proficiency are nonetheless associated.
+If so, the mere presence of an association between \textsc{clil} and English
+proficiency does not imply that there is some causal link between them.
+
+<<dag-confound2, include = FALSE, echo=FALSE, results='hide', fig.width=1.5, fig.height=1, fig.align='center', fig.path='figure/', dev='pdf'>>=
+ex1 <- dagitty("dag {
+    CLIL [exposure]
+    ENG [outcome]
+    U [unobserved]
+    U -> ENG
+    U -> CLIL
+}")
+coordinates(ex1) <- list(
+  x = c(CLIL = 0, ENG = 1, U = 0.5) ,
+  y = c(CLIL = 0, ENG = 0, U = -1) )
+drawdag( ex1 )
+@
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/dag-confound2-1}
+  \caption{Unobserved factors as confounders (2).}
+  \label{fig:dag4}
+\end{marginfigure}
+
+\subsection{Rules for drawing \textsc{dag}s}
+
+\begin{enumerate}
+  \item The direction of the arrows shows the direction of the assumed causality (hence \emph{directed}).
+
+  \item Bidirectional arrows are forbidden, i.e., no $A \leftrightarrow B$.
+
+  \item You're not allowed to draw graphs where you can end up at the same place where you started by just following arrows (hence \emph{acyclic}).
+  For instance, you're not allowed to draw a \textsc{dag} like Figure \ref{fig:loops_dag}.
+  Mutually influencing factors can be represented in a \textsc{dag}, however, but you need to
+  break down the temporal structure. Figure \vref{fig:no_loops_dag} shows how you
+  can break down the temporal structure implicit in Figure \ref{fig:loops_dag}
+  to produce a legal \textsc{dag}.
+
+\begin{marginfigure}[-3cm]
+\centering
+\includegraphics[width=0.7\textwidth]{figure/loops_dag}
+\caption[Not a \textsc{dag}.]{Not a \textsc{dag}: A, B and C are allowed to influence themselves, making the graph cyclic rather than acyclic.}
+\label{fig:loops_dag}
+\end{marginfigure}
+
+
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figure/no_loops_dag}
+\caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. $A_1$, $A_2$, $A_3$ and $A_4$ represent the same variable measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
+\label{fig:no_loops_dag}
+\end{figure}
+
+  \item Unobserved factors can, and often should, be drawn. By convention, we draw a circle around them to make it clear that they are not directly observed.
+
+  \item ``\textsc{dag}s insistently redirect the analyst's attention to justifying what arrows do not exist. Present arrows represent the analyst's ignorance. Missing arrows, by contrast, represent definitive claims of knowledge.'' \citep[p. 248]{Elwert2013}
+
+  \item A factor that isn't of interest 
+  and that only affects one factor already in the \textsc{dag} 
+  and/or is affected by only one factor already in the \textsc{dag} 
+  doesn't have to be drawn for you to be able 
+  to derive correct conclusions from the \textsc{dag}. 
+  For instance, the U in Figure \ref{fig:dag2} doesn't have to be drawn 
+  (it only affects one factor that was already in the \textsc{dag}). 
+  However, the U in Figure \ref{fig:dag3} \emph{does} have to be drawn 
+  since it affects \emph{two} factors that were already in the \textsc{dag}. 
+  That said, it can be difficult to decide 
+  if a variable should be included in a \textsc{dag} or not, 
+  and we shouldn't let perfect be the enemy of good.
+  The purpose of \textsc{dag}s is less to perfectly capture the true causal
+  structure than making explicit one's imperfect assumptions.
+\end{enumerate}
+
+Note that \textsc{dag}s don't specify \emph{how} 
+one variable causally influences another.
+For instance, if we draw $X \rightarrow Y$, 
+this could mean that $Y$ increases if we increase $X$, but it could also
+mean that $Y$ decreases if we increase $X$.
+It's even possible that $Y$ first increases and then decreases, or that
+the pattern is another altogether.
+
+\mypar{Exercise}
+Draw a \textsc{dag} that represents the belief that Danes' attitudes towards Swedish
+and their understanding of Swedish causally affect each other (i.e., the more
+the like it, the better they understand it, which leads to their liking it even better).
+\parend
+
+\mypar{Exercise}
+Draw a \textsc{dag} that represents the belief that Danes who like Swedish
+seek out more contact with Swedish (e.g., by watching Swedish television), which
+leads to their understanding it better, which in turn leads to their seeking out
+even more contact with Swedish, and so on.
+\parend
+
+\subsection{Chains, forks and inverted forks}
+
+A \textsc{dag} that is drawn by following the rules specified above is always built up
+out of at most three types of building blocks: chains, forks, and inverted forks.
+
+\paragraph{Chains}
+A chain is a sequence of causal links; in a \textsc{dag}, chains
+show up as directed paths.
+In Figure \ref{fig:chain},
+$A \rightarrow B \rightarrow C \rightarrow D$ forms a causal chain.
+Note that causality doesn't flow `upstream' against the direction of the arrows,
+so there is no causal chain from $D$ back to $A$.
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/chain}
+\caption{A chain.}
+\label{fig:chain}
+\end{marginfigure}
+
+\textbf{Chains may transmit genuine causal influences}, that is, altering the values
+of (say) $A$ may bring about a change in some values in (say) $D$. In other words,
+$A$ may causally affect $D$, albeit indirectly through $B$ and $C$.
+Since the causality is directional, altering the
+values of $D$ won't bring about any changes in the values of $A$, $B$ or $C$.
+
+Moreover, \textbf{chains may induce associations between the variables involved}.
+Based on the \textsc{dag} in Figure \ref{fig:chain}, we wouldn't be surprised
+to find some association
+between the values of $A$, $B$, $C$ and $D$. The \textsc{dag}
+doesn't tell us what this association will look like, but we'll encounter
+some common forms of association in the weeks to come.
+
+Note that it is possible that changes in $A$ are not reflected in changes
+in $D$ downstream.
+For instance, the effect that $A$ has on $B$ may be quite small,
+and perhaps only large changes in $B$ affect $C$.
+This is why I wrote that changes in $A$ \emph{may} (rather than \emph{will})
+bring about changes in $D$.
+
+If, for whatever reason,
+you want to prevent a chain from transmitting associations between two variables,
+the path between these variables has to be \term{blocked} somewhere.
+This is achieved by \term{controlling} for one (or several) of the variables
+along the path.
+A conceptually easy (if often practically arduous) way is to ensure that
+only people, words, etc.\ with the same value on that variable are included in the
+study.
+For instance, if for some reason you need to control for eye colour, you could include
+only green-eyed people in your study.
+
+\paragraph{Forks}
+When a single factor causally affects two or more other factors,
+a fork is formed; see Figure \ref{fig:fork}. In this example,
+$A$ causally influences both $B$ and $C$.
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/fork}
+\caption{A fork.}
+\label{fig:fork}
+\end{marginfigure}
+
+\textbf{Forks themselves don't transmit causal influences between the prongs},
+that is, altering the values of $B$ won't change the values of $C$ and vice
+versa: Causality doesn't travel upstream. If you want to represent a causal
+link between $B$ and $C$, you have to add it to the \textsc{dag}.
+
+Importantly, \textbf{forks may induce associations between the factors at the prongs}:
+Based on the \textsc{dag} in Figure \ref{fig:fork}, we wouldn't be surprised to find
+some association between
+the values of $B$ and $C$. This is not because of a causal link between them
+but because $A$ influences both of them. $A$ is also referred to as a \term{confounding variable}
+or \term{confounder}.
+
+To better appreciate the fact that causal forks can give rise to
+associations between the variables at the prongs, consider the fictitious
+example in Table \ref{tab:illustration_fork}. Here, $A$ causally influences
+both $B$ and $C$,
+and both $B$ and $C$ are additionally influenced by
+separate factors ($U_B$ and $U_C$). The causal factors $A$, $U_B$ and $U_C$ can
+each take on two values (0, 1), and the outcomes of $B$ and $C$ are
+determined by simple equations.
+We assume that the probability of observing the values in a particular row
+is the same for all rows, i.e., that it is $1/8$.
+
+\begin{table}
+\centering
+\begin{tabular}{ccccc}
+  \toprule
+  $A$ & $U_B$ & $U_C$ & $B := A + U_B$ & $C := A + U_C$ \\
+  \midrule
+  0   & 0     & 0     & 0   & 0 \\
+  0   & 0     & 1     & 0   & 1 \\
+  0   & 1     & 0     & 1   & 0 \\
+  0   & 1     & 1     & 1   & 1 \\
+  \midrule
+  1   & 0     & 0     & 1   & 1 \\
+  1   & 0     & 1     & 1   & 2 \\
+  1   & 1     & 0     & 2   & 1 \\
+  1   & 1     & 1     & 2   & 2 \\
+  \bottomrule
+\end{tabular}
+\caption{Illustration of how a causal fork can give rise to associations between the variables at the prongs.}
+\label{tab:illustration_fork}
+\end{table}
+
+Taking a closer look at this table, we see that $B$ and $C$ are associated:
+The overall probability that $B$ is at least equal to 1 is $\mathbb{P}(B \geq 1) = 6/8 = 75\%$. But if you already know
+that an observation's value for $C$ is $2$, then you can be absolutely confident
+that its $B$ value is at least 1: $\mathbb{P}(B \geq 1 | C = 2) = 2/2 = 100\%$.\footnote{$\mathbb{P}(B \geq 1 | C = 2)$ reads
+as `the probability that $B$ will be at least 1 when $C$ equals 2.'
+This kind of probability is referred to as a conditional probability.
+If the variables $B, C$ are not associated, then $\mathbb{P}(B \geq 1 | C = 2) = \mathbb{P}(B \geq 1)$.
+Hence, if $\mathbb{P}(B \geq 1 | C = 2) \neq \mathbb{P}(B \geq 1)$, as is the case here, $B, C$ are associated.}
+By Definition \ref{def:association}, $B$ and $C$ are associated.
+By the same token, if you know that its $C$ value
+is $0$, you'd be less confident about this guess:
+
+\begin{itemize}
+ \item $\mathbb{P}(B \geq 1 | C = 0) = 1/2.$
+ \item $\mathbb{P}(B \geq 1 | C = 1) = 3/4.$
+ \item $\mathbb{P}(B \geq 1 | C = 2) = 2/2.$
+\end{itemize}
+
+If you want to prevent a fork from transmitting an association between the variables
+at the prongs, you can control for the confounder or otherwise block the path on which
+the confounder lies.
+To appreciate this fact, again consider Table \ref{tab:illustration_fork}. We've already
+established that $\mathbb{P}(B \geq 1 | C = 0) \neq \mathbb{P}(B \geq 1 | C = 1)$. But once
+we `control for' $A$ by fixing it at a specific value (e.g., $A = 0$), we find
+that the probability of observing $B \geq 1$ doesn't depend on $C$ any more.
+
+\begin{itemize}
+ \item $\mathbb{P}(B \geq 1 | C = 0, A = 0) = 1/2.$
+ \item $\mathbb{P}(B \geq 1 | C = 1, A = 0) = 1/2.$
+\end{itemize}
+
+Similarly, we could fix $A$ at $1$ and vary $C$ and observe the same phenomenon:\footnote{We can't fix $A$ at 1 and evaluate
+this probability at $C = 0$ for the simple reason that there's no row in the table with $A = 1$ and $C = 0$.}
+
+\begin{itemize}
+ \item $\mathbb{P}(B \geq 2 | C = 1, A = 1) = 1/2.$
+ \item $\mathbb{P}(B \geq 2 | C = 2, A = 1) = 1/2.$
+\end{itemize}
+
+\mypar{Exercise}
+While I don't have the numbers handy,
+I'm confident that there is some positive association between the number
+of drownings in the Aare and the daily revenue of Bernese ice-cream vendors.
+Why?
+\parend
+
+
+\paragraph{Inverted forks}
+Figure \ref{fig:inv_fork} shows an inverted fork where two variables both influence
+a third one. The `handle' of an inverted fork is called a \term{collider}
+since the two causal arrows clash into each other in $A$.
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/inv_fork}
+\caption{An inverted fork.}
+\label{fig:inv_fork}
+\end{marginfigure}
+
+\textbf{Inverted forks don't transmit causal influences between the variables at the prongs},
+that is, there is no causal link between $B$ and $C$ (causality doesn't travel upstream).
+The intriguing thing about inverted forks is this, though:
+When the collider (i.e., $A$) is \emph{not} controlled for, the variables
+at the prongs remain unassociated.
+However, \textbf{controlling for the collider may induce an association between
+the variables at the prongs even in the absence of a causal link between them}.
+Controlling for a descendant of a collider
+may likewise induce an association between the variables at the prongs.
+
+The effects of controlling for a collider are not intuitive, so let's
+consider an example.
+
+\mypar{Example}
+University teachers can testify that there is some negative association
+between their students' intelligence and their diligence. 
+This doesn't mean that the most intelligent students are \emph{all} lazy and 
+none of the most diligent students
+are particularly clever---just that there is some tendency for the most intelligent
+students to be less hard-working than the less clever ones.
+There is a simple and plausible causal explanation for this association:
+The most intelligent students quickly figure out that they don't need to work
+as hard in order to obtain their degree, so they shift down a gear.
+
+\begin{marginfigure}[3.5cm]
+\includegraphics[width=\textwidth]{figure/student}
+\caption{To the extent that diligence (work) and intelligence (IQ) both determine
+if someone gets into university, some association between these two factors will
+be found if we only look at university students.}
+\label{fig:student}
+\end{marginfigure}
+
+But there is an equally plausible if less simple explanation: by only looking
+at university students, we've controlled for a collider without realising it;
+see Figure \ref{fig:student}. 
+Even if diligence and intelligence were completely
+unassociated in the human population, they are bound to be associated if we
+only look at university students.
+Figure \vref{fig:selectionbias} illustrates why:
+If we consider
+  the population as a whole, it's possible that there is no (or hardly any) association
+  between diligence and intelligence (left panel): If we know a person's degree of diligence,
+  we can't make a more educated guess as to their intelligence than if we don't.
+  But if we only consider university students (filled circles in the right panel), we're
+  bound to find a negative association between diligence and intelligence: If we
+  know that a university student is pretty lazy, we also know that they need
+  to be pretty intelligent---otherwise they couldn't have made it into university.
+
+\begin{figure}[htbp]
+\includegraphics[width=\textwidth]{figure/selectionbias}
+\caption[Selection bias]{Collider bias in action: If you only look at the filled (or at the unfilled) circles, you'll discover an association between diligence and intelligence, even though there is no causal link between them.}
+\label{fig:selectionbias}
+\end{figure}
+
+
+By only looking at university students, we've unwittingly controlled for a collider,
+which by itself can explain the negative association between diligence and intelligence
+observed among university students.
+This doesn't mean that our first causal
+explanation is necessarily wrong.
+But it does illustrate that there is a non-obvious
+but plausible additional explanation that we need to reckon with.
+It's also possible that both explanations are simultaneously be correct:
+There may be some (negative) causal influence of intelligence on diligence,
+but by only looking at university students, we would then end up overstating
+the strength of this causal effect.
+
+In Figure \ref{fig:selectionbias}, we've assumed---for ease of exposition---that
+there is a perfect deterministic relationship between diligence and intelligence
+on the one hand and university enrolment on the other hand (viz., if the sum
+of both scores is above 10, enrolment is granted). In reality, this relationship
+won't be perfect (some highly intelligent and highly diligent people don't go to
+university), but even so, controlling for (or `conditioning on') a collider can produce
+associations between two factors in the absence of a causal link between them.
+\parend
+
+Other examples of this collider bias are only superficially different
+from the example we've just considered.
+The difficulty lies in figuring out what collider was unwittingly controlled for.
+
+\mypar{Exercise}
+  There is a negative association between how easily accessible a restaurant
+  is from a tourist resort and how good the food is.
+  Come up with an explanation that does not assume any direct or indirect
+  causal influence of food quality on location or vice versa.
+\parend
+
+\mypar{Exercise}
+  People with a highly active dating life sometimes complain that their
+  hottest dates tend to be comparatively boring.
+  Come up with an explanation that does not assume any direct or indirect
+  causal influence of attractiveness on interestingness.
+\parend
+
+\begin{framed}
+In sum, unbroken chains both transmit causality and induce associations;
+forks induce associations without causality unless measures are taken (e.g., controlling for the confounder);
+and inverted forks induce associations without causality if the collider (or one of its descendants) is controlled for.
+\end{framed}
+
+Let's now turn to some \textsc{dag}s that are made up of several of the building
+blocks we've discussed.
+
+\mypar{Exercise}
+Consider the \textsc{dag} in Figure \ref{fig:exercise1}.\label{ex:dag1}
+
+\begin{marginfigure}[3cm]
+  \includegraphics[width=\textwidth]{figure/exercise1}
+  \caption{\textsc{dag} for Exercise \ref{ex:dag1}.}
+  \label{fig:exercise1}
+\end{marginfigure}
+
+  \begin{enumerate}[(a)]
+    \item Can $A$ causally affect $F$? In other words, does there exist a directed path (chain)
+    from $A$ to $F$ on which no variable has been controlled for?
+    \item Can $C$ causally affect $D$?
+    \item Can there be an association between $C$ and $D$
+    if no factors are controlled for? Why (not)?\footnote{If the answer is `yes', it suffices
+    to list a path via which such an association could be transmitted.
+    If the answer is `no', you need to check for each path between $C$ and $D$ that 
+    this path cannot transmit associations.}
+    \item Can there be an association between $C$ and $D$ if
+    $E$ is controlled for? Why (not)?
+    \item Can there be an association between $C$ and $D$ if
+    $F$ is controlled for? Why (not)?
+    \item Can there be an association between $C$ and $D$ if
+    $A$ is controlled for? Why (not)?
+    \item Can there be an association between $C$ and $D$ if
+    $B$ is controlled for? Why (not)? \parend
+  \end{enumerate}
+
+
+\mypar{Exercise}
+Consider the \textsc{dag} in Figure \ref{fig:exercise2}.\label{ex:dag2}
+\begin{marginfigure}[3cm]
+\includegraphics[width=\textwidth]{figure/exercise2}
+\caption{\textsc{dag} for Exercise \ref{ex:dag2}.}
+\label{fig:exercise2}
+\end{marginfigure}
+  \begin{enumerate}[(a)]
+    \item Can $A$ causally affect $F$?
+    \item Can $A$ causally affect $E$?
+    \item Can there be an association between $A$ and $E$?
+    Why (not)?
+    \item Can there be an association between $A$ and $E$
+    if $F$ is controlled for? Why (not)?
+    \item Can there be an association between $B$ and $D$
+    if no factors are controlled for? Why (not)?
+    \item Can there be an association between $B$ and $D$
+    if $A$ is controlled for? Why (not)?
+    \item Can there be an association between $B$ and $D$
+    if $F$ is controlled for? Why (not)?
+    \item Can there be an association between $B$ and $D$
+    if $C$ and $F$ are controlled for? Why (not)?
+    \item Can there be an association between $B$ and $D$
+    if $E$ and $F$ are controlled for? Why (not)? \parend
+  \end{enumerate}
+
+
+\mypar{Exercise}
+Consider the \textsc{dag} in Figure \ref{fig:exercise3}.\label{ex:dag3}
+\begin{marginfigure}[3cm]
+\includegraphics[width=\textwidth]{figure/exercise3}
+\caption{\textsc{dag} for Exercise \ref{ex:dag3}.}
+\label{fig:exercise3}
+\end{marginfigure}
+  \begin{enumerate}[(a)]
+    \item Can $A$ causally affect $D$?
+    \item Can there be an association between $A$ and $D$
+    if no factor is controlled for? If so, via which path?
+    \item Can there be an association between $A$ and $D$
+    if $C$ is controlled for? If so, via which path?
+    \item Can there be an association between $A$ and $D$
+    if $F$ is controlled for? If so, via which paths (plural!)?
+    \item Can there be an association between $A$ and $D$
+    if $G$ is controlled for? If so, via which paths (plural!)?
+    \item Can there be an association between $A$ and $D$
+    if $B$ and $C$ are controlled for? If so, via which path?
+
+    \item Can $C$ causally affect $E$?
+    \item Can there be an association between $C$ and $E$
+    if no factor is controlled for? If so, via which path?
+    \item Can there be an association between $B$ and $E$
+    if no factor is controlled for? If so, via which path?
+    \item Can there be an association between $B$ and $E$
+    if $C$ is controlled for? If so, via which path?
+    \item Can there be an association between $B$ and $E$
+    if $D$ is controlled for? If so, via which path?
+    \item Can there be an association between $B$ and $E$
+    if $D$ and $F$ are controlled for? If so, via which path?
+    \item Can there be an association between $B$ and $E$
+    if $D$ and $G$ are controlled for? If so, via which path? \parend
+  \end{enumerate}
+  
+\mypar[Bias]{Definition}
+The term \term{bias} refers to a systematic distortion of the results, 
+e.g., due to confounding variables. 
+A single \term{unbiased} study isn't guaranteed to estimate the size of the causal effect correctly, 
+but roughly speaking, 
+if we were to run the same study lots of times, the under- and overestimates would cancel each other out. 
+If the under- and overestimates don't cancel each other out, then the study is \term{biased}.\footnote{The more formal mathematical definition is that an estimate is unbiased
+  if its expected value equals the parameter value it attempts to estimate,
+  and biased otherwise.}
+\parend
+
+\mypar{Exercise}
+If\label{ex:dag4} we want to obtain an unbiased estimate of the total causal influence
+  of a variable $X$ on another variable $Y$, we need to ensure \label{ex:dag}
+  \begin{itemize}
+    \item that all directed paths from $X$ to $Y$
+          are open (i.e., no intermediate variable is controlled for);
+    \item and that $X$ and $Y$ cannot be associated via any other paths.
+  \end{itemize}
+  
+  \medskip
+  
+  
+  \begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/exercise4}
+\caption{\textsc{dag} for Exercise \ref{ex:dag4}.}
+\label{fig:exercise4}
+\end{marginfigure}
+
+  Now consider the \textsc{dag} in Figure \ref{fig:exercise4} and
+  answer the following questions:
+  \begin{enumerate}[(a)]
+    \item List all paths via which $X$ may causally affect $Y$ if no variables
+    are controlled for.
+    \item List all paths via which $X$ and $Y$ may be associated if no variables
+    are controlled for.
+    \item Which variable(s) do you \emph{need} to control for if
+          you want to obtain an unbiased estimate of the causal
+          effect of $X$ on $Y$?
+          Also quickly check if controlling for these variable(s) doesn't open up any new paths via which $X$ and $Y$ may be associated!\footnote{Sometimes, different sets of variables can be controlled for to this end. But in this case, there is just a single correct solution.}
+          \parend
+  \end{enumerate}
+
+\section{Some further terms}
+\mypar[Descriptive statistics]{Exercise}\label{ex:johnson}
+Read \citet{Johnson2013} with an eye towards
+explaining the following terms and
+concepts in a manner that you find intelligible by providing
+your own definition, clarifying example or illustration.
+
+\begin{enumerate}[(a)]
+ \item Continuous vs. categorical variables \citep[pp.~289--290 in][]{Johnson2013}
+ \item Histogram (pp.~292--293)
+ \item Bimodal distribution (p. 292)
+ \item Outliers (p. 292)
+ \item Normal distribution (pp.~293--294)
+ \item Arithmetic mean vs.\ median vs.\ mode (pp.~295--296)
+ \item The effect of outliers on the mean and median (p. 297)
+ \item Quantile, percentile, and quartile (p. 298)
+ \item Standard deviation and variance (p. 299)
+ \item Left- and right-skewed distributions (p. 301)
+ \item Ordinal vs. nominal variables (p. 307)
+ \item Bar chart (pp.~307--308)
+ \item Contingency table (p. 311) \parend
+\end{enumerate}
+
+\section{*Further reading}
+Sections marked with an asterisk are optional.
+
+\citet{Rohrer2018} is an accessible introduction to \textsc{dag}s.
+I don't recommended you read it right away, though,
+but save it in case you need a refresher from a different source
+in a couple of months or years.
+
+Discussions about biased estimates are easier to follow
+if you have some experience with analysing quantitative data.
+The relevant concepts are discussed in the lecture notes
+\href{https://janhove.github.io/resources.html#einführung-in-die-quantitative-datenanalyse}{\textit{Einführung in die quantitative Datenanalyse}}.
+An abridged English-language version is available in the form
+of the lecture notes \href{https://janhove.github.io/resources.html#introduction-to-the-general-linear-model}{\textit{Introduction to the general linear model}}.

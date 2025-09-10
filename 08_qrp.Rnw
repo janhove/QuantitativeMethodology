@@ -1,0 +1,181 @@
+\chapter{Questionable research practices}
+
+\mypar[Reading assignment]{Exercise}
+Read Chapter 2 in \citet{Chambers2017}.
+There are no guiding questions for this text; it should be
+intelligible enough. But by way of preparing for it, try
+to answer these questions.
+
+\begin{enumerate}[(a)]
+  \item You recruit 60 participants, aged 8--88. Half of them
+  are assigned to the experimental group; the others to the
+  control group (random assignment). You run a significance test
+  comparing the mean age in both groups. What is, at most, the probability
+  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  
+  \item Each of your participants throws a fair six-sided dice.
+  You run another significance test to check if there's a mean
+  difference in the number of pips obtain in the control and in
+  the intervention groups. (Evidently, the intervention doesn't
+  make you throw dice any better.)
+  What is, at most, the probability
+  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  
+  \item What do you know about the probability of observing
+  \emph{either} a significant age difference between the two groups,
+  \emph{or} a significant difference in the mean number of pips obtained,
+  \emph{or} two significant differences? \parend
+\end{enumerate}
+
+\section{A paradox}
+\citet{Sterling1995} inspected 563 articles in psychology
+journals (published in 1986--1987) in which significance tests
+were used to answer the research question.
+In 538 of them (96\%), the researchers reported a significant
+result that confirmed their own hypothesis.
+In medical journals, the figure was lower but still pretty high
+(270/316, 85\%).
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{figure/Sterling1995}
+\caption{Table 1 from \citet{Sterling1995}.}
+\label{fig:sterling}
+\end{figure*}
+
+But at the same time, the sample sizes in psychological research
+are fairly small \citep{Marszalek2011,Sedlmeier1989}: The average
+study in applied psychology published in 1995 only contained 
+22 participants per condition. This implies that many of these studies
+must have had fairly low statistical power (see Section \vref{sec:power}): 
+Even if the null hypothesis hadn't been correct in any of these studies,
+it'd have been impossible to reject it in 96\% of cases.
+
+For a long time \citep[see already][]{Sterling1959}, it was believed
+that the reason for this discrepancy (low power, lots of significant
+results) was due to \term{publication bias}: 
+Researchers prefer to write up the studies in which they obtained
+significant results, and editors and reviewers tend to reject
+studies with non-significant findings. The studies that were conducted
+but that produced non-significant findings were believed to languish
+in the researchers' file-drawers.
+
+But while some studies never make it into print, the vast majority do.
+So where did the non-significant findings go?
+
+\section{Hidden flexibility}
+
+More recently, scholars with an interest in meta-science (i.e.,
+science about science) have come to realise that research projects
+afford a great deal of flexibility. Researchers can---consciously
+or subconsciously---leverage this flexibility to produce a steady stream
+of significant findings---\emph{even if the data are nothing but noise}.\footnote{If the data aren't just noise, such flexibility will spuriously amplify the signal. For instance, even if $A$ influences $B$, the literature as a whole will tend to overestimate the extent of this influence.}\\
+\citet{Simmons2011} call this flexibility \term{researcher degrees of freedom} 
+and demonstrate how significant findings can be 
+conjured from thin air if researchers afford themselves some leeway in
+analysing their data.
+
+Sources of researcher degrees of freedom include:
+
+\begin{itemize}
+  \item A researcher can run intermediate analyses 
+  and decide to stop or to continue collecing data based on the results. 
+  See \citet{Simmons2011} and Exercise \ref{ex:fpp} for the consequences of this.
+  
+  \item Sometimes, there are several ways in which a task or test can be
+  scored, or how some variable can be constructed.
+  When one way yields a significant finding and the other doesn't,
+  it's easy to convince yourself that the one that produced significance
+  was obviously the right one. 
+  Relatedly, researchers routinely collect multiple outcome variables, but
+  it's tempting to focus on the one that `worked' (i.e., produced significance)
+  rather than on those that didn't.
+  See \citet{Simmons2011},
+  \citet{Gelman2013}, and 
+  \citet{Malsburg2017}. For a discussion with a focus on bilingualism
+  research, see \citet{Poarch2018}.
+  
+  \item \term{HARKing} \citep[hypothesizing after the results are known;][]{Kerr1998}: 
+  A largely exploratory analysis is reported as though it were planned all along.
+  Inevitably, the researchers will find in the data what they claim to have
+  anticipated. (This can happen without any bad intent on the part of the
+  researchers.)
+  
+  \item Convenient errors and biased debugging: 
+  Everyone makes mistakes, but you're more likely to catch your own
+  mistakes when the results don't pan out than when they do.
+  As a result, the mistakes that remain in the literature aren't
+  distributed randomly but tend to favour the researchers' hypotheses.
+  
+\end{itemize}
+
+Trying out several defensible analyses and glossing over the ones
+that didn't produce significance is referred to as \term{p-hacking}.
+
+The practices listed above are examples of questionable research practices.
+Traditionally, these aren't viewed as outright fraud (which includes 
+fabricating or manipulating data), though arguably, it will become increasingly
+difficult to invoke plausible deniability 
+as professional researchers can be expected to know their consequences.
+
+For possible solutions, see \citet{Chambers2017}.
+
+\mypar[False-positive psychology]{Exercise}\label{ex:fpp}
+The consequences of researcher degrees of freedom/p-hacking are
+best appreciated by seeing them. Do these exercises in order.
+
+\begin{enumerate}[(a)]
+  \item Open the app at \url{https://plurilinguisme.shinyapps.io/fppsy/}
+  and carefully read the description.
+  
+  \item Click `Simulate!', leaving all settings at their default values.
+  Describe what the two graphs (reproduced here as Figure \ref{fig:app} for your convenience) are showing.
+  
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figure/app}
+\caption{When you run the app using its default settings, you'll obtain two graphs similar to these. Your graphs won't be identical as they are based on simulations with random data.}
+\label{fig:app}
+\end{figure}
+  
+  \item First try to answer the following questions by \emph{thinking}
+  about them. Once you've written down your answer, check it by
+  running the simulation.
+  
+  \begin{enumerate}[i.]
+    \item Increase the `maximum number of additional participants in each group' to 30. Leave the other settings at their default values. How will the graphs change?
+    
+    \item Leaving all other settings as they currently are, what will
+    happen if instead of analysing the data after 10 new participants
+    per condition, they're analysed after 5 new participants per
+    condition? Or after just 2 new participants per condition?
+    
+    \item What'll happen when the correlation between the two 
+    dependent variables becomes weaker (e.g., $r = 0.1$ instead
+    of $r = 0.5$)? Why?
+    
+    \item What'll happen when the correlation between the two
+    dependent variables becomes stronger (e.g., $r = 0.95$)? Why?
+    
+    \item For which combination of the different parameters will
+    you obtain the highest Type-I error? Think before running the simulation!
+    
+    \item For which combination of the different parameters will
+    you find a Type-I error rate of about 5\%? Are there any
+    parameters that don't play a role? Think before running the simulation! \parend
+  \end{enumerate}
+\end{enumerate}
+
+\section{*Further reading}
+
+Most studies referred to in this chapter are both accessible and short.
+If you read \citet{Simmons2011} (warmly recommended!),
+also read their short retrospective article \citep{Simmons2018}
+lest you misinterpret the take-home message.
+\citet{Peterson2016} presents an ethnographic study that gives
+you some insight into what questionable research practices look like
+in the field.
+
+A highly accessible book-length treatment of these topics, and then some,
+which I cannot recommend highly enough, is \citet{Ritchie2021}.
+\citet{Chambers2017} is also recommended.

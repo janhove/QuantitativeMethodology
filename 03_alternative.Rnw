@@ -1,0 +1,765 @@
+\chapter{Alternative explanations}\label{ch:alternative_explanations}
+
+\section{The roles of variables in research}
+
+Some common terminology:
+
+\begin{description}
+  \item[Dependent variable] or \textit{outcome variable}.
+
+  \item[Independent variable] or \textit{predictor variable}.
+  In experiments, such variables are `manipulated' by the researchers.
+  The goal is then to find out the effects of such manipulation of
+  the independent (or predictor) variables on the dependent (or outcome) variables.
+
+  \item[Control variable.] Additional variable that
+  was collected as it may be related to the \textit{outcome}.
+  We'll discuss the usefulness of control variables later.
+
+\end{description}
+
+\mypar[Reading assignment]{Exercise}\label{ex:ludke}
+Read \citet{Ludke2014} in light of the questions below and briefly answer them.
+The answers to these questions can be found in the `Method' section 
+(pp.~43--47), so you don't have to read the rest.
+
+\begin{enumerate}[(a)]
+  \item What is or what are the independent
+  variable(s) in Ludke et al.'s study?
+  \item What is or what are the dependent
+  variable(s) in Ludke et al.'s study? 
+  \item How did the researchers assign the participants to the conditions?\parend
+  % \item How did Ludke et al.\ try to ensure 
+  % that any differences between the conditions could be attributed 
+  % to differences between speaking, rhythmic speaking and singing 
+  % rather than to other factors?
+  % List \emph{at least two} techniques the researchers used.
+\end{enumerate}
+
+\section{Alternative explanations for results}
+In the study by \citet{Ludke2014} (see Exercise \ref{ex:ludke}), 
+the question about internal validity boils down to this:
+Can the differences in the outcomes between the conditions actually 
+be ascribed to the difference between the conditions 
+(control vs.\ intervention; singing vs.\ rhythmic speaking vs.\ speaking)?
+Or are there other explanations for it?
+
+In Chapter \ref{ch:randomisation}, we focused on
+the threat that confounding poses to a study's internal validity
+and how this threat can be neutralised using randomisation.
+We saw that randomised (`true') experiments (probabilistically)
+negate the influence of confounding variables on the results:
+one group isn't systematically given
+an advantage compared to the other (e.g., higher motivation,
+greater affinity with a topic etc.). This increases
+the study's internal validy, but:
+
+\begin{framed}
+Even if confounding variables are
+taken into account, other systematic factors may
+give rise to a spurious difference between
+the experiment's conditions or may mask an
+existing effect of the conditions.
+\end{framed}
+
+\section{Explanation 1: Expectancy effects}
+
+Perhaps the researchers or their assistants (subconsciously)
+nudged the data in the hypothesised direction. 
+This can happen even when the measurements seem perfectly objective. 
+For instance, when you're counting the number of syllables in a snippet of speech, 
+there are bound to be a number of close decisions
+(Does German \textit{haben} [ha(b)m] have one or two syllables?).
+This isn't too big a problem in itself.
+But it does become a cause for concern 
+if you tend to reach different decisions 
+depending on which condition the participant was assigned to.
+
+Relatedly, it's possible that the participants want to help (or thwart)
+the researchers achieve what they think are the researchers' goals.
+In this case, differences in the outcome variable between the conditions may arise
+not because of the intervention itself but because of unwanted changes
+in the participants' behaviour. Such changes in behaviour needn't come about
+consciously.
+
+\medskip
+
+\begin{description}
+ \item[Expectancy effects] Both
+ on the part of the participants (e.g., \emph{placebo}
+ effect) or on the part of the researchers.
+
+ \item[Single-blind experiment] Typically used to describe
+ that the participants don't know which condition they're assigned to.
+
+ \item[Double-blind experiment] If neither the participants
+ nor the researchers themselves (at the time of collecting and
+ preparing the data) know which condition the participants were assigned
+ to.
+\end{description}
+
+\medskip
+
+Blinding isn't always possible, and it may be immediately obvious
+to the participants what the intervention entails. But in studies
+with raters, it's usually easy to prevent them from knowing
+which condition the participants were assigned to.
+
+\section{Explanation 2: Failed manipulation}
+A second class of alternative explanations is that the experiment
+didn't run quite as the researchers expected it to. For instance,
+the participants may have misunderstood, or failed to act on, the instructions,
+or the script used to run the experiment could contain a crucial coding error.
+
+\medskip
+
+\begin{description}
+ \item[Manipulation checks]
+
+Example 1: \citet{Ludke2014} (Exercise \ref{ex:ludke}) wanted to find out 
+  if foreign-language phrases are more easily learnt 
+  if the learners practice them while singing or speaking rhythmically. 
+  Their experimental manipulation involved asking the participants 
+  to practice Hungarian phrases while singing or speaking rhythmically. 
+  In order to verify whether they indeed did as they were asked, 
+  they recorded their participants.
+
+Example 2: \citet{Lardiere2006} had her
+  participant judge L2 sentences for their grammaticality.
+  To ensure that the participant rejected sentences
+  for the (syntactic) reason intended by the researcher,
+  she was also asked to correct any sentences she rejected.
+  The researcher found out that the participant rejected
+  a fair number of syntactically correct sentences, but that she
+  did so for stylistic (rather than strictly syntactic)
+  reasons. The researcher then (correctly) didn't draw the conclusion
+  that the participant's syntactic knowledge was incomplete.
+
+ \item[Satisficing]
+ Sometimes, participants don't really pay any attention to the stimuli or to
+ the instructions.
+ For instance, questionnaire respondents may answer in a specific
+ pattern (e.g., ABCDEDCBA\dots) rather than give their mind to each question.
+ Figure \ref{fig:satisficing}
+ provides another example of satisficing.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figure/PortugueseSatisficing}
+  \caption{A large number of raters were asked to each rate about 50
+  short texts on a 9-point scale. These two clearly
+  lost interest at some point \citep{Vanhove_lexrich_TR}.}
+  \label{fig:satisficing}
+\end{figure}
+
+ If you want to run a study online or at the computer,
+ check out \citet{Oppenheimer2009} for a neat and unintrusive way to find
+ out if your participants read the instructions.
+
+ \item[Positive control]
+ Does the intervention yield an effect in cases
+ where it \emph{should} (with near-certainty) yield
+ an effect? If not, then the experiment may have been
+ carried out suboptimally.
+ 
+ Example 1: 
+ Let's say a researcher wants to find out if knowledge of L2 verb morphology
+ contributes to L2 French speakers' comprehension of temporally complex texts.
+ To this end, she proposes an experiment that involves the intensive teaching
+ of French verb morphology.
+ In this case, it would make sense for the researcher to check 
+ if the intervention does in fact succeed in improving the participants' 
+ command of French verb morphology.
+ If it doesn't, then the results of the study can't speak to the link
+ between knowledge of verb morphology and text comprehension.
+ 
+ Example 2: In L2 research, the task given to the L2 speakers
+ is often also given to a group of L1 speakers.
+ This helps identify issues in the materials used.
+ For example, 
+ if sentences meant to be grammatically correct are frequently rejected by L1 
+ speakers and L2 speakers alike (perhaps due to awkward style), 
+ it suggests the problem lies with the stimuli, not necessarily with the L2 speakers' abilities.
+
+ The term \term{negative control} refers to traditional control groups 
+ (of which we know that they shouldn't show an effect of the intervention).
+
+ \item[Pilot study] A pilot study is a small-scale study conducted before the main study.
+ Typical goals of a pilot study are
+ \begin{enumerate}[(a)]
+ \item ensuring that the participants understand, and act on, the instructions;
+ \item identifying any remaining glitches in the experimental software or in the analysis pipeline;
+ \item if relevant, checking whether the responses obtained can be coded satisfactorily;
+ \item estimating how much time participants need to complete the study.
+ This is useful for recruiting participants and scheduling;
+ \item detecting any \term{floor} or \term{ceiling effects}.
+  A floor effect occurs when a task is so difficult that 
+  many participants score near the bottom. 
+  Even if participants differ in ability, the task fails to capture it.
+  Ceiling effects occur if a task is too easy.
+ \end{enumerate}
+ 
+\end{description}
+
+\section{Explanation 3: Chance}
+A third important possible non-causal explanation for one's results is that they're due to chance. 
+The entire next chapter is devoted to an attempt to get a handle on this explanation.
+
+\chapter{Inferential statistics 101}\label{ch:stats}
+
+If you've ever read a quantitative research articles,
+you've probably encountered $p$-values.
+This chapter explains the basic logic
+behind $p$-value-based inferential statistics.
+It does so by explicitly linking the computation of $p$-values
+to the random assignment of participants to conditions
+in experimental research. If you have ever taken an introductory
+statistics class, chances are $p$-values were explained to you
+in a different fashion, presumably by making assumptions about
+how the observations in the sample were sampled from a larger
+population and by making reference to the Central Limit Theorem.
+For the explanation in this chapter, however, we're going to take
+a different tack and we will ignore the sampling method and
+the larger population.
+Instead, we're going to leverage what we know about how the
+observations, once sampled, were \emph{assigned} to the different
+conditions of an experiment. The advantages of this approach
+are that it connects the design of a study more explicitly to the analysis of its data
+and that it is less math-intensive while permitting one
+to illustrate several key concepts about inferential statistics.
+
+The goal of this chapter is for you to \emph{understand conceptually} what
+statistical tests attempt to achieve, not for you to be able to use them
+yourself. As a matter of personal opinion, statistical tests are overused
+\citep{Vanhove2020b}. I think that, in your own research,
+your focus should be on describing your data (e.g., by means of
+appropriate graphs) rather than running umpteen significance tests.
+Analysing data and running
+statistical tests are not synonymous.
+
+\medskip
+
+\section{An example: Does alcohol intake affect fluency in a second language?}
+
+\paragraph{Research question} Does moderate alcohol consumption affect verbal fluency in an L2?
+
+\paragraph{Method}
+Ten students (L1 German, L2 English)\footnote{Ten participants is obviously a very low number of participants, but it keeps things more tractable here.}
+are randomly assigned to either the control or the experimental condition (five each);
+they don't know which condition they're assigned to.
+Participants in the experimental condition drink one pint of ordinary beer;
+those in the control condition drink one pint of alcohol-free beer.
+
+Afterwards, they watch a video clip and relate what happens in it in English.
+This description is taped,
+and two independent raters who don't know which condition the participants were assigned to
+count the number of syllables uttered by the participants during the first minute.
+The mean of these two counts serves as the verbal fluency/speech rate variable.
+
+\paragraph{Results}
+The measured speech rates are shown in Figure \ref{fig:alcohol_results}.
+On average (mean), the participants in the \textit{with alcohol} condition
+uttered 4.3 syllables/second,
+compared to 3.7 syllables/second in the \textit{without alcohol} condition.
+
+<<echo = FALSE, eval = FALSE>>=
+# data used
+d <- data.frame(
+  Name = c("Sandra", "Nicole", "Maria", "Yves", "Daniel",
+           "Nadja", "Laura", "Lukas", "Thomas", "Michael"),
+  Rate = c(5.0, 4.4, 4.2, 4.1, 3.8,
+           4.2, 4.1, 3.7, 3.4, 3.1),
+  Condition = rep(c("with", "without"), each = 5)
+)
+
+mean_diff <- function(variable, treatment_idx) {
+  mean(variable[treatment_idx]) - mean(variable[-treatment_idx])
+}
+observed_diff <- mean_diff(d$Rate, which(d$Condition == "with"))
+
+rerandomisations <- combn(1:nrow(d), 5)
+H0_stats <- apply(rerandomisations, 2, mean_diff, variable = d$Rate)
+H0_stats <- sort(H0_stats)
+
+# p-test for observed statistic (take into account machine precision)
+mean(abs(H0_stats) >= abs(observed_diff) - .Machine$double.eps^0.5)
+
+# distribution of p among rerandomisations
+compute_p <- function(obs, H0) {
+  mean(abs(H0) >= abs(obs) - .Machine$double.eps^0.5)
+}
+plot(H0_stats, sapply(H0_stats, compute_p, H0 = H0_stats))
+@
+
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/alcohol_results}
+\caption{Individual results of a randomised experiment.}
+\label{fig:alcohol_results}
+\end{marginfigure}
+
+\section{The basic question in inferential statistics}
+We have dealt with major threats to internal validity, viz.,
+confounders (neutralised using randomisation)
+and expectancy effects (neutralised using double blinding).
+But there is another threat to internal validity that we need
+to keep in check:
+While we found a mean difference between the two conditions (4.3 vs. 3.7),
+this difference could have come about through \emph{chance}.
+We are, then, faced with two types of account for this mean difference:
+
+\begin{itemize}
+  \item The \term{null hypothesis} (or $H_0$):
+  The difference between the means is due \emph{only} to chance.
+
+  \item The \term{alternative hypothesis} (or $H_A$):
+  The difference between the means is due to chance \emph{and} systematic factors.
+\end{itemize}
+
+\emph{Assuming the $H_0$ is correct},
+the participants' results aren't affected by the condition (alcohol vs.\ no alcohol)
+they were assigned to. For instance,
+Sandra was assigned to the \textit{with alcohol} condition
+and her speech rate was measured to be 5.0.
+But had she been assigned to the \textit{without alcohol} condition,
+her speech rate would also have been 5.0.
+Assuming the $H_0$ is correct, then, the difference in speech rate between the two
+conditions
+must be due solely to the random assignment of
+participants to conditions, due to which more fluent talkers
+ended up in the \textit{with alcohol} condition.
+Another roll of the dice could have assigned Sandra
+to the control condition instead of Michael,
+and since under the $H_0$, the speech rate of neither is influenced
+by the condition, this would have
+produced a slower speech rate in the \textit{with alcohol} condition than in the
+\textit{without alcohol} one (3.9 vs. 4.1; see Figure \ref{fig:alcohol_results_alt}).
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/alcohol_results_alt}
+\caption{If only chance were at play, Michael's (3.1) and Sandra's (5.0) results would be unaffected by the experimental condition and the outcome might equally well have looked like this (swapping Michael and Sandra).}
+\label{fig:alcohol_results_alt}
+\end{marginfigure}
+
+\term{Frequentist inferential statistics} seeks to quantify
+how surprising the results are if we assume that only chance is at play.
+To do so, it attempts to answer the following key question:
+\textbf{How likely is it that a difference at least this large would've come about if chance alone were at play?}
+
+If it's pretty unlikely that chance alone would give rise to at least the difference observed,
+then this can lead one to revisit the assumption that the results are due
+only to chance---perhaps some systematic factors are at play after all.
+By tradition, the threshold between `pretty unlikely' and `still too likely',
+usually written as $\alpha$, is 5\%,
+but there is nothing special about this number.
+If the result falls below this 5\% threshold,
+the difference is said to be `statistically significant'.
+This is just a phrase, however, and arguably a poorly chosen one: statistical `significance' doesn't tell you anything about a
+result's practical or theoretical import.\footnote{From now on, avoid using the words `significance' and `significant' in their non-technical sense when writing about quantitative research.}
+Before discussing these and other misunderstandings about significance tests,
+let's see how you can compute how often you would
+observe a mean difference of at least $4.3-3.7=0.6$ if chance alone were at play.
+
+\section{Testing the null hypothesis by exhausitive rerandomisation}
+With 10 participants in two equal-sized groups,
+there were ${10 \choose 5} = 252$ possible assignments of participants to conditions,
+each of which was equally likely to occur.
+To see how easily a difference as least as large as the one observed (4.3 vs. 3.7) 
+could occur due to random assignment alone,
+we can re-arrange the participants' speech rates into each of these 252 combinations and see for each combination what the difference between the \textit{with} and
+\textit{without alcohol} condition means is (Figure \ref{fig:alcohol_test}).
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/alcohol_test}
+\caption{There are 252 different ways in which the 10 participants could have been split up into two groups. These are the differences between the means for all 252 possibilities.
+The mean difference we actually observed (0.6) is represented by the dashed red vertical line
+on the right-hand side; the dashed red vertical line on the left-hand side is the opposite
+of this observed mean difference ($-0.6$).}
+\label{fig:alcohol_test}
+\end{marginfigure}
+
+In eleven out of 252 cases, the re-arrangement of participants to conditions
+produces a mean difference in speech rate in favour of the \textit{with alcohol}
+group that is a least as large as the one we actually observed (0.6).
+In another eleven out of 252 cases, the re-arrangement produced a difference
+that went in the opposite direction 
+(i.e., in favour of the \textit{without alcohol} condition)
+but was also at least as large in magnitude as the difference actually observed.
+In other words, the probability with which we would observe
+a difference of at least $0.6$ between the conditions (in either direction) 
+if chance alone (random assignment) is at play is $\frac{22}{252} = 0.087$ (8.7\%).
+This is the infamous \textbf{p-value}.
+
+Using the threshold $\alpha = 0.05$,
+we would find that $p = 0.087 > \alpha$ and conclude
+that a difference of $0.6$ or more is still likely enough
+to occur under the null hypothesis of chance alone.
+Hence, we would see little need to revisit the
+assumption that the results may be due to chance alone.
+\textbf{Crucially, this doesn't mean that we have shown $H_0$ to be true.}
+It's just that $H_0$ would account reasonably well for these data.
+
+\mypar[One- and two-sided $p$-values]{Remark}
+  In the example above, 
+  we computed a two-sided $p$-value: we counted
+  the rerandomisations that resulted in differences
+  as least as extreme as the one observed in either direction.
+  If we had hypothesised in advance that we would observe a difference
+  in favour of the \textit{with alcohol} condition, we could have
+  computed a one-sided (right-sided) $p$-value and only have counted
+  the eleven rerandomisations resulting in a mean difference as least as large
+  as $0.6$.
+  The resulting $p$-value would have been $p_r = \frac{11}{252} = 0.044$.
+  
+  Conversely, if we had hypothesised in advance that we would observe
+  a difference in favour of the \textit{without alcohol} condition, 
+  we could have computed a \emph{left}-sided $p$-value and only have counted
+  the rerandomisations resulting a mean difference at \emph{most} as large
+  as $0.6$.
+  The resulting $p$-value would have been $p_{\ell} = \frac{245}{252} = 0.972$.
+  
+  Since we didn't specify the direction of the expected difference in advance,
+  we need to consider both possibilities simultaneously and compute a two-sided
+  $p$-value.
+  One way to compute two-sided $p$-values is to count the rerandomisations
+  resulting in a mean difference at least as large in absolute value as 
+  the difference actually observed (in our case: $p = \frac{22}{252}$).
+  Alternatively, a two-sided $p$-value can be computed as
+  \[
+    p = 2\min(p_{\ell}, p_r).
+  \]
+  Both of these valid ways coincide in `nice' cases (e.g., exhaustive 
+  rerandomisation tests with an equal number of participants in both conditions),
+  but they may yield somewhat different results in other cases.
+\parend
+
+\mypar[Other test statistics]{Exercise}
+  In your own words, outline how you can compute a (two-sided)
+  $p$-value for the difference between the condition medians in the example above.
+\parend
+
+\mypar[More than two conditions]{Exercise}
+  Let's say we want to conduct an experiment with
+  twelve participants who are randomly allocated to
+  three conditions with four participants each.
+  (Again, the numbers are kept low to keep exhaustive
+  rerandomisation feasible.)
+  With three conditions, we could compute the 
+  three pairwise differences between the condition means.
+  But if we want to capture the differences between
+  these in a single number, we could instead compute,
+  for instance, the standard deviation of the condition means
+  (see Exercise \vref{ex:johnson}).
+  Standard deviations can't be negative.
+  Under $H_0$, you'd expect the condition means to be close to one another,
+  so this standard deviation would be close to $0$; 
+  under $H_A$, you'd expect it to be higher.
+  \begin{enumerate}[(a)]
+    \item Would you compute a left-sided, a right-sided or a two-sided $p$-value in this case?
+    \item How many possible ways are there to split up 
+    twelve participants into three groups of four participants each?
+    \item Explain how you can compute an appropriate $p$-value using
+    exhausitive rerandomisation in this setting.
+    \item Now assume that we're interested in the group medians rather 
+    than in the group means. 
+    What would you need to change in your answer to (c)?\parend
+  \end{enumerate}
+  
+\section{On `rejecting' null hypotheses}
+Researchers will often say that they `reject' the null hypothesis in
+favour of the alternative hypothesis if $p \leq \alpha$, where typically $\alpha = 0.05$.
+This practice is subject to often heated debate \citep[see][]{McShane2017},
+and it's important to realise that $p \leq \alpha$ is possible
+even if the null hypothesis is true.
+In theory, 
+significance tests guarantee that 
+$p \leq \alpha$ in at most 
+$100\alpha$\% of the studies in which 
+$H_0$ actually is true (for all $\alpha \in (0, 1)$).
+This is true in particular for $p$-values 
+computed using exhaustive rerandomisation.
+
+\mypar{Lemma}\label{lemma:boundpval}
+  Under the null hypothesis, exhaustive rerandomisation results in a $p$-value
+  such that $\mathbb{P}(p \leq \alpha) \leq \alpha$ for each $\alpha \in (0, 1)$.
+\parend
+
+\begin{proof}
+  We'll first consider left-sided $p$-values.
+  Assume there are $M$ possible rerandomisations.
+  Sort these ascendingly by the value of the test statistic
+  they result in (e.g., the mean difference in our example), 
+  breaking ties randomly if necessary.
+  Note that, after this sorting, 
+  the left-sided $p$-value that the $i$-th rerandomisation would have 
+  resulted in (call it $p_i$) is at least $i/M, i = 1, \dots, M$: there are at least $i$ out of $M$
+  rerandomisations with test statistics that are at least as extreme
+  as the one in the $i$-th rerandomisation;
+  an even higher value than $i/M$ is possible if several rerandomisations
+  give rise to the same test statistic value.
+  
+  Now, for $\alpha \in (0, 1)$, compute $\kappa := \lfloor \alpha M \rfloor$.
+  ($\lfloor \cdot \rfloor$ rounds down the number to the nearest integer.)
+  Under the null hypothesis, we were equally likely to have generated
+  each of the $M$ possible randomisations.
+  Hence, the probability that we generated a randomisation resulting
+  in a $p$-value no larger than $\alpha$ is
+  \begin{align*}
+    \mathbb{P}(p \leq \alpha)
+    &= \frac{\textrm{\# rerandomisations with $p_i \leq \alpha$}}{M}\\
+    &\leq \frac{\textrm{\# rerandomisations with $i/M \leq \alpha$}}{M}\\
+    &= \frac{\textrm{\# rerandomisations with $i \leq \kappa$}}{M} \\
+    &= \frac{\kappa}{M} \\
+    &\leq \alpha.
+  \end{align*}
+  
+  For right-sided $p$-values, sort the rerandomisations descendingly by
+  the test statistic value and proceed analogously.
+  For two-sided $p$-values, sort the rerandomisations by the
+  absolute value of the test statistic and again proceed analogously.\footnote{When
+  using the alternative definition of two-sided $p$-values,
+  consider that $\mathbb{P}(p_{\ell} \leq \alpha/2) \leq \alpha/2$
+  and $\mathbb{P}(p_r \leq \alpha/2) \leq \alpha/2$.
+  Hence $\mathbb{P}(\min(p_{\ell}, p_r) \leq \alpha/2) \leq \alpha/2 + \alpha/2 = \alpha$.}
+\end{proof}
+
+In principle, then, $p$-values can be used to bound the probability 
+that we claim that something is going on in the data if in fact nothing is going on:
+We pick some value for $\alpha$ (typically $0.05$).
+If the $H_0$ is in fact true, then we'd only observe $p$-values lower than
+$\alpha$ with a probability of at most $\alpha$.
+In practice, however, things aren't so simple.
+We'll return to this when discussing questionable research practices;
+but already see Exercise \ref{ex:multipletesting}.
+
+Furthermore, $p>\alpha$ can occur even
+if the alternative hypothesis is true.
+Consequently,
+researchers who are in the business of `rejecting' null hypotheses
+can make two types of errors, depending on whether $H_0$ or $H_A$ is actually true;
+see Table \ref{tab:errors}.
+Without additional information (e.g., in the form of converging evidence
+from other studies or logical reasoning), we can't really know whether
+`$p \leq 0.05$' represents an error or a true finding. \textbf{(!)}
+
+\begin{table}[h]
+\caption{If you're in the business of rejecting null hypotheses, there are two types of errors you can make.
+Incorrectly rejecting the $H_0$ is commonly referred to as a \textbf{Type-I error};
+incorrectly not rejecting the $H_0$ is referred to as a \textbf{Type-II error}.}
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+                            & $H_0$ is actually correct       & $H_A$ is actually correct \\ \midrule
+$p > \alpha$                  & Fine---we didn't reject $H_0$   & Wrong conclusion  \\
+$p \leq \alpha$               & Wrong conclusion                & Fine---we rejected $H_0$ \\
+\bottomrule
+\end{tabular}
+\label{tab:errors}
+\end{table}
+
+\medskip
+
+Note, furthermore, that the $H_A$ stipulates that the results are
+due to a combination of chance and systematic factors.
+It doesn't stipulate \emph{which} systematic factors, though.
+What we would like to conclude is that the systematic factor
+at play is our experimental manipulation,
+but expectancy effects, failed manipulations, confounding and collider bias
+are also systematic factors.
+What is more, the experimental manipulation may exert a systematic
+effect on the results, but for different reasons from what we think it does.
+For instance, a systematic difference between the
+\textit{with} and \textit{without alcohol} conditions needn't be due to alcohol intake per se but
+may be related to the taste of the beers in question instead.
+Or maybe alcohol increases speech rate---not because the participants
+become more fluent per se, but because they use simpler syntactic
+constructions that they can produce more quickly.
+In other studies, different theoretical explanations 
+may account for any given finding---in addition to more mundane reasons such as confounding, expectancy effects and the like.
+
+\mypar{Exercise}
+Assume that 10,000 experiments are carried out and analysed appropriately.
+Further assume that the null hypothesis is correct in all of these experiments.
+Which of the four histograms shown in Figure \vref{fig:distr_pvalues}
+could plausibly represent the distribution of the 10,000 $p$-values?
+What if the alternative hypothesis were correct in all of the 10,000 experiments?
+\parend
+
+\begin{figure*}[htp]
+    \centering
+    \includegraphics[width=\textwidth]{figure/distr_pvalues}
+    \caption{What could the distribution of 10,000 $p$-values look like under the null hypothesis?}
+    \label{fig:distr_pvalues}
+\end{figure*}
+
+\mypar[False discovery rate]{Exercise}
+  Imagine that in a given academic field, 
+  1,000 experiments are conducted over the course of a year.
+  Assume that in 80\% of these experiments, the null hypothesis is correct,
+  whereas in 20\%, the alternative hypothesis is correct.
+  Further assume that if the null hypothesis is correct, 
+  there is a 5\% chance that a statistically significant difference 
+  will be observed between the experiment's conditions; 
+  if the alternative hypothesis is correct, 
+  there is a 60\% chance of observing a statistically significant difference.
+
+  For the following questions, you may use the following probabilistic fact:
+  If $n$ attempts each succeed with probability $p$,
+  then the expected number of successful attempts out of the $n$ attempts is $np$.
+  
+  \begin{enumerate}[(a)]
+    \item In how many of the 1,000 experiments can we expect that the
+          null hypothesis will be incorrectly rejected?
+    \item In how many of the 1,000 experiments can we expect that the
+          null hypothesis will be correctly rejected?
+    \item Now consider the total number of experiments in which we expect
+          to reject the null hypothesis.
+          In what percentage of these will the 
+          null hypothesis actually be correct?\parend
+  \end{enumerate}
+        
+\mypar[Multiple testing]{Exercise}\label{ex:multipletesting}
+A research team is conducting an experiment in 30 school classes
+        simultaneously. In each school class, the children are assigned
+        to the control or experimental group using complete randomisation.
+        That is, the researchers are in effect conducting 30 parallel and
+        independent experiments.
+
+        Assume that in all of these classes, the null hypothesis is true.
+        Further assume that, if the null hypothesis is true, there is
+        exactly a 5\% chance of observing a statistically significant difference between
+        the control and experimental conditions.
+
+        What is the probability of obtaining a statistically significant
+        difference in at least one of the 30 experiments?
+\parend
+
+\section{Monte Carlo rerandomisation p-values}
+Exhausitive rerandomisation is computationally impossible for larger samples\footnote{How many ways are there to split up 40 participants into two equal-sized groups?} 
+and may be infeasible for more complex research designs.
+One alternative is to use a Monte Carlo simulation:
+Instead of generating all possible rerandomisations, we only generate, say, 20,000 of them.
+Then, we compute the proportion of the rerandomisations considered that resulted
+in test statistic values at least as extreme as the one we actually observed;
+this proportion serves as the Monte Carlo $p$-value.
+The guarantee encapsulated in Lemma \ref{lemma:boundpval} also holds for
+such Monte Carlo $p$-values.
+However, if you run the same analysis multiple times, 
+the resulting $p$-value is bound to vary somewhat from run to run 
+due to the inherent randomness in the simulation.
+
+\section{Analytical shortcuts}
+Statistical inference predates computers, and analytical shortcuts were developed
+to circumvent the tedious computations required for rerandomisation tests.
+These shortcuts include the $t$-test, the $\chi^2$-test, and \textsc{anova}, 
+as well as their generalisations.
+They typically produce similar results to those produced by rerandomisation tests
+and are usually used instead.
+In the context of experiments with random assignment,
+the $p$-values that these procedures return have
+the essentially same interpretation and are subject to the same caveats as those above.
+That said, they are based on a different set of assumptions from rerandomisation tests.
+Typically,
+the guarantee from Lemma \ref{lemma:boundpval} only holds approximately
+when using these shortcuts
+(i.e., $\mathbb{P}(p \leq \alpha) \approx \alpha$ under $H_0$).
+
+\section{Statistical power}\label{sec:power}
+A study's statistical power is the probability with which its significance test
+will yield $p \leq \alpha$, for some predetermined $\alpha \in (0, 1)$. 
+In studies in which one group is compared to a different
+group, this probability depends on three factors apart from $\alpha$ itself (see Figure \vref{fig:power}):
+
+\begin{enumerate}
+\item The size of the difference in the outcome between the groups
+that the systematic factors cause. Even if they don't cause any difference, it is possible to obtain a statistically significant difference due to chance (see table above).
+\item The number of observations.
+\item The variability in the outcome variable within each group.
+\end{enumerate}
+
+\begin{figure*}[htp]
+    \centering
+    \includegraphics[width=\textwidth]{figure/power}
+    \caption{These three graphs show how the statistical power of a study varies with the effect size (left), the number of observations per group (middle) and the variability in the outcome variable within each group (right).}
+    \label{fig:power}
+\end{figure*}
+
+The precise numbers along the $y$-axis in Figure \ref{fig:power}
+aren't important; what's relevant is the direction and the shape of the curves.
+
+\mypar{Exercise}
+Take a look at Figure \ref{fig:power} and answer the following questions:
+
+\begin{enumerate}[(a)]
+\item How do the effect size, the number of observations and the within-group variability in the outcome affect the probability that a study will yield a statistically significant result?
+
+\item Other things equal, what yields a greater improvement in a study's power:
+10 additional participants per group when each group already consists of 10 participants, or 20 additional
+participants per group, when each group already consists of 50 participants?
+
+\item How could researchers reduce the within-group variability in the outcome variable in order
+to increase their statistical power? \parend
+\end{enumerate}
+
+\medskip
+
+Some further exercises to wrap up this chapter.
+
+\medskip
+
+\mypar{Exercise}
+$p$-values are commonly misinterpreted.
+By way of preparation for the next exercise, answer the following questions.
+
+\begin{enumerate}[(a)]
+  \item What, roughly, is the probability that, when you'll die, it'll be because a shark bit your head clean off?\footnote{In the notation of probability theory, you'd write this as $\mathbb{P}(\textrm{head bitten off by shark}~|~\textrm{dead}).$}
+  \item What, roughly, is the probability that, when a shark bites your head clean off, you'll die?\footnote{I.e., $\mathbb{P}(\textrm{dead}~|~\textrm{head bitten off by shark})$.}
+  \item Is 0.087 the probability that the null hypothesis in the alcohol example is correct?
+  If not, then which probability exactly does this $p$-value of 0.087 refer to? \parend
+\end{enumerate}
+
+\mypar{Exercise}
+Consider the following vignette and some possible interpretations of the results reported in them. Decide for each interpretation if it follows logically from the vignette and the correct definition of the $p$-value. Explain your reasoning.
+
+Vignette: In an experiment that was carried out and analysed rigorously, we find that the mean difference between the control and intervention groups amounts to 5 points on a 100-point scale. This difference is ``statistically significant'', with a $p$-value of 0.02.
+
+\begin{enumerate}[(a)]
+  \item It's unlikely that we would have found a difference of 5 points or larger between both groups if the null hypothesis were indeed true. More precisely, this probability would have only been 2\%.
+
+  \item The null hypothesis is incorrect; the alternative hypothesis is correct.
+
+   \item It's unlikely that the null hypothesis is indeed correct. More precisely, the probability that it is correct is only 2\%.
+
+  \item It's highly likely that the alternative hypothesis is correct. More precisely, the probability that it is correct is 98\%.
+
+  \item A new but similar study would likely yield a low $p$-value as well.
+  More precisely, there is a 98\% probability that such a study would yield
+  a significant $p$-value (i.e., $p \leq 0.05$).
+
+  \item If we concluded that the alternative hypothesis is correct, we would be wrong at most 2\% of the time.
+
+  \item If we concluded that the alternative hypothesis is correct, we would be wrong at most 5\% of the time. \parend
+\end{enumerate}
+
+\section{*Examples in R}
+See the file \texttt{rerandomisation\_tests.html}
+in the \texttt{tutorials} directory on \url{https://github.com/janhove/QuantitativeMethodology}.
+
+\section{*Further reading}
+The blog entries \href{https://janhove.github.io/posts/2015-02-26-explaining-key-concepts-using-permutation-tests/}{\textit{Explaining key concepts using permutation tests}}
+and \href{https://janhove.github.io/posts/2014-09-12-a-graphical-explanation-of-p-values/}{\textit{A purely graphical explanation of $p$-values}} may be of some use.
+For an explanation in German, see Chapter 13 of my statistics booklet (available from \url{https://janhove.github.io}).
+\citet{Goodman2008} discusses some common misinterpretations of $p$-values;
+his list is far from exhaustive.
+
+Analysing quantitative data and running significance tests aren't
+synonymous; see my booklet as well as \citet{Winter2019} for introductions
+to statistics for linguists that don't emphasise signficance testing.
+Nonetheless, quantitative research in the social sciences, including in applied
+linguistics, has developed something of a significance fetish,
+with authors inundating their readers with significance tests and $p$-values
+that they themselves don't seem to really understand while giving them
+little insight into what the data actually look like.
+For further lamentations and some
+suggestions, see \citet{Vanhove2020b}.
+

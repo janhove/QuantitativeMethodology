@@ -1,0 +1,46 @@
+\chapter{Reporting research transparently}
+
+Many a research report leaves out information that is crucial
+for interpreting its findings correctly. And often, readers are
+implicitly asked to just take the authors word for it and trust that the
+analyses were run appropriately---even though reporting errors are common
+\citep{Nuijten2016} and suboptimal or downright wrong analyses
+abound.
+Here are some tips to help ensure that your methods and
+findings are transparent to the readers.
+
+\begin{enumerate}
+  \item ong reports detailing everything quickly become unreadable.
+        My own preference
+        is to aim for a crisp main text that doesn't inundate the reader
+        with numbers and numbing details. Instead, I try to communicate the findings
+        mainly through plots and refer to copious online
+        materials for the details \citep[also contains further guidance for writing quantitative research reports and some useful references]{Vanhove2020b}. 
+        Using these online materials, interested readers should 
+        at least be able to reproduce the results occurring in the 
+        report, and so the online materials that I make available minimally
+        comprise the data sets and the computer code necessary for reproducing
+        the plots and numbers in the main text.
+        Materials such as stimulus lists, questionnaires, code for running
+        the experiment itself etc.\ should in my view also be shared by default.
+        For projects involving lots of tedious steps that will be of little
+        interest to the average reader, I also like to make available a technical
+        report that documents every little detail \citep[e.g.,][]{Vanhove2019}.
+        
+        That said, \textbf{don't let perfect be the enemy of good}. If you're able to 
+        share your computer code but it's poorly documented, that's better than
+        not sharing your code at all.
+        
+  \item It's easier to share code, data, and materials if you made the decision
+        to do so at the start of the project rather than a couple of weeks before
+        handing in your report.
+        
+  \item Nowadays I exclusively use \url{https://osf.io/} for making available
+        online materials. See \url{https://osf.io/yxzfm/} for examples.
+        
+ \item For further guidance, 
+       see \citet{Klein2018},
+       \citet{Levenstein2018},
+       and \citet{Soderberg2018}.
+\end{enumerate}
+

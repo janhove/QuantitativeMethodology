@@ -1,0 +1,598 @@
+\chapter{Constructing a control group}\label{ch:randomisation}
+
+\section{A made-up example}\label{sec:beispiel}
+Imagine that a new self-learning method for fostering
+Danish reading skills in speakers of German has been developed.
+You're tasked with finding out if this new method works
+better than the old one.
+
+\paragraph{First attempt} 
+You find four students of German philology
+who want to learn Danish. You ask them to work
+autonomously with the new learning method
+half an hour a day for three weeks. After three weeks,
+you give them an article from a Danish newspaper,
+which they are to summarise orally in German.
+Two raters judge these summaries at their own discretion
+(20-point scale); the mean of the two ratings per
+learner counts as their reading comprehension score.
+The average group score is 11/20.\\
+What can you conclude from this study?
+
+\bigskip
+
+One of several problems with this study is that 
+there is no baseline against which to compare the participants'
+average result: We don't know whether 11/20 indicates that the
+new learning method works better or worse than the old one, or whether
+the old and new learning method are roughly equally effective.
+So we need a comparison or \term{control group}
+of people that didn't take part in the intervention.
+
+\paragraph{Second attempt}
+You convince four law students to also take part in the study.
+They're asked to work with the old learning method
+half an hour a day for three weeks.
+Then they take the same test as the German philology students.
+Their group mean is 8/20.\\
+What can you conclude from this study?
+
+\clearpage
+
+\section{Critical questions}\label{sec:validitaet}%\cite{Nunan1992}\cite{Abbuhl2013}}
+
+The second attempt outlined above also falls short on a number of criteria.
+There are a couple of critical questions we can ask, and slightly modified
+versions of these questions can be asked about studies in general.
+
+\begin{description}
+ \item[Internal validity]
+ Can the difference in test scores between the two groups
+ be ascribed to the difference in learning methods,
+ or do alternative explanations for it present themselves?
+
+ \item[External validity]
+ Does the finding apply only to the present \term{sample}
+ or can it be generalised to a larger \term{population}?
+ To what population, exactly?
+
+ \item[Ecological validity]
+ (Especially for applied research.)
+ To what extent are the findings applicable
+ to the world outside of the lab
+ (e.g., teaching, policy)?
+ 
+ \item[Reproducibility]
+ Would different observers agree on the measurements?
+ Would the \emph{same} observers agree on the measurements if they had to redo them?
+ (The raw data may leave room for interpretation.)\footnote{My use of the term `reproducibility' is definitely non-standard.
+ The term is usually used to mean `computational reproducibility': Given the study's data, can its results (e.g., the statistical analyses) be reproduced?}
+ 
+  \item[Interpretative consensus]
+ Confronted with the same data, would other researchers draw similar conclusions?
+ (The overall results may leave room for interpretation.)\footnote{For instance,
+ a study with considerable internal, external and ecological validity could show
+ that beginning L2 French learners vastly prefer subject-verb inversion over other strategies
+ for formulating questions, but that more seasoned learners show a more balanced
+ use of the different strategies. Researchers may agree on these results, but
+ are bound to disagree on which implications, if any, they ought to have for
+ L2 French teaching.}
+
+ \item[Replicability]
+ Can the results of this study be confirmed
+ in an independent \term{replication},
+ that is, in a new but otherwise similar study?
+\end{description}
+
+The labels above aren't important; the questions behind them are.
+Further, the questions asked above can rarely be answered in absolute terms.
+But our second attempt outlined above is deficient in several of these respects. 
+Discuss a few problems.
+
+\bigskip
+
+Some relevant terminology:
+
+\begin{description}
+ \item [Confounding variable] See Chapter \ref{ch:causality}.
+ \item [Inter-rater reliability] The extent to which different raters would score the observations similarly.
+ \item [Intra-rater reliability] The extent to which the same raters would score the observations 
+ similarly on a different occasion.
+\end{description}
+
+\begin{framed}
+ Anticipate and resolve problems
+related to lacking validity and reproducibility/reliability
+\emph{before} collecting the data. This often
+involves making compromises or coming to the
+realisation that you can't satisfactorily
+answer all your questions in a single study.
+Do \emph{not} assume that some statistical method
+will solve your problems.
+\end{framed}
+
+Depending on your goals, some types of validity
+or reliability may not be as important as others.
+For instance, for most studies in psycholinguistics,
+university students are recruited as participants,
+and their results don't necessarily generalise
+to the population at large. But the purpose of these
+studies is often to demonstrate that some
+experimental manipulation \emph{can} affect
+language use and processing, not that
+it will yield the exact same effect for everyone.
+From this perspective, these studies' lack
+of external validity isn't too damning \citep{Mook1983}.
+
+\section{Increasing internal validity through randomisation}
+Of the three types of validity considered, 
+internal validity is the most pressing one:
+If internal validity is low, external and ecological validity are both
+essentially irrelevant.
+Hence,
+our first priority is to maximise the study's internal validity, that is,
+we want to maximise the chances that any association we find the data
+is due to the factor of interest.
+Confounding in particular represents a substantial threat to internal validity:
+As we've seen in Chapter \ref{ch:causality}, confounding variables induce
+associations between the variables of interest even in the absence of a causal
+link between them. Moreover, even if a causal link does exist between the
+variables of interest, confounding variables can bias the association
+between them: The association may systematically under- or overestimate the
+strength of the causal link. Keeping confounding in check is therefore key.
+
+Your first inclination may be to try to ensure that the intervention and
+control groups are identical in all respects save for the treatment itself.
+That way, any differences in the outcome variable can't be explained by
+confounding due to pre-existing differences between the groups.
+However, it is practically
+impossible to assign a fixed number of participants to two groups in such a
+way that these groups are identical in all respects even in the utterly
+unrealistic case where all the relevant information is available beforehand.
+Clearly, it's entirely impossible to do so when not all of the relevant information
+is available beforehand.
+
+The solution is to assign the participants 
+to the study's conditions \term{at random}, i.e., to deliberately leave the allocation
+up to chance and chance alone. The \textsc{dag}s in Figure \vref{fig:randomisation} show what such
+randomisation achieves. When the participants themselves (or their parents,
+or their circumstances, etc.) decide or otherwise affect which condition they end up in ($X$),
+confounding is a genuine concern (left).
+However, when we assign the participants to the conditions at random,
+we \emph{know} that there is no systematic link between pre-existing characteristics
+($U$) and $X$, let alone a causal one. That is, randomisation prevents any
+causal arrows from entering $X$ (right)! The result of this is that the
+non-causal path between $X$ and $Y$ (via $U$) is broken and that the $X$-$Y$
+relationship is no longer confounded by $U$.
+To highlight that the values of $X$ were specified at random,
+we use a subscript $_r$.
+
+Studies in which the participants
+are randomly assigned are called \term{true experiments}.
+Random allocation by itself doesn't guarantee that the results of the
+experiment can be trusted or interpreted at face value, but it does eliminate
+confounding as a threat to the study's internal validity.
+
+\begin{framed}
+ Randomise wherever possible -- unless you have a \emph{very} good reason not to!
+\end{framed}
+
+\begin{figure}[tbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figure/w_o_randomisation}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figure/w_randomisation}
+    \end{minipage}
+    \caption{\textit{Left:} The $X$-$Y$ relationship is confounded by $U$: there are two paths from $X$ to $Y$, but only one causal one.
+    \textit{Right:} Randomising the values of $X$ prevents arrows from $U$ entering $X$, which effectively closes the non-causal path
+    via the confounder.}
+    \label{fig:randomisation}
+\end{figure}
+
+\subsection{Why experiments?}
+ \begin{enumerate}
+  \item ``Experiments allow us to set up a \textbf{direct comparison} between the treatments of interest.
+  \item ``We can design experiments to \textbf{minimize any bias} in the comparison. [especially randomisation]
+  \item ``We can design experiments so that the \textbf{error} in the comparison is \textbf{small}. [see later chapters]
+  \item ``Most important, we are \textbf{in control} of experiments, and having that control allows us to make stronger inferences about the nature of differences that we see in the experiment. Specifically, we may make \textbf{inferences about causation}.'' \citep[p.~2, my emphasis]{Oehlert2010}
+ \end{enumerate}
+
+What's meant by the first point is that we don't need to piece together snippets of evidence
+from different and often difficult-to-reconcile sources (e.g., in a literature review) to figure
+out which treatment (e.g., which learning method) works best in some situation.
+Instead, we set up an experiment that directly evaluates the efficacy of several treatments
+in the context we're interested in.
+
+The second point alludes to techniques such as randomisation; the third to techniques
+that we will encounter in the chapters to come.
+
+\subsection{What does randomisation do?}
+\begin{enumerate}
+ \item ``Randomization balances the population on average.''
+ \item ``The beauty of randomization is that it helps prevent confounding, \emph{even
+for factors that we do not know are important}.'' \citep[p.~15, my emphasis]{Oehlert2010}
+\end{enumerate}
+
+We've already discussed the second point, 
+but the first point warrants some explanation.
+Some fundamental results from combinatorics are useful at this stage.
+
+\mypar[Factorial]{Lemma/Definition}
+  If you have $n \geq 0$ distinct objects,
+  there are 
+  \begin{align*}
+    n! := 
+    \begin{cases}
+      n(n-1)\cdots 2 \cdot 1, & \textrm{if $n \geq 1$}, \\
+      1, &\textrm{if $n = 0$.}
+    \end{cases}
+  \end{align*}
+  different ways to sort them (`permutations').
+  
+  We say `$n$ factorial' for `$n!$'.
+\parend
+
+\begin{proof}
+  If $n = 0$, there is only one way to sort the objects: do nothing.
+
+  If $n \geq 1$: There are $n$ candidates to fill the first slot.
+  Once a candidate for the first slot has been picked,
+  $n-1$ candidates remain for the second slot, and so on,
+  till there is only a single candidate left for the final slot.
+\end{proof}
+
+Incidentally,
+for $n \geq 1$, $n!$ can also be written recursively as $n! = n\cdot (n-1)!$.
+The factorial function increases spectacularly quickly---much more quickly
+than the exponential functions of Covid 19 fame.
+
+\mypar[Binomial coefficient]{Lemma/Definition}
+	There are
+  \begin{align*}
+    {n \choose k} := \frac{n!}{k!(n-k)!}
+  \end{align*}
+  different ways to choose $k \geq 0$ objects from among $n \geq k$
+  distinct objects.
+  
+  A term of the form ${\cdot \choose \cdot}$ is called a 
+  \term{binomial coefficient}\footnote{Called so because these terms
+  appear when expanding binomial expressions such as $(a + b)^n$.};
+  we say `$n$ choose $k$' for `${n \choose k}$'.
+\parend
+
+\begin{proof}
+  With the previous lemma, there are $n!$ ways to arrange the $n \geq 0$ distinct objects.
+  For each possible rearrangement, pick the first $k$ objects.
+  This covers all possible choices of $k$ from $n$ objects.
+  However, several rearrangements result in the same selection.
+  Specifically, if we rearrange the first $k$ elements and the last $n-k$
+  elements separately from each other, we end up with the same selection:
+  the order among the first $k$ and among the last $n-k$ doesn't matter.
+  Hence, again with the previous lemma, there are, for each of the $n!$ permutations,
+  $k!(n-k)!$ rearrangements that result in the same selection.
+  So there are $\frac{n!}{k!(n-k)!}$ different possible selections.
+\end{proof}
+
+<<partiq, fig.width = 2, fig.height = 1.7, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+set.seed(123)
+df <- data.frame(Subject = letters[1:10],
+                 IQ = round(rnorm(10, 100, 15)),
+                 Sex = sample(c("M", "F"), 10, replace = TRUE))
+
+source("https://raw.githubusercontent.com/janhove/janhove.github.io/master/RCode/sortLvls.R")
+df$Subject <- sortLvlsByVar.fnc(factor(df$Subject), df$IQ)
+ggplot(df, 
+       aes(x = IQ, y = Subject, shape = Sex)) +
+  geom_point(size = 2) +
+  ylab("") +
+  scale_shape_manual(values = c(1, 3)) +
+  theme_bw(8) +
+  theme(legend.position = "none")
+@
+
+\begin{marginfigure}[4cm]
+  \centering
+  \includegraphics{figure/partiq-1}
+  \caption{Ten participants sign up for a study. You measure their IQ and you also know their sex (represented here using circles and crosses).}
+  \label{fig:partiq}
+\end{marginfigure}
+
+Let's say that we have ten participants
+and we know both their sex and their IQ (Figure \vref{fig:partiq}).
+We can pick five among them at random and assign them to the first condition;
+the others are assigned to the second condition.
+By the previous lemma, there are
+\[
+  {10 \choose 5} = \frac{10!}{5!(10-5)!} = \frac{3628800}{(120)^2} = 252
+\]
+different choices for the participants in the first group;
+each of these choices has an equal probability of being our allocation.
+Six out of the 252 possible allocations are shown in Figure \ref{fig:rand-alloc}.
+Note that in none of them, the intervention and control groups are
+perfectly balanced with respect to both IQ and sex.
+So randomisation clearly does not generate balanced groups in any particular
+study. However, each participant is as likely to end up in the intervention
+group as they are to end up in the control group, so \emph{on average}---across
+all 252 possible allocations---sex, IQ, as well as all unmeasured variables,
+are balanced between the two groups. For our present purposes, this means that
+randomisation is an equaliser: the result may not be two perfectly equal groups,
+but at least one group isn't systematically given an advantage relative to the other.
+As we'll see in Chapter \ref{ch:stats}, randomisation also justifies the use of some
+common statistical procedures.
+
+<<rand-alloc, fig.width = 8*0.85, fig.height = 6*0.85,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+set.seed(1234)
+df$Kondition <- c(rep("control", 5), rep("intervention", 5))
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p1 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p2 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p3 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p4 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p5 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+df$Kondition <- sample(df$Kondition)
+df <- df %>% group_by(Kondition) %>% mutate(GroupMean = mean(IQ))
+p6 <- ggplot(df, aes(x = IQ, y = Subject, shape = Sex)) + geom_point(size = 3) +
+  ylab("") +
+  facet_wrap(~ Kondition, ncol = 1, scales = "free_y") +
+  scale_shape_manual(values = c(1, 3)) +
+  geom_vline(aes(xintercept = GroupMean), data = df, linetype = 3) +
+  theme(legend.position = "none")
+
+library(gridExtra)
+grid.arrange(p1, p2, p3, p4, p5, p6, ncol = 3)
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/rand-alloc-1}
+  \caption{Six possible random assignments (out of 252) of the ten participants from Figure \ref{fig:partiq}. The dotted vertical lines show the mean IQ in each group.}
+  \label{fig:rand-alloc}
+\end{figure}
+
+
+\mypar{Exercise}
+For each description, decide whether the participants were randomly assigned
+to the experiment's conditions and, if not, explain how the lack of randomisation
+could result in confounding.
+
+\begin{enumerate}[(a)]
+ \item 60 participants trickle into the lab.
+ The first 30 are assigned to the experimental condition,
+ the final 30 are assigned to the control group.
+ \item Experiment with a school class:
+ Pupils whose last name starts with a letter between
+ A and K are assigned to the control group,
+ the others to the experimental group.
+ \item Participants come to the lab one by one.
+ For each participant, the researcher throws a dice.
+ If the dice comes up 1, 2, or 3, the participant is
+ assigned to the experimental condition; if it comes
+ up 4, 5, or 6, the participant is assigned to the control
+ condition.
+ After four weeks, no more participants sign up.
+ The control group consists of 17 participants;
+ the experimental group of 12.
+ \item To investigate the effects of bilingualism
+ on children's cognitive development, 20 bilingual
+ 4-year-olds (10 girls, 10 boys) are recruited.
+ 20 monolingual 4-year-olds (10 girls, 10 boys)
+ serve as the control group.
+ \item 32 participants sign up for an experiment.
+ The researcher enters their names into \url{http://www.random.org/lists/},
+ clicks \texttt{Randomize} and assigns the first 16 to the control group
+ and the others to the experimental group. \parend
+\end{enumerate}
+
+\begin{framed}
+`Random' does not mean `haphazard', `arbitrary' or `at the researcher's whim'.
+\end{framed}
+
+\mypar[Randomisation and estimation]{Remark}\label{remark:estimation}
+  When participants are assigned randomly to the experiment's conditions,
+  the results of the experiment are also subject to randomness.
+  To appreciate this, 
+  consider an experiment for which sixteen participants sign up.
+  The left-side panel in Figure \ref{fig:estimation} shows the score
+  that each participant would have obtained in both conditions.
+  The difference between both of these scores varies somewhat between
+  participants, but on average, it amounts to one point.
+  This is the true average intervention (or treatment) effect that is the target
+  of the experiment.
+  
+  Depending on the condition they are assigned to, 
+  we would only observe one of the scores for each participant, however.
+  If we randomly assign eight of the sixteen participants to the intervention
+  condition and the others to the control condition,
+  we end up with one out of ${16 \choose 8} = 12870$ possible allocations.
+  To estimate the true average intervention effect,
+  we can compute the mean difference between the scores of the participants
+  assigned to the intervention condition and those assigned to the control condition.
+  The estimated intervention effect would then be one of the 12,870
+  values summarised in the histogram on the right-hand side.
+  While the \emph{average} estimated intervention effect coincides with
+  the true intervention effect (i.e., the estimation is unbiased),
+  depending on the actual allocation, the estimated intervention effect
+  may differ considerably from the true one.
+  In Chapter \ref{ch:precision}, we'll discuss techniques for increasing the precision
+  of the estimation.
+\parend
+
+<<estimation, fig.width = 8*0.85, fig.height = 3.5*0.85,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+set.seed(2025-07-30)
+n <- 16
+untreated <- rnorm(n, mean = 10, 2)
+treatment_effect <- rnorm(n, sd = 0.4)
+treatment_effect <- treatment_effect - mean(treatment_effect) + 1
+treated <- untreated + treatment_effect
+selections <- combn(1:n, n/2)
+M <- ncol(selections)
+mean_diffs <- vector(length = M)
+for (i in 1:M) {
+  mean_diffs[[i]] <- mean(treated[selections[, i]]) - mean(untreated[-selections[, i]])
+}
+d <- tibble(
+  participant = LETTERS[1:n],
+  intervention = treated,
+  control = untreated
+) |> 
+  pivot_longer(cols = intervention:control,
+               names_to = "Condition",
+               values_to = "Score")
+p1 <- ggplot(d,
+       aes(x = Score,
+           y = reorder(participant, Score),
+           shape = Condition)) +
+  geom_point() +
+  scale_shape_manual(values = c(1, 3)) +
+  xlab("Score") +
+  ylab("Participant ID") +
+  theme(legend.position = "right")
+
+p2 <- tibble(mean_diffs = mean_diffs) |> 
+  ggplot(aes(x = mean_diffs)) +
+  geom_histogram(binwidth = 0.25, center = 1, colour = "darkgrey", fill = "lightgrey") +
+  geom_vline(xintercept = mean(mean_diffs), linetype = "dashed", colour = "black") +
+  scale_x_continuous(breaks = seq(floor(min(mean_diffs)), ceiling(max(mean_diffs)), by = 1)) +
+  xlab("Mean difference between conditions") +
+  ylab("Frequency")
+
+grid.arrange(p1, p2, ncol = 2)
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/estimation-1}
+  \caption{\textit{Left:} The scores that each of the sixteen participants
+  would have obtained if they had been assigned to the control group (circles)
+  or to the intervention group (crosses). The average difference between
+  the intervention and the control scores, i.e., the average intervention effect, 
+  is one point. 
+  \textit{Right:} The histogram shows the distribution of the mean difference
+  between the intervention and control scores for each of the ${16 \choose 8} = 12870$
+  possible allocations of participants to the two conditions.
+  Averaged over all 12,870 allocations, the mean difference is also one point.
+  But for many individual allocations, the mean difference may differ considerably
+  from the true average intervention effect of one point.}
+  \label{fig:estimation}
+\end{figure}
+
+\subsection{How to randomise?}
+
+\paragraph{When collecting data using computers}
+Have the computer randomly assign the
+participants to the conditions
+without your involvement. 
+Frameworks for running experiments such as OpenSesame 
+(\url{https://osdoc.cogsci.nl/}),
+PsychoPy (\url{https://www.psychopy.org/})
+or jsPsych (\url{https://www.jspsych.org/}) 
+all contain functions for allocating participants randomly.
+
+\paragraph{When the data collection does not take place
+at the computer and you know who'll be participanting
+beforehand}
+Randomise the list of participants using \url{https://www.random.org/}.
+Assign the first half of the list to the experimental condition
+and the second half to the control condition.
+If the experiment features $k \geq 3$ conditions,
+similarly split up the list into $k$ parts.
+
+This procedure is known as \textbf{complete randomisation}.
+It guarantees that the number of experimental units is the same
+in each condition (or at most one off if the number of units isn't
+divisible by the number of conditions).
+
+\paragraph{When the data collection does not take place
+at the computer and you don't know who'll be participating
+beforehand}
+Randomly assign each participant individually
+and with the same probability to a condition as they sign up.
+This procedure is known as \textbf{simple randomisation}.
+In contrast to complete randomisation, you're not guaranteed to end up
+with an equal number of units in each condition. This is usually of little
+concern, and in fact, simple randomisation arguably reduces the potential
+for the researchers' biases to affect the study's results \citep{Kahan2015}.
+Importantly, \textbf{there is nothing wrong with having unequal sample sizes}.\footnote{See blog entry \href{https://janhove.github.io/posts/2015-11-02-unequal-sample-sized/}{\textit{Causes and consequences of unequal sample sizes}}.}
+
+\begin{framed}
+ Humans make for poor randomisation devices.
+ Always randomise mechanically (preferably with a computer).
+\end{framed}
+
+More complex allocation procedures are possible.
+Some of these are common in medical research \citep{Rosenberger2016},\footnote{Incidentally, medical researchers refer to simple randomisation as `complete randomisation'\dots It's probably best to just spell out how the randomisation was carried out rather than to rely on short-hand terminology.} 
+but they are rarely applied in the social sciences.
+
+\mypar{Exercise}
+For each description, decide if the study is a true experiment.
+
+\begin{enumerate}[(a)]
+
+ \item Eight Swiss speakers of German indicate how beautiful they find
+ the French language on a 7-point scale. Additionally, they all record a text in French.
+ In a `perception experiment', 20 native speakers rate all recordings on a 5-point scale
+ from `very strong foreign accent' till `no foreign accent whatsoever'.
+ The question is whether the speakers' attitudes are related to the strength of their accent in French \citep{Kolly2011}.
+
+ \item ''This study presents the first experimental evidence that singing can facilitate short-term paired-associate phrase learning in an unfamiliar language (Hungarian). Sixty adult participants were randomly assigned to one of three ''listen-and-repeat'' learning conditions: speaking, rhythmic speaking, or singing.''
+ After 15 minutes of learning, the learners' Hungarian skills are tested and compared between the three conditions \citep{Ludke2014}.
+
+ \item ''The possible advantage of bilingual children over monolinguals in analyzing word meaning from verbal context was examined.
+ The subjects were 40 third-grade children (20 bilingual and 20 monolingual) \dots
+ The two groups of participants were compared on their performance on a standardized test of receptive vocabulary
+ and an experimental measure of word meanings, the Word--Context Test.'' \citep{MarinovaTodd2012}\parend
+\end{enumerate}
+
+\begin{framed}
+ The word 'experiment' can be used in a stricter or in a looser sense.
+The mere fact that a study is referred to as an 'experiment' does \emph{not}
+mean that it's a \textit{true experiment} (control group + randomisation):
+the use of the label doesn't automatically imply that confounding has been
+taken care of.
+
+ Many quantitative studies in our field aren't experiments in the strict sense.
+\end{framed}

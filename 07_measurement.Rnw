@@ -1,0 +1,221 @@
+\chapter{Constructs and indicators}\label{ch:measurementerror}
+
+We're faced with an inescapable fact of life:
+
+\medskip
+
+\begin{framed}
+Most measurements are imperfect.
+\end{framed}
+
+\medskip
+
+Saying that a study's measurements aren't perfect isn't much of a criticism.
+But it's crucial to appreciate the consequences of imperfect measures---pointing
+out that a study's findings can plausibly be accounted for by the fact
+that its measurements are imperfect \emph{is} a valid criticism.
+
+\medskip
+
+\begin{description}
+  \item[Construct] or \textit{latent variable}. 
+  Lots of characteristics can't be observed or measured directly.
+  Instead, their existence, as well as their relative value, are
+  inferred on the basis of other, observable variables.
+  
+  \item[Indicator] or \textit{manifest variable}. 
+  These are variables that can be measured or observed directly
+  and from which information about the construct is inferred.
+  Table \vref{tab:constructs} lists some examples.
+  
+\begin{table}
+\centering
+\begin{tabular}{p{4.75cm}p{5cm}}
+  \toprule
+  Construct                               &   Example indicator \\
+  \midrule  
+  Intelligence                            &   Result on an intelligence test\\
+  Working memory capacity                 &   Length of a sequence of digits you can repeat in reversed order\\
+  Language aptitude                       &   Result on the LLAMA-D test\\
+  L2 reading skills                       &   Number of correctly answered items on a reading test\\
+  Attitudes towards Danish                &   Answer to the question `How beautiful do you think Danish is?'\\
+  Socio-economic status                   &   Father's occupational category\\
+  \bottomrule
+\end{tabular}
+\caption{Examples of constructs and indicators.}
+\label{tab:constructs}
+\end{table}
+
+  \item[Measurement error] Even the best indicators are rarely perfect.
+  Better indicators just have a smaller measurement error.
+  
+  Even variables that don't act as proxies for some cognitive or social
+  construct are often measured with some error. Examples include
+  body weight (bathroom scales are imperfect, and the result is rounded),
+  blood pressure (if you have a sphygmomanometer, 
+  check its manual),
+  and age (invariably rounded down to the integer below when reported).
+\end{description}
+
+\section{Systematic and random measurement error}
+Measurement error can include both a systematic and a random component.
+
+The \term{systematic} component of an instrument's measurement error is the extent
+to which it tends to over- or underestimate what it's supposed to measure.
+For instance, a miscalibrated kitchen scale may overestimate weights by 10 g on average,
+and an overly harsh language test may tend to label learners' L2 skills
+one CEFR level below their actual proficiency on average.
+
+Note that it's possible for an instrument to systematically overestimate
+values on one part of the scale and to underestimate them on another part.
+
+When there's no gold standard to which the measurements can be compared,
+it may be impossible to assess their systematic measurement error.
+
+The \term{random} component of an instrument's measurement error is the
+extent to which the measured values differ from the true values + 
+systematic error.
+Another way of putting this is: By how much will the
+measurements vary if the true values are the same?
+For instance, an kitchen scale may, on average, measure weights
+accurately (no systematic error), 
+but the individual readings may be off by up to a couple of grams 
+in either direction (random error).
+
+As a second example, consider a group of 365 7-year-olds, all born
+on different days of the year. Just one of them actually is 7 years old
+on the day; the reported values of the others will be off by 1 day, 2 days, \dots,
+364 days. The reported age, then, systematically underestimates their true age
+by $\frac{0+1+2+\dots+364}{365} = 182$ days.
+The random component is 0, though, as children born on the same day will report
+the same age, even though this reported age will be lower than their actual age.
+
+As a final example, consider a poorly calibrated bathroom scale. If you put
+a calibrated mass of precisely 60 kg on it on five different occassions, it returns
+readings of 61.1, 60.4, 60.4, 60.5 and 61.2.
+The mean observation for the same mass is $\frac{61.1+60.4+60.4+60.5+61.2}{5} = 60.78$,
+i.e., an overestimate of 0.78 kg.
+The mean absolute difference between the observations and their expected
+value (here: 60.78) is $\frac{|0.32| + |-0.38| + |-0.38| + |-0.28| + |0.72|}{5} = 0.42$.
+
+\section{Consequences of measurement error}
+
+The consequence of systematic measurement error is clear: Your data are biased.
+This isn't necessarily a problem: If you're comparing two groups for both
+of which you have data that are biased to the same extent, the difference between
+them won't be biased. And for variables such as age, the systematic error (roughly
+182 days) tends to be small relative to the variability of the true values, in 
+which case it's probably inconsequential.\footnote{But see, for instance, 
+\citet{Helsen2005} and \citet{Sprietsma2010} on the consequences of `relative age' (i.e., age 
+differences within an age group, e.g., 15-year-olds) in sports and education.}
+
+The consequences of random measurement error are much less intuitive and bear
+pointing out.
+
+\paragraph{Less power and precision}
+Measurement error on the \emph{outcome} variable will increase
+its variability. Since power and precision are lower when
+there's more variability in the outcome, 
+measurement error on the outcome lowers power and precision.
+
+\paragraph{Statistical control is imperfect}
+Measurement error on a \emph{control} variable means that 
+controlling for this observed variable won't fully eradicate 
+the confounding caused by the construct itself.
+The \textsc{dag} in Figure \ref{fig:caveat2} illustrates this.
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/caveat2}
+  \caption{The $X$--$Y$ relationship is confounded by $A$. $A$, however,
+  can't be observed directly. A proxy (indicator) $A_{obs}$ can be controlled for instead, but this won't fully shut the non-causal path $X \leftarrow A \rightarrow Y$.}
+  \label{fig:caveat2}
+\end{marginfigure}
+
+\begin{quote}
+``[F]allibility in a covariate usually implies that there would be more adjustment if the variable were measured without error.'' \citep[p.~569]{Huitema2011}
+\end{quote}
+  
+Controlling for $A_{obs}$ is better than not controlling for it.
+But researchers routinely mistake 
+controlling for an indicator with controlling for a construct,
+and their causal conclusions are overconfident as a result.
+A discussion of this problem can be found in
+\citet{Westfall2016}, \citet{Vanhove_HELASCOT_results}
+and \citet{Berthele2017b}.
+
+\paragraph{Regression to the mean}
+When observations are due partly to skill or some underlying
+construct and partly to chance (e.g., measurement error), 
+a second round of observations will likely show that the 
+extreme scores have become less extreme, i.e., that they've regressed
+to the mean.
+
+\begin{itemize}
+\item First consider an example where the observations are purely due to luck,
+with no skill or construct involved: playing roulette. Playing roulette
+is a losing proposition: For every 100 francs bet, you stand to lose about 5
+francs (= the mean). But on any given night, some players will luck out and
+make a killing, whereas other players get extraordinarily unlucky and lose much
+more than the expected 5 francs. Their winnings or losses are a dreadful measure
+of their skill level: they all have the same skill level, which corresponds
+to a loss of 5 francs.
+
+The next night, however, the lucky players from the
+day before probably won't get as lucky again (their luck the day before was
+extraordinary), and similarly for the unlucky players---all again stand to
+lose about 5 francs. Some might get lucky or unlucky twice in a
+row, but they're more likely to end up somewhere near the 5-franc mark, i.e., most
+of the lucky and unlucky players will regress to the mean.
+
+\item The same principle is at play when the observations come about in part through
+skill (or some other construct) and in part through chance.
+For instance, the most successful stock picker of the year 2032 is likely
+ not to perform as well in the year 2033---even if the conditions
+ on the stock market are comparable and the stock picker didn't start to 
+ rest on his laurels. The reason could simply be that he had more
+ than his fair share of luck in 2032---you need some luck to 
+ come out on top---and wasn't as lucky in 2033. As a result,
+ his performance in the next year is likely to be closer to the
+ average performance (i.e., he's regressed to the mean of stock
+ picker performance).
+ 
+ \item If you administer a reading test to a group of learners
+ one week and another reading test a couple of weeks later,
+ you're likely to find that the very worst readers on the first test
+ are still pretty poor readers on the second test (= the skill part),
+ but their performance won't be as atrocious---it'll seem as though
+ they've made some progress. Similarly, the best readers on the first
+ test are likely to still be good readers on the second test, but
+ their performance probably won't be as exceptional---it'll seem as
+ though they've become worse.
+ 
+ But this pattern can be explained in
+ terms of measurement error: Even if none of the learners actually
+ learnt or unlearnt something, you're likely to find such a pattern.
+ The reason is that, if you obtained a dismal score, you're likely
+ to be a pretty poor reader \emph{and} to have had some bad luck---perhaps
+ the topic of the reading test just wasn't suited for you, or you
+ were coming down with the flu. A couple of weeks later, you might
+ encounter a topic you know a thing or two about or you might
+ be in better physical shape.
+ Similarly, if you scored exceptionally well on the first test,
+ you may have had some luck with the test's topic or with other
+ circumstances, and these may not be as favourable next time round.
+\end{itemize}
+
+\mypar{Exercise}
+A nationwide standardised maths test is administered
+to all 5th graders. It turns out that the classes with
+the highest mean test scores tend to be pretty small.
+One possible explanation is that small classes are more
+conducive to learning maths.
+Another explanation is that this finding is an artefact
+of measurement error. 
+These explanations aren't mutually exclusive.
+
+\begin{enumerate}[(a)]
+  \item Explain how measurement error can give rise to this finding.
+  \item How could you check if measurement error accounts (fully or in part)
+        for this finding?\footnote{Hint: Which graph could you draw?}\parend
+\end{enumerate}

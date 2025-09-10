@@ -1,0 +1,379 @@
+\chapter{Within-subjects experiments}
+
+\section{Advantages and drawbacks}
+
+Blocking increases power and precision by
+pairing up similar participants and randomly assigning one of each pair to
+each condition. In within-subjects designs, this idea is taken to an extreme:
+the \emph{same} participants are tested in the different conditions.
+
+\medskip
+
+\begin{framed}
+In a within-subjects experiment, every participant serves as their own control.
+\end{framed}
+
+\medskip
+
+\begin{description}
+ \item[Advantage 1: Easier to explore interindividual differences]
+ With a between-subjects experiment, you can only estimate
+ the average effect of an intervention.
+ With a within-subjects experiment, you could additionally gauge
+ which participants gain more from an intervention than others.
+
+ \item[Advantage 2: Statistical precision]
+ A study's statistical precision depends on
+ (a) the amount of data and
+ (b) the variability in the data. 
+ The \emph{main} (!) advantage of a within-subjects design is that it easily
+ accounts for an important source of variability: interindividual differences.
+ 
+ How much more precise a within-subjects experiment is than a
+ between-subjects experiment varies from case to case.\footnote{\citet{Quene2010} 
+ estimates that within-subjects designs have the statistical precision
+ of between-subjects designs with four times as many participants.
+ The precise factor depends on the extent to which the participants'
+ performance in one condition correlates with their performance in the
+ other condition:
+ The stronger this correlation, the greater the added value of a
+ within-subjects experiment.
+ But even if you can't quantify this added value: 
+ Within-subjects designs offer more statistical precision.}
+
+ \item[Possible drawback 1: Lack of ecological validity] 
+ In applied settings, you typically want the study 
+ to mimic the context in which its findings are to be implemented.
+ But in such a context, people (e.g., pupils) won't be exposed to several 
+ conditions (e.g., learning methods) but rather to just one.
+ 
+ \item[Possible drawback 2: Order and carry-over effects]
+ When participants are tested in several conditions,
+ it's possible that they learn something in one condition
+ that affects their performance in the other condition (\term{carry-over effect}).
+ It's also possible that their performance in the last condition differs
+ from their performance in the first condition because they've grown
+ accustomed to the setting or because they've grown tired of being tested (\term{order effects}).
+\end{description}
+
+\section{Minimising order effects}
+
+\begin{description}
+ \item[Complete counterbalancing]
+ To prevent learning or fatigue effects from exerting a systematic
+ effect on the results, you can vary the order of the conditions
+ between the participants.
+ In complete counterbalancing, \emph{all} possible orders are 
+ taken into account. If you have two within-subjects conditions,
+ half of the participants first complete condition $A$ and then $B$,
+ and the other half first complete condition $B$ and then $A$.
+ If you have three conditions, there are $3! = 6$ possible orders;
+ you can then randomly assign one sixth of the participants to 
+ first complete A, then B, then C;
+ one sixth completes A, then C, then B, etc.:
+ 
+\begin{table}[h]
+\centering
+\caption{Complete counterbalancing for a within-subjects experiment with three conditions.}
+\label{tab:counter}
+\begin{tabular}{cccccc}
+A & A & B & B & C & C \\
+B & C & A & C & A & B \\
+C & B & C & A & B & A \\
+\end{tabular}
+\end{table}
+\medskip
+ 
+ \item[Latin squares] 
+ If a within-subjects experiment has lots of conditions,
+ complete counterbalancing is impractical. For four conditions,
+ for instance, there are already $4! = 24$ possible orders---we may not
+ even have that many participants! The Latin square lends itself
+ to such cases.\footnote{`Latin' because the symbols used are typically
+ letters of the Latin alphabet.} Latin squares are arrangements of symbols in a grid in which
+ each of the symbols used occurs exactly once
+ in each row and exactly once in each column. The grid below is a Latin square
+ of size 4---one of the 576 possible arrangements of the symbols A, B, C, and D
+ that form a Latin square. (Can you come up with a couple of the other 575 ones?)
+ 
+ \begin{table}[h]
+\centering
+\caption{A Latin square for a within-subjects experiment with four conditions.}
+\label{tab:latquad}
+\begin{tabular}{cccc}
+A & B & C & D \\
+B & C & D & A \\
+C & D & A & B \\
+D & A & B & C \\ 
+\end{tabular}
+\end{table}
+\medskip
+
+  Let's say you picked the Latin square above for your study.
+  You'd then randomly assign one quarter of the participants to
+  the condition (or stimulus set) order ABCD (first row), 
+  one quarter to BCDA (second row),
+  one quarter to CDAB (third row) and one quarter to DABC (fourth row).
+  The conditions (or stimulus sets) are randomly
+  assigned to one of the letters, too.
+  
+\item[Other possibilities] In which order should we show our
+participants 50 pictures that they are to describe if we want to 
+prevent order effects from biasing the results?\footnote{Of course,
+it's possible that we just accept such `bias' if we aren't interested
+in differences between the images, but just in differences between
+the participants. If that's the case, these steps may be superfluous.} 
+$50! = 3 \cdot 10^{64}$ is an astronomical number,
+and even just 50 different Latin square orders seem impractical. One of several
+possible solutions is to present the images in a new random order for each participant.
+The drawback of doing this is that perhaps image 3 occurs much more often at the start than at the
+end of the data collection.
+\end{description}
+
+In many psycholinguistic studies, participants need to react
+to several stimuli per condition (e.g., 12 stimuli per condition).
+The order of the stimuli in these studies are often randomised
+so that the conditions are mixed up (e.g., $ABAABBBAB$ etc.).
+
+Counterbalancing and Latin squares don't negate carry-over effects.
+Whether carry-over effects represent an acute danger to the study's
+validity needs to be judged on a case-by-case basis.
+That said, the possible danger of carry-over effects quite often isn't
+large enough to offset the certain gain in statistical precision.
+
+\begin{framed}
+If you have a genuine choice between a between-subjects
+and a within-subjects design for your own research, pick the 
+within-subjects design. (Unless, of course, you have an excellent
+reason not to do so.)
+\end{framed}
+
+\mypar{Example}
+  In \citet{Vanhove2018}, I examined the influence of metalinguistic knowledge
+  about some structure in the L1 on the participants' intuitions about 
+  the corresponding structure in a foreign language.
+  Metalinguistic knowledge was manipulated experimentally.
+  In the control condition (call it $A$), the participants were 
+  given correct but irrelevant information about the L1's morphosyntax.
+  In the second condition ($B$), they were given correct, relevant information.
+  In the third condition ($C$), they were given correct, relevant information
+  and they were additionally taught an algorithm for identifying the structure in question.
+  
+  It's quite clear that this study couldn't be realised in a within-subjects design:
+  Once you give the participants the relevant information (conditions $B$ and $C$), 
+  you can't then expect them to suppress this information as they are tested in condition $A$.
+  Similarly, once you teach the participants an algorithm for identifying a structure (condition $C$),
+  you can't then expect them not to apply it in the other conditions.
+  Consequently, I opted for a between-subjects design.
+\parend
+
+\mypar{Exercise}
+From \citet{Ludke2014}:
+ \begin{quote}
+Participants were randomly assigned to one of three learning conditions:
+speaking, rhythmic speaking, and singing. The participants heard 20 paired-associate
+phrases in English and an unfamiliar language (Hungarian) (\dots).
+(\dots) The 15-min learning period was followed by a series of five different production,
+recall, recognition, and vocabulary tests for the English--Hungarian pairs.
+\end{quote}
+Re-design this between-subjects experiment as a within-subjects experiment.
+What would this description look like? For the time being, ignore the \textit{rhythmic speaking} condition.
+
+In your design, you are constrained by the resources Ludke et al. had. This means that
+you cannot introduce stimuli and tests that were not already used by Ludke et al., and
+that you have to work with at most 30 men and 30 women as participants.
+\parend
+
+\mypar{Exercise}
+As in the previous exercise, but with all three conditions.
+\parend
+
+
+\mypar[Reading assignment]{Exercise}
+The study by \citet{Kang2013} serves as an example of a within-subjects design. 
+Additionally, it uses some turns of phrase commonly found in research reports:
+
+\begin{enumerate}[(a)]
+\item ``The Hebrew nouns were learned in one of two training conditions -- retrieval practice or imitation -- that were manipulated within subjects across separate blocks and semantic categories.'' (p.~1261)
+\begin{enumerate}[i.]
+  \item What does ``manipulated within subjects across separate blocks'' mean?
+  \item What does ``manipulated within subjects across semantic categories'' mean?
+\end{enumerate}
+
+\item ``The order of items in each test was randomized for each learner.'' (p.~1262) 
+        Why?
+        Would it have made sense to use the same fixed order of items for all learners?
+
+\item ``In Experiment 2, the order of both tests was counterbalanced across learners\dots'' (p.~1262).
+        This merely means that half of the learners first took Test A and then Test B, 
+        whereas the other half first took Test B and then Test A.
+        Would it have made sense to administer the test in the same order to all learners?\parend
+\end{enumerate}
+
+\section{*Analysing data from within-subjects designs with two conditions}
+\subsection{AB/BA cross-over design}
+  Consider a within-subjects experiment with two conditions, creatively labelled $A$ and $B$, 
+  in which participants are randomly assigned to the two possible orders $AB$ and $BA$.
+  This design is called a \term{AB/BA cross-over design}.
+  We will consider condition $A$ to be the intervention (or treatment) condition
+  and $B$ the control condition, but nothing hinges on these labels.
+  Let's break down the systematic factors that contribute 
+  to the first and second measurements in both orders, see Table \ref{tab:analysiswithin}.
+  
+\begin{table}[h]
+  \centering
+  \caption{Systematic factors contributing to the measurements in a within-subjects experiment with two conditions. The meaning of the Greek symbols is explained in the running text.}
+  \label{tab:analysiswithin}
+  \begin{tabular}{ccc}
+    \toprule 
+    Order & First measurement & Second measurement \\
+    \midrule
+    AB    & $\beta + \tau$    & $\beta + \omega + \kappa$ \\
+    BA    & $\beta$           & $\beta + \tau + \omega$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{itemize}
+  \item We assume that there is some baseline $\beta$ common to all measurements.
+        This common baseline is of no further interest.
+  
+  \item There may be treatment effect $\tau$ that contributes to the measurements
+        in condition $A$ (i.e., the first measurement for order $AB$ and the second
+        for order $BA$), but not to those in condition $B$.\footnote{If there is a treatment effect $\tau'$
+        that contributes to the measurements in condition $B$, this is equivalent to there being
+        a treatment effect $\tau = -\tau'$ that contributes to the measurements in condition $A$.}
+        
+  \item There may be an order effect $\omega$ that contributes to the second
+        measurements but not to the first measurements.\footnote{Similarly, if an order effect $\omega'$
+        contributes to the first measurements instead, write $\omega = -\omega'$.}
+        
+  \item There may be a carryover effect $\kappa$ that affects the measurements
+        in condition $B$ but only if $B$ follows $A$.\footnote{Similarly, if a carryover $\kappa'$ affects
+        $A$ when following $B$, write $\kappa = -\kappa'$.}
+\end{itemize}
+
+\medskip
+
+In any analysis of these data, 
+we need to assume that there are no carryover effects, that is, $\kappa = 0$.
+If $\kappa \neq 0$, a within-subjects design was the wrong choice.
+Under the assumption that $\kappa = 0$, we may estimate the value of $\tau$ by first computing,
+for each participant, the period difference, that is, 
+the difference between their first and their second measurement.
+For the participants in the $AB$ order, and ignoring any non-systematic effects, we obtain
+\[
+  d_{AB} = (\beta + \tau) - (\beta + \omega + \kappa) = \tau - \omega - \kappa = \tau - \omega,
+\]
+since $\kappa = 0$ by assumption.
+For the participants in the $BA$ order, we similarly obtain
+\[
+  d_{BA} = \beta - (\beta + \tau + \omega) = - \tau - \omega.
+\]
+Observe that
+\[
+  \frac{d_{AB} - d_{BA}}{2} = \frac{(\tau - \omega) - (- \tau - \omega)}{2} = \tau.
+\]
+The consequence of this is that, under the assumption of no carryover effects,
+the treatment effect $\tau$ can be estimated as half the mean difference in the period
+differences between the two orders.
+A rerandomisation test or some analytical approximation thereof can be used to obtain a $p$-value for the null hypothesis
+that $\tau = 0$.\footnote{In practice, you'll encounter different approaches to analysing within-subjects designs when reading social science studies. Not all of these
+are grounded in sound statistical theory.}
+
+\subsection{Interleaved conditions}
+Consider again a within-subjects experiment with two conditions, $A$ and $B$,
+in which $n$ participants are shown a fixed list of words $w_1, \dots, w_m$.
+For each participant, half of the words are shown in condition $A$,
+and half are shown in condition $B$;
+the presentation software assigns the words to the conditions randomly
+and separately for each participant.
+The participants react to each word, and their response is expressed numerically
+in some fashion (e.g., accuracy, speed, \dots).
+
+For a design like this, there is no real sense in which one condition
+follows another condition for each participant.
+A sensible way to analyse these data is to compute, for each participant,
+the difference score between their average response to condition $A$
+and their average response to condition $B$, resulting in difference
+scores $d_1, \dots, d_n$.
+We then compute the average of these differences, $\overline d$.
+Under the null hypothesis of no difference,
+each $d_i$ value could just as likely have had the opposite sign.
+To generate the distribution of $\overline d$ under the null hypothesis,
+we can randomly flip the signs of the observed $d_i$ values
+and recompute their average.
+Exhaustive sign-flipping would generate the full distribution of $\overline d$
+under the null hypothesis, but it involves generating $2^n$ $\overline d$ values.
+A Monte Carlo version of this procedure would also work.
+Once the distribution of $\overline d$ has been generated or approximated using this sign-flipping,
+one- or two-sided $p$-values can be computed as usual.
+An analytical short-cut to this procedure is the paired $t$-test on the condition averages per participant.
+  
+\mypar[Within-school/class designs]{Remark}
+  In within-school or within-class designs (see Figure \vref{fig:withinschool}),
+  the same procedure can be applied: For each school (or class), compute
+  the average score obtained by the pupils in the intervention and the average
+  score obtained by the pupils in the control condition.
+  Then analyse these averages as described above.
+\parend
+
+\section{*Further reading}
+Latin-square designs are also used in studies other than 
+within-subject experiments, for instance as a technique for blocking.
+See \citet{Richardson2018} for an overview and some finer points that weren't discussed here; 
+his article is geared towards educational researchers.
+
+\section{*Examples in R}
+See the file \texttt{within.html} in the \texttt{tutorials} directory
+on \url{https://github.com/janhove/QuantitativeMethodology}.
+
+
+
+% LATIN SQUARES ALSO USEFUL FOR BLOCKING. SEE OEHLERT.
+
+% \mypar[Reading assignment]{Exercise}
+% The Simon task was (and still is) commonly used in research on any cognitive advantages of bilingualism. In a nutshell, the theory is that bilinguals have to constantly inhibit one of their languages. Because of this, they practice their `inhibitory control'. The Simon task is purported to tap into this same skill (suppressing impulses). As a result, some researchers have interpreted smaller Simon effects in bilinguals as evidence for cognitive advantages of bilingualism. However, these studies have drawn criticism \citep[see the references in][]{Kirk2014}.
+% 
+% Read pages 640--643 of Kirk et al.\ (2014).
+%   Don't read the Results section (it is needlessly complicated),
+%   but do take a look at Table 1 and Figure 1.
+%   Then answer the following questions; short answers suffice.
+%   
+%   \begin{enumerate}
+%     \item Quasi-experiments tend to be both less conclusive and more arduous
+%           than true experiments. Explain why.
+%           
+%     \item ``Colour assignment to key location was counter-balanced across
+%           participants.'' (p.\ 643, top right)
+%           Rewrite this sentence without using the word {\it counter-balanced}.
+%           Do you have any idea why the researchers effected this counter-balancing?
+%           If so, briefly describe it.
+%           
+%     \item On page 641, the authors make two predictions:
+%           \begin{itemize}
+%             \item ``If bilingualism, rather than ethnic or cultural background
+%             is linked to superior executive control, then both bilingual groups
+%             should exhibit an advantage compared to the monolinguals.''
+%             
+%             \item ``If use of multiple dialects incurs executive control benefits
+%             similar to those observed in bilinguals, then differences in executive
+%             control between bidialectal monolinguals and bilinguals might be
+%             attenuated.''
+%           \end{itemize}
+%           Do the results in Figure 1 suggest that ``both bilingual groups
+%           \dots exhibit an advantage compared to the monolinguals''?
+%           Do they suggest that any differences in executive control between
+%           bidialectal monolinguals and bilinguals is smaller than 
+%           those between non-bidialectal monolinguals and bilinguals?
+%           Explain precisely which comparisons you base your answers on.
+%           
+%     \item Assume you had access to Kirk et al.'s full data set
+%           and that you were asked to draw a more informative graph than Figure 1.
+%           Draw a sketch of what your graph would look like
+%           and briefly explain why your graph is better than Kirk et al.'s.
+%           (You do \emph{not} need to draw such a graph in R. A free-hand
+%           sketch suffices. Do make sure, however, to indicate clearly
+%           what it is that you want to plot. Label your axes.) \parend
+% \end{enumerate}          
+

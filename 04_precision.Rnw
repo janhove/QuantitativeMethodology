@@ -1,0 +1,1008 @@
+\chapter{Increasing precision}\label{ch:precision}
+
+\section{Precision}
+
+Up till now, our chief goal has been to increase the study's
+internal validity:
+\begin{itemize}
+  \item Bias introduced by confounding can be countered by randomly
+  assigning the participants (or whatever is being investigated) to
+  the conditions. This won't always be possible, but randomisation
+  remains the ideal.
+  
+  \item Bias introduced by expectancy effects, especially on the part
+  of the researchers, can be reduced by blinding---for instance,
+  by preventing raters from knowing which experimental condition
+  the participant was assigned to.
+  
+  \item To decrease the chances that the results are affected by
+  technical glitches or misunderstandings, 
+  the experiment should be piloted,
+  and checks for comprehension and satisficing can be incorporated.
+  
+  % \item Finally, we've introduced statistical tests
+  % to get a handle on the possibility that
+  % the association observed is due just to chance.
+\end{itemize}
+
+\medskip
+
+These three points concern bias---we want to prevent our
+study from systematically under- or overestimating the answer to
+the question we're interested in, which is often a causal question. 
+But as we saw when discussing
+statistical tests, there is a random element to the results of any
+given study (see Remark \vref{remark:estimation}). 
+In a study with random assignment, the luck of the draw
+may produce an estimated effect that is larger or smaller than the actual
+effect---it's just that randomisation helps to prevent
+this estimate from being \emph{systematically} too large or too small.
+Roughly speaking, randomisation is equally like to yield overestimates as it is
+to yield underestimates.
+
+But \emph{an estimate obtained from an unbiased study can be completely off-target.}
+We've demonstrated this in Remark \ref{remark:estimation},
+but to better appreciate this, consider a six-sided dice. 
+The average number of pips on a six-sided dice 
+is $\frac{1+2+3+4+5+6}{6}=3.5$. Let's pretend
+we didn't know this and we wanted to estimate this number (i.e., 3.5) by throwing
+the dice and jotting down the number of pips showing face-up.
+
+\begin{itemize}
+  \item If we do this just once, we'll just obtain an integer between 1 and 6
+  with equal probability (six possibilities). 
+  If we obtain a 1, iyr estimate will be off by 2.5 pips;
+  if we obtain a 2, we'll be off by 1.5 pips; \dots; 
+  if we obtain a 6, we'll be off by 2.5 pips. 
+  Taking into account all six possibilities,
+  our average estimation error is 1.5 pips. 
+  Note that the estimation procedure itself is unbiased: 
+  underestimates and overestimates are equally likely to occur,
+  and they're of the same size, so they will cancel each other out.
+
+\begin{marginfigure}[-2cm]
+\includegraphics[width=\textwidth]{figure/pips_1}
+\caption{If we throw a six-sided dice once, we'll observe one of these 6 outcomes.
+The dashed vertical line highlights the true mean number of pips.}
+\label{fig:pips1}
+\end{marginfigure}
+
+  \item If we throw the dice twice,
+  we'll now observe one of $6^2 = 36$ possible outcomes. 
+  When we average the number of pips on both throws, we can still obtain an estimate of 1 (when
+  you throw two 1s), but there's just a 1-in-36 probability of that happening.
+  Six of the possible outcomes will be right on the mark
+  (1+6, 6+1, 2+5, 5+2, 3+4, 4+3).
+  Taking into account all 36 possibilities,
+  our average estimation error is 0.97 pips. 
+  Again, this estimation procedure is unbiased.
+  
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/pips_2}
+\caption{If we throw a six-sided dice twice and take the mean number of pips observed, we'll obtain one of these 36 outcomes.}
+\label{fig:pips2}
+\end{marginfigure}
+  
+  \item If we throw the dice five times, 
+  we'll observe one of $6^5 = 7776$ possible outcomes. 
+  When we average the number of pips on the five throws,
+  there's just a 1-in-7,776 probability 
+  that we'll end up estimating the average number of pips on the dice as 1. 
+  Taking into account all 7,776 possibilities,
+  our average estimation error is 0.62 pips. 
+  Again, this estimation procedure is unbiased.
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/pips_5}
+\caption{If we throw a six-sided dice five times and take the mean number of pips observed, we'll obtain one of these 7,776 outcomes.}
+\label{fig:pips5}
+\end{marginfigure}
+\end{itemize}
+
+\medskip
+
+So as we increase the number of throws (i.e., as we increase the sample size),
+the average observation tends to correspond more closely to the true average.
+Put differently, our estimate tends to become more \textbf{precise}.
+It's still \emph{possible} to be completely off mark, but it's less \emph{probable}.
+Clearly, the third `design' (throwing the dice 5 times) is preferable to
+the first and second design---not because it's unbiased (all three attempts are
+unbiased), but because the estimate it yields is expected to be closer to the
+truth.
+
+In a similar vein, even unbiased studies can often be improved upon by taking
+steps that increase their precision. 
+The precision of an estimate obtained in a study can itself be estimated 
+and is typically expressed by means of \textbf{standard errors}, 
+\textbf{confidence intervals},
+or \textbf{credible intervals}. 
+We won't concern ourselves here with how these
+statistics are to be calculated and interpreted; 
+a rough appreciation of precision along the lines of the dice example suffices.
+
+\section{Factors affecting precision}
+Precision is affected mainly by the following two factors:
+\begin{itemize}
+  \item the number of data points. Other things equal,\footnote{This phrase is crucial. There is often a trade-off between the sample size and the quality of the data.} larger studies
+  yield more precise estimates. As the dice example illustrates, the effect
+  of increasing the sample size yields diminishing returns:
+  the same number of added observations results in a greater increase in precision
+  if the original sample is small compared to when it is large.
+
+  \item the variability of the data within each group. The more variable the data
+  within the groups are, the less precise the estimates will be.
+  (In the dice example, the estimation error would be lower
+  if our dice didn't have the values 1 and 6.)
+  For the exercises in Section \ref{sec:power}, 
+  you may have already identified a couple of ways to reduce the variability of the data within the groups 
+  (e.g., restricting the study to a more homogeneous group; 
+  using more precise measurements). But we can also
+  reduce this variability through a combination of experimental design and
+  statistics, see Sections \ref{sec:blocking} and \ref{sec:covariates}.
+\end{itemize}
+
+\medskip
+
+Note that both of these factors also affect statistical power in the same
+way (see Figure \vref{fig:power}).
+Indeed, high power usually translates into high precision.
+
+\section{Matching and blocking}\label{sec:blocking}
+
+\begin{description}
+ \item[Matching]
+ Matching is a procedure in which researchers manually assign the participants
+ (or whatever is being investigated) to the different conditions in such a way
+ that both conditions are comparable on one or a number of background variables.
+
+ \begin{itemize}
+ \item Actual meaning: For each participant in condition $A$,
+ find a similar participant (e.g., same age, sex and L2 skills)
+ and assign this participant to condition $B$. This way, each participant
+ has a counterpart in the other condition.
+
+ \item What is often meant: Assign participants to conditions
+ $A$ and $B$ in such a way that the \emph{average} age (etc.)
+ is similar or the same in both conditions. The individual participants
+ themselves don't need to have any particular counterpart in the other group.
+ \end{itemize}
+ 
+ \begin{marginfigure}[4cm]
+% \begin{figure}
+\centering
+\includegraphics[width = 5cm]{figure/matching}
+\caption{Matching the conditions ($X$) on $A$ doesn't prevent confounding by other (perhaps unobserved) variables ($U$).}
+\label{fig:matching}
+\end{marginfigure}
+% \end{figure}
+
+ The rationale behind matching is that, by equating the conditions on one
+ or a number of background variables, these variables can't act as confounding
+ variables. However, matching is \textbf{not recommended}:
+ It's possible that the researchers,
+ while matching the participants on one background variable, inadvertently
+ introduce a bias with respect to another background variable.
+ Moreover, (pure) matching only allows you to equate those confounding variables
+ that you matched for (see Figure \vref{fig:matching}).
+ Randomisation also
+ equates \emph{other} (and indeed unknown) confounding variables
+ and is superior to matching.
+
+ \item[Blocking] This is similar to matching, 
+ but unlike (pure) matching, it is used \emph{in combination with}
+ (rather than as an alternative to) randomisation:
+ \begin{quotation}
+ ``[M]atching is no real help when used to
+ overcome initial group differences.
+  This is not to rule out matching \emph{as an adjunct to randomization}, as when one
+  \emph{gains statistical precision} by assigning students to matched pairs, and
+  then randomly assigning one member of each pair to the experimental group,
+  the other to the control group. In the statistical literature this is known
+  as `blocking.''' \citep[p.~15; my emphasis]{Campbell1963}
+  \end{quotation}
+
+  \begin{itemize}
+ \item Example 1: Based on a pool of participants, we build pairs of participants of the same sex and age and
+ with a similar IQ. From each pair of participants, we \emph{randomly}
+ (rather than arbitrarily) assign one participant to condition $A$ and
+ one to condition $B$. In doing so, we both equate the two groups
+ in terms of age, sex and IQ, but, due to the randomised assignment,
+ we also prevent confounding by
+ unobserved factors.\footnote{This technique is rarely used in our line of research, possibly because the pool of participants is rarely known at the start of the experiment.}
+
+ \item Example 2 \citep[see][]{Ludke2014}: We randomly assign half of the female participants to condition $A$ and half to condition $B$;
+ same for the male participants. Again, randomised assignment helps to prevent
+ confounding variables from biasing the results, and we have the added benefit that
+ the two conditions will be perfectly balanced in terms of sex.
+ \end{itemize}
+
+ Blocking can increase a study's statistical precision---provided it is
+ taken into account during the analysis.
+ The stronger the outcome is related to the
+ blocking factors, the more powerful blocking is.
+ 
+ Note that blocking takes place \emph{before} the random assignment.
+ You can't block after the fact.
+\end{description}
+
+\mypar[Blocking and rerandomisation testing]{Remark}
+If you incorporate blocking in the design of your study, 
+but you don't take this into account when analysing the data,
+you're not reaping its full benefits.
+
+If you're testing some association using rerandomisation
+as discussed in the previous chapter, the idea is that you only
+generate randomisations that you could actually have obtained in your study.
+For instance, if you block your participants into $k$ pairs based on sex, age, and IQ
+as in the first example above, and then randomly allocate the participants
+to the conditions within each pair, there are $2^k$ possible randomisations
+instead of ${2k} \choose k$ ones.
+You should then only generate randomisations in which participants belonging
+to the same block are assigned to different conditions.
+
+Similarly, in the second example, only randomisations that split the participants
+of each sex equally among the conditions should be considered.
+
+ Further see \citet{Vanhove2015} for some other options that don't
+ involve rerandomisation testing.
+\parend
+
+\paragraph{How does blocking increase precision?}
+Let's say you're comparing the efficacy of two methods for learning Dutch
+as a foreign language. Six German-speaking and eight French-speaking learners
+sign up for your study, they work with one of the two learning methods for a while,
+and then take the same test at the end.\footnote{Again, the number of participants in this
+fictitious example is low to keep things tractable.}
+\begin{itemize}
+  \item The speakers of German can be expected to have
+an advantage because of the similarity between Dutch and German. Let's say this
+advantage corresponds to 3 points on a 20-point test scale. (Realistically,
+you wouldn't be able to peg this number down so precisely.)
+
+  \item Within each language group, learners still vary in their ability to
+  learn Dutch.
+
+  \item Let's say that, unbeknownst to you, learning method $B$ boosts
+  test performance by two points relative to learning method $A$.
+  Figure \ref{fig:dutch} shows what each learner's scores would have
+  been if they had been tested on both methods.
+\end{itemize}
+
+<<dutch, include = FALSE, echo = FALSE, results = "hide", fig.path = "figure/", dev = "pdf", fig.width = 4.5*0.85, out.width="0.8\\textwidth", fig.height = 4*0.85>>=
+# Learning Dutch
+set.seed(314)
+learners <- data.frame(
+  L1 = c(rep("German", 6), rep("French", 8)),
+  Learner = c(1:6, 1:8)
+)
+
+learners$Learner <- paste(learners$L1, learners$Learner)
+# learners$MethodB <- round(rnorm(14, mean = 9, sd = 2))
+learners$MethodB <- round(rnorm(14, mean = 9, sd = 1))
+learners$MethodB <- ifelse(learners$L1 == "German",
+                           learners$MethodB + 3,
+                           learners$MethodB)
+# learners$MethodA <- learners$MethodB - 1
+learners$MethodA <- learners$MethodB - 2
+
+p1 <- ggplot(learners %>%
+               pivot_longer(cols = MethodA:MethodB),
+             aes(x = value,
+                 y = reorder(Learner, value),
+                 shape = name)) +
+  geom_point() +
+  scale_shape_manual(values = c(1, 3), labels = c("A", "B"),
+                     name = "Method") +
+  facet_grid(L1 ~ .,  scales = "free_y", space = "free_y") +
+  xlab("Test score") +
+  # xlim(2, 14) +
+  ylab(element_blank())
+
+p1
+@
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width = 0.7\textwidth]{figure/dutch-1}
+  \caption{The test scores that each learner would obtain for each learning method. But we can't test all learners on one and the same method, so for half of the learners, we'll observe their scores for Method A, and for the other half, we'll observe their scores on Method B.}
+  \label{fig:dutch}
+\end{figure}
+
+There are ${14 \choose 7} = 3432$ ways to randomly assign these 14 participants to
+two conditions ($A$ and $B$) with 7 participants each.
+For the learners in Condition $A$, we'd observe the scores
+shown as circles in Figure \ref{fig:dutch};
+for the learners in Condition $B$, we'd observe the scores
+shown as crosses. If we then took the mean difference between
+these groups, we'd end up observing one of the 3,432 values
+shown in Figure \vref{fig:dutch2}. Complete random assignment
+would yield a mean estimation error of about 0.80 points.
+
+However, we've identified a likely important source of variability in the data:
+language group. It makes sense to block on this factor, i.e., restrict the
+random assignment in such a way that half of the learners in each language group
+are assigned to one learning method and the other half to the other learning method.
+Of the 3,432 total possible random allocations, only 1,400 feature four French speakers
+in one condition and four in the other, as well as three German speakers in one
+condition and three in the other.\footnote{There are ${8 \choose 4} = 70$
+ways to split up the eight French speakers into two groups of four, and
+${6 \choose 3} = 20$ ways of splitting up the German speakers into two groups of three. Combining these yields $70 \cdot 20 = 1400$ possibilities.}
+The average estimated difference between the two learning methods among these
+1,400 allocations is still 2, but the average estimation error is now only 0.63---an increase
+in efficiency of about 21\%;
+see Figure \ref{fig:dutch3}.
+What has happened is that, by restricting the randomisation
+in this fashion, we limited both the number of allocations that would have yielded
+large overestimates (when the Method B condition would've consisted mainly of
+advantaged German speakers)
+and those that would have yielded large underestimates (when the Method B condition would've consisted mainly of disadvantaged French speakers).
+In our example, complete randomisation resulted in 412 out of 3,432 (12\%)
+allocations with an absolute estimation error of more than 1.5 points;
+blocked randomisation resulted in only 60 out of 1,400 (4\%) such allocations.
+Also see Table \vref{tab:diffrand}.
+
+<<dutch2, include = FALSE, echo = FALSE, results = "hide", fig.path = "figure/", dev = "pdf", fig.width = 6*0.8, fig.height = 6*0.8>>=
+# Define a function that computes the difference
+# in means (adaptable to other functions)
+# between one part of a vector (indices in Group1)
+# and the remaining part (indices NOT in Group1)
+mean.diff <- function(methodA, methodB, Group1) {
+  mean_methodA <- mean(methodA[Group1])
+  mean_methodB <- mean(methodB[-Group1])
+  mean_methodB - mean_methodA
+}
+
+# For the 1st, 2nd ... 10th data points
+combinations <- combn(1:14,
+# Allocate 3 data points to Group 1
+                      7,
+# (and return output as a list)
+                      simplify = FALSE)
+
+# uncomment next line to show all 70 combinations
+# combinations
+
+# apply function mean.diff
+diffs <- mapply(mean.diff,
+# for every combination of indices in combinations
+                Group1 = combinations,
+# apply to actual.data
+                MoreArgs = list(methodA = learners$MethodA,
+                                methodB = learners$MethodB))
+
+# mean(abs(diffs - 1))
+
+df_diffs <- data.frame(diffs = sort(diffs), sample = 1:length(diffs))
+df_diffs_a <- df_diffs %>%
+  mutate(Method = "Complete randomisation")
+ggplot(df_diffs, aes(diffs, y = sample)) +
+  geom_point(shape = 1) +
+  xlab("difference between group means\n(B - A)") +
+  ylab("randomisation") +
+  geom_vline(xintercept = 2, linetype = 2) +
+  xlim(-2, 6) +
+  ggtitle("Possible results when using complete randomisation")
+@
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.7\textwidth]{figure/dutch2-1}
+  \caption{Across all 3,432 possible random assignments, the mean estimation error of the difference between the two learning methods is about 0.80 points. The vertical line highlights the average estimate across all 3,432 possible random assignments.}
+  \label{fig:dutch2}
+\end{figure}
+
+
+<<dutch3, include = FALSE, echo = FALSE, results = "hide", fig.path = "figure/", dev = "pdf", fig.width = 6*0.80, fig.height = 6*0.80>>=
+# check for each combo if 3rd element is 4/5/6
+retained <- vector(mode = "logical", length = choose(14, 7))
+for (i in 1:choose(14, 7)) {
+  retained[[i]] <- combinations[[i]][4] %in% c(4:8) &&
+          combinations[[i]][5] > 8
+}
+df_diffs <- data.frame(diffs = diffs,
+                       retained = retained)
+df_diffs <- df_diffs %>%
+  filter(retained == TRUE) %>%
+  arrange(diffs) %>%
+  mutate(sample = 1:n())
+
+df_diffs_b <- df_diffs %>%
+  mutate(Method = "Blocked randomisation")
+ggplot(df_diffs,
+       aes(diffs, y = sample)) +
+  geom_point(shape = 1) +
+  xlab("difference between group means\n(B - A)") +
+  ylab("randomisation") +
+  geom_vline(xintercept = 2, linetype = 2) +
+  xlim(-2, 6) +
+  ggtitle("Possible results when blocking on language group")
+
+# mean(abs(df_diffs$diffs - 1))
+@
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.7\textwidth]{figure/dutch3-1}
+  \caption{Of the 3,432 possible random assignments, only 1,400 have an equal number of French speakers assigned to each learning method, as well as an equal number of German speakers assigned to each learning method. Across these 1,400 assignments, the mean estimation error is just 0.63. The average estimate, highlighted by the vertical line, doesn't change.}
+  \label{fig:dutch3}
+\end{figure}
+
+%
+%
+%
+% # <<>>=
+% # df_diffs <- bind_rows(df_diffs_a, df_diffs_b)
+% # df_diffs %>%
+% #   mutate(Interval = cut(diffs, breaks = seq(-6.5, 6.5, 1))) %>%
+% #   group_by(Method, Interval) %>%
+% #   summarise(
+% #     n = n(),
+% #     mean_diff = mean(diffs)
+% #   ) %>%
+% #   mutate(Interval = factor(Interval)) %>%
+% #   mutate(Interval = reorder(Interval, mean_diff)) %>%
+% #   ungroup() %>%
+% #   group_by(Method) %>%
+% #   mutate(tot_n = sum(n)) %>%
+% #   ungroup() %>%
+% #   mutate(Percentage = round(100*n/tot_n, 2)) %>%
+% #   arrange(mean_diff) %>%
+% #   select(Method, Interval, Percentage) %>%
+% #   pivot_wider(
+% #     values_from = Percentage,
+% #     names_from = Method,
+% #     values_fill = 0
+% #   ) %>%
+% #   knitr::kable(format = "latex", booktabs = TRUE, position = "!h", linesep = "", caption = "In what percentage of randomisations did the mean difference end up in each interval? Note that for blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.\\label{tab:diffrand}")
+% # @
+
+\begin{table}[tpbh]
+
+\caption{In what percentage of randomisations did the mean difference end up in each interval? Note that for blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.}
+\label{tab:diffrand}
+\centering
+\begin{tabular}[t]{lrr}
+\toprule
+Interval & Complete randomisation & Blocked randomisation\\
+\midrule
+(-1.5,-0.5] & 0.52 & 0.00\\
+(-0.5,0.5] & 5.48 & 2.14\\
+(0.5,1.5] & 28.03 & 27.57\\
+(1.5,2.5] & 31.93 & 40.57\\
+(2.5,3.5] & 28.03 & 27.57\\
+(3.5,4.5] & 5.48 & 2.14\\
+(4.5,5.5] & 0.52 & 0.00\\
+\bottomrule
+\end{tabular}
+\end{table}
+%
+So blocking on influential factors prevents
+the randomisation from generating some of the `unlucky' allocations,
+thereby reducing the study's average estimation error, i.e., increasing
+its precision.
+
+The higher precision obtained by blocking is reflected
+in an increase in statistical power.
+In this particular example, the rerandomisation-based
+significance test presented in the previous chapter
+will return a $p$-value of 0.05 or less in 1,165 out of the
+3,432 possible allocations when using complete randomisation,
+that is, it has 34\% power.
+But when using blocking, such a significance test will return
+a $p$-value of 0.05 or less in 642 out of the 1,400 possible
+allocation, that is, it has 46\% power.
+
+
+\section{Leveraging control variables}\label{sec:covariates}
+
+\begin{description}
+ \item[Control variable]  Additionally collected variable that isn't of actual interest
+ but that may account for differences between participants in terms of the outcome.
+
+ Example: the `language aptitude test' in \citet{Ludke2014}.
+
+ In randomised experiments, the added value of control variables is mostly statistical:
+ If control variables can account for differences in the outcome between participants,
+ they can be used to statistically reduce the variability within the groups.
+ Similarly to blocking, this yields greater power and precision.\footnote{Contrary to common belief, including powerful control variables in the analysis is useful \emph{even if} the groups are balanced with respect to these control variables. In fact, they're even more useful than when the groups aren't balanced.}
+ Note that the use of a control variable to this end is planned before the data are
+ collected. Don't try out a bunch of `control variables' during your analysis
+ to see which works best!
+
+ \item[Pretest] Often, the most potent indicator of a participant's performance
+ at the end of the experiment is their performance at the start of the experiment.
+ A pre-intervention measure of their performance---be it in the form of a score
+ on a full-fledged pretest or some rougher proxy---is therefore a useful control variable.\footnote{On taking into account pretest results, see \citet{Vanhove2015}.}
+
+ It's also possible to `block' on pretest scores. To this end, sort the participants
+ according to their pretest score and divide them up into pairs like so:
+ (12)(34)(56)(78)\dots. Within each pair, randomly assign one participant to the
+ control group and one to the intervention group.
+ You can similarly block on other continuous variables.
+
+  \begin{framed}
+ Pre- and post-tests don't have to look identically.
+ Any measure of pre-experiment performance is better than no measure at all.
+ \end{framed}
+
+ Of course, if the pre- and posttests aren't similar and can't be scored
+ on the same scale, you won't be able to make any claims about how much
+ the participants progressed in each condition.
+ \emph{But that's not important!}
+ What's important in a pretest/posttest design is the comparison between
+ the conditions on the posttest scores. The purpose of the pretest scores
+ is to increase the precision of this comparison. This can be achieved
+ by using them as you would any other blocking or control variable,
+ so they don't have to be expressed on the same scale as
+ or be otherwise comparable with the posttest.
+\end{description}
+
+In fairly small studies, blocking tends to increase precision a bit more than
+merely using control variables in the analysis, but in the vast majority of
+cases, either is a good idea compared to the alternative of not leveraging
+any prior information!\footnote{We don't need to concern ourselves with the freak
+cases where blocking or using control variables reduces precision (viz.,
+tiny studies in which the blocking or control variables are
+uninformative with respect to the outcome; \citealp{Imai2008}.)}
+
+ \begin{framed}
+ Even if you're conducting a randomised experiment, it pays to
+ think about which factors are likely to strongly affect the outcome so that, if feasible, you
+ can take these factors into account using blocking or by means of control variables.
+ \end{framed}
+
+Don't go overboard with this, though. One or two strong blocking or control
+variables are likely to be helpful; umpteen variables that \emph{might conceivably}
+bear some relation to the outcome aren't.
+Using several highly intercorrelated control variables doesn't hurt but it 
+isn't too useful either:
+they will all tend to do the same work, 
+which makes them mutually superfluous.
+
+\mypar{Exercise}
+Having taking this class, you've become the go-to expert
+  on experimental methodology among your friends. So unavoidably, a
+  friend of yours sollicts your input on an experiment she wants to run with
+  one experimental condition and one control condition in a Zurich-based school class
+  with 24 pupils.
+  For each pupil, your friend knows if they have Swiss-German as their main
+  language and whether they receive special educational measures.
+  She also knows the pupils' average school grades.
+  These data are shown in Table \vref{tab:pupils}.
+
+After some discussion with your friend, you realise that, ideally,
+she should block on language background, whether the pupils receive special educational
+measures as well as average grade when randomly allocating the pupils to
+the experiment's condition. An equal number of pupils is to be assigned
+to both conditions.
+
+  \begin{enumerate}[(a)]
+    \item Explain, as you would to your friend, how to generate
+          a suitable allocation of pupils to conditions.
+          Also generate such a suitable allocation in order to illustrate
+          the steps involved.
+          List the pupil IDs of the pupils that would be assigned to the control
+          condition under the allocation you generated.
+          Feel free to use your spreadsheet software or R for this part.
+    \item How many different allocations could your scheme generate?
+          How many different allocations could complete randomisation without
+          blocking have generated?
+          Provide both the computations as well as the numeric results. \parend
+  \end{enumerate}
+
+\begin{table}[tbp]
+\centering
+\caption{Fictional pupil characteristics.}
+\label{tab:pupils}
+\begin{tabular}{@{}lllc@{}}
+\toprule
+ Pupil ID       & Main language   & Special measures?    & Average grade     \\
+ \midrule
+ S01            & Swiss-German & no  & 4.9 \\
+ S02            & Swiss-German & no  & 5.4 \\
+ S03            & Swiss-German & yes & 4.2 \\
+ S04            & other        & yes & 3.5 \\
+ S05            & Swiss-German & no  & 4.0 \\
+ S06            & Swiss-German & no  & 4.6 \\
+ S07            & Swiss-German & no  & 6.0 \\
+ S08            & Swiss-German & no  & 3.9 \\
+ S09            & Swiss-German & no  & 4.7 \\
+ S10            & other        & yes & 5.0 \\
+ S11            & Swiss-German & yes & 5.1 \\
+ S12            & other        & no  & 4.2 \\
+ S13            & other        & yes & 3.9 \\
+ S14            & Swiss-German & no  & 4.5 \\
+ S15            & other        & yes & 4.2 \\
+ S16            & Swiss-German & yes & 4.5 \\
+ S17            & other        & yes & 3.0 \\
+ S18            & other        & no  & 4.2 \\
+ S19            & other        & no  & 5.3 \\
+ S20            & other        & yes & 2.7 \\
+ S21            & other        & no  & 4.6 \\
+ S22            & Swiss-German & no  & 5.3 \\
+ S23            & Swiss-German & yes & 4.9 \\
+ S24            & Swiss-German & no  & 4.7 \\
+ \bottomrule
+\end{tabular}
+\end{table}
+
+
+\paragraph{Don't control for post-treatment variables!}\label{par:posttreatment}
+A fairly common error researchers make is controlling for variables that are themselves
+(directly or indirectly) affected by the treatment. The reason is that
+controlling for a descendant of a variable (when drawn in a \textsc{dag}) 
+is like controlling for the variable itself, only less strongly.
+
+\begin{itemize}
+  \item If you `controlled' for the treatment variable
+  (e.g., throwing away data in order to keep it constant), you wouldn't be able to compare the outcome variable
+  according to different values of the treatment variable (since there aren't any).
+  Controlling for a descendant of the treatment variable (even by statistical means
+  rather than by selecting observations) similarly amounts to throwing away
+  data, just to a lesser extent. Rather than increase power and precision,
+  you'll lose some.
+
+  \item If you `controlled' for the outcome variable,
+  you wouldn't be able to find any differences between the treatment groups
+  even if the treatment produced some differences
+  (since you fixed all outcome observations to the same value).
+  Similarly, controlling for a descendant of the outcome variable
+  (even by statistical means) typically amounts to artificially pulling the
+  differences between the treatment groups towards zero.
+\end{itemize}
+
+\medskip
+
+See the \textsc{dag}s in Figure \ref{fig:posttreatment} for these and two other
+cases.
+
+\mypar{Example}
+Say you want to find out if a pedagogical intervention boosts
+learners' conversational French skills. It may be a good idea to control
+for the learners' vocabulary knowledge. But if you collect the measure of
+vocabulary knowledge \emph{after} the intervention, it's possible that
+this measure is also affected by the intervention. If you control for it,
+you could find yourself in one the situations depicted in Figure \ref{fig:posttreatment}:
+learners could conceivably pick up some vocabulary as they're working
+on their conversational skills.
+\parend
+
+\medskip
+
+A poorly chosen pretreatment control variable won't be too helpful, 
+but it won't hurt your study either---other than in terms of time spent and
+money wasted.
+But controlling for a posttreatment variable can bias your results or decrease their precision.
+Luckily, in true experiments, there's a simple solution:
+
+\begin{framed}
+ Collect control variables at the outset of the study (before the intervention)
+ so that you're sure that the control variables aren't themselves influenced by the intervention.
+\end{framed}
+
+\begin{figure}[tbp]
+    \centering
+
+    \begin{minipage}{0.45\textwidth}
+        \centering
+          \includegraphics[width = \textwidth]{figure/posttreatment1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/posttreatment2}
+    \end{minipage}
+
+    \vfill
+
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/posttreatment4}
+    \end{minipage}
+        \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/posttreatment3}
+    \end{minipage}
+
+    \caption{In all four \textsc{dag}s, $A$ is causally affected by $X_r$.
+
+    \textit{Top left:} $A$ is a collider. Controlling for it opens up a non-causal
+    path between $X_r$ and $Y$.
+
+    \textit{Bottom left:} Controlling for $A$ closes a causal path from $X_r$
+    to $Y$. You'd be answering the question \textit{What's the causal effect of $X_r$ on $Y$
+    other than that mediated by $A$?}. This may be interesting in its own right,
+    but you have to be aware that this question differs from the question \textit{What's the causal
+    effect of $X_r$ on $Y$?}
+
+    \textit{Top right:} Controlling for $A$ is like controlling for $Y$,
+    just less strongly. If you want to estimate the causal effect of
+    $X_r$ on $Y$, controlling for $Y$ would be a dreadful idea, so
+    controlling for $A$ would only be a slightly less dreadful idea.
+
+    \textit{Bottom right:} Controlling for $A$ isn't as terrible here as it
+    is in the top right panel. But it's unnecessary, and you'll lose some precision.}
+    \label{fig:posttreatment}
+\end{figure}
+
+\mypar{Exercise}
+ Consider the \textsc{dag} in Figure \ref{fig:dagweek4}.\label{ex:dagweek4}
+
+  \begin{itemize}[(a)]
+    \item If the goal is to obtain an unbiased estimate of the causal influence
+    of $X$ on $Y$, regardless of precision, which variable or which variables do you \emph{need} to control for?
+
+    \item Assume that all variables shown in the \textsc{dag} have already been collected
+    (i.e., there are no further costs involved in collecting them).
+    If the goal is to obtain an unbiased and maximally precise estimate of the causal
+    influence of $X$ on $Y$,
+    which variable or which variables would you \emph{need} to control for?\parend
+  \end{itemize}
+
+\begin{marginfigure}[-4.5cm]
+  \includegraphics[width=\textwidth]{figure/week5_ex1}
+  \caption{\textsc{dag} for Exercise \ref{ex:dagweek4}.}
+  \label{fig:dagweek4}
+\end{marginfigure}
+
+\section{*Examples in R}
+See the file \texttt{blocking.html} in the \texttt{tutorials} directory
+on \url{https://github.com/janhove/QuantitativeMethodology}.
+
+\chapter{Pedagogical interventions}
+The following remarks are especially relevant to pedagogical interventions,
+but they apply to other studies, too.
+
+\section{Sample mortality}
+Sample mortality refers to research participants who become unavailable
+in the course of a study.
+In a school-based study, examples include children who can't participate
+in a follow-up test because of a dental appointment, because they 
+switched schools, or quite simply, because they don't want to.
+Less lurid and more descriptive terms for sample mortality are
+\emph{drop-outs}, \emph{outmovers}, and \emph{panel attrition}.
+
+In addition to lowering the sample size, drop-outs may bias the results
+of the study. As Figure \ref{fig:dropouts} shows,
+being a drop-out or not can be a post-treatment factor,
+but one that has insidiously already been controlled for:
+the participants whose data goes into the analysis
+all have the same value on this variable.
+
+\begin{figure}
+    \centering
+
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout1}
+    \end{minipage}
+        \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout2}
+    \end{minipage}
+        \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout3}
+    \end{minipage}
+
+    \caption{The fact that some participants stayed in the study
+    and others can be treated as a factor in its own right ($D_s$; $D$ for `drop-out', $_s$ for making clear
+    that selection took place).}
+    \label{fig:dropouts}
+\end{figure}
+
+Ideally, mortality doesn't depend on the condition ($X$),
+the participants' prior knowledge or other characteristics ($U$), or their progress ($Y$).
+When mortality does vary by condition, prior knowledge or learning progress,
+you have take into account the selection effect when interpreting the results.\footnote{In a study with two measurement times, assessing learning progress for the drop-outs is impossible. But if you have several measurement times, you can check if those who progressed little thus far were more likely to drop out of the study.}
+
+Figure \vref{fig:example_dropouts} illustrates how mortality can bias the study's
+estimates. It is in fact possible that an observed `treatment' effect is little
+more than a selection effect: If only gifted or highly motivated learners
+remain part of the treatment condition but the control condition isn't as selective,
+it's hardly surprising that at the end of the study, you'll find better scores
+in the treatment condition than in the control condition.
+
+
+
+<<dropout_effect, fig.width = 8*0.85, fig.height = 3.5*0.85, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+set.seed(09-10-2017)
+kontroll <- rnorm(80, 50, 20)
+intervention <- rnorm(80, 50, 20)
+df <- data.frame(Ergebnis = c(kontroll, intervention),
+                 Kondition = rep(c("control", "difficult intervention"), each = 80),
+                 Dropout = "no",
+                 stringsAsFactors = FALSE)
+df$Ergebnis[df$Ergebnis < 0] <- 0
+df$Ergebnis[df$Ergebnis > 100] <- 100
+df$Dropout[df$Ergebnis < 30 & df$Kondition == "difficult intervention"] <- "yes"
+set.seed(09-10-2017)
+
+p1 <- ggplot(data = df,
+       aes(x = Kondition,
+           y = Ergebnis)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_point(shape = 1,
+             position = position_jitter(width = 0.2)) +
+  theme_bw(10) +
+  xlab("Condition") + ylab("Result") +
+  ggtitle("No mortality",
+          subtitle = "estimated intervention effect: 5 points")
+
+set.seed(09-10-2017)
+
+p2 <- ggplot(data = df,
+       aes(x = Kondition,
+           y = Ergebnis)) +
+  geom_boxplot(data = subset(df, Dropout == "no"), outlier.shape = NA) +
+  geom_point(aes(shape = Dropout),
+             position = position_jitter(width = 0.2)) +
+  scale_shape_manual(name = "Dropout?",
+                     values = c(1, 3)) +
+  theme_bw(10) +
+  xlab("Condition") + ylab("Result") +
+  ggtitle("Intervention too difficult for some",
+          subtitle = "estimated intervention effect: 10 points")
+
+grid.arrange(p1, p2, ncol = 2, widths = c(1, 1.3))
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/dropout_effect-1}
+  \caption{Example of the biasing effect of sample mortality. \textit{Left:} Had it been possible to test all participants, we'd have found a mean difference of 5 points. \textit{Right:} If the drop-out likelihood is itself affected by the intervention, we could end with a biased estimate.}
+  \label{fig:example_dropouts}
+\end{figure}
+
+\section{Clustering}\label{sec:clustering}
+
+In typical pedagogical settings, the participants can't be randomly
+assigned to the experiment's conditions on an individual basis.
+Instead, entire intact groups of participants (e.g., entire classes,
+entire schools, entire school districts etc.) are assigned to the same
+condition. This induces \textbf{clustering}: Due to teacher/class/school etc.\ effects, participants belonging to the same cluster (class, school, etc.) tend to be somewhat more alike in their performance than participants belonging to different clusters.
+
+\begin{description}
+  \item[Within- vs between-school design] See Figure \ref{fig:withinschool}.
+  In a within-school (or similarly, within-class etc.) design,
+  the school effect is neutralised using blocking, whereas
+  the remaining possible confounding variables are ideally
+  taken care of using randomisation. This increases precision
+  relative to a between-school design.
+  One possible drawback of a within-school design is that
+  the pupils in the control and treatment classes in the same
+  school influence each other (e.g., by comparing notes
+  or helping each other make sense of what's being taught),
+  which may wash out an existing treatment effect.
+\end{description}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figure/within_between_school}
+  \caption{Within- vs between-school designs. ($I$ for intervention, $C$ for control.)}
+  \label{fig:withinschool}
+\end{figure}
+
+\begin{description}
+ \item[Cluster-randomised design] When clusters are
+ assigned in their entiry to the same condition (e.g.,
+ all pupils in the same class are assigned to the same
+ learning condition rather than each on an individual basis).
+\end{description}
+
+\begin{framed}
+ In a cluster-randomised design, you need to
+ take the cluster-randomisation into account when analysing the data.
+\end{framed}
+
+To appreciate the need for taking clustering into account during the analysis, consider an experiment with 6 classes of 10 pupils each. 
+There are over one-hundred \emph{quadrillion} ways to split up 60 pupils into two groups of 30 (${60 \choose 30} \approx 1.2 \times 10^{17}$). 
+But there are only 20 ways to split up six classes into two groups of three classes each. 
+The analysis needs to be based on the assumption that the allocation obtained is one of 20 possible ones, not one of a gazillion ones.
+
+\mypar[Analysis of cluster-randomised designs]{Remark}\label{remark:clusteranalysis}
+  One simple and valid approach for analysing data obtained with 
+  a cluster-randomised design is to compute the mean (or some other kind of average) 
+  of each cluster and then analyse these cluster-level summaries using one of the
+  methods covered in Chapter \ref{ch:stats}.
+  That said, lots of alternative approaches exist; 
+  see \citet{Vanhove2015}, \citet{Vanhove2020c}, and references therein.
+\parend
+
+\medskip
+
+% You need to be able to recognise a cluster-randomised design
+% and to know that you need to take the cluster-randomisation
+% into account during the analysis. But for this class, you don't need to know how to take it
+%  into account.\footnote{One simple but valid approach is to compute the mean of each cluster and then analyse these means instead of the raw data.} If you want to conduct an experiment that uses
+%  cluster-randomisation, see \citet{Vanhove2015}, \citet{Vanhove2020c}, and references therein.
+
+What you also need to know about cluster-randomisation is this:
+
+ \begin{framed}
+   Studies with one intact group as the experimental group and another
+   intact group as the control group are useless.
+ \end{framed}
+
+ Conceptually, the reason is that class, school and teacher effects can't be separated
+ from the effect of the intervention if you just have one intact group
+ per condition.
+ If you use a rerandomisation test as per Remark \ref{remark:clusteranalysis}
+ but you only have a single cluster per group, 
+ then there are only two possible allocations.
+ As a result, the left- and right-sided $p$-value will both be at least 0.50,
+ and the two-sided $p$-value will always be 1.
+
+
+\mypar{Exercise}
+Let's say you want to run a pedagogical experiment (e.g.,
+to compare two learning methods for French as a foreign language)
+in which randomisation has to take place at the class level rather than at the
+individual level.
+Other things equal (e.g., number of classes, number of pupils),
+what are the advantages and drawbacks of the following designs?
+What's the worst option, and why? What's the best, and why?
+
+\begin{enumerate}[(a)]
+  \item All classes are taught by the same teacher.
+  \item Each class is taught by a different teacher.
+  \item One teacher teaches all classes in the control condition,
+        and another teacher teaches all classes in the intervention
+        condition.
+  \item Each teacher teaches two classes: one in the control condition,
+        and one in the intervention condition. \parend
+\end{enumerate}
+
+\mypar[Reading assignment]{Exercise}
+The article by \citet{Slavin2011} makes for pretty challenging reading,
+especially in terms of the analysis and the
+way the results are presented. But the introductory and methodological sections
+discuss some concepts that we've already discussed (especially p.~49).
+
+First try to read the text in full, but skip the parts you find unintelligible.
+Then answer the following questions:
+
+\begin{enumerate}[(a)]
+  % \item ``[C]hildren's reading proficiency in their native language is a strong \underline{predictor} of their ultimate English reading performance.'' (p.~48, middle, left) What does this mean?
+  %
+  % \item What do the following terms mean?
+  % \begin{enumerate}[i.]
+  %   \item matching (p.~49, middle, right)
+  %   \item selection bias (p.~49, middle, right, and p.~50, top, left)
+  %   \item teacher/school effects (p.~49, bottom, right)
+  %   \item within-school design (p.~51, left).
+  %         What would the opposite, a between-school design, look like?
+  % \end{enumerate}
+
+  \item What is the independent variable in this study?
+        What are the dependent variables?
+
+  \item How were the pupils assigned to the different groups?
+
+  \item \citeauthor{Slavin2011} discuss at length how many pupils in each group
+  (TBE vs SEI) couldn't be tested (Table 2) and whether the characteristics
+  of these pupils differed between the conditions (Table 3). Why do you think
+  they discuss this at all?
+
+  \item ``Children were pretested \dots\ on the English Peabody
+  Picture Vocabulary Test (PPVT) and its Spanish equivalent, the Test de
+  Vocabulario en Imagenes Peabody (TVIP).'' (p.~51, right)
+  Why did the researchers go to the bother of conducting such pretests?
+  Try to find at least two reasons.
+
+  \item  Comparing Slavin et al.'s Tables 4 and 6,
+  we observe that the cohorts' average TVIP
+  ({\it Test de Vocabulario en Imagenes Peabody}) scores dropped
+  from 99.85 and 90.19 to 92.86 and 85.64, respectively,
+  over the course of two years.
+
+  Come up with the most
+  plausible explanation for this result.\footnote{Hint: The children's Spanish vocabulary knowledge probably did not
+  decline on average as they got older.}\parend
+\end{enumerate}
+
+\section{*Examples in R}
+See the file \texttt{clusters.html}
+in the \texttt{tutorials} directory on \url{https://github.com/janhove/QuantitativeMethodology}.
