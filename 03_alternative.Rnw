@@ -1,42 +1,45 @@
 \chapter{Alternative explanations}\label{ch:alternative_explanations}
+As we've seen in Chapter \ref{ch:causality},
+causal explanations for observed associations become more tenuous to
+the extent that more, and more plausible, alternative explanations for the
+associations exist.
+In Chapter \ref{ch:randomisation}, the random assignment of units
+(e.g., participants) to conditions was introduced as a crucial technique
+for neutralising the danger that an association will come about
+through systematic confounding.
+The present chapter investigates some other plausible rival explanations.
 
 \section{The roles of variables in research}
+It is useful to clarify some terminology at this point.
 
-Some common terminology:
+\mypar[Roles of variables]{Definition}
+  An \term{outcome variable} (also called \term{dependent variable})
+  is a variable whose value we want to explain, predict, or otherwise
+  characterise.
+  
+  A \textrm{predictor variable} (also called \term{independent variable})
+  is a variable that is used to explain, predict, or otherwise characterise
+  an outcome variable. In experiments, such variables are `manipulated'
+  by the researchers.
+  
+  A \term{control variable} is a variable that is not of primary interest
+  but that is collected in order for the researchers to be able to 
+  account for alternative explanations or to otherwise improve the study.
+  We'll discuss the usefulness of control variables in a later chapter.
+\parend
 
-\begin{description}
-  \item[Dependent variable] or \textit{outcome variable}.
-
-  \item[Independent variable] or \textit{predictor variable}.
-  In experiments, such variables are `manipulated' by the researchers.
-  The goal is then to find out the effects of such manipulation of
-  the independent (or predictor) variables on the dependent (or outcome) variables.
-
-  \item[Control variable.] Additional variable that
-  was collected as it may be related to the \textit{outcome}.
-  We'll discuss the usefulness of control variables later.
-
-\end{description}
-
-\mypar[Reading assignment]{Exercise}\label{ex:ludke}
-Read \citet{Ludke2014} in light of the questions below and briefly answer them.
+\mypar{Exercise}\label{ex:ludke}
+Skim \citet{Ludke2014} in the light of the questions below 
+and briefly answer them.
 The answers to these questions can be found in the `Method' section 
 (pp.~43--47), so you don't have to read the rest.
 
 \begin{enumerate}[(a)]
-  \item What is or what are the independent
-  variable(s) in Ludke et al.'s study?
-  \item What is or what are the dependent
-  variable(s) in Ludke et al.'s study? 
+  \item What is or what are predictor variable(s) in Ludke et al.'s study?
+  \item What is or what are outcome variable(s) in Ludke et al.'s study?
   \item How did the researchers assign the participants to the conditions?\parend
-  % \item How did Ludke et al.\ try to ensure 
-  % that any differences between the conditions could be attributed 
-  % to differences between speaking, rhythmic speaking and singing 
-  % rather than to other factors?
-  % List \emph{at least two} techniques the researchers used.
 \end{enumerate}
 
-\section{Alternative explanations for results}
 In the study by \citet{Ludke2014} (see Exercise \ref{ex:ludke}), 
 the question about internal validity boils down to this:
 Can the differences in the outcomes between the conditions actually 
@@ -52,7 +55,7 @@ negate the influence of confounding variables on the results:
 one group isn't systematically given
 an advantage compared to the other (e.g., higher motivation,
 greater affinity with a topic etc.). This increases
-the study's internal validy, but:
+the study's internal validity, but:
 
 \begin{framed}
 Even if confounding variables are
@@ -63,11 +66,11 @@ existing effect of the conditions.
 \end{framed}
 
 \section{Explanation 1: Expectancy effects}
-
 Perhaps the researchers or their assistants (subconsciously)
 nudged the data in the hypothesised direction. 
 This can happen even when the measurements seem perfectly objective. 
-For instance, when you're counting the number of syllables in a snippet of speech, 
+For instance, when you're counting the 
+number of syllables in a snippet of speech, 
 there are bound to be a number of close decisions
 (Does German \textit{haben} [ha(b)m] have one or two syllables?).
 This isn't too big a problem in itself.
@@ -80,68 +83,79 @@ the researchers achieve what they think are the researchers' goals.
 In this case, differences in the outcome variable between the conditions may arise
 not because of the intervention itself but because of unwanted changes
 in the participants' behaviour. Such changes in behaviour needn't come about
-consciously.
+consciously and are known as \term{expectancy effects}.
 
-\medskip
-
-\begin{description}
- \item[Expectancy effects] Both
- on the part of the participants (e.g., \emph{placebo}
- effect) or on the part of the researchers.
-
- \item[Single-blind experiment] Typically used to describe
- that the participants don't know which condition they're assigned to.
-
- \item[Double-blind experiment] If neither the participants
- nor the researchers themselves (at the time of collecting and
- preparing the data) know which condition the participants were assigned
- to.
-\end{description}
-
-\medskip
+Expectancy effects can be countered by \term{blinding}.
+The term \term{single-blind experiment} is typically used to describe
+an experiment in which the participants don't know which condition
+they're assigned to,
+whereas the term \term{double-blind experiment} is used to describe experiments
+in which neither the participants nor the researchers themselves
+(at the time of collecting and preparing the data) know which condition
+the participants were assigned to.
+That said, these terms are often used in ambiguous ways
+so, when you use blinding, it's best to simply explain how you achieved it.
 
 Blinding isn't always possible, and it may be immediately obvious
 to the participants what the intervention entails. But in studies
 with raters, it's usually easy to prevent them from knowing
 which condition the participants were assigned to.
+It is also possible (though rarely done in the social sciences) 
+to apply blinding during the analysis
+of the data \citep{Dutilh2021}.
+
+\mypar{Example}
+  \citet{Ludke2014} obtained the raw data from
+  phonetic transcriptions of their participants'
+  utterances without knowing which conditions the participants had been
+  assigned to (p.~46, bottom right).
+  This way, close decisions as to whether a response was good enough
+  were less likely to contribute to a difference between the conditions.
+\parend
 
 \section{Explanation 2: Failed manipulation}
 A second class of alternative explanations is that the experiment
 didn't run quite as the researchers expected it to. For instance,
 the participants may have misunderstood, or failed to act on, the instructions,
-or the script used to run the experiment could contain a crucial coding error.
+or the script used to run the experiment could have contained 
+a crucial coding error.
 
-\medskip
+One tool to uncover discrepancies between how the experimenters intended
+the instructions and how the participants interpreted them is to 
+include \term{manipulation checks} in the study's design.
 
-\begin{description}
- \item[Manipulation checks]
+\mypar{Example}
+  The experimental manipulation in \citet{Ludke2014} involved
+  asking the participants to practice Hungarian phrases while
+  singing or rhythmically pronouncing them.
+  In order to verify whether the participants followed these instructions,
+  the authors recorded the participants as they practiced the phrases.
+\parend
 
-Example 1: \citet{Ludke2014} (Exercise \ref{ex:ludke}) wanted to find out 
-  if foreign-language phrases are more easily learnt 
-  if the learners practice them while singing or speaking rhythmically. 
-  Their experimental manipulation involved asking the participants 
-  to practice Hungarian phrases while singing or speaking rhythmically. 
-  In order to verify whether they indeed did as they were asked, 
-  they recorded their participants.
+\mypar{Example}
+  \citet{Lardiere2006} had her (single) participant judge 
+  sentences in her second language for their grammaticality.
+  The goal of the study was to figure out if this participant had acquired
+  some syntactic property of the second language.
+  To ensure that the participant rejected any sentences for the intended
+  syntactic reason, she was also asked to correct any sentences she
+  rejected.
+  This turned out to be an excellent idea: 
+  The researcher found that the participant rejected a fair number
+  of syntactically correct sentences, but that she did so for stylistic
+  rather than strictly syntactic reasons.
+  The researcher then correctly didn't draw the conclusion that the
+  participant's syntactic knowledge was incomplete.
+\parend
 
-Example 2: \citet{Lardiere2006} had her
-  participant judge L2 sentences for their grammaticality.
-  To ensure that the participant rejected sentences
-  for the (syntactic) reason intended by the researcher,
-  she was also asked to correct any sentences she rejected.
-  The researcher found out that the participant rejected
-  a fair number of syntactically correct sentences, but that she
-  did so for stylistic (rather than strictly syntactic)
-  reasons. The researcher then (correctly) didn't draw the conclusion
-  that the participant's syntactic knowledge was incomplete.
-
- \item[Satisficing]
- Sometimes, participants don't really pay any attention to the stimuli or to
- the instructions.
- For instance, questionnaire respondents may answer in a specific
- pattern (e.g., ABCDEDCBA\dots) rather than give their mind to each question.
- Figure \ref{fig:satisficing}
- provides another example of satisficing.
+Sometimes, the participants in a study don't really pay any attention
+to the stimuli or the instructions.
+For instance, questionnaire respondents may answer the questions
+in a zig-zag pattern (e.g., ABCDEDCBA\dots) 
+rather than give their mind to each question,
+so that they can tell the researcher they've participated.
+Figure \ref{fig:satisficing}
+provides another example of satisficing.
 
 \begin{figure}
   \centering
@@ -152,42 +166,48 @@ Example 2: \citet{Lardiere2006} had her
   \label{fig:satisficing}
 \end{figure}
 
- If you want to run a study online or at the computer,
- check out \citet{Oppenheimer2009} for a neat and unintrusive way to find
- out if your participants read the instructions.
+If you want to verify if your participants carefully read the instructions
+and you're able to run the study online or at the computer,
+\citet{Oppenheimer2009} introduces a neat and unintrusive way 
+to do so.
 
- \item[Positive control]
- Does the intervention yield an effect in cases
- where it \emph{should} (with near-certainty) yield
- an effect? If not, then the experiment may have been
- carried out suboptimally.
- 
- Example 1: 
- Let's say a researcher wants to find out if knowledge of L2 verb morphology
- contributes to L2 French speakers' comprehension of temporally complex texts.
- To this end, she proposes an experiment that involves the intensive teaching
- of French verb morphology.
- In this case, it would make sense for the researcher to check 
- if the intervention does in fact succeed in improving the participants' 
- command of French verb morphology.
- If it doesn't, then the results of the study can't speak to the link
- between knowledge of verb morphology and text comprehension.
- 
- Example 2: In L2 research, the task given to the L2 speakers
- is often also given to a group of L1 speakers.
- This helps identify issues in the materials used.
- For example, 
- if sentences meant to be grammatically correct are frequently rejected by L1 
- speakers and L2 speakers alike (perhaps due to awkward style), 
- it suggests the problem lies with the stimuli, not necessarily with the L2 speakers' abilities.
+Another useful technique to identify failed manipulations
+is the use of \term{positive controls}.
+A positive control is a condition, measure, or comparison that should show an effect if the study is functioning properly. 
+Positive controls can therefore help identify failed manipulations.
 
- The term \term{negative control} refers to traditional control groups 
- (of which we know that they shouldn't show an effect of the intervention).
+\mypar{Example}
+Let's say that a researcher wants to find out if knowledge of L2 verb morphology
+contributes to L2 French speakers' comprehension of temporally complex texts.
+To this end, she proposes an experiment that involves the intensive teaching
+of French verb morphology.
 
- \item[Pilot study] A pilot study is a small-scale study conducted before the main study.
+In this case, it would make sense for the researcher to check 
+if the intervention does in fact succeed in improving the participants' 
+command of French verb morphology.
+If it doesn't, then the results of the study can't speak to the link
+between knowledge of verb morphology and text comprehension.
+\parend
+
+\mypar{Example}
+In L2 research, the task given to the L2 speakers
+is often also given to a group of L1 speakers.
+This helps identify issues in the materials used.
+For example, 
+if sentences meant to be grammatically correct are frequently rejected by L1 
+speakers and L2 speakers alike (perhaps due to awkward style), 
+it suggests the problem lies with the stimuli, not necessarily with the L2 speakers' abilities.
+\parend
+
+The term \term{negative control}, incidentally,
+refers to traditional control groups 
+(of which we know that they shouldn't show an effect of the intervention).
+
+The final tool is perhaps the most important one: \term{pilot studies}.
+A pilot study is a small-scale study conducted before the main study.
  Typical goals of a pilot study are
  \begin{enumerate}[(a)]
- \item ensuring that the participants understand, and act on, the instructions;
+ \item ensuring that the participants understand and act on the instructions;
  \item identifying any remaining glitches in the experimental software or in the analysis pipeline;
  \item if relevant, checking whether the responses obtained can be coded satisfactorily;
  \item estimating how much time participants need to complete the study.
@@ -196,14 +216,18 @@ Example 2: \citet{Lardiere2006} had her
   A floor effect occurs when a task is so difficult that 
   many participants score near the bottom. 
   Even if participants differ in ability, the task fails to capture it.
-  Ceiling effects occur if a task is too easy.
- \end{enumerate}
- 
-\end{description}
+  A ceiling effect occurs if a task is so easy
+  that many participants score near the top.\marginnote{The problem with floor and ceiling effects is that participants may differ
+substantially in their ability yet all obtain the same score.}
+\end{enumerate}
+
+
 
 \section{Explanation 3: Chance}
-A third important possible non-causal explanation for one's results is that they're due to chance. 
-The entire next chapter is devoted to an attempt to get a handle on this explanation.
+A third important possible non-causal explanation for one's results is 
+that they're due to chance. 
+The entire next chapter is devoted to an attempt to get a 
+handle on this explanation.
 
 \chapter{Inferential statistics 101}\label{ch:stats}
 
