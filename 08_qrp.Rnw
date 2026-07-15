@@ -1,4 +1,4 @@
-\chapter{Questionable research practices}
+\chapter{Questionable research practices}\label{ch:qrp}
 
 \mypar[Reading assignment]{Exercise}
 Read Chapter 2 in \citet{Chambers2017}.

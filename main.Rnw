@@ -258,7 +258,7 @@ your own definition, clarifying example or illustration.
 
 Another useful concept is introduced in the next definition.
 
-\mypar[Probability of superiority]{Definition}
+\mypar[Probability of superiority]{Definition}\label{def:probsup}
 Let $\bm a = (a_1, \dots, a_m)$ and $\bm b = (b_1, \dots, b_n)$
 be numeric vectors.
 Consider all $m \times n$ possible pairwise comparisons between an element 
