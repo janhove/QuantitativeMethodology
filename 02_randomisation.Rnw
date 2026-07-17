@@ -252,7 +252,7 @@ confounding as a threat to the study's internal validity.
     \caption{\textit{Left:} The $X$-$Y$ relationship is confounded by $U$: there are two paths from $X$ to $Y$, but only one causal one.
     \textit{Right:} Randomising the values of $X$ prevents arrows from $U$ entering $X$, which effectively closes the non-causal path
     via the confounder.}
-    \label{fig:randomisation}
+    \figlabel{fig:randomisation}
 \end{figure}
 
 \mypar{Tip}
@@ -393,7 +393,7 @@ ggplot(df,
   \centering
   \includegraphics{figure/partiq-1}
   \caption{Ten participants sign up for a study. You measure their IQ and you also know their sex (represented here using circles and crosses).}
-  \label{fig:partiq}
+  \figlabel{fig:partiq}
 \end{marginfigure}
 
 Let's say that we have ten participants
@@ -485,7 +485,7 @@ grid.arrange(p1, p2, p3, p4, p5, p6, ncol = 3)
   \centering
   \includegraphics[max width = \textwidth]{figure/rand-alloc-1}
   \caption{Six possible random assignments (out of 252) of the ten participants from Figure \ref{fig:partiq}. The dotted vertical lines show the mean IQ in each group.}
-  \label{fig:rand-alloc}
+  \figlabel{fig:rand-alloc}
 \end{figure}
 
 
@@ -621,7 +621,7 @@ grid.arrange(p1, p2, ncol = 2)
   Averaged over all 11,440 allocations, the mean difference is also one point.
   But for many individual allocations, the mean difference may differ considerably
   from the true average intervention effect of one point.}
-  \label{fig:estimation}
+  \figlabel{fig:estimation}
 \end{figure}
 
 \subsection{How to randomise?}

@@ -1,0 +1,287 @@
+\chapter{Pedagogical interventions}
+The following remarks are especially relevant to pedagogical interventions,
+but they apply to other studies, too.
+
+\section{Sample mortality}
+\term{Sample mortality} refers to research participants who become unavailable
+in the course of a study.
+In a school-based study, examples include children who can't participate
+in a follow-up test because of a dental appointment, because they 
+switched schools, or quite simply, because they don't want to.
+Less lurid and more descriptive terms for sample mortality are
+\term{drop-outs}, \term{outmovers}, and \term{panel attrition}.
+
+In addition to lowering the sample size, drop-outs may bias the results
+of the study. As Figure \ref{fig:dropouts} shows,
+being a drop-out or not can be a post-treatment factor (see Remark \ref{par:posttreatment}),
+but one that has insidiously already been controlled for:
+the participants whose data goes into the analysis
+all have the same value on this variable.
+
+\begin{figure}
+    \centering
+
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout1}
+    \end{minipage}
+        \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout2}
+    \end{minipage}
+        \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width = \textwidth]{figure/dropout3}
+    \end{minipage}
+
+    \caption{The fact that some participants stayed in the study
+    and others can be treated as a factor in its own right ($D_s$; $D$ for `drop-out', $_s$ for making clear
+    that selection took place).}
+    \figlabel{fig:dropouts}
+\end{figure}
+
+Ideally, mortality doesn't depend on the condition ($X$),
+the participants' prior knowledge or other characteristics ($U$), or their progress ($Y$).
+When mortality does vary by condition, prior knowledge or learning progress,
+you have to take into account the selection effect when interpreting the results.
+
+Figure \ref{fig:example_dropouts} illustrates how mortality can bias the study's
+estimates. It is in fact possible that an observed `treatment' effect is little
+more than a selection effect: If only gifted or highly motivated learners
+remain part of the treatment condition but the control condition isn't as selective,
+it's hardly surprising that at the end of the study, you'll find better scores
+in the treatment condition than in the control condition.
+
+<<dropout_effect, fig.width = 8*0.85, fig.height = 3.5*0.85, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+set.seed(09-10-2017)
+kontroll <- rnorm(80, 50, 20)
+intervention <- rnorm(80, 50, 20)
+df <- data.frame(Ergebnis = c(kontroll, intervention),
+                 Kondition = rep(c("control", "difficult intervention"), each = 80),
+                 Dropout = "no",
+                 stringsAsFactors = FALSE)
+df$Ergebnis[df$Ergebnis < 0] <- 0
+df$Ergebnis[df$Ergebnis > 100] <- 100
+df$Dropout[df$Ergebnis < 30 & df$Kondition == "difficult intervention"] <- "yes"
+set.seed(09-10-2017)
+
+p1 <- ggplot(data = df,
+       aes(x = Kondition,
+           y = Ergebnis)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_point(shape = 1,
+             position = position_jitter(width = 0.2)) +
+  theme_bw(10) +
+  xlab("Condition") + ylab("Result") +
+  ggtitle("No mortality",
+          subtitle = "estimated intervention effect: 5 points")
+
+set.seed(09-10-2017)
+
+p2 <- ggplot(data = df,
+       aes(x = Kondition,
+           y = Ergebnis)) +
+  geom_boxplot(data = subset(df, Dropout == "no"), outlier.shape = NA) +
+  geom_point(aes(shape = Dropout),
+             position = position_jitter(width = 0.2)) +
+  scale_shape_manual(name = "Dropout?",
+                     values = c(1, 3)) +
+  theme_bw(10) +
+  xlab("Condition") + ylab("Result") +
+  ggtitle("Intervention too difficult for some",
+          subtitle = "estimated intervention effect: 10 points")
+
+gridExtra::grid.arrange(p1, p2, ncol = 2, widths = c(1, 1.3))
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/dropout_effect-1}
+  \caption{Example of the biasing effect of sample mortality. \textit{Left:} Had it been possible to test all participants, we'd have found a mean difference of 5 points. \textit{Right:} The boxplots are now only drawn based on the participants that didn't drop out. If the drop-out likelihood is itself affected by the intervention, we could end with a biased estimate.}
+  \figlabel{fig:example_dropouts}
+\end{figure}
+
+\mypar{Example}
+\citet{Slavin2011} conducted a pretest--posttest randomised experiment
+to compare the effects of two school models for bilingual children
+on a series of language skills.
+In order to investigate whether sample mortality could explain their main findings,
+they first compared the school models in terms 
+of the outmover rates (i.e., which proportion of children who took the pretest
+didn't take the posttest) 
+and outmover type (i.e., whether the outmovers were simply absent on the day, e.g.,
+due to a dental appointment, or whether they had changed school); see their Table 2.
+Furthermore, they compared the outmovers between the school models 
+in terms of their pretest scores; see their Table 3.
+\parend
+
+\section{Clustering}\label{sec:clustering}
+In many pedagogical settings, the participants can't be randomly
+assigned to the experiment's conditions on an individual basis.
+Instead, entire intact groups of participants (e.g., entire classes,
+entire schools, entire school districts etc.) are assigned to the same
+condition. This induces \textbf{clustering}: Due to teacher/class/school etc.\ effects, participants belonging to the same cluster (class, school, etc.) tend to be somewhat more alike in their performance than participants belonging to different clusters.
+
+\mypar{Definition}
+A \term{cluster-randomised experiment} is an experiment that uses random
+assignment of units (e.g., children) to conditions in such a way that guarantees
+that all units in a certain set of units (e.g., classes) are assigned
+to the same condition.
+The sets that are kept intact are called \term{clusters}.
+\parend
+
+Figure \ref{fig:withinschool} schematically illustrates two kinds of 
+research design that may be encountered in pedagogical settings.
+In a \term{between-school design} (or, similarly, a between-class, between-district, etc.\ design),
+all pupils in a school are assigned to the same experimental condition.
+In a \term{within-school design} (or, similarly, in a within-class, within-district, etc.\ design),
+by contrast,
+the school effect is neutralised using blocking,
+whereas the remaining possible confounding variables are ideally taken care
+of using randomisation.
+This increases precision relative to a between-school design.
+
+One possible drawback of a within-school design is that
+the pupils in the control and treatment classes in the same
+school influence each other (e.g., by comparing notes
+or helping each other make sense of what's being taught),
+which may wash out an existing treatment effect.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figure/within_between_school}
+  \caption{Within- vs between-school designs. ($I$ for intervention, $C$ for control.)}
+  \figlabel{fig:withinschool}
+\end{figure}
+
+\mypar{Exercise}
+Let's say you want to run a pedagogical experiment (e.g.,
+to compare two learning methods for French as a foreign language)
+in which randomisation has to take place at the class level rather than at the
+individual level.
+Other things equal (e.g., number of classes, number of pupils),
+what are the advantages and drawbacks of the following designs?
+What's the worst option, and why? What's the best, and why?
+
+\begin{enumerate}[(a)]
+  \item All classes are taught by the same teacher.
+  \item Each class is taught by a different teacher.
+  \item One teacher teaches all classes in the control condition,
+        and another teacher teaches all classes in the intervention
+        condition.
+  \item Each teacher teaches two classes: one in the control condition,
+        and one in the intervention condition. \parend
+\end{enumerate}
+
+\mypar{Exercise}
+The article by \citet{Slavin2011} makes for pretty challenging reading,
+especially in terms of the analysis and the
+way the results are presented. But the introductory and methodological sections
+discuss some concepts that we've already discussed (especially p.~49).
+
+First try to read the text in full, but skip the parts you find unintelligible.
+Then answer the following questions:
+
+\begin{enumerate}[(a)]
+  \item What is the independent variable in this study?
+        What are the dependent variables?
+
+  \item How were the pupils assigned to the different groups?
+  
+  \item ``Children were pretested \dots\ on the English Peabody
+  Picture Vocabulary Test (PPVT) and its Spanish equivalent, the Test de
+  Vocabulario en Imagenes Peabody (TVIP).'' (p.~51, right)
+  Why did the researchers go to the bother of conducting such pretests?
+  Try to find at least two reasons.
+
+  \item  Comparing Slavin et al.'s Tables 4 and 6,
+  we observe that the cohorts' average TVIP
+  ({\it Test de Vocabulario en Imagenes Peabody}) scores dropped
+  from 99.85 and 90.19 to 92.86 and 85.64, respectively,
+  over the course of two years.
+
+  Come up with the most
+  plausible explanation for this result.
+  
+  Hint: The children's Spanish vocabulary knowledge probably did not
+  decline on average as they got older.\parend
+\end{enumerate}
+
+While cluster-randomised experiments are commonly encountered in 
+applied linguistics research, one crucial aspect is sadly often neglected:
+
+\begin{framed}
+ In a cluster-randomised design, you need to
+ take the cluster-randomisation into account when analysing the data.
+\end{framed}
+
+To appreciate the need for taking clustering into account during the analysis, 
+consider an experiment with 6 classes of 10 pupils each. 
+There are over one-hundred \emph{quadrillion} ways to split up 60 pupils into 
+two groups of 30 (${60 \choose 30} \approx 1.2 \times 10^{17}$). 
+But there are only 20 ways to split up six classes into two groups of three classes each. 
+The analysis needs to be based on the assumption that the allocation obtained 
+is one of 20 possible ones, not one of a gazillion ones.
+
+\mypar[Analysis of cluster-randomised designs]{Remark}\label{remark:clusteranalysis}
+  One simple and valid approach for analysing data obtained with 
+  a cluster-randomised design is to compute the mean (or some other kind of average) 
+  of each cluster and then analyse these cluster-level summaries using one of the
+  methods covered in Chapter \ref{ch:stats}.
+  That said, lots of alternative approaches exist; 
+  see \citet{Vanhove2015}, \citet{Vanhove2020c}, and references therein.
+\parend
+
+What you also need to know about cluster-randomisation is this:
+
+ \begin{framed}
+   Studies with one intact group as the experimental group and another
+   intact group as the control group are useless.
+ \end{framed}
+
+ Conceptually, the reason is that class, school and teacher effects can't be separated
+ from the effect of the intervention if you just have one intact group
+ per condition.
+ If you use a randomisation test as per Remark \ref{remark:clusteranalysis}
+ but you only have a single cluster per group, 
+ then there are only two possible allocations.
+ As a result, the left- and right-sided $p$-value will both be at least 0.50,
+ and the two-sided $p$-value will always be 1.
+ 
+\mypar{Remark}
+  More complex research designs may combine aspects of between- and within-school
+  (or -class, or -whatever) designs.
+  For instance, researchers interested in L2 vocabulary learning could compare
+  different methods for designing flash cards (i.e., cards with L2 words on one side
+  and their L1 translations or some description on the other side).
+  They may want to compare four methods:
+  \begin{itemize}
+    \item the learners design the physical cards themselves;
+    \item the learners are given physical cards prepared by the researchers;
+    \item the learners design digital cards themselves in a computer program or smartphone app;
+    \item the learners are given a digital card deck prepared by the researchers.
+  \end{itemize}
+  The researchers may then recruit multiple classes of learners to participate
+  in the experiment.
+  
+  For logistical reasons, it may be preferable to have all learners in the same class
+  use either physical or digital cards.
+  But within any given class, some learners can still design their own cards 
+  whereas others work with prepared cards.
+  The resulting design would have two factors:
+  (1) physical vs digital,
+  and (2) prepared vs self-made.
+  The first factor would be a between-class factor;
+  the second factor a within-class factor.
+  
+  Incidentally, 
+  the terms \textit{between-class} (or between-whatever) 
+  and \textit{within-class} (or within-whatever) 
+  refer to whether the comparison for a given factor can only be made 
+  between different classes or can also be made within the same class.
+\parend
+
+\section{*Examples in R}
+See the file \texttt{clusters.html}
+in the \texttt{tutorials} directory on \url{https://github.com/janhove/QuantitativeMethodology}.

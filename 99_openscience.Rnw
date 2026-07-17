@@ -10,7 +10,7 @@ Here are some tips to help ensure that your methods and
 findings are transparent to the readers.
 
 \begin{enumerate}
-  \item ong reports detailing everything quickly become unreadable.
+  \item Long reports detailing everything quickly become unreadable.
         My own preference
         is to aim for a crisp main text that doesn't inundate the reader
         with numbers and numbing details. Instead, I try to communicate the findings

@@ -180,7 +180,7 @@ Three further remarks are in order:
 \begin{marginfigure}
 \includegraphics[width=\textwidth]{figure/correlation}
 \caption{Source: \url{https://xkcd.com/552}.}
-\label{fig:xkcdcorrelation}
+\figlabel{fig:xkcdcorrelation}
 \end{marginfigure}
 Research would be pretty easy if you could safely conclude that a causal
 link existed between two variables any time you observed an association between
@@ -247,7 +247,7 @@ drawdag(ex1)
   \centering
   \includegraphics{figure/dag-clileng-1}
   \caption{\textsc{dag} representing a causal influence of \textsc{clil} on English proficiency (\textsc{eng}).}
-  \label{fig:dag1}
+  \figlabel{fig:dag1}
 \end{marginfigure}
 
 Figure \ref{fig:dag1} is the simplest of \textsc{dag}s. It represents the assumption
@@ -274,7 +274,7 @@ shows the assumed direction of the causal link.
   \centering
   \includegraphics{figure/dag-unobserved-1}
   \caption{\textsc{dag} representing a causal influence of \textsc{clil} and of unobserved factors on English proficiency.}
-  \label{fig:dag2}
+  \figlabel{fig:dag2}
 \end{marginfigure}
 
 The pupils' English proficiency won't be affected by their taking \textsc{clil} classes or not \emph{alone} but by a host of other unobserved factors as well. In
@@ -301,7 +301,7 @@ drawdag( ex1 )
   \centering
   \includegraphics{figure/dag-confound-1}
   \caption{Unobserved factors as confounders (1).}
-  \label{fig:dag3}
+  \figlabel{fig:dag3}
 \end{marginfigure}
 
 \textbf{Important:} If we don't draw an arrow between U and \textsc{clil}, this means
@@ -329,7 +329,7 @@ drawdag( ex1 )
   \centering
   \includegraphics{figure/dag-confound2-1}
   \caption{Unobserved factors as confounders (2).}
-  \label{fig:dag4}
+  \figlabel{fig:dag4}
 \end{marginfigure}
 
 Figure \vref{fig:dag4} also features the unobserved factors as possible confounders,
@@ -359,13 +359,13 @@ proficiency does not imply that there is some causal link between them.
 \centering
 \includegraphics[width=0.7\textwidth]{figure/loops_dag}
 \caption[Not a \textsc{dag}.]{Not a \textsc{dag}: A, B and C are allowed to influence themselves, making the graph cyclic rather than acyclic.}
-\label{fig:loops_dag}
+\figlabel{fig:loops_dag}
 \end{marginfigure}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figure/no_loops_dag}
 \caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. $A_1$, $A_2$, $A_3$ and $A_4$ represent the same variable measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
-\label{fig:no_loops_dag}
+\figlabel{fig:no_loops_dag}
 \end{figure}
 
   \item Unobserved factors can, and often should, be drawn. By convention, we draw a circle around them to make it clear that they are not directly observed.
@@ -412,7 +412,7 @@ so there is no causal chain from $D$ back to $A$.
 \begin{marginfigure}
 \includegraphics[width=\textwidth]{figure/chain}
 \caption{A chain.}
-\label{fig:chain}
+\figlabel{fig:chain}
 \end{marginfigure}
 
 \textbf{Chains may transmit genuine causal influences}, that is, altering the values
@@ -481,7 +481,7 @@ $A$ causally influences both $B$ and $C$.
 \begin{marginfigure}
 \includegraphics[width=\textwidth]{figure/fork}
 \caption{A fork.}
-\label{fig:fork}
+\figlabel{fig:fork}
 \end{marginfigure}
 
 \textbf{Forks themselves don't transmit causal influences between the prongs},
@@ -584,7 +584,7 @@ since the two causal arrows clash into each other in $A$.
 \begin{marginfigure}
 \includegraphics[width=\textwidth]{figure/inv_fork}
 \caption{An inverted fork.}
-\label{fig:inv_fork}
+\figlabel{fig:inv_fork}
 \end{marginfigure}
 
 \textbf{Inverted forks don't transmit causal influences between the variables at the prongs},
@@ -616,7 +616,7 @@ as hard in order to obtain their degree, so they shift down a gear.
 \caption{To the extent that diligence (work) and intelligence (IQ) both determine
 if someone gets into university, some association between these two factors will
 be found if we only look at university students.}
-\label{fig:student}
+\figlabel{fig:student}
 \end{marginfigure}
 
 But there is an equally plausible if less simple explanation: by only looking
@@ -638,7 +638,7 @@ If we consider
 \begin{figure}[htbp]
 \includegraphics[width=\textwidth]{figure/selectionbias}
 \caption[Selection bias]{Collider bias in action: If you only look at the filled (or at the unfilled) circles, you'll discover an association between diligence and intelligence, even though there is no causal link between them.}
-\label{fig:selectionbias}
+\figlabel{fig:selectionbias}
 \end{figure}
 
 
@@ -694,7 +694,7 @@ Consider the \textsc{dag} in Figure \ref{fig:exercise3}.\label{ex:dag3}
 \begin{marginfigure}[3cm]
 \includegraphics[width=\textwidth]{figure/exercise3}
 \caption{\textsc{dag} for Exercise \ref{ex:dag3}.}
-\label{fig:exercise3}
+\figlabel{fig:exercise3}
 \end{marginfigure}
   \begin{enumerate}[(a)]
     \item Can $A$ causally affect $D$?
@@ -756,7 +756,7 @@ statistical procedure to obtain the estimate.
   \begin{marginfigure}
   \includegraphics[width=\textwidth]{figure/exercise4}
   \caption{\textsc{dag} for Exercise \ref{ex:dag4}.}
-  \label{fig:exercise4}
+  \figlabel{fig:exercise4}
 \end{marginfigure}
   \begin{enumerate}[(a)]
     \item List all paths via which $X$ may causally affect $Y$ if no variables

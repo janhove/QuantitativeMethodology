@@ -1,9 +1,7 @@
 \documentclass[a4paper]{tufte-book}
 \hypersetup{colorlinks}
-
 \usepackage{setspace}
 \usepackage{parskip}
-
 
 \makeatletter
 % Paragraph indentation and separation for normal text
@@ -14,15 +12,6 @@
   \setlength{\parskip}{0.3\baselineskip}%
 }
 \@tufte@reset@par
-% 
-% % Paragraph indentation and separation for marginal text
-% \renewcommand{\@tufte@margin@par}{%
-%   \setlength{\RaggedRightParindent}{0.5pc}%
-%   \setlength{\JustifyingParindent}{0.5pc}%
-%   \setlength{\parindent}{0pt}%
-%   \setlength{\parskip}{\baselineskip}%
-% }
-% \makeatother
 
 % Define a new counter for theorems, lemmas, remarks, etc.
 \newcounter{mycounter}[chapter] % Reset counter at the start of each chapter
@@ -47,12 +36,16 @@
 }
 
 % After comments / exercises
-% \newcommand*{\parend}[1][$\diamondsuit$]{%
-% \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
-%     \quad\hbox{#1}%
-% }
 \newcommand*{\parend}[1][$\diamondsuit$]{%
   \unskip\nobreak\hspace{1em plus 1fill}$\diamondsuit$%
+}
+
+% Fix new bug with tufte class - sometimes figures, tables get referred to by section nr rather than fig/tab nr
+\newcommand{\figlabel}[1]{% 
+  \label{#1}% 
+}
+\newcommand{\tablabel}[1]{% 
+  \label{#1}% 
 }
 
 \renewcommand{\bibname}{References}
@@ -77,12 +70,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{booktabs}
-% \usepackage{mathastext}
 \usepackage{mathpazo}
-\usepackage{varioref}
 \usepackage{bm}
-% \renewcommand*{\reftextfaceafter}{on the next page} % Prevents "on the facing page"
-% \renewcommand*{\reftextfacebefore}{on the previous page}
 
 % Algorithms
 \usepackage[linesnumbered,boxed,vlined,algochapter]{algorithm2e}
@@ -95,6 +84,7 @@
 
 \makeatletter
 \@addtoreset{chapter}{part}
+\makeatother
 
 \begin{document}
 
@@ -112,22 +102,6 @@
 To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-nc/4.0/}. \\
 \url{jan.vanhove@unifr.ch} \\
 \url{https://janhove.github.io}
-
-
-% \par\smallcaps{Published by \thanklesspublisher}
-
-% \par\smallcaps{tufte-latex.googlecode.com}
-
-% \par Licensed under the Apache License, Version 2.0 (the ``License''); you may not
-% use this file except in compliance with the License. You may obtain a copy
-% of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless
-% required by applicable law or agreed to in writing, software distributed
-% under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT
-% WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the
-% License for the specific language governing permissions and limitations
-% under the License.\index{license}
-
-% \par\textit{First printing, \monthyear}
 \end{fullwidth}
 
 
@@ -204,26 +178,26 @@ source(here::here("functions", "drawdag.R"))
 <<alternative, child='03_alternative.Rnw'>>=
 @
 
-
-<<precision, child='04_precision.Rnw'>>=
+<<stats, child='04_stats.Rnw'>>=
 @
 
-<<within, child='05_within.Rnw'>>=
+<<precision, child='05_precision.Rnw'>>=
 @
 
-<<quasi, child='06_quasi.Rnw'>>=
+<<within, child='06_pedagogical.Rnw'>>=
 @
 
-<<measurement, child='07_measurement.Rnw'>>=
+<<within, child='07_within.Rnw'>>=
 @
 
-<<qrp, child='08_qrp.Rnw'>>=
+<<quasi, child='08_quasi.Rnw'>>=
 @
 
-% \part{Reading assignments}
-% 
-% <<prep, child='reading_assignments.Rnw'>>=
-% @
+<<measurement, child='09_measurement.Rnw'>>=
+@
+
+<<qrp, child='10_qrp.Rnw'>>=
+@
 
 \appendix
 
@@ -316,7 +290,8 @@ to be \citep[see][]{Vanhove2020b}.
 \end{framed}
 
 Here are some tips for muddling through difficult results sections with minimal
-psychological damage.\footnote{Based on the blog entry \href{https://janhove.github.io/posts/2016-05-18-surviving-anova-onslaught/}{\textit{Surviving the ANOVA onslaught}}.}
+psychological damage,
+based on the blog entry \href{https://janhove.github.io/posts/2016-05-18-surviving-anova-onslaught/}{\textit{Surviving the ANOVA onslaught}}.)
 
 \begin{enumerate}
   \item Identify the central, genuine research questions and the corresponding hypotheses.
@@ -354,7 +329,9 @@ Ideally, the paper will contain a graph of the main results
 that you can then compare with the graphs you drew yourself. 
 Do the results seem to confirm or disconfirm the researchers' predictions? 
 Sometimes, a good graph will allow you to carry out the easiest of significance tests yourself: 
-the \term{inter-ocular trauma test}---if the conclusion hits you between the eyes, it's significant.\footnote{To be clear, this isn't a formal significance test. But it's a useful heuristic!} 
+the \term{inter-ocular trauma test}---if the conclusion hits you between the eyes, it's significant.
+To be clear, this isn't a formal significance test. But it's a useful heuristic!
+
 If the results are less clear cut, you'll need to scan the Results section 
 for the more details, but by now, you should have a clearer idea of what you're 
 looking for---and what you can ignore for now. If the paper doesn't contain a 

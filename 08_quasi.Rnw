@@ -1,0 +1,477 @@
+\chapter{Quasi-experiments and correlational studies}\label{ch:quasi}
+Up till now, we've discussed designs that eliminate pre-existing
+factors as confounders by means of random allocation or by testing all participants
+in all conditions.
+We now turn to between-subjects studies without random allocation:
+quasi-experiments and correlational studies.
+
+Whether a study counts as a quasi-experiment or a 
+correlational study depends on whom you ask.
+Some researchers confusingly use the term \textit{quasi-experiment}
+to refer to cluster-randomised experiments, whereas others
+use the term \textit{pre-experiment} to refer to group comparisons
+without randomisation. Similarly, different researchers draw the
+border between quasi-experiments and correlational studies at different places.
+As far as I'm concerned, the communalities between the two 
+outnumber the differences.
+For what it's worth, I use the term \term{quasi-experiment} for group comparisons 
+and \term{correlational study} when the predictor is continuous.
+What's important is that, because no random assignment was used,
+we can't assume that the treatment variable is independent of
+pre-treatment variables---confounding is a real threat.
+Importantly, it doesn't matter whether the groups \emph{could} have
+been constructed using random assignment, just whether they were.
+
+% \medskip
+% 
+% \begin{description}
+%   \item[Quasi-experiment] Group comparison, but the groups weren't constructed using random assignment.
+%   \begin{itemize}
+%    \item Example 1: Comparison of pupils with and
+%       without an immigration background.
+%    \item Example 2: Comparison of children that take
+%       heritage language classes and children that don't.
+%   \end{itemize}
+% 
+%   It doesn't matter whether the groups \emph{could} have
+%   been constructed using random assignment, just whether they were.
+% 
+%   \item[Correlational study] No group comparison.
+%   Instead, one assesses to what extent variation in
+%     an outcome (dependent) variable can be accounted
+%     for by differences in one or more continuous predictors (independent variables).
+%     The values of these predictors weren't assigned to the units of observation
+%     randomly.
+% 
+%   \begin{itemize}
+%    \item Example 1: Researchers collect IQ and
+%     L2 proficiency data in a group of learners and
+%     assess how strongly both types of data covary.
+% 
+%    \item Example 2: Using archival data,
+%     researchers gauge how well they can account for whether
+%       children will pass their A-levels based on the results of a
+%       vocabulary test when the children were 12 years old.
+%   \end{itemize}
+% \end{description}
+
+\paragraph{Why carry out quasi-experiments and correlational studies?}
+ \begin{quote}
+``But just because full experimental control \emph{is} lacking, it becomes imperative that the researcher
+\textbf{be thoroughly aware of which specific variables his particular design fails to control}.
+
+``The average student or potential researcher reading the previous section of this chapter probably ends up with more things to worry about in designing an experiment that he had in mind to begin with.
+This is all to the good if it leads to the \textbf{design and execution of better experiments and to more
+circumspection in drawing inferences from the results}.
+It is, however, an unwanted side effect if it creates a feeling of hopelessness with regard to achieving
+experimental control and leads to the abandonment of such efforts in favor
+of even more informal methods of investigation.
+
+``[W]e shall \dots survey the strenghts and weaknesses of a heterogeneous collection of quasi-experimental designs, each deemed worthy of use \emph{where better designs are not feasible}.'' \citep[p.~34; their emphasis in italics, mine in bold-face]{Campbell1963}
+\end{quote}
+
+The goal of quasi-experiments and correlational studies
+is often to draw causal conclusions, but the findings---for better
+or for worse---tend to be couched in non-causal language \citep{Grosz2020}.
+The present course cannot hope to exhaustively cover the difficulties involved
+in drawing causal conclusions from quasi-experiments and correlational studies.
+Instead, the following exercise highlights a few of the problems,
+and the remainder of this chapter introduces and then critiques a technique
+commonly used in applied linguistics to draw causal conclusions from
+observational data.
+Fuller treatments can be found in \citet{Campbell1963} and in the more
+technical books by \citet{Imbens2015} and \citet{Ding2024}.
+
+\mypar[Controlling for confounds is difficult]{Exercise}
+Consider the following description:
+
+\begin{quote}
+``There were 40 participants who composed two language groups and two age groups.
+Twenty of the participants were younger adults ranging in age from 30 to 54
+years (mean age = 43.0 years), and 20 were older adults ranging in age from
+60 to 88 years (mean age = 71.9 years). In each age group, half the participants
+were monolingual English speakers living in Canada, and the other half were
+Tamil--English bilinguals living in India. (\dots) All the participants in
+both groups had bachelor's degrees \dots'' \citep[p.~44]{Bialystok2004}
+\end{quote}
+
+\begin{enumerate}[(a)]
+  \item Did the authors control for level of education?
+  \item It is possible that the authors introduced additional bias into their
+        study by only including participants with a Bachelor's degree.
+        How so?
+        
+        Hint: If you're stuck, consult 
+        \url{https://gpseducation.oecd.org/CountryProfile?primaryCountry=CAN&treshold=5&topic=EO} 
+        and look up similar data for India. \parend
+\end{enumerate}
+
+\section{Correlation coefficients}
+\term{Pearson correlation coefficients}, typically just called
+correlation coefficients and abbreviated as $r$,
+express how closely the ($X$,$Y$) data points fall on a straight line.
+
+\begin{itemize}
+ \item $r = 1$: All points fall exactly on an increasing line.
+ \item $r = -1$: All points fall exactly on a decreasing line.
+ Correlation coefficients of $1$ or $-1$ (or close to it, e.g., $r = 0.99$)
+ tend not to be too interesting: They typically indicate that the two variables
+ express the same thing (e.g., body length in centimetres and in inches).
+ \item $r = 0$: There's no linear relation between the two variables whatsoever.
+\end{itemize}
+
+Correlation coefficients work in both directions: $r_{XY} = r_{YX}$.
+
+\mypar{*Definition}
+  Let $\boldsymbol x = (x_1, \dots, x_n)$ and $\boldsymbol y = (y_1, \dots, y_n)$ 
+  be non-constant numeric vectors, $n \geq 2$.
+  The Pearson (product-moment) correlation coefficient $r_{\boldsymbol x\boldsymbol y}$
+  is defined as
+  \[
+    r_{\boldsymbol x\boldsymbol y}
+    = \frac{\frac{1}{n-1}\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{s_{\boldsymbol x}s_{\boldsymbol y}},
+  \]
+  where
+  \[
+    \overline x := \frac{1}{n}\sum_{i=1}^n x_i
+  \]
+  is the mean of $\boldsymbol x$
+  and
+  \[
+    s_{\boldsymbol x} := \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i - \overline x)^2}
+  \]
+  is the sample standard deviation of $\boldsymbol x$, and similarly
+  for $\overline y, s_{\boldsymbol y}$.
+\parend
+
+Figure \ref{fig:correlations} shows eight examples of scatterplots
+and the correlation coefficients for the data presented in them.
+Importantly, a correlation coefficient close to zero doesn't imply
+that there is no relation between them;
+correlation coefficients different from 1 or -1 don't imply that
+the relation between two variables is imperfect;
+and it's possible for a positive correlation coefficient to reflect
+a relationship that's largely negative, and vice versa.\marginnote{Do these examples contradict the rough definition of correlation coefficients given at the start of this section?}
+
+<<correlations, fig.width = 6, fig.height = 7,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+par(mfrow = c(4, 2), cex.main = 0.9,
+    mar = c(3, 5, 2, 4), tcl = NA, las = 1)
+par(cex = 0.8, cex.main = 1.4)
+
+set.seed(10-11-2016)
+
+# Typischer Fall steigend
+x <- runif(80, 0, 100)
+y1 <- x + rnorm(80, sd = 20)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Typischer Fall steigend, weniger
+x <- runif(80, 0, 100)
+y1 <- 0.3*x + rnorm(80, sd = 20)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Typischer Fall senkend
+x <- runif(80, 0, 100)
+y1 <- -0.5*x + rnorm(80, sd = 20)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Typischer Fall: kein Zusammenhang
+x <- runif(80, 0, 100)
+y1 <- rnorm(80, sd = 20)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Perfect Logarithmic relationship
+x <- runif(80, 0, 100)
+y1 <- log10(x)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Sinusoid relationship
+x <- seq(-2*pi, pi, by = 0.2)
+y1 <- sin(x) + rnorm(length(x), sd = 0.15)
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Single outlier
+x <- c(seq(1, 20, by = 2), 80)
+y1 <- sin(x) + rnorm(length(x), sd = 2)
+y1[length(y1)] <- 100
+plot(x, y1, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y1),2),sep=""))
+
+# Two groups
+x <- c(seq(1, 30, by = 3), seq(81, 100, length.out = 10))
+y2 <- 5-2*x + rnorm(length(x), sd = 8)
+y2[11:20] <- 500-2*x[11:20] + rnorm(10, sd = 8)
+plot(x, y2, ylab="", xlab="",
+     main=paste("r = ", round(cor(x,y2),2),sep=""))
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/correlations-1}
+  \caption{Examples of scatterplots and their associated correlation coefficients.}
+  \figlabel{fig:correlations}
+\end{figure}
+
+\begin{framed}
+The same correlation coefficient can correspond to a multitude of relationships
+between two variables.
+Never \emph{ever} compute a correlation coefficient without drawing a scatterplot first.
+\end{framed}
+
+\mypar{Tip}
+By the same token, don't put stock in conclusions that hinge crucially on
+correlation coefficients for which no scatterplots are provided.
+\parend
+
+\mypar[Honing intuitions about correlation coefficients]{Exercise}
+To hone your intuitions about correlation coefficients, you can use
+the \texttt{plot\_r()} function from the \texttt{cannonball} package
+for \texttt{R}.
+
+<<echo = TRUE, eval = FALSE>>=
+# Install the package if necessary
+# install.packages("pak")
+pak::pak("janhove/cannonball")
+
+# Load the functions
+library(cannonball)
+
+# Draw 16 plots with 20 data points each and r = 0.6
+plot_r(n = 20, r = 0.6)
+
+# With 50 data points each and r = 0.0
+plot_r(n = 50, r = 0.0)
+
+# With 40 data points and r = -0.9
+plot_r(n = 40, r = -0.9)
+@
+
+Type \texttt{?plot\_r} at the R prompt to access the function's
+help page and read the text under `Details'.\parend
+
+\section{Statistical control using hierarchical regression}
+\mypar[Reading assignment]{Exercise}
+The next reading assignment concerns the study by \citet{Slevc2006}.
+The ```zero-order correlations'' mentioned
+are correlation coefficients expressing the relationship between two measured variables.
+(``First-order correlations'' would be correlation coefficients expressing the relationship between two variables from which the influence of a third variable was statistically `partialled out'.)
+
+To help you make sense of Table 3:
+\begin{itemize}
+ \item $R^2$: The proportion of the variation (`variance') in the outcome variable that can be described using the predictor
+ variables included in the regression model.
+
+ \item $\Delta R^2$: The increase in $R^2$ compared to the previous \textit{step} (i.e., the improvement in $R^2$ attributable to the current predictor).
+
+ \item \textit{df}, $F$: You can ignore this for this class.
+
+ \item \textit{Final $\beta$}: Expresses the form of the relationship between the predictor in question and the outcome.
+\end{itemize}
+
+\medskip
+
+Now to the questions:
+\begin{enumerate}[(a)]
+  \item What was the most important goal that \citet{Slevc2006} set themselves?
+
+  \item Why did they have this aim?
+
+  \item Why did they collected the variables \textit{age of arrival},
+  \textit{length of residence}, \textit{language use and exposure}
+  and \textit{phonological short-term memory}?
+
+  \item Which conclusions do they draw on the basis of their results?
+
+  \item Regardless of whether you agree with these conclusions: Try
+  to find one or two alternative explanations for their results
+  that call into question the claim that ``musical skills may
+  facilitate the acquisition of L2 sound structure'' (abstract).\parend
+\end{enumerate}
+
+In correlational studies, control variables are often used to
+adjust statistically for known confounders.
+One technique used to accomplish this is hierarchical regression;
+see Table 3 in \citet{Slevc2006} for an example.
+We will discuss this technique mainly so that you
+are better able to appreciate the shortcomings of this
+technique and ones similar to it.
+
+\mypar{Example}
+If you measure the shoe size and vocabulary knowledge of 4- to 16-year-olds,
+you'll observe a positive correlation between the two. This isn't surprising;
+see Figure \ref{fig:shoe}.
+We'll use this silly example to illustrate the principle behind
+hierarchical regression; see Figure \vref{fig:hierarchical}.
+
+\begin{marginfigure}
+  \includegraphics{figure/shoe}
+  \caption{Shoe size and vocabulary knowledge are correlated since age
+  acts as a confound.}
+  \figlabel{fig:shoe}
+\end{marginfigure}
+
+\begin{itemize}
+ \item Top left: Shoe size and vocabulary knowledge are positively correlated.
+
+ \item Top right and middle left: Age---the confound---is correlated
+ positively with both shoe size and vocabulary knowledge.
+
+ \item Middle right: This plot shows the vertical distance between
+ the points in the middle left panel and the regression line.
+  This shows the remaining variation in vocabulary test scores 
+  once the linear association between age and vocabulary knowledge 
+  has been partialled out.
+
+ \item Bottom left: The association between shoe size and the vocabulary
+ test scores with the linear association of age partialled out is much
+ less strong. In this simulated example, the fact that the remaining
+ association isn't exactly zero is due entirely to chance.\parend
+\end{itemize}
+
+
+<<hierarchical, fig.width = 6, fig.height = 7, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+par(mfrow = c(3, 2), cex.main = 0.9,
+    mar = c(4, 5, 1.5, 2), tck = -0.05, las = 1)
+par(cex = 0.8, cex.main = 1)
+
+set.seed(11-11-2016)
+
+# Create data
+Alter <- sample(x = 4:16,
+                50, replace = TRUE)
+Schuhgroesse <- 160 + 4*Alter + rnorm(50, sd = 25)
+Vokabeltest <- Alter + rnorm(50, sd = 3)
+Vokabeltest <- scale(Vokabeltest)*20 + 50
+Farbe <- rep(NA, 50)
+Farbe[sample(1:50, 3)] <- c("darkblue", "orange", "red")
+Colour <- "darkgrey"
+
+# Korrelation outcome vs. predictor 1
+plot(Schuhgroesse, Vokabeltest, pch = 21, bg = Farbe, col = Colour, cex = 1.8,
+     xlab = "shoe size", ylab = "vocabulary test")
+abline(lm(Vokabeltest ~ Schuhgroesse))
+
+# Korrelation predictor 1 vs. predictor 2
+plot(Alter, Schuhgroesse, pch = 21, bg = Farbe, col = Colour, cex = 1.8,
+     xlab = "age", ylab = "shoe size")
+abline(lm(Schuhgroesse ~ Alter))
+
+# Korrelation predictor 2 vs. predictor 1
+plot(Alter, Vokabeltest, pch = 21, bg = Farbe, col = Colour, cex = 1.8,
+     xlab = "age", ylab = "vocabulary test")
+mod <- lm(Vokabeltest ~ Alter)
+abline(mod)
+
+# Reste
+boxplot(resid(mod),
+        ylab = "variation vocabulary test\nwith age 'partialled out'")
+stripchart(resid(mod), method = "jitter", pch = 21, bg = Farbe, col = Colour, cex = 1.8,
+           vertical = TRUE, add = TRUE)
+
+# Effekt
+plot(Schuhgroesse, resid(mod), pch = 21, bg = Farbe, col = Colour, cex = 1.8,
+     ylab = "variation vocabulary test\nwith age 'partialled out'",
+     xlab = "shoe size")
+abline(lm(resid(mod) ~ Schuhgroesse))
+@
+
+\begin{figure}[tpbh]
+  \centering
+  \includegraphics[max width = \textwidth]{figure/hierarchical-1}
+  \caption{Hierarchical regression used to control for the age confound in the relationship between shoe size and vocabulary knowledge. The coloured circles in each panel show data belonging to the same three participants. The straight lines are regression lines. A regression line is the straight line that best captures the tendency in the cloud of data points, according to some definition of `best'.}
+  \figlabel{fig:hierarchical}
+\end{figure}
+
+\clearpage
+
+\section{Caveats}
+You need to be hyper-aware of the following caveats
+concerning statistical control:
+
+\begin{enumerate}
+  \item Controlling for a number of possible confounds doesn't rule
+  out the possibility that there are even more confounds; Figure \ref{fig:caveat1}.
+
+  \begin{marginfigure}
+    \centering
+    \includegraphics{figure/caveat1}
+    \caption{Perfectly controlling for $A$ and $B$ closes the non-causal paths $X \leftarrow A \rightarrow Y$ and $X \leftarrow B \rightarrow Y$. But it leaves open the non-causal path via $U$.}
+    \figlabel{fig:caveat1}
+  \end{marginfigure}
+
+  \item The methods typically used to account for confounding variables
+  account for \emph{linear} relationships between the confounds and the
+  variables of interest. If these relationships aren't linear, the
+  confound won't be fully accounted for. In \textsc{dag} parlance, the path
+  via the confound won't be fully closed.
+
+  \item The `confound' may be a post-treatment variable. See Section
+  \vref{sec:covariates}.
+
+  \item Statistical control may be imperfect because the confound was
+  measured with some error. We'll treat this in more detail in Chapter
+  \ref{ch:measurementerror}.
+\end{enumerate}
+
+The following excerpt makes the same points:
+\begin{quote}
+``When experimental designs are premature, impractical, or impossible,
+researchers must rely on statistical methods to
+adjust for potentially confounding effects.
+Such procedures, however, are quite fallible.
+We examine several errors that often follow the use of statistical adjustment.
+
+``The first is inferring a factor is causal because
+it predicts an outcome even after ``statistical control''
+for other factors. This inference is fallacious when (as usual) such control
+involves removing the linear contribution of
+imperfectly measured variables, or when
+some confounders remain unmeasured.
+
+``The converse fallacy is inferring a factor is not causally
+important because its association with the outcome is attenuated
+or eliminated by the inclusion of covariates in the adjustment
+process. This attenuation may only reflect that the covariates treated as
+confounders are actually mediators (intermediates) and
+critical to the causal chain from the study factor to the study
+outcome.\footnote{What's meant is a causal chain such as $A \rightarrow B \rightarrow C$.
+$A$ is causally important, but if you control for $B$, you won't find
+any association between $A$ and $C$.}
+
+``Other problems arise due to mismeasurement of the study factor or outcome,
+or because these study variables are only proxies for underlying constructs.
+
+``\emph{Statistical adjustment serves a useful
+function, but it cannot transform observational studies into natural experiments, and involves far more subjective judgment than
+many users realize.}''
+\citep[abstract, my emphasis]{Christenfeld2004}
+\end{quote}
+
+\begin{framed}
+Large sample sizes don't solve these problems.
+\end{framed}
+
+Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats-confounds-correlational-designs/}{\textit{Controlling for confounding variables in correlational research: Four caveats}}.
+
+\mypar[On despair]{Remark}
+  To call back to the \citet{Campbell1963} quote at the start of this chapter,
+  the point of the preceding discussion is not for budding researchers to 
+  throw their hands up in despair and avoid doing or reading observational studies.
+  Rather, it is to instill in these researchers a sense of modesty as
+  well as the appreciation that
+  observational studies, to a much greater extent than experimental studies,
+  leave open a host of alternative explanations for any sort of finding that
+  they produce and that more definitive conclusions can be drawn only
+  by considering converging evidence from a wider range of studies.
+  Each study may leave open plausible alternative accounts of the findings.
+  But to the extent that the studies vary in terms of settings, participants, and methods,
+  different alternative accounts are required, and a unifying causal account becomes
+  ever more plausible.
+  See \citet{Hill1965} for a similar sentiment in the medical context.
+\parend
