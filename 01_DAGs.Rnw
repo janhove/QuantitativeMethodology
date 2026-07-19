@@ -18,9 +18,10 @@ Furthermore, Danes like Swedish better than Swedes do Danish
       like the language better? Several answers are possible.
 \item Which additional finding would call this claim into question?
       Several answers are possible.\parend\marginnote{The 
-diamond symbol signals where an example, exercise, remark, definition and such like ends.}
+diamond symbol signals where an example, exercise, remark, definition 
+and such like ends.
+The few proofs included in this script end with an empty square symbol ($\square$).}
 \end{enumerate}
-\medskip
 
 \mypar[Content and language integrated learning]{Exercise}\label{ex:clil}
 Pupils in \textit{Content and Language Integrated Learning} (\textsc{clil}) programmes 
@@ -39,7 +40,6 @@ than other Andalusian pupils \citep{Lorenzo2010}.
 \item Which additional finding would call this claim into question?
       Several answers are possible.\parend
 \end{enumerate}
-\medskip
 
 In both examples, an \term{association} of some sort is found in the data,
 and a \term{causal explanation} for this association is put forward: 
@@ -68,7 +68,6 @@ are \term{associated} if knowing the value of one factor
 can help you hazard a more educated guess about the value of the other factor.
 If two factors are not associated, we say that they are \term{independent}.
 \parend
-\medskip
 
 \mypar{Exercise}
 Explain why, according to Definition \ref{def:association}, 
@@ -82,7 +81,6 @@ the following are examples of associations:
  \item a person's age and their father's age;
  \item a person's nationality and the colour of their eyes. \parend
 \end{itemize}
-\medskip
 
 Five remarks are in order:
 
@@ -104,23 +102,21 @@ than not knowing it, but also vice versa.
   (e.g., eye colour and nationality).
 \end{itemize}
 
+\clearpage
+
 \mypar{*Remark}\marginnote{Comments and sections prefaced with an asterisk are optional.
 You don't need to study them for the exam.}
-The more rigorous mathematical definition
-is that we call two random variables
-$X, Y$ associated if there exist sets $A, B$ such that 
-$\mathbb{P}(X \in A, Y \in B) \neq \mathbb{P}(X \in A)\mathbb{P}(Y \in B)$,
-where $\mathbb{P}(E)$ denotes the probability of an event $E$.
-For the purposes of this class, though, a conceptual understanding
-along the lines of the more informal Definition \ref{def:association}
-is sufficient.
+The concepts of association and independence can be made more precise
+mathematically, and in full-fledged statistics course,
+you would need the more precise definitions.
+For the purposes of this course, however, a conceptual understanding
+along the lines of the more informal Definition \ref{def:association} suffices.
 \parend
-\medskip
 
-Typical examples of associations in research are mean differences between
-groups and correlations.\marginnote{You'll also often see the words `association' and
-`correlation' used interchangeably. I prefer to use `association' as the hypernym
-and reserve `correlation' for a specific type of association. See Chapter \ref{ch:quasi}.}
+% Typical examples of associations in research are mean differences between
+% groups and correlations.\marginnote{You'll also often see the words `association' and
+% `correlation' used interchangeably. I prefer to use `association' as the hypernym
+% and reserve `correlation' for a specific type of association. See Chapter \ref{ch:quasi}.}
 
 Next, we define what we mean if we say that a variable $D$ causally influences
 a variable $Y$.
@@ -131,7 +127,6 @@ a variable $Y$.
 one unit in that population for which intervening in the world
 to change $D$ will change $Y$ \dots.'' \citep[p. 3]{Keele2019}
 \parend
-\medskip
 
 Definition \ref{def:causality} relies on a counterfactual and interventionist 
 notion of causality:
@@ -686,8 +681,6 @@ In sum, unbroken chains both transmit causality and induce associations;
 forks induce associations without causality unless measures are taken (e.g., controlling for the confounder);
 and inverted forks induce associations without causality if the collider (or one of its descendants) is controlled for.
 \end{framed}
-
-\clearpage 
 
 \mypar{Exercise}
 Consider the \textsc{dag} in Figure \ref{fig:exercise3}.\label{ex:dag3}

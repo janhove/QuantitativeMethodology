@@ -11,6 +11,14 @@ mean_diff <- function(outcome, treatment_idx) {
   mean(outcome[treatment_idx]) - mean(outcome[-treatment_idx])
 }
 
+# Studentised mean difference
+stud_mean_diff <- function(outcome, treatment_idx) {
+  control_idx <- setdiff(seq_along(outcome), treatment_idx)
+  mean_diff(outcome, treatment_idx) /
+    sqrt(var(outcome[treatment_idx]) / length(treatment_idx) +
+           var(outcome[control_idx]) / length(control_idx))
+}
+
 # Difference between group medians
 median_diff <- function(outcome, treatment_idx) {
   median(outcome[treatment_idx]) - median(outcome[-treatment_idx])
@@ -23,7 +31,7 @@ rank_sum <- function(outcome, treatment_idx) {
 }
 
 # Probability of superiority
-# Note: The naive computation involves O(N²) comparisons and is computationall
+# Note: The naive computation involves O(N²) comparisons and is computationally
 #       wasteful. The prob. of sup. can more efficiently be computed from
 #       the rank sum using only O(n log n) operations.
 prob_super <- function(outcome, treatment_idx) {
@@ -37,8 +45,12 @@ prob_super <- function(outcome, treatment_idx) {
 # Only suitable for small samples (about 18 observations total).
 exh_rerand_pval <- function(outcome, treatment_idx, statistic = mean_diff, plot = TRUE,
                             eps = .Machine$double.eps^(1/2), ...) {
-  obs_stat <- statistic(outcome, treatment_idx)
+  if (choose(length(outcome), length(treatment_idx)) > 2e5) {
+    warning("The dataset may be too large for exhaustive randomisation testing.
+            Consider using a Monte Carlo test.")
+  }
   
+  obs_stat <- statistic(outcome, treatment_idx)
   n <- length(outcome)
   rerandomisations <- combn(n, length(treatment_idx))
   H0_stats <- apply(rerandomisations, 2, statistic, outcome = outcome)
@@ -81,16 +93,13 @@ mc_pval <- function(outcome, treatment_idx, statistic = mean_diff, M = 20000, pl
   leftsided <- mean(H0_stats <= obs_stat + eps)
   rightsided <- mean(H0_stats >= obs_stat - eps)
   twosided <- min(2*min(leftsided, rightsided), 1)
-  # Alternatively, use
-  # twosided <- mean(abs(H0_stats) >= abs(obs_stat))
-  # The version I used is also correct and has slightly more power.
   list("left-sided p-value" = leftsided,
        "right-sided p-value" = rightsided,
        "two-sided p-value" = twosided)
 }
 
 # Exhaustive rerandomisation when using blocking with 2 conditions and k blocks
-exh_rerand_pval_blocking <- function(outcome, treaatment_idx, block,
+exh_rerand_pval_blocking <- function(outcome, treatment_idx, block,
                                      statistic = mean_diff, plot = TRUE,
                                      eps = .Machine$double.eps^(1/2)) {
   obs_stat <- statistic(outcome, treatment_idx)
