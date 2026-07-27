@@ -43,10 +43,13 @@ than other Andalusian pupils \citep{Lorenzo2010}.
 
 In both examples, an \term{association} of some sort is found in the data,
 and a \term{causal explanation} for this association is put forward: 
-Not only do Danes both understand and like Swedish better than Swedes do Danish (association), 
-it's suggested that one reason why they understand the other language better is that they like it better (explanation).
-Similarly, not only do \textsc{clil} pupils in Andalusia outperform non-\textsc{clil} pupils (association),
-it's suggested that they outperform them \emph{because} of the \textsc{clil} programme (explanation).
+Not only do Danes both understand and like Swedish better than Swedes do Danish 
+(association), it's suggested that one reason why they understand the other 
+language better is that they like it better (explanation).
+Similarly, not only do \textsc{clil} pupils in Andalusia outperform 
+non-\textsc{clil} pupils (association),
+it's suggested that they outperform them 
+\emph{because} of the \textsc{clil} programme (explanation).
 
 Uncovering associations and drawing causal conclusions from them is a key
 goal in empirical research. But it's also fraught with difficulty: after a
@@ -61,7 +64,8 @@ plausibility of such alternative explanations.
 
 \section{Definitions}
 \mypar[Association and independence]{Definition}\label{def:association}
-Two factors (or variables)\marginnote{I use the terms \textit{factor} and \textit{variable} interchangeably. 
+Two factors (or variables)\marginnote{I use the terms \textit{factor} and 
+\textit{variable} interchangeably. 
 Sometimes, factors are constant rather than variable in the context of a study, 
 but let's save our pedantic inclinations for other things.} 
 are \term{associated} if knowing the value of one factor
@@ -69,7 +73,7 @@ can help you hazard a more educated guess about the value of the other factor.
 If two factors are not associated, we say that they are \term{independent}.
 \parend
 
-\mypar{Exercise}
+\mypar{Exercise}\label{ex:association}
 Explain why, according to Definition \ref{def:association}, 
 the following are examples of associations:
 
@@ -82,8 +86,7 @@ the following are examples of associations:
  \item a person's nationality and the colour of their eyes. \parend
 \end{itemize}
 
-Five remarks are in order:
-
+From Exercise \ref{ex:association}, we may draw a few conclusions:
 \begin{itemize}
   \item Associations work in both directions: knowing the time of day
 allows you to venture a more educated guess about the temperature outside
@@ -93,16 +96,17 @@ than not knowing it, but also vice versa.
   (e.g., the relation between weight and height levels off after a certain weight).
 
   \item Associations needn't be monotonic, 
-  e.g., the relationship between the two variables can go up and then down again (as in the time of day/temperature example).
+  e.g., the relationship between the two variables can go up and 
+  then down again (as in the time of day/temperature example).
 
   \item Associations needn't be perfect 
-  (e.g., there's a lot of variation about the general trend for taller people to be heavier).
+  (e.g., there's a lot of variation about the general trend for 
+  taller people to be heavier).
 
-  \item Associations can be found between variables that aren't typically expressed numerically 
+  \item Associations can be found between variables that aren't 
+  typically expressed numerically 
   (e.g., eye colour and nationality).
 \end{itemize}
-
-\clearpage
 
 \mypar{*Remark}\marginnote{Comments and sections prefaced with an asterisk are optional.
 You don't need to study them for the exam.}
@@ -181,7 +185,7 @@ Research would be pretty easy if you could safely conclude that a causal
 link existed between two variables any time you observed an association between
 them. Fortunately for teachers of methodology courses who'd be on the dole
 otherwise, this isn't the case. But simply parroting back \emph{Correlation is not causation}
-isn't too helpful.
+isn't too helpful (Figure \ref{fig:xkcdcorrelation}).
 To help us figure out how associations between
 two variables can arise in the absence of a causal link between them, we turn
 to \term{directed acyclic graphs} (\textsc{dag}s).

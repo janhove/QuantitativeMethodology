@@ -26,9 +26,9 @@
 #' We'll also need the functions in `functions/rerandomisation_pvals.R`.
 #' 
 #' Load these functions like so:
+library(cannonball)
 library(here)
 source(here("functions", "ab_ba_crossover.R"))
-source(here("functions", "rerandomisation_pvals.R"))
 #' We'll also use the `tidyverse` for some visualisations.
 library(tidyverse)
 #' Finally, set the random seed to make this tutorial reproducible.
@@ -90,7 +90,8 @@ d_summary
 #' We can reuse the functions in `functions/rerandomisation_pvals.R`.
 #' If $A$ is considered the intervention and $B$ the control condition,
 #' then this can be done like so:
-exh_rerand_pval(d$period_difference / 2, which(d$order == "AB"))
+rand_test(d$period_difference / 2, which(d$order == "AB"),
+          statistic = mean_diff)
 
 #'
 #' ## Monte Carlo rerandomisation
@@ -130,5 +131,7 @@ d_summary <- d |>
   )
 d_summary
 (d_summary$mean_period_difference[1] - d_summary$mean_period_difference[2]) / 2
-mc_pval(d$period_difference / 2, which(d$order == "AB"))
+rand_test(d$period_difference / 2, which(d$order == "AB"), 
+          statistic = mean_diff,
+          exact = FALSE)
 

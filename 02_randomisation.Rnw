@@ -303,7 +303,13 @@ Some fundamental results from combinatorics are useful at this stage.
   different ways to sort them (`\term{permutations}').
 \parend
 
-\begin{proof}
+\begin{proof}\marginnote{This script includes a few proofs. You don't have
+to learn them as such (I won't ask for proofs on the exam), but do try to 
+understand them. The reason why I included them is that these proofs 
+help to demystify what might otherwise seem to be arbitrary pronouncements.
+Further, these proofs clarify exactly which assumptions a claim depends on 
+and how far it extends: a proof can show you that an argument holds regardless 
+of some detail that you might otherwise have assumed was essential to it.}
   If $n = 0$, there is only one way to sort the objects: do nothing.
 
   If $n \geq 1$: There are $n$ candidates to fill the first slot.
@@ -376,7 +382,7 @@ ggplot(df,
   theme(legend.position = "none")
 @
 
-\begin{marginfigure}[4cm]
+\begin{marginfigure}
   \centering
   \includegraphics{figure/partiq-1}
   \caption{Ten participants sign up for a study. You measure their IQ and you also know their sex (represented here using circles and crosses).}
@@ -610,6 +616,70 @@ grid.arrange(p1, p2, ncol = 2)
   from the true average intervention effect of one point.}
   \figlabel{fig:estimation}
 \end{figure}
+
+\mypar{Theorem}\label{th:unbiased}
+  When using random assignment, 
+  the mean difference in the outcome between the control and intervention groups
+  averaged over all possible allocations equals the true average (mean) intervention 
+  effect.
+\parend
+
+\begin{proof}[Proof sketch]
+  While it's not difficult to prove this fact by elementary means,
+  the proof is a tedious exercise in bookkeeping.
+  Instead, we content ourselves with this rougher sketch.
+  
+  The true average intervention effect is the average of the differences
+  for each unit between the potential outcomes in the intervention and in the
+  control condition (i.e., compute the differences between the crosses and the
+  circles on each line in the left panel in Figure \ref{fig:estimation}
+  and compute their average).
+  This can be rewritten as the difference between the averages of the potential
+  outcomes in the intervention and in the control condition 
+  (i.e., compute the average of the crosses and the average of the circles
+  and compute the difference between these two averages).
+  
+  Now consider the estimate obtained from any particular random allocation:
+  the mean outcome among those assigned to the intervention condition minus
+  the mean outcome among those assigned to the control condition. Under this
+  allocation, each unit's contribution to the intervention mean is either its
+  intervention potential outcome (if it was allocated to that condition) or
+  nothing (if it was allocated to the 
+  control condition instead), and vice versa for the control mean.
+
+  Crucially, thanks to the random allocation, every unit is exactly as likely
+  to end up in the intervention condition as any other unit, and the same
+  holds for the control condition. So if we consider all possible allocations
+  rather than just one, each unit's intervention potential outcome contributes
+  to the intervention mean equally often across these allocations, and each
+  unit's control potential outcome contributes to the control mean equally
+  often. Averaged over all possible allocations, then, the intervention mean
+  is the average of everyone's intervention potential outcomes,
+  and the control mean works out to be the average of everyone's control 
+  potential outcomes.
+  Hence, averaged over all possible allocations, the mean
+  difference equals the true average intervention effect.
+\end{proof}
+
+\mypar{Remark}
+  Theorem \ref{th:unbiased} concerns the \emph{mean} difference and 
+  the average (i.e., \emph{mean}) intervention effect.
+  The statement doesn't generalise to, say, medians.
+  To see this, consider an experiment with three units
+  whose potential outcomes in the intervention group are $0, 0, 1$
+  and whose potential outcomes in the control group are $0, 0, 0$.
+  The median intervention effect for these units is 0.
+  However, if we randomly assign one unit to the intervention group
+  and two to the control group (three possibilities),
+  the average median difference between the two groups is
+  $\frac{0 + 0 + 1}{3} \neq 0$.
+  
+  The proof of Theorem \ref{th:unbiased} doesn't translate to medians.
+  In the proof sketch, we first rewrote the mean of the intervention effects
+  as the difference between two means; this doesn't work for the median.
+  We also decomposed the mean of a group into separate per-unit contributions;
+  this also doesn't work for the median.
+\parend
 
 \subsection{How to randomise?}
 

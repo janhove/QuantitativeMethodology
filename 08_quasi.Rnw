@@ -1,61 +1,22 @@
-\chapter{Quasi-experiments and correlational studies}\label{ch:quasi}
+\chapter{Observational studies}\label{ch:quasi}
 Up till now, we've discussed designs that eliminate pre-existing
 factors as confounders by means of random allocation or by testing all participants
 in all conditions.
 We now turn to between-subjects studies without random allocation:
-quasi-experiments and correlational studies.
+\term{observational studies}.
 
-Whether a study counts as a quasi-experiment or a 
-correlational study depends on whom you ask.
-Some researchers confusingly use the term \textit{quasi-experiment}
-to refer to cluster-randomised experiments, whereas others
-use the term \textit{pre-experiment} to refer to group comparisons
-without randomisation. Similarly, different researchers draw the
-border between quasi-experiments and correlational studies at different places.
-As far as I'm concerned, the communalities between the two 
-outnumber the differences.
-For what it's worth, I use the term \term{quasi-experiment} for group comparisons 
-and \term{correlational study} when the predictor is continuous.
-What's important is that, because no random assignment was used,
+Some observational studies superficially look like experiments
+in that they focus on a comparison between two or more groups
+and may even comprise pre- and posttests, but without any random allocation
+of units to conditions.
+Such observational studies are often referred to as \term{quasi-experiments}.
+Because no random assignment was used,
 we can't assume that the treatment variable is independent of
 pre-treatment variables---confounding is a real threat.
 Importantly, it doesn't matter whether the groups \emph{could} have
 been constructed using random assignment, just whether they were.
 
-% \medskip
-% 
-% \begin{description}
-%   \item[Quasi-experiment] Group comparison, but the groups weren't constructed using random assignment.
-%   \begin{itemize}
-%    \item Example 1: Comparison of pupils with and
-%       without an immigration background.
-%    \item Example 2: Comparison of children that take
-%       heritage language classes and children that don't.
-%   \end{itemize}
-% 
-%   It doesn't matter whether the groups \emph{could} have
-%   been constructed using random assignment, just whether they were.
-% 
-%   \item[Correlational study] No group comparison.
-%   Instead, one assesses to what extent variation in
-%     an outcome (dependent) variable can be accounted
-%     for by differences in one or more continuous predictors (independent variables).
-%     The values of these predictors weren't assigned to the units of observation
-%     randomly.
-% 
-%   \begin{itemize}
-%    \item Example 1: Researchers collect IQ and
-%     L2 proficiency data in a group of learners and
-%     assess how strongly both types of data covary.
-% 
-%    \item Example 2: Using archival data,
-%     researchers gauge how well they can account for whether
-%       children will pass their A-levels based on the results of a
-%       vocabulary test when the children were 12 years old.
-%   \end{itemize}
-% \end{description}
-
-\paragraph{Why carry out quasi-experiments and correlational studies?}
+\paragraph{Why carry out observational studies?}
  \begin{quote}
 ``But just because full experimental control \emph{is} lacking, it becomes imperative that the researcher
 \textbf{be thoroughly aware of which specific variables his particular design fails to control}.
@@ -70,11 +31,11 @@ of even more informal methods of investigation.
 ``[W]e shall \dots survey the strenghts and weaknesses of a heterogeneous collection of quasi-experimental designs, each deemed worthy of use \emph{where better designs are not feasible}.'' \citep[p.~34; their emphasis in italics, mine in bold-face]{Campbell1963}
 \end{quote}
 
-The goal of quasi-experiments and correlational studies
+The goal of observational studies (including quasi-experiments)
 is often to draw causal conclusions, but the findings---for better
 or for worse---tend to be couched in non-causal language \citep{Grosz2020}.
 The present course cannot hope to exhaustively cover the difficulties involved
-in drawing causal conclusions from quasi-experiments and correlational studies.
+in drawing causal conclusions from observational studies.
 Instead, the following exercise highlights a few of the problems,
 and the remainder of this chapter introduces and then critiques a technique
 commonly used in applied linguistics to draw causal conclusions from
@@ -151,7 +112,7 @@ that there is no relation between them;
 correlation coefficients different from 1 or -1 don't imply that
 the relation between two variables is imperfect;
 and it's possible for a positive correlation coefficient to reflect
-a relationship that's largely negative, and vice versa.\marginnote{Do these examples contradict the rough definition of correlation coefficients given at the start of this section?}
+a relationship that's largely negative, and vice versa.
 
 <<correlations, fig.width = 6, fig.height = 7,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
 par(mfrow = c(4, 2), cex.main = 0.9,
