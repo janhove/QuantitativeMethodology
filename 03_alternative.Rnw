@@ -12,7 +12,7 @@ The present chapter investigates some other plausible rival explanations.
 \section{The roles of variables in research}
 It is useful to clarify some terminology at this point.
 
-\mypar[Roles of variables]{Definition}\label{def:variables}
+\mypar{Definition}\label{def:variables}
   An \term{outcome variable} (also called \term{dependent variable})
   is a variable whose value we want to explain, predict, or otherwise
   characterise.
@@ -214,11 +214,11 @@ A pilot study is a small-scale study conducted before the main study.
  This is useful for recruiting participants and scheduling;
  \item detecting any \term{floor} or \term{ceiling effects}.
   A floor effect occurs when a task is so difficult that 
-  many participants score near the bottom. 
-  Even if participants differ in ability, the task fails to capture it.
-  A ceiling effect occurs if a task is so easy
-  that many participants score near the top.\marginnote{The problem with floor and ceiling effects is that participants may differ
-substantially in their ability yet all obtain the same score.}
+  many participants score near the bottom;
+  a ceiling effect occurs if a task is so easy
+  that many participants score near the top.
+  The problem with floor and ceiling effects is that participants may differ
+  substantially in their ability yet obtain the same score.
 \end{enumerate}
 
 \section{Explanation 3: Chance}

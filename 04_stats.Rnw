@@ -185,7 +185,8 @@ have had in the \textit{with alcohol} condition, namely $Y_{9}(1)=$ 3.1.
 
 The strong null hypothesis allows us to fill out the empty cells
 in the results table; see Table \ref{tab:potentialoutcomes}.
-The putative results are known as \term{potential outcomes}.
+The putative results are known as potential outcomes; see Definition
+\vref{def:potentialoutcomes}.
 
 \begin{table}
 \caption{The potential outcomes in the fictitious alcohol--verbal fluency experiment 
@@ -208,18 +209,6 @@ under the strong null hypothesis}
 \end{tabular}
 \label{tab:potentialoutcomes}
 \end{table}
-
-Let us consolidate these terms into definitions.
-
-\mypar[Potential outcomes]{Definition}
-  Consider a study in which $N$ units are each observed in 
-  one of $K$ conditions (numbered $0, 1, \dots, K-1$).
-  We denote by $Y_i(k)$ the value on the outcome variable 
-  that was observed for the $i$-th unit assigned to the $k$-th condition
-  or that would have been observed for this unit had it been
-  assigned to the $k$-th condition, $i = 1, \dots, N, k = 0, \dots, K-1$.
-  These values, which may be unknown, are called \term{potential outcomes}.
-\parend
 
 \mypar[Strong null hypothesis]{Definition}
   Under the \term{strong} (or \term{sharp}) \term{null hypothesis},
@@ -278,7 +267,7 @@ could occur due to random assignment alone,
 we can re-arrange the participants' speech rates into each of these 126 combinations and see for each combination what the difference between the \textit{with} and
 \textit{without alcohol} condition means is (Figure \ref{fig:alcohol_test}).
 
-<<randomisationtest, fig.width = 4*0.7, fig.height = 7*0.7, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+<<randomisationtest, fig.width = 0.8*6, fig.height = 0.8*4, include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
 data.frame(
   diff = H0_stats,
   idx = 1:126
@@ -290,13 +279,13 @@ data.frame(
   ylab("Re-randomisation")
 @
 
-\begin{marginfigure}
-\includegraphics[width=\textwidth]{figure/randomisationtest-1}
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{figure/randomisationtest-1}
 \caption{There are 126 different ways in which the 9 participants could have been split up into two groups
 so that there are five participants in the experimental group. These are the differences between the means for all 126 possibilities under the strong null hypothesis.
 The mean difference we actually observed (0.82) is represented by the dashed red vertical line.}
 \figlabel{fig:alcohol_test}
-\end{marginfigure}
+\end{figure}
 
 In five out of 126 cases, the re-arrangement of participants to conditions
 produces a mean difference in speech rate in favour of the \textit{with alcohol}
@@ -443,7 +432,7 @@ $H_0$ actually is true (for all $\alpha \in (0, 1)$).
 This is true in particular for $p$-values 
 computed using exhaustive rerandomisation under the strong null hypothesis.
 
-\mypar{Lemma}\label{lemma:boundpval}
+\mypar{Theorem}\label{lemma:boundpval}
   Under the strong null hypothesis, 
   exhaustive rerandomisation results in a $p$-value $P$
   such that $\mathbb{P}(P \leq \alpha) \leq \alpha$ for each $\alpha \in (0, 1)$.
@@ -469,7 +458,7 @@ computed using exhaustive rerandomisation under the strong null hypothesis.
   We were equally likely to have generated
   each of the $M$ possible randomisations.\marginnote{It is possible to generalise
   the procedure for computing $p$-values to cases in which the randomisations
-  aren't all equally likely to occur, and the proof of this lemma can be adapted
+  aren't all equally likely to occur, and the proof of this theorem can be adapted
   to take this into account. I see little value in considering such cases in the present course, however.}
   Hence, the probability that we generated a randomisation resulting
   in a $p$-value $P$ no larger than $\alpha$ is
@@ -484,7 +473,7 @@ computed using exhaustive rerandomisation under the strong null hypothesis.
 \end{proof}
 
 \mypar{Remark}
-  Nothing in the proof of Lemma \ref{lemma:boundpval} depends on the choice
+  Nothing in the proof of Theorem \ref{lemma:boundpval} depends on the choice
   of test statistic. In the running example, we used the mean difference between
   the conditions as the test statistic. 
   But the difference between the condition median or the probability of superiority
@@ -607,7 +596,7 @@ A research team is conducting an experiment in 30 school classes
 \parend
 
 \mypar[`Flexible' testing]{Example}\label{ex:flexibletesting}
-  Lemma \ref{lemma:boundpval} assumes that the analyst decided 
+  Theorem \ref{lemma:boundpval} assumes that the analyst decided 
   on a suitable test statistic \emph{before} looking at the data.
   To appreciate this, assume that the strong null hypothesis holds 
   in our running example, that is, that the participants would have had
@@ -625,7 +614,7 @@ A research team is conducting an experiment in 30 school classes
   the she would have obtained a $p$-value no larger than $\alpha =$ 0.05
   with 3.97\% probability.
   In both cases, $\mathbb{P}(P \leq 0.05) \leq 0.05$ as guaranteed by 
-  Lemma \ref{lemma:boundpval}.
+  Theorem \ref{lemma:boundpval}.
   
   However, imagine that the analyst had first looked at the data to see
   which condition had the faster average speech rate before deciding
@@ -633,7 +622,7 @@ A research team is conducting an experiment in 30 school classes
   fluency.
   In this case, the probability of obtain a $p$-value no larger than $\alpha =$ 0.05
   would have been 8.73\%---larger than the 5\% upper bound guaranteed by
-  Lemma \ref{lemma:boundpval}.
+  Theorem \ref{lemma:boundpval}.
   
   As we will see in Chapter \ref{ch:qrp}, undisclosed flexibility when
   running significance test can render their results essentially meaningless.
@@ -651,7 +640,7 @@ we only generate, say, 20,000 of them, including the randomisation we actually o
 Then, we compute the proportion of the rerandomisations considered that resulted
 in test statistic values at least as extreme as the one we actually observed;
 this proportion serves as the Monte Carlo $p$-value.
-The guarantee encapsulated in Lemma \ref{lemma:boundpval} also holds for
+The guarantee encapsulated in Theorem \ref{lemma:boundpval} also holds for
 such Monte Carlo $p$-values.
 However, if you run the same analysis multiple times, 
 the resulting $p$-value is bound to vary somewhat from run to run 
@@ -669,7 +658,7 @@ the $p$-values that these procedures return have
 the essentially same interpretation and are subject to the same caveats as those above.
 That said, they are based on a different set of assumptions from randomisation tests.
 Typically,
-the guarantee from Lemma \ref{lemma:boundpval} only holds approximately
+the guarantee from Theorem \ref{lemma:boundpval} only holds approximately
 when using these shortcuts
 (i.e., $\mathbb{P}(p \leq \alpha) \approx \alpha$ under $H_0$).
 

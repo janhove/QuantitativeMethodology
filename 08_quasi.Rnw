@@ -83,28 +83,6 @@ express how closely the ($X$,$Y$) data points fall on a straight line.
 
 Correlation coefficients work in both directions: $r_{XY} = r_{YX}$.
 
-\mypar{*Definition}
-  Let $\boldsymbol x = (x_1, \dots, x_n)$ and $\boldsymbol y = (y_1, \dots, y_n)$ 
-  be non-constant numeric vectors, $n \geq 2$.
-  The Pearson (product-moment) correlation coefficient $r_{\boldsymbol x\boldsymbol y}$
-  is defined as
-  \[
-    r_{\boldsymbol x\boldsymbol y}
-    = \frac{\frac{1}{n-1}\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{s_{\boldsymbol x}s_{\boldsymbol y}},
-  \]
-  where
-  \[
-    \overline x := \frac{1}{n}\sum_{i=1}^n x_i
-  \]
-  is the mean of $\boldsymbol x$
-  and
-  \[
-    s_{\boldsymbol x} := \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i - \overline x)^2}
-  \]
-  is the sample standard deviation of $\boldsymbol x$, and similarly
-  for $\overline y, s_{\boldsymbol y}$.
-\parend
-
 Figure \ref{fig:correlations} shows eight examples of scatterplots
 and the correlation coefficients for the data presented in them.
 Importantly, a correlation coefficient close to zero doesn't imply
@@ -114,9 +92,9 @@ the relation between two variables is imperfect;
 and it's possible for a positive correlation coefficient to reflect
 a relationship that's largely negative, and vice versa.
 
-<<correlations, fig.width = 6, fig.height = 7,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
+<<correlations, fig.width = 6, fig.height = 9,  include = FALSE, echo = FALSE, results = 'hide', fig.path = 'figure/', dev = 'pdf'>>=
 par(mfrow = c(4, 2), cex.main = 0.9,
-    mar = c(3, 5, 2, 4), tcl = NA, las = 1)
+    mar = c(3, 5, 2, 1), tcl = NA, las = 1)
 par(cex = 0.8, cex.main = 1.4)
 
 set.seed(10-11-2016)

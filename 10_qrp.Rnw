@@ -125,7 +125,7 @@ The consequences of researcher degrees of freedom/p-hacking are
 best appreciated by seeing them. Do these exercises in order.
 
 \begin{enumerate}[(a)]
-  \item Open the app at \url{https://plurilinguisme.shinyapps.io/fppsy/}
+  \item Open the app at \url{https://janhove.github.io/qrp}
   and carefully read the description.
   
   \item Click `Simulate!', leaving all settings at their default values.
@@ -143,12 +143,12 @@ best appreciated by seeing them. Do these exercises in order.
     per condition, they're analysed after 5 new participants per
     condition? Or after just 2 new participants per condition?
     
-    \item What'll happen when the correlation between the two 
-    dependent variables becomes weaker (e.g., $r = 0.1$ instead
+    \item What will happen when the correlation between the two 
+    outcome variables becomes weaker (e.g., $r = 0.1$ instead
     of $r = 0.5$)? Why?
     
-    \item What'll happen when the correlation between the two
-    dependent variables becomes stronger (e.g., $r = 0.95$)? Why?
+    \item What will happen when the correlation between the two
+    outcome variables becomes stronger (e.g., $r = 0.95$)? Why?
     
     \item For which combination of the different parameters will
     you obtain the highest Type-I error? Think before running the simulation!

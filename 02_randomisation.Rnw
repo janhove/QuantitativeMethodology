@@ -534,7 +534,7 @@ could result in confounding.
   The left-side panel in Figure \ref{fig:estimation} shows the score
   that each participant would have obtained in both conditions
   (often referred to as their \term{potential outcomes} in the literature
-  on causal inference).
+  on causal inference; see Definition \vref{def:potentialoutcomes}).
   The difference between both of these scores varies somewhat between
   participants, but on average, it amounts to one point.
   This is the true average intervention (or treatment) effect that is the target
@@ -551,7 +551,8 @@ could result in confounding.
   The estimated intervention effect would then be one of the 11,440
   values summarised in the histogram on the right-hand side.
   While the \emph{average} estimated intervention effect coincides with
-  the true intervention effect (i.e., the estimation is unbiased),
+  the true intervention effect (i.e., the estimation is unbiased;
+  see Theorem \vref{th:unbiased}),
   depending on the actual allocation, the estimated intervention effect
   may differ considerably from the true one.
   In Chapter \ref{ch:precision}, we'll discuss techniques for increasing the precision
@@ -617,6 +618,16 @@ grid.arrange(p1, p2, ncol = 2)
   \figlabel{fig:estimation}
 \end{figure}
 
+\mypar[Potential outcomes]{Definition}\label{def:potentialoutcomes}
+  Consider a study in which $N$ units are each observed in 
+  one of $K$ conditions (numbered $0, 1, \dots, K-1$).
+  We denote by $Y_i(k)$ the value on the outcome variable 
+  that was observed for the $i$-th unit assigned to the $k$-th condition
+  or that would have been observed for this unit had it been
+  assigned to the $k$-th condition, $i = 1, \dots, N, k = 0, \dots, K-1$.
+  These values, which may be unknown, are called \term{potential outcomes}.
+\parend
+
 \mypar{Theorem}\label{th:unbiased}
   When using random assignment, 
   the mean difference in the outcome between the control and intervention groups
@@ -624,41 +635,43 @@ grid.arrange(p1, p2, ncol = 2)
   effect.
 \parend
 
-\begin{proof}[Proof sketch]
-  While it's not difficult to prove this fact by elementary means,
-  the proof is a tedious exercise in bookkeeping.
-  Instead, we content ourselves with this rougher sketch.
+\begin{proof}
+  Assume an experiment with $m$ units of which $n_1$ are randomly assigned to 
+  the intervention
+  condition and $n_0 = m - n_1$ are assigned to the control condition;
+  i.e., there are $\binom{m}{n_1} = \binom{m}{n_0}$ possible allocations.
+  The true average intervention effect is defined as the mean of the
+  $m$ per-unit differences between the potential outcomes in the intervention 
+  and in the control condition.
+  Equivalently, we can compute it as the difference between the mean
+  of the $m$ potential outcomes in the intervention condition and the mean
+  of the $m$ potential outcomes in the control condition.
   
-  The true average intervention effect is the average of the differences
-  for each unit between the potential outcomes in the intervention and in the
-  control condition (i.e., compute the differences between the crosses and the
-  circles on each line in the left panel in Figure \ref{fig:estimation}
-  and compute their average).
-  This can be rewritten as the difference between the averages of the potential
-  outcomes in the intervention and in the control condition 
-  (i.e., compute the average of the crosses and the average of the circles
-  and compute the difference between these two averages).
+  The estimate we obtain from any particular random allocation is computed
+  as the difference between the mean outcome among the $n_1$ units assigned to
+  the intervention condition and the mean outcome among the $n_0$ units assigned
+  to the control condition.
+  Across all possible allocations, 
+  every unit is assigned to the intervention condition equally often;
+  this works out to $\frac{n_1}{m} \cdot \binom{m}{n_1} = \binom{m-1}{n_1 - 1}$
+  times.
+  Similarly, every unit is assigned to the control condition equally often;
+  this works out to $\frac{n_0}{m} \cdot \binom{m}{n_0} = \binom{m-1}{n_0 - 1}$
+  times.
   
-  Now consider the estimate obtained from any particular random allocation:
-  the mean outcome among those assigned to the intervention condition minus
-  the mean outcome among those assigned to the control condition. Under this
-  allocation, each unit's contribution to the intervention mean is either its
-  intervention potential outcome (if it was allocated to that condition) or
-  nothing (if it was allocated to the 
-  control condition instead), and vice versa for the control mean.
-
-  Crucially, thanks to the random allocation, every unit is exactly as likely
-  to end up in the intervention condition as any other unit, and the same
-  holds for the control condition. So if we consider all possible allocations
-  rather than just one, each unit's intervention potential outcome contributes
-  to the intervention mean equally often across these allocations, and each
-  unit's control potential outcome contributes to the control mean equally
-  often. Averaged over all possible allocations, then, the intervention mean
-  is the average of everyone's intervention potential outcomes,
-  and the control mean works out to be the average of everyone's control 
-  potential outcomes.
-  Hence, averaged over all possible allocations, the mean
-  difference equals the true average intervention effect.
+  The mean intervention outcome averaged over all ${m} \choose {n_1}$ allocations
+  is therefore the sum of $\binom{m-1}{n_1 - 1}$ times each intervention
+  potential outcome divided by $n_1 \cdot \binom{m}{n_1}$.
+  You can verify that 
+  \[
+    \left. \binom{m-1}{n_1 - 1} \middle/  \left(n_1 \cdot \binom{m}{n_1}\right)\right.
+    = \frac{1}{m}.
+  \]
+  So the result is the mean potential intervention outcome over all $m$ units.
+  Similarly, the mean control outcome averaged over all $\binom{m}{n_0}$ allocations
+  is the mean potential control outcome over all $m$ units.
+  Hence, averaged over all $\binom{m}{n_1} = \binom{m}{n_0}$ allocations,
+  the mean difference between the groups equals the true average intervention effect.
 \end{proof}
 
 \mypar{Remark}
@@ -666,19 +679,22 @@ grid.arrange(p1, p2, ncol = 2)
   the average (i.e., \emph{mean}) intervention effect.
   The statement doesn't generalise to, say, medians.
   To see this, consider an experiment with three units
-  whose potential outcomes in the intervention group are $0, 0, 1$
+  whose potential outcomes in the intervention group are $0, 0, 3$
   and whose potential outcomes in the control group are $0, 0, 0$.
   The median intervention effect for these units is 0.
   However, if we randomly assign one unit to the intervention group
   and two to the control group (three possibilities),
   the average median difference between the two groups is
-  $\frac{0 + 0 + 1}{3} \neq 0$.
+  $\frac{0 + 0 + 3}{3} = 1 \neq 0$.
   
-  The proof of Theorem \ref{th:unbiased} doesn't translate to medians.
-  In the proof sketch, we first rewrote the mean of the intervention effects
+  This counterexample demonstrates that the proof of Theorem \ref{th:unbiased} 
+  cannot be adapted to medians.
+  In the proof, we first rewrote the mean of the intervention effects
   as the difference between two means; this doesn't work for the median.
-  We also decomposed the mean of a group into separate per-unit contributions;
-  this also doesn't work for the median.
+  We also were able to compute the average mean intervention and control outcomes
+  as averages over $n_1 \cdot \binom{m}{n_1}$ and $n_0 \cdot \binom{m}{n_0}$
+  potential outcomes, respectively.
+  This doesn't work for the average median outcome.
 \parend
 
 \subsection{How to randomise?}
@@ -752,9 +768,6 @@ but they are rarely applied in the social sciences.
   Consider an experiment with 60 participants who are assigned to
   three conditions using complete randomisation (20 participants per condition).
   How many possible assignments of participants to conditions are there under this scheme?
-  
-  Hint: You obtain three subgroups by first splitting off one subgroup
-  and then splitting up the remaining participants into two subgroups.
 \parend
 
 \mypar[Simple randomisation]{Exercise}
