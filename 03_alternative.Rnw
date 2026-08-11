@@ -9,7 +9,6 @@ for neutralising the danger that an association will come about
 through systematic confounding.
 The present chapter investigates some other plausible rival explanations.
 
-\section{The roles of variables in research}
 It is useful to clarify some terminology at this point.
 
 \mypar{Definition}\label{def:variables}
@@ -66,7 +65,7 @@ existing effect of the conditions.
 \end{framed}
 
 \section{Explanation 1: Expectancy effects}
-Perhaps the researchers or their assistants (subconsciously)
+Perhaps the researchers or their assistants (unwittingly)
 nudged the data in the hypothesised direction. 
 This can happen even when the measurements seem perfectly objective. 
 For instance, when you're counting the 
@@ -143,7 +142,7 @@ include \term{manipulation checks} in the study's design.
   This turned out to be an excellent idea: 
   The researcher found that the participant rejected a fair number
   of syntactically correct sentences, but that she did so for stylistic
-  rather than strictly syntactic reasons.
+  rather than for strictly syntactic reasons.
   The researcher then correctly didn't draw the conclusion that the
   participant's syntactic knowledge was incomplete.
 \parend
@@ -151,11 +150,11 @@ include \term{manipulation checks} in the study's design.
 Sometimes, the participants in a study don't really pay any attention
 to the stimuli or the instructions.
 For instance, questionnaire respondents may answer the questions
-in a zig-zag pattern (e.g., ABCDEDCBA\dots) 
+in a zig-zag pattern (e.g., \textsc{abcdedcba}\dots) 
 rather than give their mind to each question,
 so that they can tell the researcher they've participated.
-Figure \ref{fig:satisficing}
-provides another example of satisficing.
+The response patterns in Figure \ref{fig:satisficing}
+are similarly indicative of satisficing.
 
 \begin{figure}
   \centering
@@ -166,10 +165,12 @@ provides another example of satisficing.
   \figlabel{fig:satisficing}
 \end{figure}
 
+\mypar{Tip}
 If you want to verify if your participants carefully read the instructions
 and you're able to run the study online or at the computer,
 \citet{Oppenheimer2009} introduces a neat and unintrusive way 
 to do so.
+\parend
 
 Another useful technique to identify failed manipulations
 is the use of \term{positive controls}.
