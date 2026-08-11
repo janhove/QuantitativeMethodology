@@ -38,8 +38,7 @@ What can you conclude from this study?
 
 \clearpage
 
-\section{Critical questions}\label{sec:validitaet}%\cite{Nunan1992}\cite{Abbuhl2013}}
-
+\section{Critical questions}\label{sec:validitaet}
 The second attempt outlined above also falls short on a number of criteria.
 There are a couple of critical questions we can ask, and slightly modified
 versions of these questions can be asked about studies in general.
@@ -56,10 +55,10 @@ versions of these questions can be asked about studies in general.
  To what population, exactly?
 
  \item[Ecological validity]
- (Especially for applied research.)
  To what extent are the findings applicable
  to the world outside of the lab
  (e.g., teaching, policy)?
+ This question is especially important for applied research.
  
  \item[Reliability]
   Are the raw data open for interpretation?
@@ -83,7 +82,7 @@ versions of these questions can be asked about studies in general.
   Neurolinguistic research may show that using a foreign language highlights
   different brain regions in early and late learners.
   This may be interesting to neurolinguists.
-  But for language policy, what's more relevant is the extent to which
+  But for language policy, what's probably more relevant is the extent to which
   these groups differ behaviourally on communicatively relevant tasks.
 \parend
 
@@ -112,17 +111,7 @@ The second attempt outlined on page \pageref{sec:beispiel} is deficient
 in several of these respects. Discuss a few problems.
 \parend
 
-\begin{framed}
- Anticipate and resolve problems
-related to lacking validity and reliability
-\emph{before} collecting the data. This often
-involves making compromises or coming to the
-realisation that you can't satisfactorily
-answer all your questions in a single study.
-Do \emph{not} assume that some statistical method
-will solve your problems.
-\end{framed}
-
+\mypar{Remark}
 Depending on your goals, some types of validity
 may not be as important as others.
 For instance, for most studies in psycholinguistics,
@@ -135,38 +124,19 @@ language use and processing, not that
 it will affect language use in all language users.
 From this perspective, these studies' lack
 of external validity isn't too damning \citep{Mook1983}.
+\parend
 
-\mypar{Exercise}
-  Skim the article by \citet{Offerman2016}
-  and answer the following questions.
-  
-  \begin{enumerate}
-    \item The study features two \term{conditions}:
-    an experimental group and a control group.
-    Briefly describe the difference between these conditions in terms
-    of what the participants were asked to do. (Sections 3.1 and 3.3.)
-    
-    \item Consider the first research question on p.~48:
-    ``Does a visual feedback paradigm improve production of the segmental
-    feature voice onset time?''
-    
-    Based on your answer to the previous question, complete the following:
-    
-    ```Does a visual feedback paradigm improve production of the segmental
-    feature voice onset time compared to [\textsc{your answer}]?''
-    
-    What would a stronger baseline for the comparison look like, and why?
-    
-    \item Who were the participants to this study? 
-    Do the authors report how the participants were assigned to the study's
-    conditions? (Section 3.1.) 
-    
-    How does this affect our (i.e., the readers') ability to judge the study's
-    internal validity?
-    \parend
-  \end{enumerate}
-  
-  
+\begin{framed}
+ Anticipate and resolve problems
+related to lacking validity and reliability
+\emph{before} collecting the data. This often
+involves making compromises or coming to the
+realisation that you can't satisfactorily
+answer all your questions in a single study.
+Do \emph{not} assume that some statistical method
+will solve your problems.
+\end{framed}
+
 \mypar{Exercise}
   \citet{DeWilde2020} found that Flemish children already knew
   a decent number of English vocabulary items even before they took their
@@ -175,7 +145,7 @@ of external validity isn't too damning \citep{Mook1983}.
   Dutch translations (i.e., cognates) tended to be commonly known among
   these children.
   In their conclusion, the authors write that
-  ```[t]he study also suggests that (\dots) teachers do not need to pre-teach
+  ``[t]he study also suggests that (\dots) teachers do not need to pre-teach
   some cognate words, even for learners at an elementary level'' (pp.~374--375).
   
   \citet{DeWilde2020} didn't empirically investigate the effects of implementing
@@ -183,7 +153,7 @@ of external validity isn't too damning \citep{Mook1983}.
   of not `pre-teaching' English words with true Dutch cognates
   but still teaching false friends, i.e., English words for which a Dutch
   word with a similar form but a different meaning exists 
-  (e.g., \textit{room}, which means `cream' in Dutch)?
+  (e.g., \textit{slim}, which means `clever' in Dutch)?
 \parend
 
 \section{Increasing internal validity through randomisation}
@@ -229,8 +199,11 @@ relationship is no longer confounded by $U$.
 To highlight that the values of $X$ were specified at random,
 we use a subscript $_r$.
 
+\mypar{Definition}
 Studies in which the participants
 are randomly assigned are called \term{true experiments}.
+\parend
+
 Random allocation by itself doesn't guarantee that the results of the
 experiment can be trusted or interpreted at face value, but it does eliminate
 confounding as a threat to the study's internal validity.
@@ -262,6 +235,34 @@ confounding as a threat to the study's internal validity.
   And unless it explicitly says that the assignment was carried out at
   random, do not assume that it was.
 \parend
+
+\mypar{Exercise}
+  Skim the article by \citet{Offerman2016}
+  and answer the following questions.
+  
+  \begin{enumerate}
+    \item The study features two \term{conditions}:
+    an experimental group and a control group.
+    Briefly describe the difference between these conditions in terms
+    of what the participants were asked to do. (Sections 3.1 and 3.3.)
+    
+    \item Consider the first research question on p.~48:
+    ``Does a visual feedback paradigm improve production of the segmental
+    feature voice onset time?''
+    
+    Based on your answer to the previous question, complete the following:
+    
+    ``Does a visual feedback paradigm improve production of the segmental
+    feature voice onset time compared to [\textsc{your answer}]?''
+    
+    What would a stronger baseline for the comparison look like, and why?
+    
+    \item Who were the participants in this study? 
+    Do the authors report how the participants were assigned to the study's
+    conditions? (Section 3.1.) 
+    How does this affect our (i.e., the readers') ability to judge the study's
+    internal validity? \parend
+\end{enumerate}
 
 \subsection{Why experiments?}
  \begin{enumerate}
@@ -297,7 +298,7 @@ Some fundamental results from combinatorics are useful at this stage.
   \begin{align*}
     \begin{cases}
       n(n-1)\cdots 2 \cdot 1, & \textrm{if $n \geq 1$}, \\
-      1, &\textrm{if $n = 0$.}
+      1,                      & \textrm{if $n = 0$},
     \end{cases}
   \end{align*}
   different ways to sort them (`\term{permutations}').
@@ -403,8 +404,10 @@ Six out of the 252 possible allocations are shown in Figure \ref{fig:rand-alloc}
 Note that in none of them, the intervention and control groups are
 perfectly balanced with respect to both IQ and sex.
 So randomisation clearly does not generate balanced groups in any particular
-study. However, each participant is as likely to end up in the intervention
-group as they are to end up in the control group, so \emph{on average}---across
+study. 
+However, each participant is as likely to end up in the intervention
+group as any other participant, and the same goes for the control group.
+So \emph{on average}---across
 all 252 possible allocations---sex, IQ, as well as all unmeasured variables,
 are balanced between the two groups. For our present purposes, this means that
 randomisation is an equaliser: the result may not be two perfectly equal groups,
@@ -491,10 +494,12 @@ could result in confounding.
  \item 60 participants trickle into the lab.
  The first 30 are assigned to the experimental condition,
  the final 30 are assigned to the control group.
+ 
  \item Experiment with a school class:
  Pupils whose last name starts with a letter between
  A and K are assigned to the control group,
  the others to the experimental group.
+ 
  \item Participants come to the lab one by one.
  For each participant, the researcher throws a dice.
  If the dice comes up 1, 2, or 3, the participant is
@@ -504,6 +509,7 @@ could result in confounding.
  After four weeks, no more participants sign up.
  The control group consists of 17 participants;
  the experimental group of 12.
+ 
  \item Participants come to the lab one by one.
  The first participant is assigned to the experimental condition,
  the second to the control condition,
@@ -511,14 +517,26 @@ could result in confounding.
  the fourth to the control condition, etc.
  Of the 29 participants who signed up in total, 15 are assigned to the
  experimental condition and 14 to the control condition.
+ 
  \item To investigate the effects of bilingualism
  on children's cognitive development, 20 bilingual
  4-year-olds (10 girls, 10 boys) are recruited.
  20 monolingual 4-year-olds (10 girls, 10 boys)
  serve as the control group.
+ 
  \item 32 participants sign up for an experiment.
  The researcher enters their names into \url{http://www.random.org/lists/},
- clicks \texttt{Randomize} and assigns the first 16 to the control group
+ clicks \texttt{Randomize}, 
+ inspects the resulting list,
+ and decides to assign
+ the first 16 to the control group
+ and the others to the experimental group.
+ 
+ \item 32 participants sign up for an experiment.
+ The researcher enters their names into \url{http://www.random.org/lists/},
+ clicks \texttt{Randomize}, 
+ and, without first looking at the resulting list, 
+ the first 16 to the control group
  and the others to the experimental group. \parend
 \end{enumerate}
 
@@ -610,9 +628,9 @@ grid.arrange(p1, p2, ncol = 2)
   the intervention and the control scores, i.e., the average intervention effect, 
   is one point. 
   \textit{Right:} The histogram shows the distribution of the mean difference
-  between the intervention and control scores for each of the ${16 \choose 9} = 11440$
+  between the intervention and control scores for each of the 11,440
   possible allocations of participants to the two conditions.
-  Averaged over all 11,440 allocations, the mean difference is also one point.
+  Averaged over all allocations, the mean difference is also one point.
   But for many individual allocations, the mean difference may differ considerably
   from the true average intervention effect of one point.}
   \figlabel{fig:estimation}
@@ -744,26 +762,6 @@ More complex allocation procedures are possible.
 Some of these are common in medical research \citep{Rosenberger2016},\marginnote{Incidentally, medical researchers refer to simple randomisation as `complete randomisation'. It's probably best to just spell out how the randomisation was carried out rather than to rely on short-hand terminology.} 
 but they are rarely applied in the social sciences.
 
-% \mypar{Exercise}
-% For each description, decide if the study is a true experiment.
-% 
-% \begin{enumerate}[(a)]
-% 
-%  \item Eight Swiss speakers of German indicate how beautiful they find
-%  the French language on a 7-point scale. Additionally, they all record a text in French.
-%  In a `perception experiment', 20 native speakers rate all recordings on a 5-point scale
-%  from `very strong foreign accent' till `no foreign accent whatsoever'.
-%  The question is whether the speakers' attitudes are related to the strength of their accent in French \citep{Kolly2011}.
-% 
-%  \item ''This study presents the first experimental evidence that singing can facilitate short-term paired-associate phrase learning in an unfamiliar language (Hungarian). Sixty adult participants were randomly assigned to one of three ''listen-and-repeat'' learning conditions: speaking, rhythmic speaking, or singing.''
-%  After 15 minutes of learning, the learners' Hungarian skills are tested and compared between the three conditions \citep{Ludke2014}.
-% 
-%  \item ''The possible advantage of bilingual children over monolinguals in analyzing word meaning from verbal context was examined.
-%  The subjects were 40 third-grade children (20 bilingual and 20 monolingual) \dots
-%  The two groups of participants were compared on their performance on a standardized test of receptive vocabulary
-%  and an experimental measure of word meanings, the Word--Context Test.'' \citep{MarinovaTodd2012}\parend
-% \end{enumerate}
-
 \mypar[Complete randomisation with several conditions]{Exercise}
   Consider an experiment with 60 participants who are assigned to
   three conditions using complete randomisation (20 participants per condition).
@@ -779,7 +777,7 @@ but they are rarely applied in the social sciences.
 \parend
 
 \begin{framed}
- The word 'experiment' can be used in a stricter or in a looser sense.
+The word 'experiment' can be used in a stricter or in a looser sense.
 The mere fact that a study is referred to as an 'experiment' does \emph{not}
 mean that it's a \textit{true experiment} (control group + randomisation):
 the use of the label doesn't automatically imply that confounding has been
