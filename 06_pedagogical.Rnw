@@ -4,8 +4,8 @@ but they apply to other studies, too.
 
 \section{Sample mortality}
 \term{Sample mortality} refers to research participants who become unavailable
-in the course of a study.
-In a school-based study, examples include children who can't participate
+over the course of a study.
+In a school-based study, examples include children who don't participate
 in a follow-up test because of a dental appointment, because they 
 switched schools, or quite simply, because they don't want to.
 Less lurid and more descriptive terms for sample mortality are
