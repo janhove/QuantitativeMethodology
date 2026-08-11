@@ -3,11 +3,9 @@ If you've read a few quantitative research articles,
 you've probably encountered $p$-values.
 This chapter explains the basic logic
 behind $p$-value-based inferential statistics.
-It does so by explicitly linking the computation of $p$-values
-to the random assignment of participants to conditions
-in experimental research. If you have ever taken an introductory
+If you have ever taken an introductory
 statistics class, chances are $p$-values were explained to you
-in a different fashion, presumably by making assumptions about
+in a different fashion, presumably starting from assumptions about
 how the observations in the sample were sampled from a larger
 population and by making reference to the Central Limit Theorem.
 For the explanation in this chapter, however, we're going to take
@@ -90,7 +88,7 @@ H0_stats <- sort(H0_stats)
 @
 
 Table \ref{tab:speechrates} lists the precise values for good measure.
-This table introduces the shorthand $Y_i(0)$ to refer 
+This table uses the shorthand $Y_i(0)$ to refer 
 to the $i$-th participant's speech rate if this participant was assigned
 to the \textit{without alcohol} condition 
 (e.g., Lukas' speech rate is $Y_7(0) =$ 3.7)
@@ -163,7 +161,7 @@ The first type of account, namely that the result obtained is due solely
 to chance, is known as the \term{null hypothesis} ($H_0$);
 the second as the \term{alternative hypothesis} ($H_A$).
 
-A particularly strong version of the first account is that experimental 
+A particularly strong version of the first account is that the experiment's 
 conditions do not differentially affect \emph{any} of nine participants'
 speech rates.
 This version, which is due to \citet{Fisher1935}, is known as the 
@@ -190,7 +188,7 @@ The putative results are known as potential outcomes; see Definition
 
 \begin{table}
 \caption{The potential outcomes in the fictitious alcohol--verbal fluency experiment 
-under the strong null hypothesis}
+under the strong null hypothesis.}
 \centering
 \begin{tabular}{@{}rlcc@{}}
 \toprule
@@ -240,7 +238,7 @@ ggplot(d2,
 \figlabel{fig:alcohol_results_alt}
 \end{marginfigure}
 
-Under the strong $H_0$, we have $Y_i(0) = Y_i(1)$ for $i = 1, \dots, 10$.
+Under the strong $H_0$, we have $Y_i(0) = Y_i(1)$ for $i = 1, \dots, 9$.
 The difference between the means of the $Y_i(0)$ and of the $Y_i(1)$ values,
 then, is zero.
 Still assuming that the strong $H_0$ is correct, then, 
@@ -291,7 +289,7 @@ In five out of 126 cases, the re-arrangement of participants to conditions
 produces a mean difference in speech rate in favour of the \textit{with alcohol}
 group that is a least as large as the one we actually observed (0.82).
 In other words, under the strong null hypothesis,
-the probability with which we would observe a mean difference of at least $0.82$ 
+the probability with which we would observe a mean difference of at least 0.82 
 in favour of the \textit{with alcohol} condition if chance alone (in the form
 of random assignment) were at play is $\frac{5}{126} \approx$ 0.0397 (3.97\%).
 This quantity is known as the \term{p-value}.
@@ -327,7 +325,7 @@ in the L2 in these participants.
   Proceeding entirely analogously, we would have found that, under the
   strong null hypothesis, 123 out of 126 of the mean differences
   would have been larger than the actually observed mean difference of
-  $-0.82$ ($p = \frac{123}{126} \approx 0.98$).
+  \textminus 0.82 ($p = \frac{123}{126} \approx$ 0.98).
   This would have given us no evidence for an alcohol-induced decrease
   in L2 verbal fluency.
   
@@ -340,11 +338,11 @@ in the L2 in these participants.
   The analysis would then have shown that, under the strong null hypothesis,
   we would have obtained an absolute mean difference as least as large
   as the one actually obtained (namely 0.82) in 9 out of 126 cases
-  ($p = \frac{9}{126} \approx 0.071$).
+  ($p = \frac{9}{126} \approx$ 0.071).
   Using the threshold $\alpha =$ 0.05, we would then have surmised that
   the study's results are fairly compatible with the strong null hypothesis.
   
-  The choice of the statistic chosen to compare the conditions in a
+  The choice of the statistic used to compare the conditions in a
   statistical test, then, affects the outcome of this test.
   Moreover, as we will see in more detail in a moment, it is imperative
   that the choice of this statistic is settled in advance, i.e.,
@@ -398,7 +396,7 @@ in the L2 in these participants.
   To compute the left-sided $p$-value, we would have computed
   the number of rerandomisations in which the mean difference was equal to
   or lay to the left of the mean difference that we actually observed.
-  The result would have been a $p$-value of $p = \frac{123}{126} \approx 0.98$,
+  The result would have been a $p$-value of $p = \frac{123}{126} \approx$ 0.98,
   exactly as we obtained when changing the direction of the mean difference
   in Remark \ref{rem:directional}.
   Denote the left-sided $p$-value by $p_{\ell}$.
@@ -420,7 +418,7 @@ in the L2 in these participants.
   
 \section{On `rejecting' null hypotheses}
 Researchers will often say that they `reject' the null hypothesis in
-favour of the alternative hypothesis if $p \leq \alpha$, where typically $\alpha = 0.05$.
+favour of the alternative hypothesis if $p \leq \alpha$, where typically $\alpha =$ 0.05.
 This practice is subject to often heated debate \citep[see][]{McShane2017},
 and it's important to realise that $p \leq \alpha$ is possible
 even if the null hypothesis is true.
@@ -501,7 +499,7 @@ can make two types of errors, depending on whether $H_0$ or $H_A$ is actually tr
 see Table \ref{tab:errors}.
 Without additional information (e.g., in the form of converging evidence
 from other studies or logical reasoning), we can't really know whether
-`$p \leq 0.05$' represents an error or a true finding. \textbf{(!)}
+`$p \leq$ 0.05' represents an error or a true finding. \textbf{(!)}
 
 \begin{table}[h]
 \caption{If you're in the business of rejecting null hypotheses, there are two types of errors you can make.
@@ -517,6 +515,8 @@ $p \leq \alpha$               & Wrong conclusion                & Fine---we reje
 \end{tabular}
 \label{tab:errors}
 \end{table}
+
+\medskip
 
 Furthermore, that the $H_A$ stipulates that the results are
 due to a combination of chance and systematic factors.
@@ -543,7 +543,9 @@ Further assume that the null hypothesis is correct in all of these experiments.
 \begin{enumerate}[(a)]
   \item Which of the four histograms shown in Figure \vref{fig:distr_pvalues}
 could plausibly represent the distribution of the 10,000 $p$-values? 
-  \item Which of the four histograms would you hope to find if the alternative hypothesis were correct in all of the 10,000 experiments? Why? \parend
+  \item Which of the four histograms would you most hope to find 
+  if the alternative hypothesis were correct in all of the 10,000 experiments? 
+  Why? \parend
 \end{enumerate}
 
 \begin{figure*}[htp]
@@ -606,14 +608,17 @@ A research team is conducting an experiment in 30 school classes
   increases the speech rates and correspondingly used the mean difference
   in favour of the \textit{with alcohol} group as the test statistic,
   then she would have obtained a $p$-value no larger than $\alpha =$ 0.05
-  with 4.76\% probability.
+  with 4.76\% probability.\marginnote{The proportion of $p$-values below 0.05
+  cannot easily be gleaned from the data themselves. 
+  For each possible randomisation, I had to compute
+  the $p$-value that it would have resulted in.}
   
   Similarly, if she had decided beforehand to test if moderate alcohol intake
   decreases the speech rates and had correspondingly used the mean difference
   in favour of the \textit{without alcohol} condition as the test statistic,
   the she would have obtained a $p$-value no larger than $\alpha =$ 0.05
   with 3.97\% probability.
-  In both cases, $\mathbb{P}(P \leq 0.05) \leq 0.05$ as guaranteed by 
+  In both cases, $\mathbb{P}(P \leq 0.05) \leq$ 0.05 as guaranteed by 
   Theorem \ref{lemma:boundpval}.
   
   However, imagine that the analyst had first looked at the data to see
@@ -663,17 +668,23 @@ when using these shortcuts
 (i.e., $\mathbb{P}(p \leq \alpha) \approx \alpha$ under $H_0$).
 
 \section{Statistical power}\label{sec:power}
-A study's statistical power is the probability with which its significance test
+
+\mypar{Definition}
+A study's statistical \term{power} is the probability with which its significance test
 will yield $p \leq \alpha$ under the alternative hypothesis, 
 for some predetermined $\alpha \in (0, 1)$. 
+\parend
+
 In studies in which one group is compared to a different
 group, this probability depends on three factors apart from $\alpha$ itself 
 (see Figure \ref{fig:power}):
 
 \begin{enumerate}
 \item The size of the difference in the outcome between the groups
-that the systematic factors cause. Even if they don't cause any difference, it is possible to obtain a statistically significant difference due to chance.
+that the systematic factors cause.
+
 \item The number of observations.
+
 \item The variability in the outcome variable within each group.
 \end{enumerate}
 
@@ -719,7 +730,7 @@ Briefly explain your reasoning.
 
   \item A new but similar study would likely yield a low $p$-value as well.
   More precisely, there is a 98\% probability that such a study would yield
-  a significant $p$-value (i.e., $p \leq 0.05$).
+  a significant $p$-value (i.e., $p \leq$ 0.05).
 
   \item If we concluded that the alternative hypothesis is correct, we would be wrong at most 2\% of the time.
 
@@ -736,20 +747,25 @@ The blog post
 discusses why the randomisation-based approach to statistical inference
 used in this chapter differs from the population-based approach that is
 more commonly taught in introductory statistics courses.
-The blog entries 
-\href{https://janhove.github.io/posts/2015-02-26-explaining-key-concepts-using-permutation-tests/}{\textit{Explaining key concepts using permutation tests}}
-and 
-\href{https://janhove.github.io/posts/2014-09-12-a-graphical-explanation-of-p-values/}{\textit{A purely graphical explanation of $p$-values}} 
-may be of some further use.
+
+This chapter discussed how the strong null hypothesis can
+be tested.
+It contrasts with the weak null hypothesis, which posits that
+the potential outcomes in the conditions are the same on average, rather
+than the same for each unit.
+See
+\href{https://janhove.github.io/posts/2026-07-13-weak-strong-H0/}{\textit{Testing strong and weak null hypotheses in randomised experiments}}.
 
 \citet{Goodman2008} discusses some common misinterpretations of $p$-values;
 his list is far from exhaustive.
 
 Analysing quantitative data and running significance tests aren't
-synonymous; see my booklet as well as \citet{Winter2019} for introductions
+synonymous; see my booklet 
+\href{https://janhove.github.io/resources.html#analysing-quantitative-data-an-introduction-for-language-researchers}{\textit{Analysing quantitative data}}
+as well as \citet{Winter2019} for introductions
 to statistics for linguists that don't emphasise signficance testing.
-Nonetheless, quantitative research in the social sciences, including in applied
-linguistics, has developed something of a significance fetish,
+Nonetheless, quantitative research in the social sciences
+has developed something of a significance fetish,
 with authors inundating their readers with significance tests and $p$-values
 that they themselves don't seem to really understand while giving them
 little insight into what the data actually look like.
