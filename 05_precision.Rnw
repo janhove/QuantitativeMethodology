@@ -37,12 +37,12 @@ But \emph{an estimate obtained from an unbiased study can be completely off-targ
 We've demonstrated this in Remark \ref{remark:estimation},
 but to better appreciate this, consider a six-sided dice. 
 The average number of pips on a six-sided dice 
-is $\frac{1+2+3+4+5+6}{6}=3.5$. Let's pretend
-we didn't know this and we wanted to estimate this number (i.e., 3.5) by throwing
+is $\frac{1+2+3+4+5+6}{6}=$3.5. Let's pretend
+we didn't know this and we wanted to estimate this number (i.e., 3.5) by rolling
 the dice and jotting down the number of pips showing face-up.
 
 \begin{itemize}
-  \item If we do this just once, we'll just obtain an integer between 1 and 6
+  \item If we do this just once, we'll just obtain each integer between 1 and 6
   with equal probability (six possibilities). 
   If we obtain a 1, our estimate will be off by 2.5 pips;
   if we obtain a 2, we'll be off by 1.5 pips; \dots; 
@@ -61,7 +61,7 @@ The dashed vertical line highlights the true mean number of pips.}
 \end{marginfigure}
 
   \item If we throw the dice twice,
-  we'll now observe one of $6^2 = 36$ possible outcomes. 
+  we'll now observe one of $6^2 =$ 36 possible outcomes. 
   When we average the number of pips on both throws, we can still obtain an estimate of 1 (when
   you throw two 1s), but there's just a 1-in-36 probability of that happening.
   Six of the possible outcomes will be right on the mark
@@ -96,7 +96,7 @@ So as we increase the number of throws (i.e., as we increase the sample size),
 the average of the observations tends to correspond more closely to the true average.
 Put differently, our estimate tends to become more \textbf{precise}.
 It's still \emph{possible} to be completely off mark, but it's less \emph{probable}.
-Clearly, the third `design' (throwing the dice 5 times) is preferable to
+Clearly, the third `design' (rolling the dice 5 times) is preferable to
 the first and second design---not because it's unbiased (all three attempts are
 unbiased), but because the estimate it yields is expected to be closer to the
 truth.
@@ -108,7 +108,7 @@ and is typically expressed by means of \textbf{standard errors},
 \textbf{confidence intervals},
 or \textbf{credible intervals}. 
 We won't concern ourselves here with how these
-statistics are to be calculated and interpreted; 
+statistics are to be calculated; 
 a rough appreciation of precision along the lines of the dice example suffices.
 
 \section{Factors affecting precision}
@@ -172,7 +172,8 @@ have to be the same in both conditions.
  for randomisation:
  It's possible that the researchers,
  while matching the participants on one background variable, inadvertently
- introduce a bias with respect to another background variable
+ introduce a bias with respect to another background variable,
+ for instance when the matched variable happens to be a collider
  (see Chapter \ref{ch:quasi}).
  Moreover, matching only allows you to equate those confounding variables
  that you matched for (see Figure \vref{fig:matching}).
@@ -180,17 +181,23 @@ have to be the same in both conditions.
  probabilistically equates \emph{other} (and indeed unknown) confounding variables
  and is superior to matching.
 
-\mypar[Blocking]{Definition}
- \begin{quotation}
- ``[M]atching is no real help when used to
- overcome initial group differences.
-  This is not to rule out matching \emph{as an adjunct to randomization}, as when one
-  \emph{gains statistical precision} by assigning students to matched pairs, and
-  then randomly assigning one member of each pair to the experimental group,
-  the other to the control group. In the statistical literature this is known
-  as `\term{blocking}.''' \citep[p.~15; my emphasis]{Campbell1963}
-  \end{quotation}
+\mypar{Definition}
+  \term{Blocking} is a procedure in which researchers group together units
+  that are similar in some respect.
+  Then, within each group (block), the units are randomly assigned to
+  the experiment's conditions by means of complete randomisation.
 \parend
+
+ % \begin{quotation}
+ % ``[M]atching is no real help when used to
+ % overcome initial group differences.
+ %  This is not to rule out matching \emph{as an adjunct to randomization}, as when one
+ %  \emph{gains statistical precision} by assigning students to matched pairs, and
+ %  then randomly assigning one member of each pair to the experimental group,
+ %  the other to the control group. In the statistical literature this is known
+ %  as `\term{blocking}.''' \citep[p.~15; my emphasis]{Campbell1963}
+ %  \end{quotation}
+
 
 \mypar[Blocking using pairs]{Example}
 Based on a pool of participants, we build pairs of participants of the same sex and age and
@@ -213,16 +220,13 @@ beforehand.
   to each of the three conditions, and similarly for the male participants.
   The random assignment helps to prevent
   confounding variables from biasing the results, 
-  the added benefit is that the three conditions have the same sex distribution.\marginnote{That said, it is not clear to me why they chose to block on sex.}
+  the added benefit is that the three conditions have the same sex distribution.\marginnote{That said, it is not clear to me   why they chose to block on sex.}
 \parend
 
- Blocking can increase a study's statistical precision---provided it is
- taken into account during the analysis.
- The stronger the outcome is related to the
- blocking factors, the more powerful blocking is.
- 
- Furthermore, blocking takes place \emph{before} the random assignment.
- You can't block after the fact.
+Blocking can increase a study's statistical precision---provided it is
+taken into account during the analysis.
+The stronger the outcome is related to the
+blocking factors, the more powerful blocking is.
 
 \mypar[Blocking and randomisation testing]{Remark}
 If you incorporate blocking in the design of your study, 
@@ -312,7 +316,7 @@ p1
   \figlabel{fig:dutch}
 \end{figure}
 
-There are ${14 \choose 7} = 3432$ ways to randomly assign these 14 participants to
+There are ${14 \choose 7} =$ 3432 ways to randomly assign these 14 participants to
 two conditions ($A$ and $B$) with 7 participants each.
 For the learners in Condition $A$, we'd observe the scores
 shown as circles in Figure \ref{fig:dutch};
@@ -390,7 +394,7 @@ ggplot(df_diffs, aes(diffs, y = sample)) +
   ggtitle("Possible results when using complete randomisation")
 @
 
-\begin{figure}
+\begin{figure}[p]
   \centering
   \includegraphics[width = 0.7\textwidth]{figure/dutch2-1}
   \caption{Across all 3,432 possible random assignments, the mean absolute estimation error of the difference between the two learning methods is about 0.67 points. The vertical line highlights the average estimate across all 3,432 possible random assignments.}
@@ -426,7 +430,7 @@ ggplot(df_diffs,
 mean(abs(df_diffs$diffs - mean(df_diffs$diffs)))
 @
 
-\begin{figure}
+\begin{figure}[p]
   \centering
   \includegraphics[width = 0.7\textwidth]{figure/dutch3-1}
   \caption{Of the 3,432 possible random assignments, only 1,400 have an equal number of French speakers assigned to each learning method, as well as an equal number of German speakers assigned to each learning method. Across these 1,400 assignments, the mean absolute estimation error is just 0.59. The average estimate, highlighted by the vertical line, doesn't change.}
@@ -460,7 +464,7 @@ mean(abs(df_diffs$diffs - mean(df_diffs$diffs)))
 %   knitr::kable(format = "latex", booktabs = TRUE, position = "!h", linesep = "", caption = "In what percentage of randomisations did the mean difference end up in each interval? Note that for blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.\\label{tab:diffrand}")
 % @
 
-\begin{table}[tpbh]
+\begin{table}[p]
 \caption{In what percentage of randomisations did the mean difference end up in each interval? For blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.}
 \label{tab:diffrand}
 \centering
@@ -572,14 +576,13 @@ mean(p_blocked <= 0.05) # only 18%???
 The higher precision obtained by blocking is reflected
 in an increase in statistical power.
 In this particular example, the directional randomisation test 
-presented from the previous chapter
+presented in the previous chapter (with the mean difference as the test statistic)
 will return a $p$-value of 0.05 or less in 2,096 out of the
 3,432 possible allocations when using complete randomisation,
 that is, it has 61\% power.
 But when using blocking, such a significance test will return
 a $p$-value of 0.05 or less in 1,353 out of the 1,400 possible
 allocation, that is, it has 97\% power.
-
 
 \section{Leveraging control variables}\label{sec:covariates}
 In randomised experiments, the added value of control variables 
@@ -597,17 +600,17 @@ A pre-intervention measure of their performance---be it in the form of a score
 on a full-fledged \term{pretest} or some rougher proxy---is 
 therefore a useful control variable.\marginnote{On taking into account pretest results, see \citet{Vanhove2015}.}
 
-It's also possible to `block' on pretest scores. 
+It's also possible to block on pretest scores. 
 To this end, sort the participants
 according to their pretest score and divide them up into pairs like so:
 (12)(34)(56)(78)\dots. Within each pair, randomly assign one participant to the
 control group and one to the intervention group.
-You can similarly block on other continuous variables.
+You can similarly block on other ordered variables.
 
-\begin{framed}
+\mypar{Tip}
  Pre- and post-tests don't have to look identically.
  Any measure of pre-experiment performance is better than no measure at all.
-\end{framed}
+
 
  Of course, if the pre- and posttests aren't similar and can't be scored
  on the same scale, you won't be able to make any claims about how much
@@ -617,8 +620,9 @@ You can similarly block on other continuous variables.
  the conditions on the posttest scores. The purpose of the pretest scores
  is to increase the precision of this comparison. This can be achieved
  by using them as you would any other blocking or control variable,
- so they don't have to be expressed on the same scale as
- or be otherwise comparable with the posttest.
+ so they don't have to be expressed on the same scale as,
+ or be otherwise comparable with, the posttest.
+\parend
 
 In fairly small studies, blocking tends to increase precision a bit more than
 merely using control variables in the analysis, but in the vast majority of
@@ -628,11 +632,11 @@ cases where blocking or using control variables reduces precision (namely
 tiny studies in which the blocking or control variables are
 uninformative with respect to the outcome; \citealp{Imai2008}.)}
 
- \begin{framed}
+\mypar{Tip}
  Even if you're conducting a randomised experiment, it pays to
  think about which factors are likely to strongly affect the outcome so that, if feasible, you
  can take these factors into account using blocking or by means of control variables.
- \end{framed}
+\parend
 
 Don't go overboard with this, though. One or two strong blocking or control
 variables are likely to be helpful; umpteen variables that \emph{might conceivably}
@@ -657,7 +661,7 @@ After some discussion with your friend, you realise that, ideally,
 she should block on language background, whether the pupils receive special educational
 measures as well as average grade when randomly allocating the pupils to
 the experiment's condition. An equal number of pupils is to be assigned
-to both conditions.
+to each condition.
 
   \begin{enumerate}[(a)]
     \item Explain, as you would to your friend, how to generate
