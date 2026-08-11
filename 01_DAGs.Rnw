@@ -108,6 +108,8 @@ than not knowing it, but also vice versa.
   (e.g., eye colour and nationality).
 \end{itemize}
 
+\clearpage
+
 \mypar{*Remark}\marginnote{Comments and sections prefaced with an asterisk are optional.
 You don't need to study them for the exam.}
 The concepts of association and independence can be made more precise
@@ -116,11 +118,6 @@ you would need the more precise definitions.
 For the purposes of this course, however, a conceptual understanding
 along the lines of the more informal Definition \ref{def:association} suffices.
 \parend
-
-% Typical examples of associations in research are mean differences between
-% groups and correlations.\marginnote{You'll also often see the words `association' and
-% `correlation' used interchangeably. I prefer to use `association' as the hypernym
-% and reserve `correlation' for a specific type of association. See Chapter \ref{ch:quasi}.}
 
 Next, we define what we mean if we say that a variable $D$ causally influences
 a variable $Y$.
@@ -176,16 +173,16 @@ Three further remarks are in order:
 \section{Visualising causality: directed acyclic graphs (\textsc{dag}s)}
 
 \subsection{Why?}
-\begin{marginfigure}
-\includegraphics[width=\textwidth]{figure/correlation}
-\caption{Source: \url{https://xkcd.com/552}.}
-\figlabel{fig:xkcdcorrelation}
-\end{marginfigure}
 Research would be pretty easy if you could safely conclude that a causal
 link existed between two variables any time you observed an association between
 them. Fortunately for teachers of methodology courses who'd be on the dole
 otherwise, this isn't the case. But simply parroting back \emph{Correlation is not causation}
 isn't too helpful (Figure \ref{fig:xkcdcorrelation}).
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/correlation}
+\caption{Source: \url{https://xkcd.com/552}.}
+\figlabel{fig:xkcdcorrelation}
+\end{marginfigure}
 To help us figure out how associations between
 two variables can arise in the absence of a causal link between them, we turn
 to \term{directed acyclic graphs} (\textsc{dag}s).
@@ -227,7 +224,7 @@ both in the presence and in the absence of causal links between the variables of
 
 \subsection{Some examples}
 Before spelling out the rules for drawing \textsc{dag}s, let's look at a couple of
-possible \textsc{dag}s for the Andalusian \textsc{clil} study.
+possible \textsc{dag}s for the Andalusian \textsc{clil} study from Example \ref{ex:clil}.
 
 <<dag-clileng, include = FALSE, echo=FALSE, results='hide', fig.width=1.5, fig.height=0.5, fig.align='center', fig.path='figure/', dev='pdf'>>=
 library(dagitty)
@@ -363,7 +360,7 @@ proficiency does not imply that there is some causal link between them.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figure/no_loops_dag}
-\caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. $A_1$, $A_2$, $A_3$ and $A_4$ represent the same variable measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
+\caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. The nodes $A_1$, $A_2$, $A_3$ and $A_4$ represent the variable $A$ measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
 \figlabel{fig:no_loops_dag}
 \end{figure}
 
@@ -681,9 +678,11 @@ The difficulty lies in figuring out what collider was unwittingly controlled for
 \parend
 
 \begin{framed}
-In sum, unbroken chains both transmit causality and induce associations;
-forks induce associations without causality unless measures are taken (e.g., controlling for the confounder);
-and inverted forks induce associations without causality if the collider (or one of its descendants) is controlled for.
+In sum, unbroken chains may both transmit causality and induce associations;
+forks induce associations without causality unless measures are taken 
+(e.g., controlling for the confounder);
+and inverted forks may induce associations without causality if the collider 
+(or one of its descendants) is controlled for.
 \end{framed}
 
 \mypar{Exercise}
