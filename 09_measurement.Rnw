@@ -1,9 +1,5 @@
 \chapter{Constructs and indicators}\label{ch:measurementerror}
-We're faced with an inescapable fact of life:
-
-\begin{framed}
 Most measurements are imperfect.
-\end{framed}
 
 Saying that a study's measurements aren't perfect isn't much of a criticism.
 But it's crucial to appreciate the consequences of imperfect measures---pointing
@@ -83,16 +79,17 @@ the same age, even though this reported age will be lower than their actual age.
 As a final example, consider a poorly calibrated bathroom scale. If you put
 a calibrated mass of precisely 60 kg on it on five different occasions, it returns
 readings of 61.1, 60.4, 60.4, 60.5 and 61.2.
-The mean observation for the same mass is $\frac{61.1+60.4+60.4+60.5+61.2}{5} = 60.78$,
+The mean observation for the same mass is $\frac{61.1+60.4+60.4+60.5+61.2}{5} =$ 60.78,
 i.e., an overestimate of 0.78 kg.
 The mean absolute difference between the observations and their expected
-value (here: 60.78) is $\frac{|0.32| + |-0.38| + |-0.38| + |-0.28| + |0.72|}{5} = 0.42$.
+value (here: 60.78) is $\frac{|0.32| + |-0.38| + |-0.38| + |-0.28| + |0.72|}{5} =$ 0.42.
 
 \section{Consequences of measurement error}
 The consequence of systematic measurement error is clear: Your data are biased.
 This isn't necessarily a problem: If you're comparing two groups for both
 of which you have data that are biased to the same extent, the difference between
-them won't be biased. And for variables such as age, the systematic error (roughly
+them won't be biased. 
+Further, for variables such as age, the systematic error (roughly
 182 days) tends to be small relative to the variability of the true values, in 
 which case it's probably inconsequential.
 (But see, for instance, 
@@ -102,18 +99,22 @@ differences within an age group, e.g., 15-year-olds) in sport and education.)
 The consequences of random measurement error are much less intuitive and bear
 pointing out.
 
-% \paragraph{Less power and precision}
 First, measurement error on the \emph{outcome} variable will increase
 its variability. Since power and precision are lower when
 there's more variability in the outcome, 
 measurement error on the outcome lowers power and precision.
 
-% \paragraph{Statistical control is imperfect}
 Second,
 measurement error on a \emph{control} variable means that 
 controlling for this observed variable won't fully eradicate 
 the confounding caused by the construct itself.
 The \textsc{dag} in Figure \ref{fig:caveat2} illustrates this.
+As \citet{Huitema2011} puts it,
+
+\begin{quote}
+``[F]allibility in a covariate usually implies that there would be 
+more adjustment if the variable were measured without error.'' (p.~569)
+\end{quote}
 
 \begin{marginfigure}
   \centering
@@ -123,9 +124,7 @@ The \textsc{dag} in Figure \ref{fig:caveat2} illustrates this.
   \figlabel{fig:caveat2}
 \end{marginfigure}
 
-\begin{quote}
-``[F]allibility in a covariate usually implies that there would be more adjustment if the variable were measured without error.'' \citep[p.~569]{Huitema2011}
-\end{quote}
+
   
 Controlling for $A_{\textrm{obs}}$ is better than not controlling for it.
 But researchers routinely mistake 
@@ -149,14 +148,14 @@ with no skill or construct involved: playing roulette. Playing roulette
 is a losing proposition: For every 100 francs bet, you stand to lose about 5
 francs (= the mean). But on any given night, some players will luck out and
 make a killing, whereas other players get extraordinarily unlucky and lose much
-more than the expected 5 francs. Their winnings or losses are a dreadful measure
+more than the expected 5 francs per 100-franc bet. Their winnings or losses are a dreadful measure
 of their skill level: they all have the same skill level, which corresponds
-to a loss of 5 francs.
+to a loss of 5 francs per 100-franc bet.
 
 The next night, however, the lucky players from the
 day before probably won't get as lucky again (their luck the day before was
 extraordinary), and similarly for the unlucky players---all again stand to
-lose about 5 francs. Some might get lucky or unlucky twice in a
+lose about 5 francs per 100-franc bet. Some might get lucky or unlucky twice in a
 row, but they're more likely to end up somewhere near the 5-franc mark, i.e., most
 of the lucky and unlucky players will regress to the mean.
 \parend
@@ -189,11 +188,11 @@ If you administer a reading test to a group of learners
  But this pattern can be explained in
  terms of measurement error: Even if none of the learners actually
  learnt or unlearnt something, you're likely to find such a pattern.
- The reason is that, if you obtained a dismal score, you're likely
+ The reason is that, if you obtained an abysmal score, you're likely
  to be a pretty poor reader \emph{and} to have had some bad luck---perhaps
  the topic of the reading test just wasn't suited for you, or you
- were coming down with the flu. A couple of weeks later, you might
- encounter a topic you know a thing or two about or you might
+ were coming down with the flu. A couple of weeks later, you may
+ encounter a topic you know a thing or two about or you may
  be in better physical shape.
  Similarly, if you scored exceptionally well on the first test,
  you may have had some luck with the test's topic or with other

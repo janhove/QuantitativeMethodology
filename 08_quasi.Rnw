@@ -178,7 +178,7 @@ for \texttt{R}.
 # install.packages("pak")
 pak::pak("janhove/cannonball")
 
-# Load the functions
+# Load package
 library(cannonball)
 
 # Draw 16 plots with 20 data points each and r = 0.6
@@ -233,7 +233,7 @@ Now to the questions:
   facilitate the acquisition of L2 sound structure'' (abstract).\parend
 \end{enumerate}
 
-In correlational studies, control variables are often used to
+In observational studies, control variables are often used to
 adjust statistically for known confounders.
 One technique used to accomplish this is hierarchical regression;
 see Table 3 in \citet{Slevc2006} for an example.
@@ -323,7 +323,7 @@ abline(lm(resid(mod) ~ Schuhgroesse))
 \begin{figure}[tpbh]
   \centering
   \includegraphics[max width = \textwidth]{figure/hierarchical-1}
-  \caption{Hierarchical regression used to control for the age confound in the relationship between shoe size and vocabulary knowledge. The coloured circles in each panel show data belonging to the same three participants. The straight lines are regression lines. A regression line is the straight line that best captures the tendency in the cloud of data points, according to some definition of `best'.}
+  \caption{Hierarchical regression used to control for the age confound in the relationship between shoe size and vocabulary knowledge. The coloured circles in each panel show data belonging to the same three participants. The straight lines are regression lines. A regression line is the straight line that best captures the tendency in the cloud of data points, according to a definition of `best' that we do not cover here.}
   \figlabel{fig:hierarchical}
 \end{figure}
 
@@ -358,43 +358,18 @@ concerning statistical control:
   \ref{ch:measurementerror}.
 \end{enumerate}
 
-The following excerpt makes the same points:
+\citet{Christenfeld2004} make the same points,
+and their take-home message is clear:
 \begin{quote}
-``When experimental designs are premature, impractical, or impossible,
-researchers must rely on statistical methods to
-adjust for potentially confounding effects.
-Such procedures, however, are quite fallible.
-We examine several errors that often follow the use of statistical adjustment.
-
-``The first is inferring a factor is causal because
-it predicts an outcome even after ``statistical control''
-for other factors. This inference is fallacious when (as usual) such control
-involves removing the linear contribution of
-imperfectly measured variables, or when
-some confounders remain unmeasured.
-
-``The converse fallacy is inferring a factor is not causally
-important because its association with the outcome is attenuated
-or eliminated by the inclusion of covariates in the adjustment
-process. This attenuation may only reflect that the covariates treated as
-confounders are actually mediators (intermediates) and
-critical to the causal chain from the study factor to the study
-outcome.\footnote{What's meant is a causal chain such as $A \rightarrow B \rightarrow C$.
-$A$ is causally important, but if you control for $B$, you won't find
-any association between $A$ and $C$.}
-
-``Other problems arise due to mismeasurement of the study factor or outcome,
-or because these study variables are only proxies for underlying constructs.
-
-``\emph{Statistical adjustment serves a useful
+``Statistical adjustment serves a useful
 function, but it cannot transform observational studies into natural experiments, and involves far more subjective judgment than
-many users realize.}''
-\citep[abstract, my emphasis]{Christenfeld2004}
+many users realize.''
+\citep[abstract]{Christenfeld2004}
 \end{quote}
 
-\begin{framed}
-Large sample sizes don't solve these problems.
-\end{framed}
+Importantly, 
+and seemingly contrary to some researchers' beliefs,
+large sample sizes don't solve these problems!
 
 Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats-confounds-correlational-designs/}{\textit{Controlling for confounding variables in correlational research: Four caveats}}.
 
@@ -403,7 +378,7 @@ Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats
   the point of the preceding discussion is not for budding researchers to 
   throw their hands up in despair and avoid doing or reading observational studies.
   Rather, it is to instill in these researchers a sense of modesty as
-  well as the appreciation that
+  well as an appreciation that
   observational studies, to a much greater extent than experimental studies,
   leave open a host of alternative explanations for any sort of finding that
   they produce and that more definitive conclusions can be drawn only

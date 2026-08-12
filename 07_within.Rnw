@@ -8,13 +8,12 @@ each condition. In within-subjects designs, this idea is taken to an extreme.
   is assigned to multiple (typically: all) conditions.
 \parend
 
-We've already encountered within-school and within-class designs;
+We've already encountered within-school and within-class designs
+in the previous chapter;
 within-subjects designs extend the same logic to the individual unit.
 
 \section{Advantages and drawbacks}
-One potential advantage of within-subjects designs is that it becomes easier
-to explore interindividual differences in the efficacy of the treatment.
-However, the \emph{main} advantage of within-subjects designs is 
+The main advantage of within-subjects designs is 
 that they usually have greater statistical precision than an otherwise
 comparable experiment in which the units are assigned to the conditions at random.
 Indeed, a study's statistical precision depends on
@@ -56,9 +55,8 @@ These phenomena are referred to as
 and more generally, \term{order effects}.
 
 \section{Minimising order effects}
-The first technique to 
-to prevent learning or fatigue effects from exerting a systematic
-effect on the results is to vary the order of the conditions
+The first technique to prevent learning or fatigue effects 
+from biasing the results is to vary the order of the conditions
 between the participants.
 In \term{complete counterbalancing}, \emph{all} possible orders are 
 taken into account. If you have two within-subjects conditions,
@@ -79,10 +77,12 @@ B & C & A & C & A & B \\
 C & B & C & A & B & A \\
 \end{tabular}
 \end{table}
- 
+
+\medskip
+
 If a within-subjects experiment has lots of conditions,
 complete counterbalancing is impractical. For four conditions,
-for instance, there are already $4! = 24$ possible orders---we may not
+for instance, there are already 4! = 24 possible orders---we may not
 even have that many participants! 
 The second technique, the \term{Latin square design}, lends itself
 to such cases.\marginnote{`Latin' because the symbols used are typically
@@ -91,7 +91,7 @@ Latin squares are arrangements of symbols in a grid in which
 each of the symbols used occurs exactly once in each row and exactly once in each column. 
 The grid below is a Latin square
 of size 4---one of the 576 possible arrangements of the symbols A, B, C, and D
-that form a Latin square.\marginnote{Can you come up with a couple of the other 575 ones?}
+that form a Latin square.
  
 \begin{table}[h]
 \centering
@@ -105,37 +105,31 @@ D & A & B & C \\
 \end{tabular}
 \end{table}
 
-Let's say you picked the Latin square above for your study.
+\mypar{Exercise}
+There are four different Latin squares of size 4 in which the first column
+and the first row are both in natural order, i.e., ABCD.
+Such a Latin square is said to be in reduced form.
+
+Table \ref{tab:latquad} shows one Latin square of size 4 in reduced form.
+Construct the other three.
+\parend
+
+When adopting a Latin square design, you first pick at random a Latin square
+of the appropriate size in reduced form.
+You then randomly assign the participants to its rows.
+Finally, you assign the conditions randomly to the symbols used.
+
+For instance, let's say you picked at random the Latin square in 
+Table \ref{tab:latquad} for your study.
 You'd then randomly assign one quarter of the participants to
 the condition (or stimulus set) order ABCD (first row), 
 one quarter to BCDA (second row),
 one quarter to CDAB (third row) and one quarter to DABC (fourth row).
 The conditions (or stimulus sets) are randomly
 assigned to one of the letters, too.
-
-The third technique is useful when even a Latin square design becomes impractical.
-For instance, let's say that our study involves us showing 50 pictures to our
-participants that they are to describe. If we also want to draw comparisons
-between the descriptions of different pictures, then we cannot just present
-them in the same order to all participants: order effects could plausibly
-bias the results.
-But $50! = 3 \cdot 10^{64}$ is an astronomical number, ruling out
-complete counterbalancing, and and even just 50 different Latin square orders 
-seem impractical.
-One possible solution is to present the images in a new random order for each
-participant.
-The drawback of doing this is that perhaps image 3 occurs 
-much more often at the start than at the end of the data collection,
-but at least this imbalance isn't built into the design of the study.
-(Of course, it's possible that we just accept such `bias' if we aren't interested
-in differences between the images, but just in differences between
-the participants or between the conditions. 
-If that's the case, randomising the stimulus order is superfluous.)
-
-In many psycholinguistic studies, participants need to react
-to several stimuli per condition (e.g., 12 stimuli per condition).
-The order of the stimuli in these studies are often randomised
-so that the conditions are mixed up (e.g., $ABAABBBAB$ etc.).
+The participants assigned to the first row complete the conditions (or stimulus sets)
+in the order ABCD;
+those assigned to the second row complete them in the order BCDA, etc.
 
 Counterbalancing and Latin squares don't negate carry-over effects.
 Whether carry-over effects represent an acute danger to the study's
@@ -178,10 +172,44 @@ reason not to do so.)
   For a unit assigned to the $AB$ order, the known outcomes are how they
   performed in the $A$ condition \emph{if this condition is presented first}
   and how they performed in the $B$ condition \emph{if this condition is presented second}.
-  But unknown potential outcomes are how they would have performed
+  But there are still the unknown potential outcomes of how they would have performed
   in the $A$ condition if it had been presented second and in the $B$ condition
   if it had been presented first.
 \parend
+
+The preceding discussion assumes that the experiment's conditions
+have to appear one after the other.
+Sometimes, however, the conditions can be interleaved.
+In particular, this is the case in psycholinguistic studies in which
+the participants need to react to several stimuli per condition
+(e.g., 12 sentences per condition).
+In such settings, each participant is, in a sense, tested several times
+in each condition, and the order of presentation can be randomised
+for each participant (e.g., ABAABBBAB etc.).
+
+Similarly, it is sometimes desirable to randomise the order of the stimuli
+for each participant.
+For instance, let's say that we want to run a study
+in which we ask the participants to describe 50 pictures,
+which we show to them successively. 
+If we also want to draw comparisons between the descriptions 
+of the different pictures, 
+then we cannot just present them in the same order to all participants: 
+order effects could plausibly
+bias the results.
+But 50! = 3 $\cdot$ 10\textsuperscript{64} is an astronomical number, ruling out
+complete counterbalancing.
+And even a Latin square of size 50 seems impractical.
+One possible solution is to present the images in a new random order for each
+participant.
+The drawback of doing this is that perhaps image 3 occurs 
+much more often at the start than at the end of the data collection,
+but at least this imbalance isn't built into the design of the study.
+(Of course, it's possible that we just accept such `bias' if we aren't interested
+in differences between the images, but just in differences between
+the participants or between the conditions. 
+If that's the case, randomising the stimulus order for each participant is superfluous.)
+
 
 \mypar{Exercise}
 From \citet{Ludke2014}:
@@ -204,25 +232,25 @@ that you have to work with at most 30 men and 30 women as participants.
 As in the previous exercise, but with all three conditions.
 \parend
 
-\mypar[Reading assignment]{Exercise}
-The study by \citet{Kang2013} serves as an example of a within-subjects design. 
-Additionally, it uses some turns of phrase commonly found in research reports:
+\mypar{Exercise}
+A researcher wants to study if foreign-language vocabulary is best learnt
+when rehearsing the words one day (`short spacing')
+or one week after first studying them (`long spacing').
+He designs a within-subjects experiment in which fifty participants
+learn twenty items across the two conditions.
+Specifically, ten of the items are selected as `short spacing' items,
+and ten as `long spacing' items.
+On the first day, all participants study all twenty items.
+On the next day, they rehearse the `short spacing' items;
+on the eighth day, they rehearse the `long spacing' items.
+The next day, so on the ninth day, they are tested on all items;
+a few weeks later, they are tested again on all items.
 
 \begin{enumerate}[(a)]
-\item ``The Hebrew nouns were learned in one of two training conditions -- retrieval practice or imitation -- that were manipulated within subjects across separate blocks and semantic categories.'' (p.~1261)
-\begin{enumerate}[i.]
-  \item What does ``manipulated within subjects across separate blocks'' mean?
-  \item What does ``manipulated within subjects across semantic categories'' mean?
-\end{enumerate}
-
-\item ``The order of items in each test was randomized for each learner.'' (p.~1262) 
-        Why?
-        Would it have made sense to use the same fixed order of items for all learners?
-
-\item ``In Experiment 2, the order of both tests was counterbalanced across learners\dots'' (p.~1262).
-        This merely means that half of the learners first took Test A and then Test B, 
-        whereas the other half first took Test B and then Test A.
-        Would it have made sense to administer the test in the same order to all learners?\parend
+  \item Can this study tell us if these participants learn better with short spacing or with long spacing?
+        Briefly justify your answer.
+        
+  \item Suggest an improvement to this design. \parend
 \end{enumerate}
 
 \section{*Analysing data from within-subjects designs with two conditions}
@@ -248,6 +276,8 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
     \bottomrule
   \end{tabular}
 \end{table}
+
+\medskip
 
 \begin{itemize}
   \item We assume that there is some baseline $\beta$ common to all measurements.
@@ -301,7 +331,7 @@ are grounded in sound statistical theory.
   a carryover effect (i.e., that $\kappa \neq 0$),
   we can restrict the analysis to the first measurement
   and treat the data as stemming from a true (between-subjects) experiment.
-  However, by doing so, we lose half of the data as well as any 
+  However, by doing so, we lose half of the data as well as
   any improvement in statistical precision that we sought to obtain
   by adopting a within-subjects design.
 \parend
