@@ -35,12 +35,13 @@ findings are transparent to the readers.
         to do so at the start of the project rather than a couple of weeks before
         handing in your report.
         
-  \item Nowadays I exclusively use \url{https://osf.io/} for making available
-        online materials. See \url{https://osf.io/yxzfm/} for examples.
+  \item As of the autumn of 2026, the popular data-sharing platform
+        \url{https://osf.io/} will not accept new projects.
+        The CERN-hosted platform \url{https://zenodo.org/} seems to be
+        a promising alternative.
         
- \item For further guidance, 
-       see \citet{Klein2018},
-       \citet{Levenstein2018},
-       and \citet{Soderberg2018}.
+  \item For further guidance, 
+        see \citet{Klein2018},
+        and \citet{Levenstein2018}.
 \end{enumerate}
 

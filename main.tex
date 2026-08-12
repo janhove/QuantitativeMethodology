@@ -320,6 +320,8 @@ than not knowing it, but also vice versa.
   (e.g., eye colour and nationality).
 \end{itemize}
 
+\clearpage
+
 \mypar{*Remark}\marginnote{Comments and sections prefaced with an asterisk are optional.
 You don't need to study them for the exam.}
 The concepts of association and independence can be made more precise
@@ -328,11 +330,6 @@ you would need the more precise definitions.
 For the purposes of this course, however, a conceptual understanding
 along the lines of the more informal Definition \ref{def:association} suffices.
 \parend
-
-% Typical examples of associations in research are mean differences between
-% groups and correlations.\marginnote{You'll also often see the words `association' and
-% `correlation' used interchangeably. I prefer to use `association' as the hypernym
-% and reserve `correlation' for a specific type of association. See Chapter \ref{ch:quasi}.}
 
 Next, we define what we mean if we say that a variable $D$ causally influences
 a variable $Y$.
@@ -388,16 +385,16 @@ Three further remarks are in order:
 \section{Visualising causality: directed acyclic graphs (\textsc{dag}s)}
 
 \subsection{Why?}
-\begin{marginfigure}
-\includegraphics[width=\textwidth]{figure/correlation}
-\caption{Source: \url{https://xkcd.com/552}.}
-\figlabel{fig:xkcdcorrelation}
-\end{marginfigure}
 Research would be pretty easy if you could safely conclude that a causal
 link existed between two variables any time you observed an association between
 them. Fortunately for teachers of methodology courses who'd be on the dole
 otherwise, this isn't the case. But simply parroting back \emph{Correlation is not causation}
 isn't too helpful (Figure \ref{fig:xkcdcorrelation}).
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{figure/correlation}
+\caption{Source: \url{https://xkcd.com/552}.}
+\figlabel{fig:xkcdcorrelation}
+\end{marginfigure}
 To help us figure out how associations between
 two variables can arise in the absence of a causal link between them, we turn
 to \term{directed acyclic graphs} (\textsc{dag}s).
@@ -439,7 +436,7 @@ both in the presence and in the absence of causal links between the variables of
 
 \subsection{Some examples}
 Before spelling out the rules for drawing \textsc{dag}s, let's look at a couple of
-possible \textsc{dag}s for the Andalusian \textsc{clil} study.
+possible \textsc{dag}s for the Andalusian \textsc{clil} study from Example \ref{ex:clil}.
 
 
 
@@ -527,7 +524,7 @@ proficiency does not imply that there is some causal link between them.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figure/no_loops_dag}
-\caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. $A_1$, $A_2$, $A_3$ and $A_4$ represent the same variable measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
+\caption{Reciprocal influences can be represented legally in a \textsc{dag} if you break down the temporal structure. The nodes $A_1$, $A_2$, $A_3$ and $A_4$ represent the variable $A$ measured at four points in time. The value of this variable at a given point in time is determined in part by its value at the previous point in time (e.g., $A_3$ is influenced by $A_2$) as well as by the value of another variable at the previous point in time (e.g., $C_2$ influences $A_3$).}
 \figlabel{fig:no_loops_dag}
 \end{figure}
 
@@ -845,9 +842,11 @@ The difficulty lies in figuring out what collider was unwittingly controlled for
 \parend
 
 \begin{framed}
-In sum, unbroken chains both transmit causality and induce associations;
-forks induce associations without causality unless measures are taken (e.g., controlling for the confounder);
-and inverted forks induce associations without causality if the collider (or one of its descendants) is controlled for.
+In sum, unbroken chains may both transmit causality and induce associations;
+forks induce associations without causality unless measures are taken 
+(e.g., controlling for the confounder);
+and inverted forks may induce associations without causality if the collider 
+(or one of its descendants) is controlled for.
 \end{framed}
 
 \mypar{Exercise}
@@ -978,8 +977,7 @@ What can you conclude from this study?
 
 \clearpage
 
-\section{Critical questions}\label{sec:validitaet}%\cite{Nunan1992}\cite{Abbuhl2013}}
-
+\section{Critical questions}\label{sec:validitaet}
 The second attempt outlined above also falls short on a number of criteria.
 There are a couple of critical questions we can ask, and slightly modified
 versions of these questions can be asked about studies in general.
@@ -996,10 +994,10 @@ versions of these questions can be asked about studies in general.
  To what population, exactly?
 
  \item[Ecological validity]
- (Especially for applied research.)
  To what extent are the findings applicable
  to the world outside of the lab
  (e.g., teaching, policy)?
+ This question is especially important for applied research.
  
  \item[Reliability]
   Are the raw data open for interpretation?
@@ -1023,7 +1021,7 @@ versions of these questions can be asked about studies in general.
   Neurolinguistic research may show that using a foreign language highlights
   different brain regions in early and late learners.
   This may be interesting to neurolinguists.
-  But for language policy, what's more relevant is the extent to which
+  But for language policy, what's probably more relevant is the extent to which
   these groups differ behaviourally on communicatively relevant tasks.
 \parend
 
@@ -1052,17 +1050,7 @@ The second attempt outlined on page \pageref{sec:beispiel} is deficient
 in several of these respects. Discuss a few problems.
 \parend
 
-\begin{framed}
- Anticipate and resolve problems
-related to lacking validity and reliability
-\emph{before} collecting the data. This often
-involves making compromises or coming to the
-realisation that you can't satisfactorily
-answer all your questions in a single study.
-Do \emph{not} assume that some statistical method
-will solve your problems.
-\end{framed}
-
+\mypar{Remark}
 Depending on your goals, some types of validity
 may not be as important as others.
 For instance, for most studies in psycholinguistics,
@@ -1075,38 +1063,19 @@ language use and processing, not that
 it will affect language use in all language users.
 From this perspective, these studies' lack
 of external validity isn't too damning \citep{Mook1983}.
+\parend
 
-\mypar{Exercise}
-  Skim the article by \citet{Offerman2016}
-  and answer the following questions.
-  
-  \begin{enumerate}
-    \item The study features two \term{conditions}:
-    an experimental group and a control group.
-    Briefly describe the difference between these conditions in terms
-    of what the participants were asked to do. (Sections 3.1 and 3.3.)
-    
-    \item Consider the first research question on p.~48:
-    ``Does a visual feedback paradigm improve production of the segmental
-    feature voice onset time?''
-    
-    Based on your answer to the previous question, complete the following:
-    
-    ```Does a visual feedback paradigm improve production of the segmental
-    feature voice onset time compared to [\textsc{your answer}]?''
-    
-    What would a stronger baseline for the comparison look like, and why?
-    
-    \item Who were the participants to this study? 
-    Do the authors report how the participants were assigned to the study's
-    conditions? (Section 3.1.) 
-    
-    How does this affect our (i.e., the readers') ability to judge the study's
-    internal validity?
-    \parend
-  \end{enumerate}
-  
-  
+\begin{framed}
+ Anticipate and resolve problems
+related to lacking validity and reliability
+\emph{before} collecting the data. This often
+involves making compromises or coming to the
+realisation that you can't satisfactorily
+answer all your questions in a single study.
+Do \emph{not} assume that some statistical method
+will solve your problems.
+\end{framed}
+
 \mypar{Exercise}
   \citet{DeWilde2020} found that Flemish children already knew
   a decent number of English vocabulary items even before they took their
@@ -1115,7 +1084,7 @@ of external validity isn't too damning \citep{Mook1983}.
   Dutch translations (i.e., cognates) tended to be commonly known among
   these children.
   In their conclusion, the authors write that
-  ```[t]he study also suggests that (\dots) teachers do not need to pre-teach
+  ``[t]he study also suggests that (\dots) teachers do not need to pre-teach
   some cognate words, even for learners at an elementary level'' (pp.~374--375).
   
   \citet{DeWilde2020} didn't empirically investigate the effects of implementing
@@ -1123,7 +1092,7 @@ of external validity isn't too damning \citep{Mook1983}.
   of not `pre-teaching' English words with true Dutch cognates
   but still teaching false friends, i.e., English words for which a Dutch
   word with a similar form but a different meaning exists 
-  (e.g., \textit{room}, which means `cream' in Dutch)?
+  (e.g., \textit{slim}, which means `clever' in Dutch)?
 \parend
 
 \section{Increasing internal validity through randomisation}
@@ -1169,8 +1138,11 @@ relationship is no longer confounded by $U$.
 To highlight that the values of $X$ were specified at random,
 we use a subscript $_r$.
 
+\mypar{Definition}
 Studies in which the participants
 are randomly assigned are called \term{true experiments}.
+\parend
+
 Random allocation by itself doesn't guarantee that the results of the
 experiment can be trusted or interpreted at face value, but it does eliminate
 confounding as a threat to the study's internal validity.
@@ -1202,6 +1174,34 @@ confounding as a threat to the study's internal validity.
   And unless it explicitly says that the assignment was carried out at
   random, do not assume that it was.
 \parend
+
+\mypar{Exercise}
+  Skim the article by \citet{Offerman2016}
+  and answer the following questions.
+  
+  \begin{enumerate}
+    \item The study features two \term{conditions}:
+    an experimental group and a control group.
+    Briefly describe the difference between these conditions in terms
+    of what the participants were asked to do. (Sections 3.1 and 3.3.)
+    
+    \item Consider the first research question on p.~48:
+    ``Does a visual feedback paradigm improve production of the segmental
+    feature voice onset time?''
+    
+    Based on your answer to the previous question, complete the following:
+    
+    ``Does a visual feedback paradigm improve production of the segmental
+    feature voice onset time compared to [\textsc{your answer}]?''
+    
+    What would a stronger baseline for the comparison look like, and why?
+    
+    \item Who were the participants in this study? 
+    Do the authors report how the participants were assigned to the study's
+    conditions? (Section 3.1.) 
+    How does this affect our (i.e., the readers') ability to judge the study's
+    internal validity? \parend
+\end{enumerate}
 
 \subsection{Why experiments?}
  \begin{enumerate}
@@ -1237,7 +1237,7 @@ Some fundamental results from combinatorics are useful at this stage.
   \begin{align*}
     \begin{cases}
       n(n-1)\cdots 2 \cdot 1, & \textrm{if $n \geq 1$}, \\
-      1, &\textrm{if $n = 0$.}
+      1,                      & \textrm{if $n = 0$},
     \end{cases}
   \end{align*}
   different ways to sort them (`\term{permutations}').
@@ -1329,8 +1329,10 @@ Six out of the 252 possible allocations are shown in Figure \ref{fig:rand-alloc}
 Note that in none of them, the intervention and control groups are
 perfectly balanced with respect to both IQ and sex.
 So randomisation clearly does not generate balanced groups in any particular
-study. However, each participant is as likely to end up in the intervention
-group as they are to end up in the control group, so \emph{on average}---across
+study. 
+However, each participant is as likely to end up in the intervention
+group as any other participant, and the same goes for the control group.
+So \emph{on average}---across
 all 252 possible allocations---sex, IQ, as well as all unmeasured variables,
 are balanced between the two groups. For our present purposes, this means that
 randomisation is an equaliser: the result may not be two perfectly equal groups,
@@ -1357,10 +1359,12 @@ could result in confounding.
  \item 60 participants trickle into the lab.
  The first 30 are assigned to the experimental condition,
  the final 30 are assigned to the control group.
+ 
  \item Experiment with a school class:
  Pupils whose last name starts with a letter between
  A and K are assigned to the control group,
  the others to the experimental group.
+ 
  \item Participants come to the lab one by one.
  For each participant, the researcher throws a dice.
  If the dice comes up 1, 2, or 3, the participant is
@@ -1370,6 +1374,7 @@ could result in confounding.
  After four weeks, no more participants sign up.
  The control group consists of 17 participants;
  the experimental group of 12.
+ 
  \item Participants come to the lab one by one.
  The first participant is assigned to the experimental condition,
  the second to the control condition,
@@ -1377,14 +1382,26 @@ could result in confounding.
  the fourth to the control condition, etc.
  Of the 29 participants who signed up in total, 15 are assigned to the
  experimental condition and 14 to the control condition.
+ 
  \item To investigate the effects of bilingualism
  on children's cognitive development, 20 bilingual
  4-year-olds (10 girls, 10 boys) are recruited.
  20 monolingual 4-year-olds (10 girls, 10 boys)
  serve as the control group.
+ 
  \item 32 participants sign up for an experiment.
  The researcher enters their names into \url{http://www.random.org/lists/},
- clicks \texttt{Randomize} and assigns the first 16 to the control group
+ clicks \texttt{Randomize}, 
+ inspects the resulting list,
+ and decides to assign
+ the first 16 to the control group
+ and the others to the experimental group.
+ 
+ \item 32 participants sign up for an experiment.
+ The researcher enters their names into \url{http://www.random.org/lists/},
+ clicks \texttt{Randomize}, 
+ and, without first looking at the resulting list, 
+ the first 16 to the control group
  and the others to the experimental group. \parend
 \end{enumerate}
 
@@ -1436,9 +1453,9 @@ could result in confounding.
   the intervention and the control scores, i.e., the average intervention effect, 
   is one point. 
   \textit{Right:} The histogram shows the distribution of the mean difference
-  between the intervention and control scores for each of the ${16 \choose 9} = 11440$
+  between the intervention and control scores for each of the 11,440
   possible allocations of participants to the two conditions.
-  Averaged over all 11,440 allocations, the mean difference is also one point.
+  Averaged over all allocations, the mean difference is also one point.
   But for many individual allocations, the mean difference may differ considerably
   from the true average intervention effect of one point.}
   \figlabel{fig:estimation}
@@ -1570,26 +1587,6 @@ More complex allocation procedures are possible.
 Some of these are common in medical research \citep{Rosenberger2016},\marginnote{Incidentally, medical researchers refer to simple randomisation as `complete randomisation'. It's probably best to just spell out how the randomisation was carried out rather than to rely on short-hand terminology.} 
 but they are rarely applied in the social sciences.
 
-% \mypar{Exercise}
-% For each description, decide if the study is a true experiment.
-% 
-% \begin{enumerate}[(a)]
-% 
-%  \item Eight Swiss speakers of German indicate how beautiful they find
-%  the French language on a 7-point scale. Additionally, they all record a text in French.
-%  In a `perception experiment', 20 native speakers rate all recordings on a 5-point scale
-%  from `very strong foreign accent' till `no foreign accent whatsoever'.
-%  The question is whether the speakers' attitudes are related to the strength of their accent in French \citep{Kolly2011}.
-% 
-%  \item ''This study presents the first experimental evidence that singing can facilitate short-term paired-associate phrase learning in an unfamiliar language (Hungarian). Sixty adult participants were randomly assigned to one of three ''listen-and-repeat'' learning conditions: speaking, rhythmic speaking, or singing.''
-%  After 15 minutes of learning, the learners' Hungarian skills are tested and compared between the three conditions \citep{Ludke2014}.
-% 
-%  \item ''The possible advantage of bilingual children over monolinguals in analyzing word meaning from verbal context was examined.
-%  The subjects were 40 third-grade children (20 bilingual and 20 monolingual) \dots
-%  The two groups of participants were compared on their performance on a standardized test of receptive vocabulary
-%  and an experimental measure of word meanings, the Word--Context Test.'' \citep{MarinovaTodd2012}\parend
-% \end{enumerate}
-
 \mypar[Complete randomisation with several conditions]{Exercise}
   Consider an experiment with 60 participants who are assigned to
   three conditions using complete randomisation (20 participants per condition).
@@ -1605,7 +1602,7 @@ but they are rarely applied in the social sciences.
 \parend
 
 \begin{framed}
- The word 'experiment' can be used in a stricter or in a looser sense.
+The word 'experiment' can be used in a stricter or in a looser sense.
 The mere fact that a study is referred to as an 'experiment' does \emph{not}
 mean that it's a \textit{true experiment} (control group + randomisation):
 the use of the label doesn't automatically imply that confounding has been
@@ -1626,7 +1623,6 @@ for neutralising the danger that an association will come about
 through systematic confounding.
 The present chapter investigates some other plausible rival explanations.
 
-\section{The roles of variables in research}
 It is useful to clarify some terminology at this point.
 
 \mypar{Definition}\label{def:variables}
@@ -1683,7 +1679,7 @@ existing effect of the conditions.
 \end{framed}
 
 \section{Explanation 1: Expectancy effects}
-Perhaps the researchers or their assistants (subconsciously)
+Perhaps the researchers or their assistants (unwittingly)
 nudged the data in the hypothesised direction. 
 This can happen even when the measurements seem perfectly objective. 
 For instance, when you're counting the 
@@ -1760,7 +1756,7 @@ include \term{manipulation checks} in the study's design.
   This turned out to be an excellent idea: 
   The researcher found that the participant rejected a fair number
   of syntactically correct sentences, but that she did so for stylistic
-  rather than strictly syntactic reasons.
+  rather than for strictly syntactic reasons.
   The researcher then correctly didn't draw the conclusion that the
   participant's syntactic knowledge was incomplete.
 \parend
@@ -1768,11 +1764,11 @@ include \term{manipulation checks} in the study's design.
 Sometimes, the participants in a study don't really pay any attention
 to the stimuli or the instructions.
 For instance, questionnaire respondents may answer the questions
-in a zig-zag pattern (e.g., ABCDEDCBA\dots) 
+in a zig-zag pattern (e.g., \textsc{abcdedcba}\dots) 
 rather than give their mind to each question,
 so that they can tell the researcher they've participated.
-Figure \ref{fig:satisficing}
-provides another example of satisficing.
+The response patterns in Figure \ref{fig:satisficing}
+are similarly indicative of satisficing.
 
 \begin{figure}
   \centering
@@ -1783,10 +1779,12 @@ provides another example of satisficing.
   \figlabel{fig:satisficing}
 \end{figure}
 
+\mypar{Tip}
 If you want to verify if your participants carefully read the instructions
 and you're able to run the study online or at the computer,
 \citet{Oppenheimer2009} introduces a neat and unintrusive way 
 to do so.
+\parend
 
 Another useful technique to identify failed manipulations
 is the use of \term{positive controls}.
@@ -1850,11 +1848,9 @@ If you've read a few quantitative research articles,
 you've probably encountered $p$-values.
 This chapter explains the basic logic
 behind $p$-value-based inferential statistics.
-It does so by explicitly linking the computation of $p$-values
-to the random assignment of participants to conditions
-in experimental research. If you have ever taken an introductory
+If you have ever taken an introductory
 statistics class, chances are $p$-values were explained to you
-in a different fashion, presumably by making assumptions about
+in a different fashion, presumably starting from assumptions about
 how the observations in the sample were sampled from a larger
 population and by making reference to the Central Limit Theorem.
 For the explanation in this chapter, however, we're going to take
@@ -1912,7 +1908,7 @@ is 0.82 syllables/second.
 
 
 Table \ref{tab:speechrates} lists the precise values for good measure.
-This table introduces the shorthand $Y_i(0)$ to refer 
+This table uses the shorthand $Y_i(0)$ to refer 
 to the $i$-th participant's speech rate if this participant was assigned
 to the \textit{without alcohol} condition 
 (e.g., Lukas' speech rate is $Y_7(0) =$ 3.7)
@@ -1985,7 +1981,7 @@ The first type of account, namely that the result obtained is due solely
 to chance, is known as the \term{null hypothesis} ($H_0$);
 the second as the \term{alternative hypothesis} ($H_A$).
 
-A particularly strong version of the first account is that experimental 
+A particularly strong version of the first account is that the experiment's 
 conditions do not differentially affect \emph{any} of nine participants'
 speech rates.
 This version, which is due to \citet{Fisher1935}, is known as the 
@@ -2012,7 +2008,7 @@ The putative results are known as potential outcomes; see Definition
 
 \begin{table}
 \caption{The potential outcomes in the fictitious alcohol--verbal fluency experiment 
-under the strong null hypothesis}
+under the strong null hypothesis.}
 \centering
 \begin{tabular}{@{}rlcc@{}}
 \toprule
@@ -2046,7 +2042,7 @@ under the strong null hypothesis}
 \figlabel{fig:alcohol_results_alt}
 \end{marginfigure}
 
-Under the strong $H_0$, we have $Y_i(0) = Y_i(1)$ for $i = 1, \dots, 10$.
+Under the strong $H_0$, we have $Y_i(0) = Y_i(1)$ for $i = 1, \dots, 9$.
 The difference between the means of the $Y_i(0)$ and of the $Y_i(1)$ values,
 then, is zero.
 Still assuming that the strong $H_0$ is correct, then, 
@@ -2087,7 +2083,7 @@ In five out of 126 cases, the re-arrangement of participants to conditions
 produces a mean difference in speech rate in favour of the \textit{with alcohol}
 group that is a least as large as the one we actually observed (0.82).
 In other words, under the strong null hypothesis,
-the probability with which we would observe a mean difference of at least $0.82$ 
+the probability with which we would observe a mean difference of at least 0.82 
 in favour of the \textit{with alcohol} condition if chance alone (in the form
 of random assignment) were at play is $\frac{5}{126} \approx$ 0.0397 (3.97\%).
 This quantity is known as the \term{p-value}.
@@ -2123,7 +2119,7 @@ in the L2 in these participants.
   Proceeding entirely analogously, we would have found that, under the
   strong null hypothesis, 123 out of 126 of the mean differences
   would have been larger than the actually observed mean difference of
-  $-0.82$ ($p = \frac{123}{126} \approx 0.98$).
+  \textminus 0.82 ($p = \frac{123}{126} \approx$ 0.98).
   This would have given us no evidence for an alcohol-induced decrease
   in L2 verbal fluency.
   
@@ -2136,11 +2132,11 @@ in the L2 in these participants.
   The analysis would then have shown that, under the strong null hypothesis,
   we would have obtained an absolute mean difference as least as large
   as the one actually obtained (namely 0.82) in 9 out of 126 cases
-  ($p = \frac{9}{126} \approx 0.071$).
+  ($p = \frac{9}{126} \approx$ 0.071).
   Using the threshold $\alpha =$ 0.05, we would then have surmised that
   the study's results are fairly compatible with the strong null hypothesis.
   
-  The choice of the statistic chosen to compare the conditions in a
+  The choice of the statistic used to compare the conditions in a
   statistical test, then, affects the outcome of this test.
   Moreover, as we will see in more detail in a moment, it is imperative
   that the choice of this statistic is settled in advance, i.e.,
@@ -2194,7 +2190,7 @@ in the L2 in these participants.
   To compute the left-sided $p$-value, we would have computed
   the number of rerandomisations in which the mean difference was equal to
   or lay to the left of the mean difference that we actually observed.
-  The result would have been a $p$-value of $p = \frac{123}{126} \approx 0.98$,
+  The result would have been a $p$-value of $p = \frac{123}{126} \approx$ 0.98,
   exactly as we obtained when changing the direction of the mean difference
   in Remark \ref{rem:directional}.
   Denote the left-sided $p$-value by $p_{\ell}$.
@@ -2216,7 +2212,7 @@ in the L2 in these participants.
   
 \section{On `rejecting' null hypotheses}
 Researchers will often say that they `reject' the null hypothesis in
-favour of the alternative hypothesis if $p \leq \alpha$, where typically $\alpha = 0.05$.
+favour of the alternative hypothesis if $p \leq \alpha$, where typically $\alpha =$ 0.05.
 This practice is subject to often heated debate \citep[see][]{McShane2017},
 and it's important to realise that $p \leq \alpha$ is possible
 even if the null hypothesis is true.
@@ -2297,7 +2293,7 @@ can make two types of errors, depending on whether $H_0$ or $H_A$ is actually tr
 see Table \ref{tab:errors}.
 Without additional information (e.g., in the form of converging evidence
 from other studies or logical reasoning), we can't really know whether
-`$p \leq 0.05$' represents an error or a true finding. \textbf{(!)}
+`$p \leq$ 0.05' represents an error or a true finding. \textbf{(!)}
 
 \begin{table}[h]
 \caption{If you're in the business of rejecting null hypotheses, there are two types of errors you can make.
@@ -2313,6 +2309,8 @@ $p \leq \alpha$               & Wrong conclusion                & Fine---we reje
 \end{tabular}
 \label{tab:errors}
 \end{table}
+
+\medskip
 
 Furthermore, that the $H_A$ stipulates that the results are
 due to a combination of chance and systematic factors.
@@ -2339,7 +2337,9 @@ Further assume that the null hypothesis is correct in all of these experiments.
 \begin{enumerate}[(a)]
   \item Which of the four histograms shown in Figure \vref{fig:distr_pvalues}
 could plausibly represent the distribution of the 10,000 $p$-values? 
-  \item Which of the four histograms would you hope to find if the alternative hypothesis were correct in all of the 10,000 experiments? Why? \parend
+  \item Which of the four histograms would you most hope to find 
+  if the alternative hypothesis were correct in all of the 10,000 experiments? 
+  Why? \parend
 \end{enumerate}
 
 \begin{figure*}[htp]
@@ -2402,14 +2402,17 @@ A research team is conducting an experiment in 30 school classes
   increases the speech rates and correspondingly used the mean difference
   in favour of the \textit{with alcohol} group as the test statistic,
   then she would have obtained a $p$-value no larger than $\alpha =$ 0.05
-  with 4.76\% probability.
+  with 4.76\% probability.\marginnote{The proportion of $p$-values below 0.05
+  cannot easily be gleaned from the data themselves. 
+  For each possible randomisation, I had to compute
+  the $p$-value that it would have resulted in.}
   
   Similarly, if she had decided beforehand to test if moderate alcohol intake
   decreases the speech rates and had correspondingly used the mean difference
   in favour of the \textit{without alcohol} condition as the test statistic,
   the she would have obtained a $p$-value no larger than $\alpha =$ 0.05
   with 3.97\% probability.
-  In both cases, $\mathbb{P}(P \leq 0.05) \leq 0.05$ as guaranteed by 
+  In both cases, $\mathbb{P}(P \leq 0.05) \leq$ 0.05 as guaranteed by 
   Theorem \ref{lemma:boundpval}.
   
   However, imagine that the analyst had first looked at the data to see
@@ -2459,17 +2462,23 @@ when using these shortcuts
 (i.e., $\mathbb{P}(p \leq \alpha) \approx \alpha$ under $H_0$).
 
 \section{Statistical power}\label{sec:power}
-A study's statistical power is the probability with which its significance test
+
+\mypar{Definition}
+A study's statistical \term{power} is the probability with which its significance test
 will yield $p \leq \alpha$ under the alternative hypothesis, 
 for some predetermined $\alpha \in (0, 1)$. 
+\parend
+
 In studies in which one group is compared to a different
 group, this probability depends on three factors apart from $\alpha$ itself 
 (see Figure \ref{fig:power}):
 
 \begin{enumerate}
 \item The size of the difference in the outcome between the groups
-that the systematic factors cause. Even if they don't cause any difference, it is possible to obtain a statistically significant difference due to chance.
+that the systematic factors cause.
+
 \item The number of observations.
+
 \item The variability in the outcome variable within each group.
 \end{enumerate}
 
@@ -2515,7 +2524,7 @@ Briefly explain your reasoning.
 
   \item A new but similar study would likely yield a low $p$-value as well.
   More precisely, there is a 98\% probability that such a study would yield
-  a significant $p$-value (i.e., $p \leq 0.05$).
+  a significant $p$-value (i.e., $p \leq$ 0.05).
 
   \item If we concluded that the alternative hypothesis is correct, we would be wrong at most 2\% of the time.
 
@@ -2532,20 +2541,25 @@ The blog post
 discusses why the randomisation-based approach to statistical inference
 used in this chapter differs from the population-based approach that is
 more commonly taught in introductory statistics courses.
-The blog entries 
-\href{https://janhove.github.io/posts/2015-02-26-explaining-key-concepts-using-permutation-tests/}{\textit{Explaining key concepts using permutation tests}}
-and 
-\href{https://janhove.github.io/posts/2014-09-12-a-graphical-explanation-of-p-values/}{\textit{A purely graphical explanation of $p$-values}} 
-may be of some further use.
+
+This chapter discussed how the strong null hypothesis can
+be tested.
+It contrasts with the weak null hypothesis, which posits that
+the potential outcomes in the conditions are the same on average, rather
+than the same for each unit.
+See
+\href{https://janhove.github.io/posts/2026-07-13-weak-strong-H0/}{\textit{Testing strong and weak null hypotheses in randomised experiments}}.
 
 \citet{Goodman2008} discusses some common misinterpretations of $p$-values;
 his list is far from exhaustive.
 
 Analysing quantitative data and running significance tests aren't
-synonymous; see my booklet as well as \citet{Winter2019} for introductions
+synonymous; see my booklet 
+\href{https://janhove.github.io/resources.html#analysing-quantitative-data-an-introduction-for-language-researchers}{\textit{Analysing quantitative data}}
+as well as \citet{Winter2019} for introductions
 to statistics for linguists that don't emphasise signficance testing.
-Nonetheless, quantitative research in the social sciences, including in applied
-linguistics, has developed something of a significance fetish,
+Nonetheless, quantitative research in the social sciences
+has developed something of a significance fetish,
 with authors inundating their readers with significance tests and $p$-values
 that they themselves don't seem to really understand while giving them
 little insight into what the data actually look like.
@@ -2592,12 +2606,12 @@ But \emph{an estimate obtained from an unbiased study can be completely off-targ
 We've demonstrated this in Remark \ref{remark:estimation},
 but to better appreciate this, consider a six-sided dice. 
 The average number of pips on a six-sided dice 
-is $\frac{1+2+3+4+5+6}{6}=3.5$. Let's pretend
-we didn't know this and we wanted to estimate this number (i.e., 3.5) by throwing
+is $\frac{1+2+3+4+5+6}{6}=$3.5. Let's pretend
+we didn't know this and we wanted to estimate this number (i.e., 3.5) by rolling
 the dice and jotting down the number of pips showing face-up.
 
 \begin{itemize}
-  \item If we do this just once, we'll just obtain an integer between 1 and 6
+  \item If we do this just once, we'll just obtain each integer between 1 and 6
   with equal probability (six possibilities). 
   If we obtain a 1, our estimate will be off by 2.5 pips;
   if we obtain a 2, we'll be off by 1.5 pips; \dots; 
@@ -2616,7 +2630,7 @@ The dashed vertical line highlights the true mean number of pips.}
 \end{marginfigure}
 
   \item If we throw the dice twice,
-  we'll now observe one of $6^2 = 36$ possible outcomes. 
+  we'll now observe one of $6^2 =$ 36 possible outcomes. 
   When we average the number of pips on both throws, we can still obtain an estimate of 1 (when
   you throw two 1s), but there's just a 1-in-36 probability of that happening.
   Six of the possible outcomes will be right on the mark
@@ -2651,7 +2665,7 @@ So as we increase the number of throws (i.e., as we increase the sample size),
 the average of the observations tends to correspond more closely to the true average.
 Put differently, our estimate tends to become more \textbf{precise}.
 It's still \emph{possible} to be completely off mark, but it's less \emph{probable}.
-Clearly, the third `design' (throwing the dice 5 times) is preferable to
+Clearly, the third `design' (rolling the dice 5 times) is preferable to
 the first and second design---not because it's unbiased (all three attempts are
 unbiased), but because the estimate it yields is expected to be closer to the
 truth.
@@ -2663,7 +2677,7 @@ and is typically expressed by means of \textbf{standard errors},
 \textbf{confidence intervals},
 or \textbf{credible intervals}. 
 We won't concern ourselves here with how these
-statistics are to be calculated and interpreted; 
+statistics are to be calculated; 
 a rough appreciation of precision along the lines of the dice example suffices.
 
 \section{Factors affecting precision}
@@ -2727,7 +2741,8 @@ have to be the same in both conditions.
  for randomisation:
  It's possible that the researchers,
  while matching the participants on one background variable, inadvertently
- introduce a bias with respect to another background variable
+ introduce a bias with respect to another background variable,
+ for instance when the matched variable happens to be a collider
  (see Chapter \ref{ch:quasi}).
  Moreover, matching only allows you to equate those confounding variables
  that you matched for (see Figure \vref{fig:matching}).
@@ -2735,17 +2750,23 @@ have to be the same in both conditions.
  probabilistically equates \emph{other} (and indeed unknown) confounding variables
  and is superior to matching.
 
-\mypar[Blocking]{Definition}
- \begin{quotation}
- ``[M]atching is no real help when used to
- overcome initial group differences.
-  This is not to rule out matching \emph{as an adjunct to randomization}, as when one
-  \emph{gains statistical precision} by assigning students to matched pairs, and
-  then randomly assigning one member of each pair to the experimental group,
-  the other to the control group. In the statistical literature this is known
-  as `\term{blocking}.''' \citep[p.~15; my emphasis]{Campbell1963}
-  \end{quotation}
+\mypar{Definition}
+  \term{Blocking} is a procedure in which researchers group together units
+  that are similar in some respect.
+  Then, within each group (block), the units are randomly assigned to
+  the experiment's conditions by means of complete randomisation.
 \parend
+
+ % \begin{quotation}
+ % ``[M]atching is no real help when used to
+ % overcome initial group differences.
+ %  This is not to rule out matching \emph{as an adjunct to randomization}, as when one
+ %  \emph{gains statistical precision} by assigning students to matched pairs, and
+ %  then randomly assigning one member of each pair to the experimental group,
+ %  the other to the control group. In the statistical literature this is known
+ %  as `\term{blocking}.''' \citep[p.~15; my emphasis]{Campbell1963}
+ %  \end{quotation}
+
 
 \mypar[Blocking using pairs]{Example}
 Based on a pool of participants, we build pairs of participants of the same sex and age and
@@ -2768,16 +2789,13 @@ beforehand.
   to each of the three conditions, and similarly for the male participants.
   The random assignment helps to prevent
   confounding variables from biasing the results, 
-  the added benefit is that the three conditions have the same sex distribution.\marginnote{That said, it is not clear to me why they chose to block on sex.}
+  the added benefit is that the three conditions have the same sex distribution.\marginnote{That said, it is not clear to me   why they chose to block on sex.}
 \parend
 
- Blocking can increase a study's statistical precision---provided it is
- taken into account during the analysis.
- The stronger the outcome is related to the
- blocking factors, the more powerful blocking is.
- 
- Furthermore, blocking takes place \emph{before} the random assignment.
- You can't block after the fact.
+Blocking can increase a study's statistical precision---provided it is
+taken into account during the analysis.
+The stronger the outcome is related to the
+blocking factors, the more powerful blocking is.
 
 \mypar[Blocking and randomisation testing]{Remark}
 If you incorporate blocking in the design of your study, 
@@ -2836,7 +2854,7 @@ you wouldn't be able to peg this number down so precisely.)
   \figlabel{fig:dutch}
 \end{figure}
 
-There are ${14 \choose 7} = 3432$ ways to randomly assign these 14 participants to
+There are ${14 \choose 7} =$ 3432 ways to randomly assign these 14 participants to
 two conditions ($A$ and $B$) with 7 participants each.
 For the learners in Condition $A$, we'd observe the scores
 shown as circles in Figure \ref{fig:dutch};
@@ -2871,7 +2889,7 @@ Also see Table \vref{tab:diffrand}.
 
 
 
-\begin{figure}
+\begin{figure}[p]
   \centering
   \includegraphics[width = 0.7\textwidth]{figure/dutch2-1}
   \caption{Across all 3,432 possible random assignments, the mean absolute estimation error of the difference between the two learning methods is about 0.67 points. The vertical line highlights the average estimate across all 3,432 possible random assignments.}
@@ -2881,7 +2899,7 @@ Also see Table \vref{tab:diffrand}.
 
 
 
-\begin{figure}
+\begin{figure}[p]
   \centering
   \includegraphics[width = 0.7\textwidth]{figure/dutch3-1}
   \caption{Of the 3,432 possible random assignments, only 1,400 have an equal number of French speakers assigned to each learning method, as well as an equal number of German speakers assigned to each learning method. Across these 1,400 assignments, the mean absolute estimation error is just 0.59. The average estimate, highlighted by the vertical line, doesn't change.}
@@ -2915,7 +2933,7 @@ Also see Table \vref{tab:diffrand}.
 %   knitr::kable(format = "latex", booktabs = TRUE, position = "!h", linesep = "", caption = "In what percentage of randomisations did the mean difference end up in each interval? Note that for blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.\\label{tab:diffrand}")
 % @
 
-\begin{table}[tpbh]
+\begin{table}[p]
 \caption{In what percentage of randomisations did the mean difference end up in each interval? For blocked randomisation, a greater percentage of randomisations yield a mean difference close to the true difference between the learning methods (i.e., 2) than for complete randomisation.}
 \label{tab:diffrand}
 \centering
@@ -2943,14 +2961,13 @@ its precision.
 The higher precision obtained by blocking is reflected
 in an increase in statistical power.
 In this particular example, the directional randomisation test 
-presented from the previous chapter
+presented in the previous chapter (with the mean difference as the test statistic)
 will return a $p$-value of 0.05 or less in 2,096 out of the
 3,432 possible allocations when using complete randomisation,
 that is, it has 61\% power.
 But when using blocking, such a significance test will return
 a $p$-value of 0.05 or less in 1,353 out of the 1,400 possible
 allocation, that is, it has 97\% power.
-
 
 \section{Leveraging control variables}\label{sec:covariates}
 In randomised experiments, the added value of control variables 
@@ -2968,17 +2985,17 @@ A pre-intervention measure of their performance---be it in the form of a score
 on a full-fledged \term{pretest} or some rougher proxy---is 
 therefore a useful control variable.\marginnote{On taking into account pretest results, see \citet{Vanhove2015}.}
 
-It's also possible to `block' on pretest scores. 
+It's also possible to block on pretest scores. 
 To this end, sort the participants
 according to their pretest score and divide them up into pairs like so:
 (12)(34)(56)(78)\dots. Within each pair, randomly assign one participant to the
 control group and one to the intervention group.
-You can similarly block on other continuous variables.
+You can similarly block on other ordered variables.
 
-\begin{framed}
+\mypar{Tip}
  Pre- and post-tests don't have to look identically.
  Any measure of pre-experiment performance is better than no measure at all.
-\end{framed}
+
 
  Of course, if the pre- and posttests aren't similar and can't be scored
  on the same scale, you won't be able to make any claims about how much
@@ -2988,8 +3005,9 @@ You can similarly block on other continuous variables.
  the conditions on the posttest scores. The purpose of the pretest scores
  is to increase the precision of this comparison. This can be achieved
  by using them as you would any other blocking or control variable,
- so they don't have to be expressed on the same scale as
- or be otherwise comparable with the posttest.
+ so they don't have to be expressed on the same scale as,
+ or be otherwise comparable with, the posttest.
+\parend
 
 In fairly small studies, blocking tends to increase precision a bit more than
 merely using control variables in the analysis, but in the vast majority of
@@ -2999,11 +3017,11 @@ cases where blocking or using control variables reduces precision (namely
 tiny studies in which the blocking or control variables are
 uninformative with respect to the outcome; \citealp{Imai2008}.)}
 
- \begin{framed}
+\mypar{Tip}
  Even if you're conducting a randomised experiment, it pays to
  think about which factors are likely to strongly affect the outcome so that, if feasible, you
  can take these factors into account using blocking or by means of control variables.
- \end{framed}
+\parend
 
 Don't go overboard with this, though. One or two strong blocking or control
 variables are likely to be helpful; umpteen variables that \emph{might conceivably}
@@ -3028,7 +3046,7 @@ After some discussion with your friend, you realise that, ideally,
 she should block on language background, whether the pupils receive special educational
 measures as well as average grade when randomly allocating the pupils to
 the experiment's condition. An equal number of pupils is to be assigned
-to both conditions.
+to each condition.
 
   \begin{enumerate}[(a)]
     \item Explain, as you would to your friend, how to generate
@@ -3210,8 +3228,8 @@ but they apply to other studies, too.
 
 \section{Sample mortality}
 \term{Sample mortality} refers to research participants who become unavailable
-in the course of a study.
-In a school-based study, examples include children who can't participate
+over the course of a study.
+In a school-based study, examples include children who don't participate
 in a follow-up test because of a dental appointment, because they 
 switched schools, or quite simply, because they don't want to.
 Less lurid and more descriptive terms for sample mortality are
@@ -3463,13 +3481,12 @@ each condition. In within-subjects designs, this idea is taken to an extreme.
   is assigned to multiple (typically: all) conditions.
 \parend
 
-We've already encountered within-school and within-class designs;
+We've already encountered within-school and within-class designs
+in the previous chapter;
 within-subjects designs extend the same logic to the individual unit.
 
 \section{Advantages and drawbacks}
-One potential advantage of within-subjects designs is that it becomes easier
-to explore interindividual differences in the efficacy of the treatment.
-However, the \emph{main} advantage of within-subjects designs is 
+The main advantage of within-subjects designs is 
 that they usually have greater statistical precision than an otherwise
 comparable experiment in which the units are assigned to the conditions at random.
 Indeed, a study's statistical precision depends on
@@ -3511,9 +3528,8 @@ These phenomena are referred to as
 and more generally, \term{order effects}.
 
 \section{Minimising order effects}
-The first technique to 
-to prevent learning or fatigue effects from exerting a systematic
-effect on the results is to vary the order of the conditions
+The first technique to prevent learning or fatigue effects 
+from biasing the results is to vary the order of the conditions
 between the participants.
 In \term{complete counterbalancing}, \emph{all} possible orders are 
 taken into account. If you have two within-subjects conditions,
@@ -3534,10 +3550,12 @@ B & C & A & C & A & B \\
 C & B & C & A & B & A \\
 \end{tabular}
 \end{table}
- 
+
+\medskip
+
 If a within-subjects experiment has lots of conditions,
 complete counterbalancing is impractical. For four conditions,
-for instance, there are already $4! = 24$ possible orders---we may not
+for instance, there are already 4! = 24 possible orders---we may not
 even have that many participants! 
 The second technique, the \term{Latin square design}, lends itself
 to such cases.\marginnote{`Latin' because the symbols used are typically
@@ -3546,7 +3564,7 @@ Latin squares are arrangements of symbols in a grid in which
 each of the symbols used occurs exactly once in each row and exactly once in each column. 
 The grid below is a Latin square
 of size 4---one of the 576 possible arrangements of the symbols A, B, C, and D
-that form a Latin square.\marginnote{Can you come up with a couple of the other 575 ones?}
+that form a Latin square.
  
 \begin{table}[h]
 \centering
@@ -3560,37 +3578,31 @@ D & A & B & C \\
 \end{tabular}
 \end{table}
 
-Let's say you picked the Latin square above for your study.
+\mypar{Exercise}
+There are four different Latin squares of size 4 in which the first column
+and the first row are both in natural order, i.e., ABCD.
+Such a Latin square is said to be in reduced form.
+
+Table \ref{tab:latquad} shows one Latin square of size 4 in reduced form.
+Construct the other three.
+\parend
+
+When adopting a Latin square design, you first pick at random a Latin square
+of the appropriate size in reduced form.
+You then randomly assign the participants to its rows.
+Finally, you assign the conditions randomly to the symbols used.
+
+For instance, let's say you picked at random the Latin square in 
+Table \ref{tab:latquad} for your study.
 You'd then randomly assign one quarter of the participants to
 the condition (or stimulus set) order ABCD (first row), 
 one quarter to BCDA (second row),
 one quarter to CDAB (third row) and one quarter to DABC (fourth row).
 The conditions (or stimulus sets) are randomly
 assigned to one of the letters, too.
-
-The third technique is useful when even a Latin square design becomes impractical.
-For instance, let's say that our study involves us showing 50 pictures to our
-participants that they are to describe. If we also want to draw comparisons
-between the descriptions of different pictures, then we cannot just present
-them in the same order to all participants: order effects could plausibly
-bias the results.
-But $50! = 3 \cdot 10^{64}$ is an astronomical number, ruling out
-complete counterbalancing, and and even just 50 different Latin square orders 
-seem impractical.
-One possible solution is to present the images in a new random order for each
-participant.
-The drawback of doing this is that perhaps image 3 occurs 
-much more often at the start than at the end of the data collection,
-but at least this imbalance isn't built into the design of the study.
-(Of course, it's possible that we just accept such `bias' if we aren't interested
-in differences between the images, but just in differences between
-the participants or between the conditions. 
-If that's the case, randomising the stimulus order is superfluous.)
-
-In many psycholinguistic studies, participants need to react
-to several stimuli per condition (e.g., 12 stimuli per condition).
-The order of the stimuli in these studies are often randomised
-so that the conditions are mixed up (e.g., $ABAABBBAB$ etc.).
+The participants assigned to the first row complete the conditions (or stimulus sets)
+in the order ABCD;
+those assigned to the second row complete them in the order BCDA, etc.
 
 Counterbalancing and Latin squares don't negate carry-over effects.
 Whether carry-over effects represent an acute danger to the study's
@@ -3633,10 +3645,44 @@ reason not to do so.)
   For a unit assigned to the $AB$ order, the known outcomes are how they
   performed in the $A$ condition \emph{if this condition is presented first}
   and how they performed in the $B$ condition \emph{if this condition is presented second}.
-  But unknown potential outcomes are how they would have performed
+  But there are still the unknown potential outcomes of how they would have performed
   in the $A$ condition if it had been presented second and in the $B$ condition
   if it had been presented first.
 \parend
+
+The preceding discussion assumes that the experiment's conditions
+have to appear one after the other.
+Sometimes, however, the conditions can be interleaved.
+In particular, this is the case in psycholinguistic studies in which
+the participants need to react to several stimuli per condition
+(e.g., 12 sentences per condition).
+In such settings, each participant is, in a sense, tested several times
+in each condition, and the order of presentation can be randomised
+for each participant (e.g., ABAABBBAB etc.).
+
+Similarly, it is sometimes desirable to randomise the order of the stimuli
+for each participant.
+For instance, let's say that we want to run a study
+in which we ask the participants to describe 50 pictures,
+which we show to them successively. 
+If we also want to draw comparisons between the descriptions 
+of the different pictures, 
+then we cannot just present them in the same order to all participants: 
+order effects could plausibly
+bias the results.
+But 50! = 3 $\cdot$ 10\textsuperscript{64} is an astronomical number, ruling out
+complete counterbalancing.
+And even a Latin square of size 50 seems impractical.
+One possible solution is to present the images in a new random order for each
+participant.
+The drawback of doing this is that perhaps image 3 occurs 
+much more often at the start than at the end of the data collection,
+but at least this imbalance isn't built into the design of the study.
+(Of course, it's possible that we just accept such `bias' if we aren't interested
+in differences between the images, but just in differences between
+the participants or between the conditions. 
+If that's the case, randomising the stimulus order for each participant is superfluous.)
+
 
 \mypar{Exercise}
 From \citet{Ludke2014}:
@@ -3659,25 +3705,25 @@ that you have to work with at most 30 men and 30 women as participants.
 As in the previous exercise, but with all three conditions.
 \parend
 
-\mypar[Reading assignment]{Exercise}
-The study by \citet{Kang2013} serves as an example of a within-subjects design. 
-Additionally, it uses some turns of phrase commonly found in research reports:
+\mypar{Exercise}
+A researcher wants to study if foreign-language vocabulary is best learnt
+when rehearsing the words one day (`short spacing')
+or one week after first studying them (`long spacing').
+He designs a within-subjects experiment in which fifty participants
+learn twenty items across the two conditions.
+Specifically, ten of the items are selected as `short spacing' items,
+and ten as `long spacing' items.
+On the first day, all participants study all twenty items.
+On the next day, they rehearse the `short spacing' items;
+on the eighth day, they rehearse the `long spacing' items.
+The next day, so on the ninth day, they are tested on all items;
+a few weeks later, they are tested again on all items.
 
 \begin{enumerate}[(a)]
-\item ``The Hebrew nouns were learned in one of two training conditions -- retrieval practice or imitation -- that were manipulated within subjects across separate blocks and semantic categories.'' (p.~1261)
-\begin{enumerate}[i.]
-  \item What does ``manipulated within subjects across separate blocks'' mean?
-  \item What does ``manipulated within subjects across semantic categories'' mean?
-\end{enumerate}
-
-\item ``The order of items in each test was randomized for each learner.'' (p.~1262) 
-        Why?
-        Would it have made sense to use the same fixed order of items for all learners?
-
-\item ``In Experiment 2, the order of both tests was counterbalanced across learners\dots'' (p.~1262).
-        This merely means that half of the learners first took Test A and then Test B, 
-        whereas the other half first took Test B and then Test A.
-        Would it have made sense to administer the test in the same order to all learners?\parend
+  \item Can this study tell us if these participants learn better with short spacing or with long spacing?
+        Briefly justify your answer.
+        
+  \item Suggest an improvement to this design. \parend
 \end{enumerate}
 
 \section{*Analysing data from within-subjects designs with two conditions}
@@ -3703,6 +3749,8 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
     \bottomrule
   \end{tabular}
 \end{table}
+
+\medskip
 
 \begin{itemize}
   \item We assume that there is some baseline $\beta$ common to all measurements.
@@ -3756,7 +3804,7 @@ are grounded in sound statistical theory.
   a carryover effect (i.e., that $\kappa \neq 0$),
   we can restrict the analysis to the first measurement
   and treat the data as stemming from a true (between-subjects) experiment.
-  However, by doing so, we lose half of the data as well as any 
+  However, by doing so, we lose half of the data as well as
   any improvement in statistical precision that we sought to obtain
   by adopting a within-subjects design.
 \parend
@@ -3987,7 +4035,7 @@ for \texttt{R}.
 \hlcom{# install.packages("pak")}
 \hldef{pak}\hlopt{::}\hlkwd{pak}\hldef{(}\hlsng{"janhove/cannonball"}\hldef{)}
 
-\hlcom{# Load the functions}
+\hlcom{# Load package}
 \hlkwd{library}\hldef{(cannonball)}
 
 \hlcom{# Draw 16 plots with 20 data points each and r = 0.6}
@@ -4044,7 +4092,7 @@ Now to the questions:
   facilitate the acquisition of L2 sound structure'' (abstract).\parend
 \end{enumerate}
 
-In correlational studies, control variables are often used to
+In observational studies, control variables are often used to
 adjust statistically for known confounders.
 One technique used to accomplish this is hierarchical regression;
 see Table 3 in \citet{Slevc2006} for an example.
@@ -4090,7 +4138,7 @@ hierarchical regression; see Figure \vref{fig:hierarchical}.
 \begin{figure}[tpbh]
   \centering
   \includegraphics[max width = \textwidth]{figure/hierarchical-1}
-  \caption{Hierarchical regression used to control for the age confound in the relationship between shoe size and vocabulary knowledge. The coloured circles in each panel show data belonging to the same three participants. The straight lines are regression lines. A regression line is the straight line that best captures the tendency in the cloud of data points, according to some definition of `best'.}
+  \caption{Hierarchical regression used to control for the age confound in the relationship between shoe size and vocabulary knowledge. The coloured circles in each panel show data belonging to the same three participants. The straight lines are regression lines. A regression line is the straight line that best captures the tendency in the cloud of data points, according to a definition of `best' that we do not cover here.}
   \figlabel{fig:hierarchical}
 \end{figure}
 
@@ -4125,43 +4173,18 @@ concerning statistical control:
   \ref{ch:measurementerror}.
 \end{enumerate}
 
-The following excerpt makes the same points:
+\citet{Christenfeld2004} make the same points,
+and their take-home message is clear:
 \begin{quote}
-``When experimental designs are premature, impractical, or impossible,
-researchers must rely on statistical methods to
-adjust for potentially confounding effects.
-Such procedures, however, are quite fallible.
-We examine several errors that often follow the use of statistical adjustment.
-
-``The first is inferring a factor is causal because
-it predicts an outcome even after ``statistical control''
-for other factors. This inference is fallacious when (as usual) such control
-involves removing the linear contribution of
-imperfectly measured variables, or when
-some confounders remain unmeasured.
-
-``The converse fallacy is inferring a factor is not causally
-important because its association with the outcome is attenuated
-or eliminated by the inclusion of covariates in the adjustment
-process. This attenuation may only reflect that the covariates treated as
-confounders are actually mediators (intermediates) and
-critical to the causal chain from the study factor to the study
-outcome.\footnote{What's meant is a causal chain such as $A \rightarrow B \rightarrow C$.
-$A$ is causally important, but if you control for $B$, you won't find
-any association between $A$ and $C$.}
-
-``Other problems arise due to mismeasurement of the study factor or outcome,
-or because these study variables are only proxies for underlying constructs.
-
-``\emph{Statistical adjustment serves a useful
+``Statistical adjustment serves a useful
 function, but it cannot transform observational studies into natural experiments, and involves far more subjective judgment than
-many users realize.}''
-\citep[abstract, my emphasis]{Christenfeld2004}
+many users realize.''
+\citep[abstract]{Christenfeld2004}
 \end{quote}
 
-\begin{framed}
-Large sample sizes don't solve these problems.
-\end{framed}
+Importantly, 
+and seemingly contrary to some researchers' beliefs,
+large sample sizes don't solve these problems!
 
 Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats-confounds-correlational-designs/}{\textit{Controlling for confounding variables in correlational research: Four caveats}}.
 
@@ -4170,7 +4193,7 @@ Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats
   the point of the preceding discussion is not for budding researchers to 
   throw their hands up in despair and avoid doing or reading observational studies.
   Rather, it is to instill in these researchers a sense of modesty as
-  well as the appreciation that
+  well as an appreciation that
   observational studies, to a much greater extent than experimental studies,
   leave open a host of alternative explanations for any sort of finding that
   they produce and that more definitive conclusions can be drawn only
@@ -4184,11 +4207,7 @@ Also see the blog entry \href{https://janhove.github.io/posts/2015-08-24-caveats
 
 
 \chapter{Constructs and indicators}\label{ch:measurementerror}
-We're faced with an inescapable fact of life:
-
-\begin{framed}
 Most measurements are imperfect.
-\end{framed}
 
 Saying that a study's measurements aren't perfect isn't much of a criticism.
 But it's crucial to appreciate the consequences of imperfect measures---pointing
@@ -4268,16 +4287,17 @@ the same age, even though this reported age will be lower than their actual age.
 As a final example, consider a poorly calibrated bathroom scale. If you put
 a calibrated mass of precisely 60 kg on it on five different occasions, it returns
 readings of 61.1, 60.4, 60.4, 60.5 and 61.2.
-The mean observation for the same mass is $\frac{61.1+60.4+60.4+60.5+61.2}{5} = 60.78$,
+The mean observation for the same mass is $\frac{61.1+60.4+60.4+60.5+61.2}{5} =$ 60.78,
 i.e., an overestimate of 0.78 kg.
 The mean absolute difference between the observations and their expected
-value (here: 60.78) is $\frac{|0.32| + |-0.38| + |-0.38| + |-0.28| + |0.72|}{5} = 0.42$.
+value (here: 60.78) is $\frac{|0.32| + |-0.38| + |-0.38| + |-0.28| + |0.72|}{5} =$ 0.42.
 
 \section{Consequences of measurement error}
 The consequence of systematic measurement error is clear: Your data are biased.
 This isn't necessarily a problem: If you're comparing two groups for both
 of which you have data that are biased to the same extent, the difference between
-them won't be biased. And for variables such as age, the systematic error (roughly
+them won't be biased. 
+Further, for variables such as age, the systematic error (roughly
 182 days) tends to be small relative to the variability of the true values, in 
 which case it's probably inconsequential.
 (But see, for instance, 
@@ -4287,18 +4307,22 @@ differences within an age group, e.g., 15-year-olds) in sport and education.)
 The consequences of random measurement error are much less intuitive and bear
 pointing out.
 
-% \paragraph{Less power and precision}
 First, measurement error on the \emph{outcome} variable will increase
 its variability. Since power and precision are lower when
 there's more variability in the outcome, 
 measurement error on the outcome lowers power and precision.
 
-% \paragraph{Statistical control is imperfect}
 Second,
 measurement error on a \emph{control} variable means that 
 controlling for this observed variable won't fully eradicate 
 the confounding caused by the construct itself.
 The \textsc{dag} in Figure \ref{fig:caveat2} illustrates this.
+As \citet{Huitema2011} puts it,
+
+\begin{quote}
+``[F]allibility in a covariate usually implies that there would be 
+more adjustment if the variable were measured without error.'' (p.~569)
+\end{quote}
 
 \begin{marginfigure}
   \centering
@@ -4308,9 +4332,7 @@ The \textsc{dag} in Figure \ref{fig:caveat2} illustrates this.
   \figlabel{fig:caveat2}
 \end{marginfigure}
 
-\begin{quote}
-``[F]allibility in a covariate usually implies that there would be more adjustment if the variable were measured without error.'' \citep[p.~569]{Huitema2011}
-\end{quote}
+
   
 Controlling for $A_{\textrm{obs}}$ is better than not controlling for it.
 But researchers routinely mistake 
@@ -4334,14 +4356,14 @@ with no skill or construct involved: playing roulette. Playing roulette
 is a losing proposition: For every 100 francs bet, you stand to lose about 5
 francs (= the mean). But on any given night, some players will luck out and
 make a killing, whereas other players get extraordinarily unlucky and lose much
-more than the expected 5 francs. Their winnings or losses are a dreadful measure
+more than the expected 5 francs per 100-franc bet. Their winnings or losses are a dreadful measure
 of their skill level: they all have the same skill level, which corresponds
-to a loss of 5 francs.
+to a loss of 5 francs per 100-franc bet.
 
 The next night, however, the lucky players from the
 day before probably won't get as lucky again (their luck the day before was
 extraordinary), and similarly for the unlucky players---all again stand to
-lose about 5 francs. Some might get lucky or unlucky twice in a
+lose about 5 francs per 100-franc bet. Some might get lucky or unlucky twice in a
 row, but they're more likely to end up somewhere near the 5-franc mark, i.e., most
 of the lucky and unlucky players will regress to the mean.
 \parend
@@ -4374,11 +4396,11 @@ If you administer a reading test to a group of learners
  But this pattern can be explained in
  terms of measurement error: Even if none of the learners actually
  learnt or unlearnt something, you're likely to find such a pattern.
- The reason is that, if you obtained a dismal score, you're likely
+ The reason is that, if you obtained an abysmal score, you're likely
  to be a pretty poor reader \emph{and} to have had some bad luck---perhaps
  the topic of the reading test just wasn't suited for you, or you
- were coming down with the flu. A couple of weeks later, you might
- encounter a topic you know a thing or two about or you might
+ were coming down with the flu. A couple of weeks later, you may
+ encounter a topic you know a thing or two about or you may
  be in better physical shape.
  Similarly, if you scored exceptionally well on the first test,
  you may have had some luck with the test's topic or with other
@@ -4417,7 +4439,7 @@ to answer these questions.
   are assigned to the experimental group; the others to the
   control group (random assignment). You run a significance test
   comparing the mean age in both groups. What is, at most, the probability
-  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  that you'll obtain a significant result (i.e., $p \leq$ 0.05)?
   
   \item Each of your participants throws a fair six-sided dice.
   You run another significance test to check if there's a mean
@@ -4425,7 +4447,7 @@ to answer these questions.
   the intervention groups. (Evidently, the intervention doesn't
   make you throw dice any better.)
   What is, at most, the probability
-  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  that you'll obtain a significant result (i.e., $p \leq$ 0.05)?
   
   \item What is, at most, the probability of observing
   \emph{either} a significant age difference between the two groups,
@@ -4473,7 +4495,7 @@ So where did the non-significant findings go?
 Eventually, scholars with an interest in meta-science (i.e.,
 science about science) have come to realise that research projects
 afford a great deal of flexibility. Researchers can---consciously
-or subconsciously---leverage this flexibility to produce a steady stream
+or unwittingly---leverage this flexibility to produce a steady stream
 of significant findings---\emph{even if the data are nothing but noise}.
 (If the data aren't just noise, such flexibility will spuriously amplify the signal. 
 For instance, even if $A$ influences $B$, the literature as a whole will tend to overestimate the extent of this influence.)
@@ -4535,7 +4557,15 @@ best appreciated by seeing them. Do these exercises in order.
   and carefully read the description.
   
   \item Click `Simulate!', leaving all settings at their default values.
-  Describe what the two graphs (reproduced here as Figure \ref{fig:app} for your convenience) are showing.
+  Describe what the graph (reproduced here as Figure \ref{fig:app} for your convenience) is showing.
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=\textwidth]{figure/app}
+\caption{When you run the app using its default settings, you'll obtain a graph similar to this one. 
+Your graph won't be identical as it is based on simulations with random data.}
+\figlabel{fig:app}
+\end{marginfigure}
   
   \item First try to answer the following questions by \emph{thinking}
   about them. Once you've written down your answer, check it by
@@ -4565,12 +4595,7 @@ best appreciated by seeing them. Do these exercises in order.
   \end{enumerate}
 \end{enumerate}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figure/app}
-\caption{When you run the app using its default settings, you'll obtain two graphs similar to these. Your graphs won't be identical as they are based on simulations with random data.}
-\figlabel{fig:app}
-\end{figure}
+
 
 \section{*Further reading}
 Most studies referred to in this chapter are both accessible and short.
@@ -4589,7 +4614,7 @@ which I cannot recommend highly enough, is \citet{Ritchie2021}.
 
 \chapter{Descriptive statistics}
 While this isn't a full-blown course in statistics, 
-it is useful to know a few basic terms and concepts in descriptive statistics.
+it is useful to know a few basic terms and concepts from descriptive statistics.
 Most of the terms we will need are covered in the reading assignment in
 Exercise \ref{ex:johnson}.
 
@@ -4664,9 +4689,9 @@ It's also occasionally used implicitly in statistical tests
 \chapter{Reading difficult results sections}
 Results sections in quantitative research reports can be daunting.
 Sometimes, the analyses are necessarily complex 
-and require sophisticated knowledge about statistics and research
-design on the part of the reader.
-But too often, results sections are more difficult than they need
+and readers need sophisticated knowledge about statistics and research
+design in order to understand them.
+But all too often, results sections are more difficult than they need
 to be \citep[see][]{Vanhove2020b}. 
 
 \begin{framed}
@@ -4691,7 +4716,7 @@ were randomly assigned to conditions, you may find `research' questions such as
 or \textit{Do participants have higher scores on the posttest than on the pretest?} 
 Both questions are uninteresting as they don't tell you whether the treatment actually worked.
   
-  \item \textbf{Draw a graph of the predictions.} (!)
+  \item Draw a graph of the predictions.
   Having identified the key research questions and hypotheses, 
   I often find it useful to sketch what the data would look like if the 
   researchers' predictions panned out and what kind of data would, 
@@ -4709,6 +4734,9 @@ Both questions are uninteresting as they don't tell you whether the treatment ac
   This, too, can help you work out if the predictions are fairly specific
   (a good thing) or if pretty much any pattern in the data would be
   consistent with them (a bad thing).
+  
+  Also see 
+  \href{https://janhove.github.io/posts/2025-10-10-mock-outcomes/}{\textit{Clarifying research questions by sketching possible outcomes}}.
   
   \item Look for a graph in the paper.
 Ideally, the paper will contain a graph of the main results 
@@ -4782,13 +4810,14 @@ findings are transparent to the readers.
         to do so at the start of the project rather than a couple of weeks before
         handing in your report.
         
-  \item Nowadays I exclusively use \url{https://osf.io/} for making available
-        online materials. See \url{https://osf.io/yxzfm/} for examples.
+  \item As of the autumn of 2026, the popular data-sharing platform
+        \url{https://osf.io/} will not accept new projects.
+        The CERN-hosted platform \url{https://zenodo.org/} seems to be
+        a promising alternative.
         
- \item For further guidance, 
-       see \citet{Klein2018},
-       \citet{Levenstein2018},
-       and \citet{Soderberg2018}.
+  \item For further guidance, 
+        see \citet{Klein2018},
+        and \citet{Levenstein2018}.
 \end{enumerate}
 
 

@@ -203,7 +203,7 @@ source(here::here("functions", "drawdag.R"))
 
 \chapter{Descriptive statistics}
 While this isn't a full-blown course in statistics, 
-it is useful to know a few basic terms and concepts in descriptive statistics.
+it is useful to know a few basic terms and concepts from descriptive statistics.
 Most of the terms we will need are covered in the reading assignment in
 Exercise \ref{ex:johnson}.
 
@@ -278,9 +278,9 @@ It's also occasionally used implicitly in statistical tests
 \chapter{Reading difficult results sections}
 Results sections in quantitative research reports can be daunting.
 Sometimes, the analyses are necessarily complex 
-and require sophisticated knowledge about statistics and research
-design on the part of the reader.
-But too often, results sections are more difficult than they need
+and readers need sophisticated knowledge about statistics and research
+design in order to understand them.
+But all too often, results sections are more difficult than they need
 to be \citep[see][]{Vanhove2020b}. 
 
 \begin{framed}
@@ -305,7 +305,7 @@ were randomly assigned to conditions, you may find `research' questions such as
 or \textit{Do participants have higher scores on the posttest than on the pretest?} 
 Both questions are uninteresting as they don't tell you whether the treatment actually worked.
   
-  \item \textbf{Draw a graph of the predictions.} (!)
+  \item Draw a graph of the predictions.
   Having identified the key research questions and hypotheses, 
   I often find it useful to sketch what the data would look like if the 
   researchers' predictions panned out and what kind of data would, 
@@ -323,6 +323,9 @@ Both questions are uninteresting as they don't tell you whether the treatment ac
   This, too, can help you work out if the predictions are fairly specific
   (a good thing) or if pretty much any pattern in the data would be
   consistent with them (a bad thing).
+  
+  Also see 
+  \href{https://janhove.github.io/posts/2025-10-10-mock-outcomes/}{\textit{Clarifying research questions by sketching possible outcomes}}.
   
   \item Look for a graph in the paper.
 Ideally, the paper will contain a graph of the main results 
