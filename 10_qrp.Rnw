@@ -11,7 +11,7 @@ to answer these questions.
   are assigned to the experimental group; the others to the
   control group (random assignment). You run a significance test
   comparing the mean age in both groups. What is, at most, the probability
-  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  that you'll obtain a significant result (i.e., $p \leq$ 0.05)?
   
   \item Each of your participants throws a fair six-sided dice.
   You run another significance test to check if there's a mean
@@ -19,7 +19,7 @@ to answer these questions.
   the intervention groups. (Evidently, the intervention doesn't
   make you throw dice any better.)
   What is, at most, the probability
-  that you'll obtain a significant result (i.e., $p \leq 0.05$)?
+  that you'll obtain a significant result (i.e., $p \leq$ 0.05)?
   
   \item What is, at most, the probability of observing
   \emph{either} a significant age difference between the two groups,
@@ -67,7 +67,7 @@ So where did the non-significant findings go?
 Eventually, scholars with an interest in meta-science (i.e.,
 science about science) have come to realise that research projects
 afford a great deal of flexibility. Researchers can---consciously
-or subconsciously---leverage this flexibility to produce a steady stream
+or unwittingly---leverage this flexibility to produce a steady stream
 of significant findings---\emph{even if the data are nothing but noise}.
 (If the data aren't just noise, such flexibility will spuriously amplify the signal. 
 For instance, even if $A$ influences $B$, the literature as a whole will tend to overestimate the extent of this influence.)
@@ -129,7 +129,15 @@ best appreciated by seeing them. Do these exercises in order.
   and carefully read the description.
   
   \item Click `Simulate!', leaving all settings at their default values.
-  Describe what the two graphs (reproduced here as Figure \ref{fig:app} for your convenience) are showing.
+  Describe what the graph (reproduced here as Figure \ref{fig:app} for your convenience) is showing.
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=\textwidth]{figure/app}
+\caption{When you run the app using its default settings, you'll obtain a graph similar to this one. 
+Your graph won't be identical as it is based on simulations with random data.}
+\figlabel{fig:app}
+\end{marginfigure}
   
   \item First try to answer the following questions by \emph{thinking}
   about them. Once you've written down your answer, check it by
@@ -159,12 +167,7 @@ best appreciated by seeing them. Do these exercises in order.
   \end{enumerate}
 \end{enumerate}
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{figure/app}
-\caption{When you run the app using its default settings, you'll obtain two graphs similar to these. Your graphs won't be identical as they are based on simulations with random data.}
-\figlabel{fig:app}
-\end{figure}
+
 
 \section{*Further reading}
 Most studies referred to in this chapter are both accessible and short.
