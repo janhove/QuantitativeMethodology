@@ -618,8 +618,8 @@ only green-eyed people in your study.
   
   As you can verify, the probability that $C = 1$ if $A = 1$
   is 
-  $$0.75 \cdot 0.75 + 0.25 \cdot 0.75 = 0.75,$$
-  that is, 75\%,
+  $$0.75 \cdot 0.75 + 0.25 \cdot 0.25 = 0.625,$$
+  that is, 62.5\%,
   whereas the probability that $C = 1$ if $A = 0$
   is $0.25 \cdot 0.75 + 0.75 \cdot 0.25 = 0.375$ (37.5\%).
   Hence, $A$ and $C$ are associated.
@@ -2059,7 +2059,7 @@ condition than in the
 \textit{without alcohol} one 
 (3.9 vs. 4.2; see Figure \ref{fig:alcohol_results_alt}).
 
-\section{Testing the null hypothesis by exhausitive rerandomisation}
+\section{Testing the null hypothesis by exhaustive rerandomisation}
 With 9 participants split up in a control group of 4 and an experimental group of 5
 there were ${9 \choose 5} = 126$ possible assignments of participants to conditions,
 each of which was equally likely to occur.
@@ -2171,7 +2171,7 @@ in the L2 in these participants.
     \item How many possible ways are there to split up 
     twelve participants into three groups of four participants each?
     \item Explain how you can compute an appropriate $p$-value using
-    exhausitive rerandomisation in this setting.
+    exhaustive rerandomisation in this setting.
     \item Now assume that we're interested in the group medians rather 
     than in the group means. 
     What would you need to change in your answer to (b)?\parend
@@ -2419,7 +2419,7 @@ A research team is conducting an experiment in 30 school classes
   which condition had the faster average speech rate before deciding
   whether to test whether moderate alcohol intake increased or decreased verbal
   fluency.
-  In this case, the probability of obtain a $p$-value no larger than $\alpha =$ 0.05
+  In this case, the probability of obtaining a $p$-value no larger than $\alpha =$ 0.05
   would have been 8.73\%---larger than the 5\% upper bound guaranteed by
   Theorem \ref{lemma:boundpval}.
   
@@ -2428,10 +2428,10 @@ A research team is conducting an experiment in 30 school classes
 \parend
 
 \section{Monte Carlo rerandomisation p-values}
-Exhausitive rerandomisation is computationally impossible for larger samples\marginnote{How many ways 
+exhaustive rerandomisation is computationally impossible for larger samples\marginnote{How many ways 
 are there to split up 40 participants into two equal-sized groups?
 Assuming it takes 3 milliseconds to evaluate one rerandomisation,
-how many \emph{years} would it take to run the test when using exhausitive rerandomisation?} 
+how many \emph{years} would it take to run the test when using exhaustive rerandomisation?} 
 and may be infeasible for more complex research designs.
 One alternative is to use a Monte Carlo simulation:
 Instead of generating all possible rerandomisations, 
@@ -3034,7 +3034,7 @@ which makes them mutually superfluous.
 \mypar{Exercise}
 Having taking this class, you've become the go-to expert
   on experimental methodology among your friends. So unavoidably, a
-  friend of yours sollicts your input on an experiment she wants to run with
+  friend of yours solicits your input on an experiment she wants to run with
   one experimental condition and one control condition in a Zurich-based school class
   with 24 pupils.
   For each pupil, your friend knows if they have Swiss-German as their main
@@ -3939,7 +3939,7 @@ It is, however, an unwanted side effect if it creates a feeling of hopelessness 
 experimental control and leads to the abandonment of such efforts in favor
 of even more informal methods of investigation.
 
-``[W]e shall \dots survey the strenghts and weaknesses of a heterogeneous collection of quasi-experimental designs, each deemed worthy of use \emph{where better designs are not feasible}.'' \citep[p.~34; their emphasis in italics, mine in bold-face]{Campbell1963}
+``[W]e shall \dots survey the strengths and weaknesses of a heterogeneous collection of quasi-experimental designs, each deemed worthy of use \emph{where better designs are not feasible}.'' \citep[p.~34; their emphasis in italics, mine in bold-face]{Campbell1963}
 \end{quote}
 
 The goal of observational studies (including quasi-experiments)
@@ -4813,7 +4813,11 @@ findings are transparent to the readers.
   \item As of the autumn of 2026, the popular data-sharing platform
         \url{https://osf.io/} will not accept new projects.
         The CERN-hosted platform \url{https://zenodo.org/} seems to be
-        a promising alternative.
+        a promising general-purpose alternative.
+        TROLLing (\url{https://site.uit.no/trolling/about/}) is a data 
+        repository specifically for language research,
+        and SWISSUbase (\url{https://www.swissubase.ch/}) is a Swiss
+        alternative for the social sciences and linguistics.
         
   \item For further guidance, 
         see \citet{Klein2018},

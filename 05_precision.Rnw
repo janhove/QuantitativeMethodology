@@ -649,7 +649,7 @@ which makes them mutually superfluous.
 \mypar{Exercise}
 Having taking this class, you've become the go-to expert
   on experimental methodology among your friends. So unavoidably, a
-  friend of yours sollicts your input on an experiment she wants to run with
+  friend of yours solicits your input on an experiment she wants to run with
   one experimental condition and one control condition in a Zurich-based school class
   with 24 pupils.
   For each pupil, your friend knows if they have Swiss-German as their main

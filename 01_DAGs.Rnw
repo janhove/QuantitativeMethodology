@@ -454,8 +454,8 @@ only green-eyed people in your study.
   
   As you can verify, the probability that $C = 1$ if $A = 1$
   is 
-  $$0.75 \cdot 0.75 + 0.25 \cdot 0.75 = 0.75,$$
-  that is, 75\%,
+  $$0.75 \cdot 0.75 + 0.25 \cdot 0.25 = 0.625,$$
+  that is, 62.5\%,
   whereas the probability that $C = 1$ if $A = 0$
   is $0.25 \cdot 0.75 + 0.75 \cdot 0.25 = 0.375$ (37.5\%).
   Hence, $A$ and $C$ are associated.

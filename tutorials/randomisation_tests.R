@@ -43,7 +43,7 @@ d <- data.frame(
 boxplot(outcome ~ group, d)
 
 #' By default, the function `rand_test()` computes _p_-values
-#' between two conditions using exhausitive rerandomisation.
+#' between two conditions using exhaustive rerandomisation.
 #' Its `outcome` parameter takes the outcome data;
 #' the `treatment_idx` parameter takes the indices of the treatment group
 #' (obtained below using `which()`),

@@ -255,7 +255,7 @@ condition than in the
 \textit{without alcohol} one 
 (3.9 vs. 4.2; see Figure \ref{fig:alcohol_results_alt}).
 
-\section{Testing the null hypothesis by exhausitive rerandomisation}
+\section{Testing the null hypothesis by exhaustive rerandomisation}
 With 9 participants split up in a control group of 4 and an experimental group of 5
 there were ${9 \choose 5} = 126$ possible assignments of participants to conditions,
 each of which was equally likely to occur.
@@ -377,7 +377,7 @@ in the L2 in these participants.
     \item How many possible ways are there to split up 
     twelve participants into three groups of four participants each?
     \item Explain how you can compute an appropriate $p$-value using
-    exhausitive rerandomisation in this setting.
+    exhaustive rerandomisation in this setting.
     \item Now assume that we're interested in the group medians rather 
     than in the group means. 
     What would you need to change in your answer to (b)?\parend
@@ -625,7 +625,7 @@ A research team is conducting an experiment in 30 school classes
   which condition had the faster average speech rate before deciding
   whether to test whether moderate alcohol intake increased or decreased verbal
   fluency.
-  In this case, the probability of obtain a $p$-value no larger than $\alpha =$ 0.05
+  In this case, the probability of obtaining a $p$-value no larger than $\alpha =$ 0.05
   would have been 8.73\%---larger than the 5\% upper bound guaranteed by
   Theorem \ref{lemma:boundpval}.
   
@@ -634,10 +634,10 @@ A research team is conducting an experiment in 30 school classes
 \parend
 
 \section{Monte Carlo rerandomisation p-values}
-Exhausitive rerandomisation is computationally impossible for larger samples\marginnote{How many ways 
+exhaustive rerandomisation is computationally impossible for larger samples\marginnote{How many ways 
 are there to split up 40 participants into two equal-sized groups?
 Assuming it takes 3 milliseconds to evaluate one rerandomisation,
-how many \emph{years} would it take to run the test when using exhausitive rerandomisation?} 
+how many \emph{years} would it take to run the test when using exhaustive rerandomisation?} 
 and may be infeasible for more complex research designs.
 One alternative is to use a Monte Carlo simulation:
 Instead of generating all possible rerandomisations, 
