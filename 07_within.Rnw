@@ -52,7 +52,7 @@ from their performance in the first condition because they've grown
 accustomed to the setting or because they've grown tired of being tested.
 These phenomena are referred to as
 \term{learning effects}, \term{fatigue effects},
-and more generally, \term{order effects}.
+and more generally, \term{order} or \term{period effects}.
 
 \section{Minimising order effects}
 The first technique to prevent learning or fatigue effects 
@@ -62,7 +62,7 @@ In \term{complete counterbalancing}, \emph{all} possible orders are
 taken into account. If you have two within-subjects conditions,
 half of the participants first complete condition $A$ and then $B$,
 and the other half first complete condition $B$ and then $A$.
-If you have three conditions, there are $3! = 6$ possible orders;
+If you have three conditions, there are 3! = 6 possible orders;
 you can then randomly assign one sixth of the participants to 
 first complete A, then B, then C;
 one sixth completes A, then C, then B, etc.:
@@ -114,17 +114,23 @@ Table \ref{tab:latquad} shows one Latin square of size 4 in reduced form.
 Construct the other three.
 \parend
 
-When adopting a Latin square design, you first pick at random a Latin square
-of the appropriate size in reduced form.
-You then randomly assign the participants to its rows.
+When adopting a Latin square design,
+you first pick a Latin square of the appropriate size in reduced form.
+It's reasonable to pick this Latin square at random,
+but you can also, for instance, pick a square 
+in which each sequence in the square (e.g., ABCD) also occurs in reverse
+order (e.g., DCBA).
+You then randomly assign the participants to the sequences defined by
+the square's rows.
 Finally, you assign the conditions randomly to the symbols used.
 
-For instance, let's say you picked at random the Latin square in 
+For instance, let's say you picked the Latin square in 
 Table \ref{tab:latquad} for your study.
 You'd then randomly assign one quarter of the participants to
 the condition (or stimulus set) order ABCD (first row), 
 one quarter to BCDA (second row),
-one quarter to CDAB (third row) and one quarter to DABC (fourth row).
+one quarter to CDAB (third row) and one quarter to DABC (fourth row).\marginnote{Don't worry
+if the different sequences aren't represented \emph{exactly} equally frequently, though.}
 The conditions (or stimulus sets) are randomly
 assigned to one of the letters, too.
 The participants assigned to the first row complete the conditions (or stimulus sets)
@@ -143,6 +149,13 @@ and a within-subjects design for your own research, pick the
 within-subjects design. (Unless, of course, you have an excellent
 reason not to do so.)
 \end{framed}
+
+\mypar{Tip}
+  If your within-subjects experiment features three conditions,
+  complete counterbalancing is a good default strategy.
+  If it features four or more conditions,
+  a Latin square design keeps things reasonably simple.
+\parend
 
 \mypar{Example}
   In \citet{Vanhove2018}, I examined the influence of metalinguistic knowledge
@@ -271,7 +284,7 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
     \toprule 
     Order & First measurement & Second measurement \\
     \midrule
-    AB    & $\beta + \tau$    & $\beta + \omega + \kappa$ \\
+    AB    & $\beta + \tau$    & $\beta + \pi + \kappa$ \\
     BA    & $\beta$           & $\beta + \tau + \omega$ \\
     \bottomrule
   \end{tabular}
@@ -288,7 +301,7 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
         (i.e., the first measurement for order $AB$ and the second
         for order $BA$), but not to those in condition $B$.
         
-  \item There may be a differential order effect $\omega$ that contributes to the second
+  \item There may be a differential period effect $\pi$ that contributes to the second
         measurements but not to the first measurements.
         
   \item There may be a differential carryover effect $\kappa$ that affects the measurements
@@ -305,26 +318,29 @@ for each participant, the period difference, that is,
 the difference between their first and their second measurement.
 For the participants in the $AB$ order, and ignoring any non-systematic effects, we obtain
 \[
-  d_{AB} = (\beta + \tau) - (\beta + \omega + \kappa) = \tau - \omega - \kappa = \tau - \omega,
+  d_{AB} = (\beta + \tau) - (\beta + \pi + \kappa) = \tau - \pi - \kappa = \tau - \pi,
 \]
 since $\kappa = 0$ by assumption.
 For the participants in the $BA$ order, we similarly obtain
 \[
-  d_{BA} = \beta - (\beta + \tau + \omega) = - \tau - \omega.
+  d_{BA} = \beta - (\beta + \tau + \pi) = - \tau - \pi.
 \]
 Observe that
 \[
-  \frac{d_{AB} - d_{BA}}{2} = \frac{(\tau - \omega) - (- \tau - \omega)}{2} = \tau.
+  \frac{d_{AB} - d_{BA}}{2} = \frac{(\tau - \pi) - (- \tau - \pi)}{2} = \tau.
 \]
 The consequence of this is that, under the assumption of no carryover effects,
 the treatment effect $\tau$ can be estimated as half the mean difference in the period
 differences between the two orders.
-A randomisation test or some analytical approximation thereof can be used to obtain a $p$-value for the null hypothesis
+A randomisation test or some analytical approximation thereof 
+can be used to obtain a $p$-value for the null hypothesis
 that $\tau = 0$.
 
 In practice, you'll encounter different approaches to analysing within-subjects 
-designs when reading social science studies. Not all of these
-are grounded in sound statistical theory.
+designs when reading social science studies.
+Some of these are, in fact, equivalent to the approach outlined above,
+but others tacitly assume that $\pi = 0$ and therefore may yield different
+results.
 
 \mypar{Remark}
   If we aren't willing to exclude the possibility that there is 
@@ -381,56 +397,10 @@ within-subject experiments, for instance as a technique for blocking.
 See \citet{Richardson2018} for an overview and some finer points that weren't discussed here; 
 his article is geared towards educational researchers.
 
+\citet{Senn2002} discusses the design and analysis of within-subjects experiments
+(known as cross-over trials in medical circles)
+with an audience of medical researchers and applied statisticians in mind.
+
 \section{*Examples in R}
 See the file \texttt{within.html} in the \texttt{tutorials} directory
 on \url{https://github.com/janhove/QuantitativeMethodology}.
-
-
-
-% LATIN SQUARES ALSO USEFUL FOR BLOCKING. SEE OEHLERT.
-
-% \mypar[Reading assignment]{Exercise}
-% The Simon task was (and still is) commonly used in research on any cognitive advantages of bilingualism. In a nutshell, the theory is that bilinguals have to constantly inhibit one of their languages. Because of this, they practice their `inhibitory control'. The Simon task is purported to tap into this same skill (suppressing impulses). As a result, some researchers have interpreted smaller Simon effects in bilinguals as evidence for cognitive advantages of bilingualism. However, these studies have drawn criticism \citep[see the references in][]{Kirk2014}.
-% 
-% Read pages 640--643 of Kirk et al.\ (2014).
-%   Don't read the Results section (it is needlessly complicated),
-%   but do take a look at Table 1 and Figure 1.
-%   Then answer the following questions; short answers suffice.
-%   
-%   \begin{enumerate}
-%     \item Quasi-experiments tend to be both less conclusive and more arduous
-%           than true experiments. Explain why.
-%           
-%     \item ``Colour assignment to key location was counter-balanced across
-%           participants.'' (p.\ 643, top right)
-%           Rewrite this sentence without using the word {\it counter-balanced}.
-%           Do you have any idea why the researchers effected this counter-balancing?
-%           If so, briefly describe it.
-%           
-%     \item On page 641, the authors make two predictions:
-%           \begin{itemize}
-%             \item ``If bilingualism, rather than ethnic or cultural background
-%             is linked to superior executive control, then both bilingual groups
-%             should exhibit an advantage compared to the monolinguals.''
-%             
-%             \item ``If use of multiple dialects incurs executive control benefits
-%             similar to those observed in bilinguals, then differences in executive
-%             control between bidialectal monolinguals and bilinguals might be
-%             attenuated.''
-%           \end{itemize}
-%           Do the results in Figure 1 suggest that ``both bilingual groups
-%           \dots exhibit an advantage compared to the monolinguals''?
-%           Do they suggest that any differences in executive control between
-%           bidialectal monolinguals and bilinguals is smaller than 
-%           those between non-bidialectal monolinguals and bilinguals?
-%           Explain precisely which comparisons you base your answers on.
-%           
-%     \item Assume you had access to Kirk et al.'s full data set
-%           and that you were asked to draw a more informative graph than Figure 1.
-%           Draw a sketch of what your graph would look like
-%           and briefly explain why your graph is better than Kirk et al.'s.
-%           (You do \emph{not} need to draw such a graph in R. A free-hand
-%           sketch suffices. Do make sure, however, to indicate clearly
-%           what it is that you want to plot. Label your axes.) \parend
-% \end{enumerate}          
-
