@@ -3478,17 +3478,25 @@ each condition. In within-subjects designs, this idea is taken to an extreme.
 
 \mypar{Definition}
   In a \term{within-subjects experiment}, each unit (e.g., participant)
-  is assigned to multiple (typically: all) conditions.
+  is assigned to multiple conditions.
 \parend
 
 We've already encountered within-school and within-class designs
 in the previous chapter;
 within-subjects designs extend the same logic to the individual unit.
 
+Typically, the units in a within-subjects design are assigned to all
+of the experiment's conditions, though it is possible to devise
+within-subjects experiments in which each unit is assigned to
+only a subset of the experiment's conditions
+\citep[see][Section 7.3]{Senn2002}.
+We will only discuss within-subjects experiments in which 
+each unit is assigned to all conditions, however.
+
 \section{Advantages and drawbacks}
 The main advantage of within-subjects designs is 
-that they usually have greater statistical precision than an otherwise
-comparable experiment in which the units are assigned to the conditions at random.
+that they tend to have greater statistical precision and power than an otherwise
+comparable experiment in which each unit is assigned to only one condition.
 Indeed, a study's statistical precision depends on
  (a) the amount of data and
  (b) the variability in the data. 
@@ -3508,10 +3516,10 @@ within-subjects experiment.
 But even if you can't quantify this added value: 
 Within-subjects designs typically offer greater statistical precision.
  
-Let's now turn to potential drawbacks of within-subjects designs.
+Within-subjects designs, however, also suffer from a few potential drawbacks.
 First, in applied settings, you typically want the study 
 to mimic the context in which its findings are to be implemented.
-But in such a context, people (e.g., pupils) won't be exposed to several 
+But in such a context, the units (e.g., pupils) won't be exposed to several 
 conditions (e.g., learning methods) but rather to just one.
 Hence, the within-subjects design may be criticised for a lack of ecological validity.
 
@@ -3525,17 +3533,17 @@ from their performance in the first condition because they've grown
 accustomed to the setting or because they've grown tired of being tested.
 These phenomena are referred to as
 \term{learning effects}, \term{fatigue effects},
-and more generally, \term{order effects}.
+and more generally, \term{period effects}.
 
-\section{Minimising order effects}
-The first technique to prevent learning or fatigue effects 
-from biasing the results is to vary the order of the conditions
-between the participants.
-In \term{complete counterbalancing}, \emph{all} possible orders are 
+\section{Minimising period effects}
+The first technique to prevent period effects 
+from biasing the results is to vary 
+the sequence in which the conditions are presented from unit to unit.
+In \term{complete counterbalancing}, \emph{all} possible sequences are 
 taken into account. If you have two within-subjects conditions,
 half of the participants first complete condition $A$ and then $B$,
 and the other half first complete condition $B$ and then $A$.
-If you have three conditions, there are $3! = 6$ possible orders;
+If you have three conditions, there are 3! = 6 possible orders;
 you can then randomly assign one sixth of the participants to 
 first complete A, then B, then C;
 one sixth completes A, then C, then B, etc.:
@@ -3544,10 +3552,17 @@ one sixth completes A, then C, then B, etc.:
 \centering
 \caption{Complete counterbalancing for a within-subjects experiment with three conditions.}
 \label{tab:counter}
-\begin{tabular}{cccccc}
-A & A & B & B & C & C \\
-B & C & A & C & A & B \\
-C & B & C & A & B & A \\
+\begin{tabular}{cccc}
+\toprule
+Sequence & Period 1 & Period 2 & Period 2 \\
+\midrule
+\textsc{i}  & A & B & C \\
+\textsc{ii} & A & C & B \\
+\textsc{iii}&  B & A & C \\
+\textsc{iv} & B & C & A \\
+\textsc{v}  & C & A & B \\
+\textsc{vi} & C & B & A \\
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -3558,11 +3573,13 @@ complete counterbalancing is impractical. For four conditions,
 for instance, there are already 4! = 24 possible orders---we may not
 even have that many participants! 
 The second technique, the \term{Latin square design}, lends itself
-to such cases.\marginnote{`Latin' because the symbols used are typically
-letters of the Latin alphabet.} 
+to such cases.
 Latin squares are arrangements of symbols in a grid in which
-each of the symbols used occurs exactly once in each row and exactly once in each column. 
-The grid below is a Latin square
+each of the symbols used occurs exactly once in each row
+and exactly once in each column,
+and they are called so because the symbols are usually letters from
+the Latin alphabet.
+The grid in Table \ref{tab:latquad} is a Latin square
 of size 4---one of the 576 possible arrangements of the symbols A, B, C, and D
 that form a Latin square.
  
@@ -3570,11 +3587,15 @@ that form a Latin square.
 \centering
 \caption{A Latin square for a within-subjects experiment with four conditions.}
 \label{tab:latquad}
-\begin{tabular}{cccc}
-A & B & C & D \\
-B & C & D & A \\
-C & D & A & B \\
-D & A & B & C \\ 
+\begin{tabular}{ccccc}
+\toprule
+Sequence & Period 1 & Period 2 & Period 3 & Period 4 \\
+\midrule
+\textsc{i}  & A & B & C & D \\
+\textsc{ii} & B & C & D & A \\
+\textsc{iii}& C & D & A & B \\
+\textsc{iv} & D & A & B & C \\
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -3587,26 +3608,44 @@ Table \ref{tab:latquad} shows one Latin square of size 4 in reduced form.
 Construct the other three.
 \parend
 
-When adopting a Latin square design, you first pick at random a Latin square
-of the appropriate size in reduced form.
-You then randomly assign the participants to its rows.
+When adopting a Latin square design,
+you first pick a Latin square of the appropriate size in reduced form.
+It's reasonable to pick this Latin square at random,
+but you can also, for instance, pick a square 
+in which each sequence in the square (e.g., ABCD) also occurs in reverse
+order (e.g., DCBA).
+You then randomly assign the participants to the sequences defined by
+the square's rows.
 Finally, you assign the conditions randomly to the symbols used.
 
-For instance, let's say you picked at random the Latin square in 
+For instance, let's say you picked the Latin square in 
 Table \ref{tab:latquad} for your study.
 You'd then randomly assign one quarter of the participants to
 the condition (or stimulus set) order ABCD (first row), 
 one quarter to BCDA (second row),
-one quarter to CDAB (third row) and one quarter to DABC (fourth row).
+one quarter to CDAB (third row) and one quarter to DABC (fourth row).\marginnote{Don't worry
+if the different sequences aren't represented \emph{exactly} equally frequently, though.
+Whatever you do, do \emph{not} throw away data just to make each sequence occur equally often!
+This comment also applied to completely counterbalanced designs.}
 The conditions (or stimulus sets) are randomly
 assigned to one of the letters, too.
 The participants assigned to the first row complete the conditions (or stimulus sets)
 in the order ABCD;
 those assigned to the second row complete them in the order BCDA, etc.
 
-Counterbalancing and Latin squares don't negate carry-over effects.
+\mypar{Tip}
+  If your within-subjects experiment features three conditions,
+  complete counterbalancing is a good default strategy.
+  If it features four or more conditions,
+  a Latin square design keeps things reasonably simple.
+\parend
+
+Counterbalancing and Latin squares do \emph{not} negate carry-over effects.
 Whether carry-over effects represent an acute danger to the study's
-validity needs to be judged on a case-by-case basis.
+validity is a subject-matter decision (not a statistical one)
+that needs to be settled \emph{beforehand} on a case-by-case basis.
+Within-subjects designs are not suited for contexts in which carry-over effects
+are likely to be substantial.
 That said, the possible danger of carry-over effects quite often isn't
 large enough to offset the certain gain in statistical precision.
 
@@ -3633,7 +3672,8 @@ reason not to do so.)
   you can't then expect them to suppress this information as they are tested in condition $A$.
   Similarly, once you teach the participants an algorithm for identifying a structure (condition $C$),
   you can't then expect them not to apply it in the other conditions.
-  Consequently, I opted for a between-subjects design.
+  In view of such carry-over effects,
+  I opted for a between-subjects design.
 \parend
 
 \mypar[Potential outcomes in within-subjects designs]{Remark}
@@ -3672,17 +3712,17 @@ order effects could plausibly
 bias the results.
 But 50! = 3 $\cdot$ 10\textsuperscript{64} is an astronomical number, ruling out
 complete counterbalancing.
-And even a Latin square of size 50 seems impractical.
+Even a Latin square of size 50 seems impractical.
 One possible solution is to present the images in a new random order for each
 participant.
 The drawback of doing this is that perhaps image 3 occurs 
 much more often at the start than at the end of the data collection,
 but at least this imbalance isn't built into the design of the study.
-(Of course, it's possible that we just accept such `bias' if we aren't interested
+
+Of course, it's possible that we just accept such `bias' if we aren't interested
 in differences between the images, but just in differences between
 the participants or between the conditions. 
-If that's the case, randomising the stimulus order for each participant is superfluous.)
-
+If that's the case, randomising the stimulus order for each participant is superfluous.
 
 \mypar{Exercise}
 From \citet{Ludke2014}:
@@ -3727,14 +3767,14 @@ a few weeks later, they are tested again on all items.
 \end{enumerate}
 
 \section{*Analysing data from within-subjects designs with two conditions}
-\subsection{AB/BA cross-over design}
-Consider a within-subjects experiment with two conditions, creatively labelled $A$ and $B$, 
-in which participants are randomly assigned to the two possible orders $AB$ and $BA$.
-This design is called an \term{AB/BA cross-over design}.
+\subsection{Two conditions with complete counterbalancing}
+Consider a within-subjects experiment that has two conditions and uses
+complete counterbalancing.
 We will consider condition $A$ to be the intervention (or treatment) condition
 and $B$ the control condition, but nothing hinges on these labels.
 Let's break down the systematic factors that contribute 
-to the first and second measurements in both orders, see Table \ref{tab:analysiswithin}.
+to the measurements in both period for both sequences, 
+see Table \ref{tab:analysiswithin}.
   
 \begin{table}[h]
   \centering
@@ -3742,10 +3782,10 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
   \label{tab:analysiswithin}
   \begin{tabular}{ccc}
     \toprule 
-    Order & First measurement & Second measurement \\
+    Sequence& First period      & Second period \\
     \midrule
-    AB    & $\beta + \tau$    & $\beta + \omega + \kappa$ \\
-    BA    & $\beta$           & $\beta + \tau + \omega$ \\
+    AB      & $\beta + \tau$    & $\beta + \pi + \kappa$ \\
+    BA      & $\beta$           & $\beta + \tau + \pi$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -3758,14 +3798,16 @@ to the first and second measurements in both orders, see Table \ref{tab:analysis
   
   \item There may be a differential treatment effect $\tau$
         that contributes to the measurements in condition $A$ 
-        (i.e., the first measurement for order $AB$ and the second
-        for order $BA$), but not to those in condition $B$.
+        (i.e., the first period for sequence $AB$ and the second
+        for sequence $BA$), but not to those in condition $B$.
+        It is this different treatment effect we're interested in.
+      
+  \item There may be a differential period effect $\pi$ that contributes to 
+        the measurements in the second period but not to those in the first.
         
-  \item There may be a differential order effect $\omega$ that contributes to the second
-        measurements but not to the first measurements.
-        
-  \item There may be a differential carryover effect $\kappa$ that affects the measurements
-        in condition $B$ but only if $B$ follows $A$.
+  \item There may be a differential carryover effect $\kappa$ 
+        that affects the measurements in condition $B$ 
+        but only if $B$ follows $A$.
 \end{itemize}
 
 In any analysis of these data, 
@@ -3773,31 +3815,61 @@ we need to assume that there are no carryover effects, that is, $\kappa = 0$:
 If $\kappa \neq 0$, 
 the analysis presented here is no longer appropriate,
 and a within-subjects design may not have been a good choice.
-Under the assumption that $\kappa = 0$, we may estimate the value of $\tau$ by first computing,
+Under the assumption that $\kappa = 0$, 
+we may estimate the value of $\tau$ by first computing,
 for each participant, the period difference, that is, 
 the difference between their first and their second measurement.
-For the participants in the $AB$ order, and ignoring any non-systematic effects, we obtain
+For the participants assigned to the AB sequence, and ignoring any non-systematic effects, 
+we obtain
 \[
-  d_{AB} = (\beta + \tau) - (\beta + \omega + \kappa) = \tau - \omega - \kappa = \tau - \omega,
+  d_{AB} = (\beta + \tau) - (\beta + \pi + \kappa) = \tau - \pi - \kappa = \tau - \pi,
 \]
 since $\kappa = 0$ by assumption.
-For the participants in the $BA$ order, we similarly obtain
+For the participants assigned to the BA sequence, we similarly obtain
 \[
-  d_{BA} = \beta - (\beta + \tau + \omega) = - \tau - \omega.
+  d_{BA} = \beta - (\beta + \tau + \pi) = - \tau - \pi.
 \]
 Observe that
 \[
-  \frac{d_{AB} - d_{BA}}{2} = \frac{(\tau - \omega) - (- \tau - \omega)}{2} = \tau.
+  \frac{d_{AB} - d_{BA}}{2} = \frac{(\tau - \pi) - (- \tau - \pi)}{2} = \tau.
 \]
 The consequence of this is that, under the assumption of no carryover effects,
 the treatment effect $\tau$ can be estimated as half the mean difference in the period
 differences between the two orders.
-A randomisation test or some analytical approximation thereof can be used to obtain a $p$-value for the null hypothesis
+A randomisation test or some analytical approximation thereof 
+can be used to obtain a $p$-value for the null hypothesis
 that $\tau = 0$.
 
+\mypar{Remark}\label{rem:averageofaverages}
+  Alternatively, we may, for each participant, compute the difference
+  between their outcomes in the $A$ and $B$ conditions.
+  For the participants assigned to the AB sequence,
+  we then again obtain $\tau - \pi$;
+  for those assigned to the BA sequence,
+  we obtain $\tau + \pi$.
+  Hence, we may also first compute the averages of the $A - B$ differences
+  for both sequences, and then compute the mean of these two averages.
+  This procedure is mathematically equivalent to the one described in the main text,
+  but the randomisation test for it is slightly trickier to implement correctly.
+\parend
+
+\mypar[Generalisation to multiple conditions]{Remark}
+  The advantage of the `average of averages' approach outlined in
+  Remark \ref{rem:averageofaverages} is that it can straightforwardly
+  be extended to designs with multiple conditions.
+  For instance, if we want to compare the $A$ and $B$ conditions in a
+  completely counterbalanced design with three conditions,
+  we can compute the average $A - B$ difference for each of the six
+  sequences, and then average these six differences.
+\parend
+
+\mypar{Remark}
 In practice, you'll encounter different approaches to analysing within-subjects 
-designs when reading social science studies. Not all of these
-are grounded in sound statistical theory.
+designs when reading social science studies.
+Some of these are, in fact, equivalent to the approaches outlined above,
+but others tacitly assume that $\pi = 0$ and therefore may yield different
+results.
+\parend
 
 \mypar{Remark}
   If we aren't willing to exclude the possibility that there is 
@@ -3835,6 +3907,7 @@ and recompute their average.
 
 Exhaustive sign-flipping would generate the full distribution of $\overline d$
 under the null hypothesis, but it involves generating $2^n$ $\overline d$ values.
+This starts to become cumbersome for $n \geq 18$.
 A Monte Carlo version of this procedure would also work.
 Once the distribution of $\overline d$ has been generated or approximated using this sign-flipping,
 $p$-values can be computed as usual.
@@ -3854,59 +3927,13 @@ within-subject experiments, for instance as a technique for blocking.
 See \citet{Richardson2018} for an overview and some finer points that weren't discussed here; 
 his article is geared towards educational researchers.
 
+\citet{Senn2002} discusses the design and analysis of within-subjects experiments
+(known as cross-over trials in medical circles)
+with an audience of medical researchers and applied statisticians in mind.
+
 \section{*Examples in R}
 See the file \texttt{within.html} in the \texttt{tutorials} directory
 on \url{https://github.com/janhove/QuantitativeMethodology}.
-
-
-
-% LATIN SQUARES ALSO USEFUL FOR BLOCKING. SEE OEHLERT.
-
-% \mypar[Reading assignment]{Exercise}
-% The Simon task was (and still is) commonly used in research on any cognitive advantages of bilingualism. In a nutshell, the theory is that bilinguals have to constantly inhibit one of their languages. Because of this, they practice their `inhibitory control'. The Simon task is purported to tap into this same skill (suppressing impulses). As a result, some researchers have interpreted smaller Simon effects in bilinguals as evidence for cognitive advantages of bilingualism. However, these studies have drawn criticism \citep[see the references in][]{Kirk2014}.
-% 
-% Read pages 640--643 of Kirk et al.\ (2014).
-%   Don't read the Results section (it is needlessly complicated),
-%   but do take a look at Table 1 and Figure 1.
-%   Then answer the following questions; short answers suffice.
-%   
-%   \begin{enumerate}
-%     \item Quasi-experiments tend to be both less conclusive and more arduous
-%           than true experiments. Explain why.
-%           
-%     \item ``Colour assignment to key location was counter-balanced across
-%           participants.'' (p.\ 643, top right)
-%           Rewrite this sentence without using the word {\it counter-balanced}.
-%           Do you have any idea why the researchers effected this counter-balancing?
-%           If so, briefly describe it.
-%           
-%     \item On page 641, the authors make two predictions:
-%           \begin{itemize}
-%             \item ``If bilingualism, rather than ethnic or cultural background
-%             is linked to superior executive control, then both bilingual groups
-%             should exhibit an advantage compared to the monolinguals.''
-%             
-%             \item ``If use of multiple dialects incurs executive control benefits
-%             similar to those observed in bilinguals, then differences in executive
-%             control between bidialectal monolinguals and bilinguals might be
-%             attenuated.''
-%           \end{itemize}
-%           Do the results in Figure 1 suggest that ``both bilingual groups
-%           \dots exhibit an advantage compared to the monolinguals''?
-%           Do they suggest that any differences in executive control between
-%           bidialectal monolinguals and bilinguals is smaller than 
-%           those between non-bidialectal monolinguals and bilinguals?
-%           Explain precisely which comparisons you base your answers on.
-%           
-%     \item Assume you had access to Kirk et al.'s full data set
-%           and that you were asked to draw a more informative graph than Figure 1.
-%           Draw a sketch of what your graph would look like
-%           and briefly explain why your graph is better than Kirk et al.'s.
-%           (You do \emph{not} need to draw such a graph in R. A free-hand
-%           sketch suffices. Do make sure, however, to indicate clearly
-%           what it is that you want to plot. Label your axes.) \parend
-% \end{enumerate}          
-
 
 
 \chapter{Observational studies}\label{ch:quasi}

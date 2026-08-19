@@ -44,10 +44,7 @@ d
 #' Note that the $A - B$ differences as well as the period differences
 #' are precomputed; in real life, you'd have to compute these yourself.
 #' 
-#' Some visualisations. Note the stronger order effect. Nonetheless,
-#' in the aggregate, across both orders, the A scores are better than the B scores.
-#' The second plot is known as a Tukey mean--difference plot (also called
-#' a Bland-Altman plot in medical circles).
+#' Some visualisations.
 d |> 
   mutate(ParticipantID = 1:n()) |> 
   pivot_longer(A:B, values_to = "Score", names_to = "Condition") |>
