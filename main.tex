@@ -453,15 +453,6 @@ that there is a direct causal influence from the \term{treatment} variable
 nodes. There exists a directed edge (i.e., an arrow) between them that
 shows the assumed direction of the causal link.
 
-
-
-\begin{marginfigure}
-  \centering
-  \includegraphics{figure/dag-unobserved-1}
-  \caption{\textsc{dag} representing a causal influence of \textsc{clil} and of unobserved factors on English proficiency.}
-  \figlabel{fig:dag2}
-\end{marginfigure}
-
 The pupils' English proficiency won't be affected by their taking \textsc{clil} classes or not \emph{alone} but by a host of other unobserved factors as well. In
 Figure \ref{fig:dag2}, the unobserved factors are conveniently bundled and represented as `U'.
 The U is circled to make it clear that these factors were not observed or measured.
@@ -471,9 +462,9 @@ While this convention isn't universal, it's useful and we'll adopt it here.
 
 \begin{marginfigure}
   \centering
-  \includegraphics{figure/dag-confound-1}
-  \caption{Unobserved factors as confounders (1).}
-  \figlabel{fig:dag3}
+  \includegraphics{figure/dag-unobserved-1}
+  \caption{\textsc{dag} representing a causal influence of \textsc{clil} and of unobserved factors on English proficiency.}
+  \figlabel{fig:dag2}
 \end{marginfigure}
 
 \textbf{Important:} If we don't draw an arrow between U and \textsc{clil}, this means
@@ -487,10 +478,12 @@ and the 'outcome' (English proficiency), \term{confound} the causal link of inte
 
 \begin{marginfigure}
   \centering
-  \includegraphics{figure/dag-confound2-1}
-  \caption{Unobserved factors as confounders (2).}
-  \figlabel{fig:dag4}
+  \includegraphics{figure/dag-confound-1}
+  \caption{Unobserved factors as confounders (1).}
+  \figlabel{fig:dag3}
 \end{marginfigure}
+
+
 
 Figure \vref{fig:dag4} also features the unobserved factors as possible confounders,
 but this time there is no edge between \textsc{clil} and \textsc{eng}.
@@ -500,6 +493,15 @@ and subsequently use the \textsc{dag} to deduce if it is possible that
 \textsc{clil} and English proficiency are nonetheless associated.
 If so, the mere presence of an association between \textsc{clil} and English
 proficiency does not imply that there is some causal link between them.
+
+
+
+\begin{marginfigure}
+  \centering
+  \includegraphics{figure/dag-confound2-1}
+  \caption{Unobserved factors as confounders (2).}
+  \figlabel{fig:dag4}
+\end{marginfigure}
 
 \subsection{Rules for drawing \textsc{dag}s}
 
@@ -735,6 +737,7 @@ of drownings in the River Aare and the daily revenue of Bernese ice-cream vendor
 Why can I be pretty confident about this?
 \parend
 
+\clearpage
 
 \paragraph{Inverted forks}
 Figure \ref{fig:inv_fork} shows an inverted fork where two variables both influence
